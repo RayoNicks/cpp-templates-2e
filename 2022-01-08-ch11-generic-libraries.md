@@ -1,10 +1,3 @@
----
-layout: post
-title: 《C++ Templates》第11章 泛型库
-categories: Reading
-tags: C++
----
-
 # 11 泛型库
 
 ## 11.1 可调用对象类型

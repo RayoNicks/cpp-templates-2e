@@ -1,10 +1,3 @@
----
-layout: post
-title: 《C++ Templates》第9章 模板在实际中的应用
-categories: Reading
-tags: C++
----
-
 # 9 模板在实际中的应用
 
 ## 9.1 模板的包含模型

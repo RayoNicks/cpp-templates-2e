@@ -1,10 +1,3 @@
----
-layout: post
-title: 《C++ Templates》第26章 可识别联合体
-categories: Reading
-tags: C++
----
-
 # 26 可识别联合体
 
 可识别联合体中存储了一组可能类型之一的值，但是和传统的联合体不同的是可识别联合体知道当前其中存储的是什么类型，也就可以提高安全性。本章实现了`Variant<>`，类似于`std::variant`，一个简单的应用如下：

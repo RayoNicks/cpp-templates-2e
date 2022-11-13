@@ -1,10 +1,3 @@
----
-layout: post
-title: 《C++ Templates》第12章 深入模板
-categories: Reading
-tags: C++
----
-
 # 12 深入模板
 
 ## 12.1 参数化声明

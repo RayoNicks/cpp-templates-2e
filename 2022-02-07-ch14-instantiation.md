@@ -1,10 +1,3 @@
----
-layout: post
-title: 《C++ Templates》第14章 模板实例化
-categories: Reading
-tags: C++
----
-
 # 14 模板实例化
 
 ## 14.1 按需实例化

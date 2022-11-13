@@ -1,10 +1,3 @@
----
-layout: post
-title: 《C++ Templates》第1章 函数模板
-categories: Reading
-tags: C++
----
-
 # 1 函数模板
 
 ## 1.1 函数模板速览

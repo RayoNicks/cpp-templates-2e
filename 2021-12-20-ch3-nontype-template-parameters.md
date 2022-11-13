@@ -1,10 +1,3 @@
----
-layout: post
-title: 《C++ Templates》第3章 非类型模板参数
-categories: Reading
-tags: C++
----
-
 # 3 非类型模板参数
 
 对于函数模板和类模板，模板参数也可以是普通的数值。

@@ -1,10 +1,3 @@
----
-layout: post
-title: 《C++ Templates》附录B 值类型
-categories: Reading
-tags: C++
----
-
 # B 值类型
 
 ## B.1 传统意义下的左值和右值

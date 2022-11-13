@@ -1,10 +1,3 @@
----
-layout: post
-title: 《C++ Templates》第19章 类型特征模板
-categories: Reading
-tags: C++
----
-
 # 19 类型特征模板
 
 ## 19.1 序列累加的例子

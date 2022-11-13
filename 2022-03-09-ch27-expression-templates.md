@@ -1,10 +1,3 @@
----
-layout: post
-title: 《C++ Templates》第27章 表达式模板
-categories: Reading
-tags: C++
----
-
 # 27 表达式模板
 
 表达式模板用来支持针对整个数组的数值运算。

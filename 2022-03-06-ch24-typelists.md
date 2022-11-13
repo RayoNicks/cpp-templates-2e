@@ -1,10 +1,3 @@
----
-layout: post
-title: 《C++ Templates》第24章 类型列表
-categories: Reading
-tags: C++
----
-
 # 24 类型列表
 
 ## 24.1 类型列表

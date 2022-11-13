@@ -1,10 +1,3 @@
----
-layout: post
-title: 《C++ Templates》第13章 模板中的名称解析
-categories: Reading
-tags: C++
----
-
 # 13 模板中的名称解析
 
 ## 13.1 C++名称分类

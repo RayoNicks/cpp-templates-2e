@@ -1,10 +1,3 @@
----
-layout: post
-title: 《C++ Templates》第5章 模板中的复杂问题
-categories: Reading
-tags: C++
----
-
 # 5 模板中的复杂问题
 
 ## 5.1 typename关键字 {#typename}

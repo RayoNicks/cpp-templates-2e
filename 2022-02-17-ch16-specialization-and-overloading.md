@@ -1,10 +1,3 @@
----
-layout: post
-title: 《C++ Templates》第16章 特化和重载
-categories: Reading
-tags: C++
----
-
 # 16 特化和重载
 
 ## 16.1 泛型代码无法解决的问题

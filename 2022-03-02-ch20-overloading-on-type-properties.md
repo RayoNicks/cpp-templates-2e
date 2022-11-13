@@ -1,10 +1,3 @@
----
-layout: post
-title: 《C++ Templates》第20章 基于类型属性的重载
-categories: Reading
-tags: C++
----
-
 # 20 基于类型属性的重载
 
 ## 20.1 算法特化

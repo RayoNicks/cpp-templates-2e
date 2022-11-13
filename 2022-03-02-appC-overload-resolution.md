@@ -1,10 +1,3 @@
----
-layout: post
-title: 《C++ Templates》附录C 重载解析规则
-categories: Reading
-tags: C++
----
-
 # C 重载解析规则
 
 这一部分应该是在第16章之后的，不过忘记了。

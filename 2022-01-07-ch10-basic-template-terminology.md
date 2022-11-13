@@ -1,10 +1,3 @@
----
-layout: post
-title: 《C++ Templates》第10章 模板相关术语
-categories: Reading
-tags: C++
----
-
 # 10 模板相关术语
 
 ## 10.1 类模板还是模板类（“Class Template” or “Template Class”?）

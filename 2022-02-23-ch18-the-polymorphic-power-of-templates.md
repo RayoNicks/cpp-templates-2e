@@ -1,10 +1,3 @@
----
-layout: post
-title: 《C++ Templates》第18章 模板和多态
-categories: Reading
-tags: C++
----
-
 # 18 模板和多态
 
 ## 18.1 动态多态

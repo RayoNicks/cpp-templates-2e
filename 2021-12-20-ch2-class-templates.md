@@ -1,10 +1,3 @@
----
-layout: post
-title: 《C++ Templates》第2章 类模板
-categories: Reading
-tags: C++
----
-
 # 2 类模板
 
 ## 2.1 栈类模板实现

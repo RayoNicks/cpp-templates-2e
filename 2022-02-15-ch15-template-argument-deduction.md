@@ -1,10 +1,3 @@
----
-layout: post
-title: 《C++ Templates》第15章 模板参数推导
-categories: Reading
-tags: C++
----
-
 # 15 模板参数推导
 
 ## 15.1 模板参数推导过程

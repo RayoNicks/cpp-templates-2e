@@ -1,10 +1,3 @@
----
-layout: post
-title: 《C++ Templates》第22章 桥接静态和动态多态
-categories: Reading
-tags: C++
----
-
 # 22 桥接静态和动态多态
 
 本章实现了`FunctionPtr<>`，类似于`std::function`。

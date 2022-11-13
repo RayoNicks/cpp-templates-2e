@@ -1,10 +1,3 @@
----
-layout: post
-title: 《C++ Templates》第7章 传值和传引用
-categories: Reading
-tags: C++
----
-
 # 7 传值和传引用
 
 从C++11开始，函数传引用参数分为下面三种类型：

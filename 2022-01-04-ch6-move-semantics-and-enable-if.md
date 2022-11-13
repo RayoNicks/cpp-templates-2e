@@ -1,10 +1,3 @@
----
-layout: post
-title: 《C++ Templates》第6章 移动语义和std::enable_if
-categories: Reading
-tags: C++
----
-
 # 6 移动语义和std::enable_if
 
 这应该是我印象里最好的关于移动语义定义了：移动操作可以将拷贝和赋值操作优化为内部资源的偷取，这是因为被移动的对象是一个将要被释放的对象。原文：

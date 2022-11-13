@@ -1,10 +1,3 @@
----
-layout: post
-title: 《C++ Templates》第4章 可变参数模板
-categories: Reading
-tags: C++
----
-
 # 4 可变参数模板
 
 ## 4.1 可变参数模板

@@ -1,10 +1,3 @@
----
-layout: post
-title: 《C++ Templates》第8章 编译时编程
-categories: Reading
-tags: C++
----
-
 # 8 编译时编程
 
 ## 8.1 模板元编程

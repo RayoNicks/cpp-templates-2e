@@ -1,10 +1,3 @@
----
-layout: post
-title: 《C++ Templates》第21章 模板和继承
-categories: Reading
-tags: C++
----
-
 # 21 模板和继承
 
 ## 21.1 空基类优化

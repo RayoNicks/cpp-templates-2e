@@ -1,10 +1,3 @@
----
-layout: post
-title: 《C++ Templates》第23章 元编程
-categories: Reading
-tags: C++
----
-
 # 23 元编程
 
 元编程是对程序进行编程，也就是在编程系统对源代码进行构建的过程中产生出新代码、实现新功能的技术。原文：

@@ -1,10 +1,3 @@
----
-layout: post
-title: 《C++ Templates》第17章 模板的未来
-categories: Reading
-tags: C++
----
-
 # 17 模板的未来
 
 ## 17.1 更宽松的typename关键字规则
