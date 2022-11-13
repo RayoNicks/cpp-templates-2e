@@ -1,0 +1,895 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Chapter 6 Move Semantics and enable_if<> · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="2022-01-05-ch7-by-value-or-by-reference.html" />
+    
+    
+    <link rel="prev" href="2021-12-30-ch5-tricky-basics.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="2021-12-15-ch1-function-templates.html">
+            
+                <a href="2021-12-15-ch1-function-templates.html">
+            
+                    
+                    Chapter 1 Funtion Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="2021-12-20-ch2-class-templates.html">
+            
+                <a href="2021-12-20-ch2-class-templates.html">
+            
+                    
+                    Chapter 2 Class Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="2021-12-20-ch3-nontype-template-parameters.html">
+            
+                <a href="2021-12-20-ch3-nontype-template-parameters.html">
+            
+                    
+                    Chapter 3 Nontype Template Parameters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="2021-12-20-ch4-variadic-templates.html">
+            
+                <a href="2021-12-20-ch4-variadic-templates.html">
+            
+                    
+                    Chapter 4 Variadic Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="2021-12-30-ch5-tricky-basics.html">
+            
+                <a href="2021-12-30-ch5-tricky-basics.html">
+            
+                    
+                    Chapter 5 Tricky Basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.7" data-path="2022-01-04-ch6-move-semantics-and-enable-if.html">
+            
+                <a href="2022-01-04-ch6-move-semantics-and-enable-if.html">
+            
+                    
+                    Chapter 6 Move Semantics and enable_if<>
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="2022-01-05-ch7-by-value-or-by-reference.html">
+            
+                <a href="2022-01-05-ch7-by-value-or-by-reference.html">
+            
+                    
+                    Chapter 7 By Value or by Reference?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="2022-01-06-ch8-compile-time-programming.html">
+            
+                <a href="2022-01-06-ch8-compile-time-programming.html">
+            
+                    
+                    Chapter 8 Compile-Time Programming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="2022-01-06-ch9-using-templates-in-practice.html">
+            
+                <a href="2022-01-06-ch9-using-templates-in-practice.html">
+            
+                    
+                    Chapter 9 Using Templates in Practice
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="2022-01-07-ch10-basic-template-terminology.html">
+            
+                <a href="2022-01-07-ch10-basic-template-terminology.html">
+            
+                    
+                    Chapter 10 Basic Template Terminology
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="2022-01-08-ch11-generic-libraries.html">
+            
+                <a href="2022-01-08-ch11-generic-libraries.html">
+            
+                    
+                    Chapter 11 Generic Libraries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="2022-01-12-ch12-fundamentals-in-depth.html">
+            
+                <a href="2022-01-12-ch12-fundamentals-in-depth.html">
+            
+                    
+                    Chapter 12 Fundamentals in Depth
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="2022-01-27-ch13-names-in-templates.html">
+            
+                <a href="2022-01-27-ch13-names-in-templates.html">
+            
+                    
+                    Chapter 13 Names in Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="2022-02-07-ch14-instantiation.html">
+            
+                <a href="2022-02-07-ch14-instantiation.html">
+            
+                    
+                    Chapter 14 Instantiation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="2022-02-15-ch15-template-argument-deduction.html">
+            
+                <a href="2022-02-15-ch15-template-argument-deduction.html">
+            
+                    
+                    Chapter 15 Template Argument Deduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="2022-02-17-ch16-specialization-and-overloading.html">
+            
+                <a href="2022-02-17-ch16-specialization-and-overloading.html">
+            
+                    
+                    Chapter 16 Specialization and Overloading
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="2022-02-22-ch17-future-directions.html">
+            
+                <a href="2022-02-22-ch17-future-directions.html">
+            
+                    
+                    Chapter 17 Future Directions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="2022-02-23-ch18-the-polymorphic-power-of-templates.html">
+            
+                <a href="2022-02-23-ch18-the-polymorphic-power-of-templates.html">
+            
+                    
+                    Chapter 18 The Polymorphic Power of Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="2022-03-01-ch19-implementing-traits.html">
+            
+                <a href="2022-03-01-ch19-implementing-traits.html">
+            
+                    
+                    Chapter 19 Implementing Traits
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="2022-03-02-ch20-overloading-on-type-properties.html">
+            
+                <a href="2022-03-02-ch20-overloading-on-type-properties.html">
+            
+                    
+                    Chapter 20 Overloading on Type Properties
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="2022-03-03-ch21-templates-and-inheritance.html">
+            
+                <a href="2022-03-03-ch21-templates-and-inheritance.html">
+            
+                    
+                    Chapter 21 Templates and Inheritance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="2022-03-05-ch22-bridging-static-and-dynamic-polymorphism.html">
+            
+                <a href="2022-03-05-ch22-bridging-static-and-dynamic-polymorphism.html">
+            
+                    
+                    Chapter 22 Bridging Static and Dynamic Polymorphism
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="2022-03-05-ch23-metaprogramming.html">
+            
+                <a href="2022-03-05-ch23-metaprogramming.html">
+            
+                    
+                    Chapter 23 Metaprogramming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="2022-03-06-ch24-typelists.html">
+            
+                <a href="2022-03-06-ch24-typelists.html">
+            
+                    
+                    Chapter 24 Typelists
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" data-path="2022-03-07-ch25-tuples.html">
+            
+                <a href="2022-03-07-ch25-tuples.html">
+            
+                    
+                    Chapter 25 Tuples
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27" data-path="2022-03-08-ch26-discriminated-unions.html">
+            
+                <a href="2022-03-08-ch26-discriminated-unions.html">
+            
+                    
+                    Chapter 26 Discriminated Unions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28" data-path="2022-03-09-ch27-expression-templates.html">
+            
+                <a href="2022-03-09-ch27-expression-templates.html">
+            
+                    
+                    Chapter 27 Expression Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29" data-path="2022-03-09-ch28-debugging-templates.html">
+            
+                <a href="2022-03-09-ch28-debugging-templates.html">
+            
+                    
+                    Chapter 28 Debugging Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.30" data-path="2022-01-05-appB-value-categories.html">
+            
+                <a href="2022-01-05-appB-value-categories.html">
+            
+                    
+                    Appendix B Value Categories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.31" data-path="2022-03-02-appC-overload-resolution.html">
+            
+                <a href="2022-03-02-appC-overload-resolution.html">
+            
+                    
+                    Appendix C Overload Resolution
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Chapter 6 Move Semantics and enable_if<></a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="6-&#x79FB;&#x52A8;&#x8BED;&#x4E49;&#x548C;stdenableif">6 &#x79FB;&#x52A8;&#x8BED;&#x4E49;&#x548C;std::enable_if</h1>
+<p>&#x8FD9;&#x5E94;&#x8BE5;&#x662F;&#x6211;&#x5370;&#x8C61;&#x91CC;&#x6700;&#x597D;&#x7684;&#x5173;&#x4E8E;&#x79FB;&#x52A8;&#x8BED;&#x4E49;&#x5B9A;&#x4E49;&#x4E86;&#xFF1A;&#x79FB;&#x52A8;&#x64CD;&#x4F5C;&#x53EF;&#x4EE5;&#x5C06;&#x62F7;&#x8D1D;&#x548C;&#x8D4B;&#x503C;&#x64CD;&#x4F5C;&#x4F18;&#x5316;&#x4E3A;&#x5185;&#x90E8;&#x8D44;&#x6E90;&#x7684;&#x5077;&#x53D6;&#xFF0C;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x88AB;&#x79FB;&#x52A8;&#x7684;&#x5BF9;&#x8C61;&#x662F;&#x4E00;&#x4E2A;&#x5C06;&#x8981;&#x88AB;&#x91CA;&#x653E;&#x7684;&#x5BF9;&#x8C61;&#x3002;&#x539F;&#x6587;&#xFF1A;</p>
+<blockquote>
+<p>You can use it to optimize copying and assignments by moving (&#x201C;stealing&#x201D;) internal resources from a source object to a destination object instead of copying those contents. This can be done provided the source no longer needs its internal value or state (because it is about to be discarded).</p>
+</blockquote>
+<h2 id="Perfect-Fowarding">6.1 &#x5B8C;&#x7F8E;&#x8F6C;&#x53D1; </h2>
+<p>&#x5B8C;&#x7F8E;&#x8F6C;&#x53D1;&#x662F;&#x4E3A;&#x4E86;&#x4FDD;&#x8BC1;&#x5728;&#x6A21;&#x677F;&#x5B9E;&#x4F8B;&#x5316;&#x65F6;&#x4ECD;&#x7136;&#x4FDD;&#x6301;&#x53C2;&#x6570;&#x7684;&#x5C5E;&#x6027;&#xFF1A;</p>
+<ul>
+<li>&#x5DE6;&#x503C;&#x4ECD;&#x7136;&#x662F;&#x5DE6;&#x503C;</li>
+<li>&#x5E38;&#x91CF;&#x4ECD;&#x7136;&#x662F;&#x5E38;&#x91CF;</li>
+<li>&#x88AB;&#x79FB;&#x52A8;&#x7684;&#x5BF9;&#x8C61;&#x4ECD;&#x7136;&#x662F;&#x53EF;&#x4EE5;&#x88AB;&#x79FB;&#x52A8;&#x7684;</li>
+</ul>
+<p>&#x6240;&#x4EE5;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x628A;&#x4EE3;&#x7801;&#x5199;&#x6210;&#x8FD9;&#x4E2A;&#x6837;&#x5B50;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// basics/move1.cpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;utility&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+
+<span class="hljs-keyword">class</span> X {
+    <span class="hljs-comment">// ...</span>
+};
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">g</span> <span class="hljs-params">(X&amp;)</span> </span>{
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;g() for variable\n&quot;</span>;
+}
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">g</span> <span class="hljs-params">(X <span class="hljs-keyword">const</span>&amp;)</span> </span>{
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;g() for constant\n&quot;</span>;
+}
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">g</span> <span class="hljs-params">(X&amp;&amp;)</span> </span>{
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;g() for movable object\n&quot;</span>;
+}
+
+<span class="hljs-comment">// let f() forward argument val to g():</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">f</span> <span class="hljs-params">(X&amp; val)</span> </span>{
+    g(val);             <span class="hljs-comment">// val is non-const lvalue =&gt; calls g(X&amp;)</span>
+}
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">f</span> <span class="hljs-params">(X <span class="hljs-keyword">const</span>&amp; val)</span> </span>{
+    g(val);             <span class="hljs-comment">// val is const lvalue =&gt; calls g(X const&amp;)</span>
+}
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">f</span> <span class="hljs-params">(X&amp;&amp; val)</span> </span>{
+    g(<span class="hljs-built_in">std</span>::move(val));  <span class="hljs-comment">// val is non-const lvalue =&gt; needs std::move() to call g(X&amp;&amp;)</span>
+}
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    X v;                <span class="hljs-comment">// create variable</span>
+    X <span class="hljs-keyword">const</span> c;          <span class="hljs-comment">// create constant</span>
+    f(v);               <span class="hljs-comment">// f() for nonconstant object calls f(X&amp;) =&gt; calls g(X&amp;)</span>
+    f(c);               <span class="hljs-comment">// f() for constant object calls f(X const&amp;) =&gt; calls g(X const&amp;)</span>
+    f(X());             <span class="hljs-comment">// f() for temporary calls f(X&amp;&amp;) =&gt; calls g(X&amp;&amp;)</span>
+    f(<span class="hljs-built_in">std</span>::move(v));    <span class="hljs-comment">// f() for movable variable calls f(X&amp;&amp;) =&gt; calls g(X&amp;&amp;)</span>
+}
+</code></pre>
+<p>&#x6CE8;&#x610F;&#x5728;<code>void f (X&amp;&amp; val)</code>&#x4E2D;&#x4ECD;&#x7136;&#x9700;&#x8981;<code>std::move</code>&#xFF0C;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;C++&#x9ED8;&#x8BA4;&#x4E0D;&#x4F20;&#x9012;&#x53F3;&#x503C;&#x7684;&#x5C5E;&#x6027;&#x3002;&#x5F53;&#x4F7F;&#x7528;<code>val</code>&#x65F6;&#xFF0C;&#x4ECD;&#x7136;&#x662F;&#x975E;&#x5E38;&#x91CF;&#x5DE6;&#x503C;&#xFF0C;&#x548C;<code>void f (X&amp; val)</code>&#x4E2D;&#x7684;<code>val</code>&#x5C5E;&#x6027;&#x662F;&#x4E00;&#x6837;&#x7684;&#x3002;&#x5982;&#x679C;&#x9ED8;&#x8BA4;&#x4F20;&#x9012;&#x53F3;&#x503C;&#xFF0C;&#x90A3;&#x4E48;&#x5F53;&#x8BE5;&#x503C;&#x7B2C;&#x4E00;&#x6B21;&#x4F5C;&#x4E3A;&#x67D0;&#x51FD;&#x6570;&#x7684;&#x5B9E;&#x53C2;&#x65F6;&#xFF0C;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x540E;&#x8BE5;&#x503C;&#x53EF;&#x80FD;&#x5C31;&#x5931;&#x6548;&#x4E86;&#x3002;&#x539F;&#x6587;&#xFF1A;</p>
+<blockquote>
+<p>The fact that move semantics is not automatically passed through is intentional and important. If it weren&#x2019;t, we would lose the value of a movable object the first time we use it in a function.</p>
+</blockquote>
+<p>&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x5199;&#x4E3A;&#x6A21;&#x677F;&#x7684;&#x5F62;&#x5F0F;&#x4F1A;&#x662F;&#x8FD9;&#x4E2A;&#x6837;&#x5B50;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">f</span> <span class="hljs-params">(T val)</span> </span>{
+    g(T);
+}
+</code></pre>
+<p>&#x4F46;&#x662F;&#x53EA;&#x5BF9;&#x5DE6;&#x503C;&#x7248;&#x672C;&#x6709;&#x6548;&#xFF08;&#x8BE6;&#x89C1;&#x7B2C;1&#x7AE0;&#x4E2D;&#x7684;&#x63A8;&#x5BFC;&#x89C4;&#x5219;&#xFF09;&#x3002;&#x4E3A;&#x4E86;&#x652F;&#x6301;&#x53F3;&#x503C;&#x7248;&#x672C;&#xFF0C;&#x5E94;&#x8BE5;&#x5199;&#x6210;&#x4E0B;&#x9762;&#x7684;&#x6837;&#x5B50;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">f</span> <span class="hljs-params">(T&amp;&amp; val)</span> </span>{
+    g(<span class="hljs-built_in">std</span>::forward&lt;T&gt;(val)); <span class="hljs-comment">// perfect forward val to g()</span>
+}
+</code></pre>
+<p>&#x7531;&#x4E8E;<code>std::move</code>&#x4E0D;&#x662F;&#x6A21;&#x677F;&#xFF0C;&#x6240;&#x4EE5;&#x8981;&#x7528;<code>std::forward</code>&#x6765;&#x8F6C;&#x53D1;&#x6F5C;&#x5728;&#x7684;&#x79FB;&#x52A8;&#x8BED;&#x4E49;&#x3002;</p>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x6A21;&#x677F;&#x4E2D;&#x7684;<code>T&amp;&amp;</code>&#x548C;&#x666E;&#x901A;&#x51FD;&#x6570;&#x4E2D;&#x7684;<code>X&amp;&amp;</code>&#x662F;&#x4E0D;&#x4E00;&#x6837;&#x7684;&#xFF1A;</p>
+<ul>
+<li>&#x53EA;&#x6709;&#x53EF;&#x4EE5;&#x88AB;&#x79FB;&#x52A8;&#x7684;&#x5BF9;&#x8C61;&#x624D;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x4E3A;<code>X&amp;&amp;</code>&#x7684;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;</li>
+<li><code>T&amp;&amp;</code>&#x8868;&#x660E;&#x6A21;&#x677F;&#x7684;&#x53C2;&#x6570;&#x7684;&#x7C7B;&#x578B;&#x662F;&#x8F6C;&#x53D1;&#x5F15;&#x7528;&#xFF08;forwarding reference&#xFF09;&#xFF0C;&#x6216;&#x8005;&#x5728;C++17&#x4E4B;&#x524D;&#x53EB;&#x505A;&#x901A;&#x7528;&#x5F15;&#x7528;&#xFF08;universal reference&#xFF09;&#xFF0C;&#x5B9E;&#x53C2;&#x53EF;&#x4EE5;&#x662F;&#x5E38;&#x91CF;&#x5DE6;&#x503C;&#x3001;&#x975E;&#x5E38;&#x91CF;&#x5DE6;&#x503C;&#x548C;&#x53EF;&#x79FB;&#x52A8;&#x5BF9;&#x8C61;&#x3002;&#x5373;&#x4F7F;&#x6A21;&#x677F;&#x51FD;&#x6570;&#x4E2D;&#x7684;<code>typename T::iterator&amp;&amp;</code>&#x4E5F;&#x53EA;&#x662F;&#x58F0;&#x660E;&#x53D8;&#x91CF;&#x7684;&#x7C7B;&#x578B;&#x4E3A;&#x53F3;&#x503C;&#x5F15;&#x7528;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x8F6C;&#x53D1;&#x5F15;&#x7528;</li>
+</ul>
+<p>&#x5B8C;&#x6574;&#x7A0B;&#x5E8F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// basics/move2.cpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;utility&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+
+<span class="hljs-keyword">class</span> X {
+    <span class="hljs-comment">// ...</span>
+};
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">g</span> <span class="hljs-params">(X&amp;)</span> </span>{
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;g() for variable\n&quot;</span>;
+}
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">g</span> <span class="hljs-params">(X <span class="hljs-keyword">const</span>&amp;)</span> </span>{
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;g() for constant\n&quot;</span>;
+}
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">g</span> <span class="hljs-params">(X&amp;&amp;)</span> </span>{
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;g() for movable object\n&quot;</span>;
+}
+
+<span class="hljs-comment">// let f() perfect forward argument val to g():</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">f</span> <span class="hljs-params">(T&amp;&amp; val)</span> </span>{
+    g(<span class="hljs-built_in">std</span>::forward&lt;T&gt;(val)); <span class="hljs-comment">// call the right g() for any passed argument val</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    X v;                <span class="hljs-comment">// create variable</span>
+    X <span class="hljs-keyword">const</span> c;          <span class="hljs-comment">// create constant</span>
+    f(v);               <span class="hljs-comment">// f() for variable calls f(X&amp;) =&gt; calls g(X&amp;)</span>
+    f(c);               <span class="hljs-comment">// f() for constant calls f(X const&amp;) =&gt; calls g(X const&amp;)</span>
+    f(X());             <span class="hljs-comment">// f() for temporary calls f(X&amp;&amp;) =&gt; calls g(X&amp;&amp;)</span>
+    f(<span class="hljs-built_in">std</span>::move(v));    <span class="hljs-comment">// f() for move-enabled variable calls f(X&amp;&amp;) =&gt; calls g(X&amp;&amp;)</span>
+}
+</code></pre>
+<h2 id="Special-Member-Function-Template">6.2 &#x7279;&#x6B8A;&#x6210;&#x5458;&#x51FD;&#x6570;&#x6A21;&#x677F; </h2>
+<p>&#x53EF;&#x4EE5;&#x5C06;&#x6784;&#x9020;&#x51FD;&#x6570;&#x6A21;&#x677F;&#x5316;&#xFF1A;</p>
+<pre><code class="lang-cpp">// basics/specialmemtmpl1.cpp
+#include &lt;utility&gt;
+#include &lt;string&gt;
+#include &lt;iostream&gt;
+
+class Person
+{
+    private:
+        std::string name;
+    public:
+        // constructor for passed initial name:
+        explicit Person(std::string const&amp; n) : name(n) {
+            std::cout &lt;&lt; &quot;copying string-CONSTR for &apos;&quot; &lt;&lt; name &lt;&lt; &quot;&apos;\n&quot;;
+        }
+        explicit Person(std::string&amp;&amp; n) : name(std::move(n)) {
+            std::cout &lt;&lt; &quot;moving string-CONSTR for &apos;&quot; &lt;&lt; name &lt;&lt; &quot;&apos;\n&quot;;
+        }
+        // copy and move constructor:
+        Person (Person const&amp; p) : name(p.name) {
+            std::cout &lt;&lt; &quot;COPY-CONSTR Person &apos;&quot; &lt;&lt; name &lt;&lt; &quot;&apos;\n&quot;;
+        }
+        Person (Person&amp;&amp; p) : name(std::move(p.name)) {
+            std::cout &lt;&lt; &quot;MOVE-CONSTR Person &apos;&quot; &lt;&lt; name &lt;&lt; &quot;&apos;\n&quot;;
+        }
+};
+
+int main()
+{
+    std::string s = &quot;sname&quot;;
+    Person p1(s);               // init with string object =&gt; calls copying string-CONSTR
+    Person p2(&quot;tmp&quot;);           // init with string literal =&gt; calls moving string-CONSTR
+    Person p3(p1);              // copy Person =&gt; calls COPY-CONSTR
+    Person p4(std::move(p1));   // move Person =&gt; calls MOVE-CONST
+}
+</code></pre>
+<p>&#x6709;&#x4E86;&#x5B8C;&#x7F8E;&#x8F6C;&#x53D1;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5C06;&#x63A5;&#x53D7;<code>std::string</code>&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x5199;&#x6210;&#x6A21;&#x677F;&#x5F62;&#x5F0F;&#xFF1A;</p>
+<pre><code class="lang-cpp">// basics/specialmemtmpl2.hpp
+#include &lt;utility&gt;
+#include &lt;string&gt;
+#include &lt;iostream&gt;
+
+class Person
+{
+    private:
+        std::string name;
+    public:
+        // generic constructor for passed initial name:
+        template&lt;typename STR&gt;
+        explicit Person(STR&amp;&amp; n) : name(std::forward&lt;STR&gt;(n)) {
+            std::cout &lt;&lt; &quot;TMPL-CONSTR for &apos;&quot; &lt;&lt; name &lt;&lt; &quot;&apos;\n&quot;;
+        }
+        // copy and move constructor:
+        Person (Person const&amp; p) : name(p.name) {
+            std::cout &lt;&lt; &quot;COPY-CONSTR Person &apos;&quot; &lt;&lt; name &lt;&lt; &quot;&apos;\n&quot;;
+        }
+        Person (Person&amp;&amp; p) : name(std::move(p.name)) {
+            std::cout &lt;&lt; &quot;MOVE-CONSTR Person &apos;&quot; &lt;&lt; name &lt;&lt; &quot;&apos;\n&quot;;
+        }
+};
+</code></pre>
+<p>&#x4F46;&#x662F;&#x6B64;&#x65F6;<code>Person p3(p1)</code>&#x4F1A;&#x62A5;&#x9519;&#xFF0C;&#x56E0;&#x4E3A;&#x6839;&#x636E;&#x6A21;&#x677F;&#x5339;&#x914D;&#x89C4;&#x5219;&#xFF0C;<code>p1</code>&#x4E0D;&#x662F;&#x5E38;&#x91CF;&#xFF0C;&#x6240;&#x4EE5;<code>Person(STR&amp;&amp; n)</code>&#x6BD4;<code>Person (Person const&amp; p)</code>&#x5339;&#x914D;&#x5EA6;&#x66F4;&#x9AD8;&#xFF0C;&#x4F46;&#x662F;<code>std::string</code>&#x5374;&#x65E0;&#x6CD5;&#x901A;&#x8FC7;<code>Person</code>&#x8FDB;&#x884C;&#x6784;&#x9020;&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x901A;&#x8FC7;<code>std::enable_if</code>&#x6765;&#x7981;&#x6B62;&#x5339;&#x914D;&#x6A21;&#x677F;&#x51FD;&#x6570;&#x3002;</p>
+<h2 id="63-stdenableif">6.3 std::enable_if</h2>
+<p>&#x4ECE;C++11&#x5F00;&#x59CB;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>std::enable_if</code>&#x6765;&#x5728;&#x67D0;&#x4E9B;&#x6761;&#x4EF6;&#x4E0B;&#x7981;&#x6389;&#x51FD;&#x6570;&#x6A21;&#x677F;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">typename</span> <span class="hljs-built_in">std</span>::enable_if&lt;(<span class="hljs-keyword">sizeof</span>(T) &gt; <span class="hljs-number">4</span>)&gt;::<span class="hljs-function">type
+<span class="hljs-title">foo</span><span class="hljs-params">()</span> </span>{
+}
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x901A;&#x8FC7;<code>typename</code>&#x6765;&#x63D0;&#x793A;&#x7F16;&#x8BD1;&#x5668;&#x540E;&#x9762;&#x7684;<code>T</code>&#x662F;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x3002;<code>std::enable_if</code>&#x7684;&#x542B;&#x4E49;&#x4E3A;&#xFF1A;</p>
+<ul>
+<li>&#x5F53;&#x8868;&#x8FBE;&#x5F0F;&#x4E3A;&#x5047;&#xFF08;<code>T</code>&#x7C7B;&#x578B;&#x7684;&#x5927;&#x5C0F;&#x5C0F;&#x4E8E;&#x7B49;&#x4E8E;<code>4</code>&#xFF09;&#x65F6;&#xFF0C;<code>std::enable_if::type</code>&#x662F;&#x672A;&#x5B9A;&#x4E49;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x6839;&#x636E;&#x6A21;&#x677F;&#x7684;&#x201C;&#x4EE3;&#x6362;&#x5931;&#x8D25;&#x4E0D;&#x662F;&#x9519;&#x8BEF;&#xFF08;Substitution Failure Is Not An Error&#xFF0C;SFINAE&#xFF09;&#x201D;&#x539F;&#x5219;&#xFF0C;<code>foo()</code>&#x7684;&#x6A21;&#x677F;&#x5B9A;&#x4E49;&#x5C31;&#x88AB;&#x5FFD;&#x7565;&#x4E86;</li>
+<li>&#x5F53;&#x8868;&#x8FBE;&#x5F0F;&#x4E3A;&#x771F;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x7B2C;&#x4E8C;&#x4E2A;&#x6A21;&#x677F;&#x53C2;&#x6570;&#xFF0C;&#x5219;<code>std::enable_if::type</code>&#x662F;<code>void</code>&#xFF0C;&#x5426;&#x5219;&#x5C31;&#x662F;&#x7B2C;&#x4E8C;&#x4E2A;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x7684;&#x7C7B;&#x578B;</li>
+</ul>
+<p>&#x4ECE;C++14&#x5F00;&#x59CB;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x7B80;&#x5199;&#x4E3A;&#x4E0B;&#x9762;&#x7684;&#x6837;&#x5B50;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-built_in">std</span>::<span class="hljs-keyword">enable_if_t</span>&lt;(<span class="hljs-keyword">sizeof</span>(T) &gt; <span class="hljs-number">4</span>)&gt;
+foo() {
+}
+</code></pre>
+<h2 id="64-&#x4F7F;&#x7528;stdenableif">6.4 &#x4F7F;&#x7528;std::enable_if</h2>
+<p>&#x4F7F;&#x7528;<code>std::enable_if</code>&#x6539;&#x5199;&#x7684;<code>Person</code>&#x7C7B;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-cpp">// basics/specialmemtmpl3.hpp
+#include &lt;utility&gt;
+#include &lt;string&gt;
+#include &lt;iostream&gt;
+#include &lt;type_traits&gt;
+
+template&lt;typename T&gt;
+using EnableIfString = std::enable_if_t&lt;std::is_convertible_v&lt;T,std::string&gt;&gt;;
+
+class Person
+{
+    private:
+        std::string name;
+    public:
+        // generic constructor for passed initial name:
+        template&lt;typename STR, typename = EnableIfString&lt;STR&gt;&gt;
+        explicit Person(STR&amp;&amp; n)
+        : name(std::forward&lt;STR&gt;(n)) {
+            std::cout &lt;&lt; &quot;TMPL-CONSTR for &apos;&quot; &lt;&lt; name &lt;&lt; &quot;&apos;\n&quot;;
+        }
+        // copy and move constructor:
+        Person (Person const&amp; p) : name(p.name) {
+            std::cout &lt;&lt; &quot;COPY-CONSTR Person &apos;&quot; &lt;&lt; name &lt;&lt; &quot;&apos;\n&quot;;
+        }
+        Person (Person&amp;&amp; p) : name(std::move(p.name)) {
+            std::cout &lt;&lt; &quot;MOVE-CONSTR Person &apos;&quot; &lt;&lt; name &lt;&lt; &quot;&apos;\n&quot;;
+        }
+};
+</code></pre>
+<pre><code class="lang-cpp">// basics/specialmemtmpl3.cpp
+#include &quot;specialmemtmpl3.hpp&quot;
+int main()
+{
+    std::string s = &quot;sname&quot;;
+    Person p1(s);               // init with string object =&gt; calls TMPL-CONSTR
+    Person p2(&quot;tmp&quot;);           // init with string literal =&gt; calls TMPL-CONSTR
+    Person p3(p1);              // OK =&gt; calls COPY-CONSTR
+    Person p4(std::move(p1));   // OK =&gt; calls MOVE-CONST
+}
+</code></pre>
+<p>&#x6CE8;&#x610F;&#x5728;C++14&#x4E2D;&#x8981;&#x5199;&#x4E3A;&#x8FD9;&#x6837;&#x5B50;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">using</span> EnableIfString = <span class="hljs-built_in">std</span>::<span class="hljs-keyword">enable_if_t</span>&lt;<span class="hljs-built_in">std</span>::is_convertible&lt;T, <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&gt;::value&gt;;
+</code></pre>
+<p>&#x800C;&#x5728;C++11&#x4E2D;&#x8981;&#x5199;&#x4E3A;&#x8FD9;&#x6837;&#x5B50;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">using</span> EnableIfString
+    = <span class="hljs-keyword">typename</span> <span class="hljs-built_in">std</span>::enable_if&lt;<span class="hljs-built_in">std</span>::is_convertible&lt;T, <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&gt;::value&gt;::type;
+</code></pre>
+<p>&#x8FD8;&#x53EF;&#x4EE5;&#x7528;<code>std::is_constructible</code>&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">using</span> EnableIfString = <span class="hljs-built_in">std</span>::<span class="hljs-keyword">enable_if_t</span>&lt;<span class="hljs-built_in">std</span>::is_constructible_v&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>, T&gt;&gt;;
+</code></pre>
+<p>&#x5728;&#x4F7F;&#x7528;&#x8FD9;&#x79CD;&#x6761;&#x4EF6;&#x6A21;&#x677F;&#x65F6;&#xFF0C;&#x4E00;&#x5B9A;&#x8981;&#x4F7F;&#x7528;&#x5BF9;&#x5E94;&#x7684;&#x8BED;&#x4E49;&#xFF0C;&#x5982;<code>STR</code>&#x7C7B;&#x578B;&#x53EF;&#x4EE5;&#x8F6C;&#x6362;&#x4E3A;<code>std::string</code>&#x5219;&#x6A21;&#x677F;&#x5B9A;&#x4E49;&#x6709;&#x6548;&#xFF0C;&#x800C;&#x4E0D;&#x80FD;&#x662F;<code>STR</code>&#x7C7B;&#x578B;&#x4E0D;&#x80FD;&#x8F6C;&#x6362;&#x4E3A;<code>Person</code>&#x3002;&#x539F;&#x6587;&#xFF1A;</p>
+<blockquote>
+<p>If you wonder why we don&#x2019;t instead check whether STR is &#x201C;not convertible to Person,&#x201D; beware: We are defining a function that might allow us to convert a string to a Person. So the constructor has to know whether it is enabled, which depends on whether it is convertible, which depends on whether it is enabled, and so on. Never use enable_if in places that impact the condition used by enable_if. This is a logical error that compilers do not necessarily detect.</p>
+</blockquote>
+<p>&#x4E0D;&#x80FD;&#x901A;&#x8FC7;<code>std::enable_if</code>&#x7981;&#x6389;&#x7F16;&#x8BD1;&#x5668;&#x5408;&#x6210;&#x7684;&#x62F7;&#x8D1D;&#x548C;&#x79FB;&#x52A8;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x9664;&#x975E;&#x62F7;&#x8D1D;&#x6784;&#x9020;&#x51FD;&#x6570;&#x88AB;&#x5220;&#x9664;&#x4E86;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">class</span> C
+{
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-comment">// ...</span>
+        <span class="hljs-comment">// user-define the predefined copy constructor as deleted</span>
+        <span class="hljs-comment">// (with conversion to volatile to enable better matches)</span>
+        C(C <span class="hljs-keyword">const</span> <span class="hljs-keyword">volatile</span>&amp;) = <span class="hljs-keyword">delete</span>;
+
+        <span class="hljs-comment">// implement copy constructor template with better match:</span>
+        <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+        C (T <span class="hljs-keyword">const</span>&amp;) {
+            <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;tmpl copy constructor\n&quot;</span>;
+        }
+        <span class="hljs-comment">// ...</span>
+};
+</code></pre>
+<h2 id="65-&#x4F7F;&#x7528;concepts&#x7B80;&#x5316;enableif">6.5 &#x4F7F;&#x7528;concepts&#x7B80;&#x5316;enable_if</h2>
+<p>&#x672A;&#x6807;&#x51C6;&#x5316;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x4E0D;&#x77E5;&#x9053;&#x5728;&#x8BF4;&#x5565;&#x3002;</p>
+<h2 id="66-&#x603B;&#x7ED3;">6.6 &#x603B;&#x7ED3;</h2>
+<ol>
+<li>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8F6C;&#x53D1;&#x5F15;&#x7528;<code>T&amp;&amp;</code>&#x548C;<code>std::forward</code>&#x6765;&#x5B9E;&#x73B0;&#x5B8C;&#x7F8E;&#x8F6C;&#x53D1;</li>
+<li>&#x5B8C;&#x7F8E;&#x8F6C;&#x53D1;&#x7684;&#x6210;&#x5458;&#x51FD;&#x6570;&#x6A21;&#x677F;&#x53EF;&#x80FD;&#x6BD4;&#x666E;&#x901A;&#x7684;&#x51FD;&#x6570;&#x5339;&#x914D;&#x5EA6;&#x66F4;&#x9AD8;</li>
+<li>&#x901A;&#x8FC7;<code>std::enable_if</code>&#x53EF;&#x4EE5;&#x5728;&#x7F16;&#x8BD1;&#x671F;&#x95F4;&#x7981;&#x6389;&#x67D0;&#x4E9B;&#x6A21;&#x677F;&#x51FD;&#x6570;</li>
+<li>&#x901A;&#x8FC7;<code>std::enable_if</code>&#x53EF;&#x4EE5;&#x7981;&#x6389;&#x5339;&#x914D;&#x5EA6;&#x66F4;&#x9AD8;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x6A21;&#x677F;&#x548C;&#x8D4B;&#x503C;&#x8FD0;&#x7B97;&#x7B26;&#x6A21;&#x677F;&#xFF0C;&#x4ECE;&#x800C;&#x8BA9;&#x7F16;&#x8BD1;&#x5668;&#x4F18;&#x5148;&#x5339;&#x914D;&#x9690;&#x5F0F;&#x5408;&#x6210;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;</li>
+<li>&#x901A;&#x8FC7;<code>std::enable_if</code>&#x548C;<code>delete</code>&#x53EF;&#x4EE5;&#x6A21;&#x677F;&#x5316;&#x7F16;&#x8BD1;&#x5668;&#x5408;&#x6210;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;</li>
+<li>Concepts will allow us to use a more intuitive syntax for requirements on function templates</li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="2021-12-30-ch5-tricky-basics.html" class="navigation navigation-prev " aria-label="Previous page: Chapter 5 Tricky Basics">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="2022-01-05-ch7-by-value-or-by-reference.html" class="navigation navigation-next " aria-label="Next page: Chapter 7 By Value or by Reference?">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Chapter 6 Move Semantics and enable_if<>","level":"1.7","depth":1,"next":{"title":"Chapter 7 By Value or by Reference?","level":"1.8","depth":1,"path":"2022-01-05-ch7-by-value-or-by-reference.md","ref":"2022-01-05-ch7-by-value-or-by-reference.md","articles":[]},"previous":{"title":"Chapter 5 Tricky Basics","level":"1.6","depth":1,"path":"2021-12-30-ch5-tricky-basics.md","ref":"2021-12-30-ch5-tricky-basics.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"2022-01-04-ch6-move-semantics-and-enable-if.md","mtime":"2022-11-13T05:00:16.175Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-11-13T05:01:04.198Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,1054 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Chapter 27 Expression Templates · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="2022-03-09-ch28-debugging-templates.html" />
+    
+    
+    <link rel="prev" href="2022-03-08-ch26-discriminated-unions.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="2021-12-15-ch1-function-templates.html">
+            
+                <a href="2021-12-15-ch1-function-templates.html">
+            
+                    
+                    Chapter 1 Funtion Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="2021-12-20-ch2-class-templates.html">
+            
+                <a href="2021-12-20-ch2-class-templates.html">
+            
+                    
+                    Chapter 2 Class Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="2021-12-20-ch3-nontype-template-parameters.html">
+            
+                <a href="2021-12-20-ch3-nontype-template-parameters.html">
+            
+                    
+                    Chapter 3 Nontype Template Parameters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="2021-12-20-ch4-variadic-templates.html">
+            
+                <a href="2021-12-20-ch4-variadic-templates.html">
+            
+                    
+                    Chapter 4 Variadic Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="2021-12-30-ch5-tricky-basics.html">
+            
+                <a href="2021-12-30-ch5-tricky-basics.html">
+            
+                    
+                    Chapter 5 Tricky Basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="2022-01-04-ch6-move-semantics-and-enable-if.html">
+            
+                <a href="2022-01-04-ch6-move-semantics-and-enable-if.html">
+            
+                    
+                    Chapter 6 Move Semantics and enable_if<>
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="2022-01-05-ch7-by-value-or-by-reference.html">
+            
+                <a href="2022-01-05-ch7-by-value-or-by-reference.html">
+            
+                    
+                    Chapter 7 By Value or by Reference?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="2022-01-06-ch8-compile-time-programming.html">
+            
+                <a href="2022-01-06-ch8-compile-time-programming.html">
+            
+                    
+                    Chapter 8 Compile-Time Programming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="2022-01-06-ch9-using-templates-in-practice.html">
+            
+                <a href="2022-01-06-ch9-using-templates-in-practice.html">
+            
+                    
+                    Chapter 9 Using Templates in Practice
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="2022-01-07-ch10-basic-template-terminology.html">
+            
+                <a href="2022-01-07-ch10-basic-template-terminology.html">
+            
+                    
+                    Chapter 10 Basic Template Terminology
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="2022-01-08-ch11-generic-libraries.html">
+            
+                <a href="2022-01-08-ch11-generic-libraries.html">
+            
+                    
+                    Chapter 11 Generic Libraries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="2022-01-12-ch12-fundamentals-in-depth.html">
+            
+                <a href="2022-01-12-ch12-fundamentals-in-depth.html">
+            
+                    
+                    Chapter 12 Fundamentals in Depth
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="2022-01-27-ch13-names-in-templates.html">
+            
+                <a href="2022-01-27-ch13-names-in-templates.html">
+            
+                    
+                    Chapter 13 Names in Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="2022-02-07-ch14-instantiation.html">
+            
+                <a href="2022-02-07-ch14-instantiation.html">
+            
+                    
+                    Chapter 14 Instantiation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="2022-02-15-ch15-template-argument-deduction.html">
+            
+                <a href="2022-02-15-ch15-template-argument-deduction.html">
+            
+                    
+                    Chapter 15 Template Argument Deduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="2022-02-17-ch16-specialization-and-overloading.html">
+            
+                <a href="2022-02-17-ch16-specialization-and-overloading.html">
+            
+                    
+                    Chapter 16 Specialization and Overloading
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="2022-02-22-ch17-future-directions.html">
+            
+                <a href="2022-02-22-ch17-future-directions.html">
+            
+                    
+                    Chapter 17 Future Directions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="2022-02-23-ch18-the-polymorphic-power-of-templates.html">
+            
+                <a href="2022-02-23-ch18-the-polymorphic-power-of-templates.html">
+            
+                    
+                    Chapter 18 The Polymorphic Power of Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="2022-03-01-ch19-implementing-traits.html">
+            
+                <a href="2022-03-01-ch19-implementing-traits.html">
+            
+                    
+                    Chapter 19 Implementing Traits
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="2022-03-02-ch20-overloading-on-type-properties.html">
+            
+                <a href="2022-03-02-ch20-overloading-on-type-properties.html">
+            
+                    
+                    Chapter 20 Overloading on Type Properties
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="2022-03-03-ch21-templates-and-inheritance.html">
+            
+                <a href="2022-03-03-ch21-templates-and-inheritance.html">
+            
+                    
+                    Chapter 21 Templates and Inheritance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="2022-03-05-ch22-bridging-static-and-dynamic-polymorphism.html">
+            
+                <a href="2022-03-05-ch22-bridging-static-and-dynamic-polymorphism.html">
+            
+                    
+                    Chapter 22 Bridging Static and Dynamic Polymorphism
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="2022-03-05-ch23-metaprogramming.html">
+            
+                <a href="2022-03-05-ch23-metaprogramming.html">
+            
+                    
+                    Chapter 23 Metaprogramming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="2022-03-06-ch24-typelists.html">
+            
+                <a href="2022-03-06-ch24-typelists.html">
+            
+                    
+                    Chapter 24 Typelists
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" data-path="2022-03-07-ch25-tuples.html">
+            
+                <a href="2022-03-07-ch25-tuples.html">
+            
+                    
+                    Chapter 25 Tuples
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27" data-path="2022-03-08-ch26-discriminated-unions.html">
+            
+                <a href="2022-03-08-ch26-discriminated-unions.html">
+            
+                    
+                    Chapter 26 Discriminated Unions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.28" data-path="2022-03-09-ch27-expression-templates.html">
+            
+                <a href="2022-03-09-ch27-expression-templates.html">
+            
+                    
+                    Chapter 27 Expression Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29" data-path="2022-03-09-ch28-debugging-templates.html">
+            
+                <a href="2022-03-09-ch28-debugging-templates.html">
+            
+                    
+                    Chapter 28 Debugging Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.30" data-path="2022-01-05-appB-value-categories.html">
+            
+                <a href="2022-01-05-appB-value-categories.html">
+            
+                    
+                    Appendix B Value Categories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.31" data-path="2022-03-02-appC-overload-resolution.html">
+            
+                <a href="2022-03-02-appC-overload-resolution.html">
+            
+                    
+                    Appendix C Overload Resolution
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Chapter 27 Expression Templates</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="27-&#x8868;&#x8FBE;&#x5F0F;&#x6A21;&#x677F;">27 &#x8868;&#x8FBE;&#x5F0F;&#x6A21;&#x677F;</h1>
+<p>&#x8868;&#x8FBE;&#x5F0F;&#x6A21;&#x677F;&#x7528;&#x6765;&#x652F;&#x6301;&#x9488;&#x5BF9;&#x6574;&#x4E2A;&#x6570;&#x7EC4;&#x7684;&#x6570;&#x503C;&#x8FD0;&#x7B97;&#x3002;</p>
+<h2 id="271-&#x4E34;&#x65F6;&#x91CF;&#x548C;&#x5FAA;&#x73AF;&#x5206;&#x5272;">27.1 &#x4E34;&#x65F6;&#x91CF;&#x548C;&#x5FAA;&#x73AF;&#x5206;&#x5272;</h2>
+<p>&#x5728;&#x5F15;&#x5165;&#x8868;&#x8FBE;&#x5F0F;&#x6A21;&#x677F;&#x4E4B;&#x524D;&#xFF0C;&#x5148;&#x770B;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x8FD0;&#x7B97;&#x7684;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre><code class="lang-cpp">// exprtmpl/sarray1.hpp
+#include &lt;cstddef&gt;
+#include &lt;cassert&gt;
+
+template&lt;typename T&gt;
+class SArray {
+    public:
+        // create array with initial size
+        explicit SArray (std::size_t s)
+            : storage(new T[s]), storage_size(s) {
+                init();
+        }
+
+        // copy constructor
+        SArray (SArray&lt;T&gt; const&amp; orig)
+            : storage(new T[orig.size()]), storage_size(orig.size()) {
+                copy(orig);
+        }
+
+        // destructor: free memory
+        ~SArray() {
+            delete[] storage;
+        }
+
+        // assignment operator
+        SArray&lt;T&gt;&amp; operator= (SArray&lt;T&gt; const&amp; orig) {
+            if (&amp;orig!=this) {
+                copy(orig);
+            }
+            return *this;
+        }
+
+        // return size
+        std::size_t size() const {
+            return storage_size;
+        }
+
+        // index operator for constants and variables
+        T const&amp; operator[] (std::size_t idx) const {
+            return storage[idx];
+        }
+        T&amp; operator[] (std::size_t idx) {
+            return storage[idx];
+        }
+    protected:
+        // init values with default constructor
+        void init() {
+            for (std::size_t idx = 0; idx&lt;size(); ++idx) {
+                storage[idx] = T();
+            }
+        }
+        // copy values of another array
+        void copy (SArray&lt;T&gt; const&amp; orig) {
+            assert(size()==orig.size());
+            for (std::size_t idx = 0; idx&lt;size(); ++idx) {
+                storage[idx] = orig.storage[idx];
+            }
+        }
+    private:
+        T* storage;                 // storage of the elements
+        std::size_t storage_size;   // number of elements
+};
+</code></pre>
+<pre><code class="lang-cpp"><span class="hljs-comment">// exprtmpl/sarrayops1.hpp</span>
+<span class="hljs-comment">// addition of two SArrays</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+SArray&lt;T&gt; <span class="hljs-keyword">operator</span>+ (SArray&lt;T&gt; <span class="hljs-keyword">const</span>&amp; a, SArray&lt;T&gt; <span class="hljs-keyword">const</span>&amp; b)
+{
+    assert(a.size()==b.size());
+    SArray&lt;T&gt; result(a.size());
+    <span class="hljs-keyword">for</span> (<span class="hljs-built_in">std</span>::<span class="hljs-keyword">size_t</span> k = <span class="hljs-number">0</span>; k&lt;a.size(); ++k) {
+        result[k] = a[k]+b[k];
+    }
+    <span class="hljs-keyword">return</span> result;
+}
+
+<span class="hljs-comment">// multiplication of two SArrays</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+SArray&lt;T&gt; <span class="hljs-keyword">operator</span>* (SArray&lt;T&gt; <span class="hljs-keyword">const</span>&amp; a, SArray&lt;T&gt; <span class="hljs-keyword">const</span>&amp; b)
+{
+    assert(a.size()==b.size());
+    SArray&lt;T&gt; result(a.size());
+    <span class="hljs-keyword">for</span> (<span class="hljs-built_in">std</span>::<span class="hljs-keyword">size_t</span> k = <span class="hljs-number">0</span>; k&lt;a.size(); ++k) {
+        result[k] = a[k]*b[k];
+    }
+    <span class="hljs-keyword">return</span> result;
+}
+
+<span class="hljs-comment">// multiplication of scalar and SArray</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+SArray&lt;T&gt; <span class="hljs-keyword">operator</span>* (T <span class="hljs-keyword">const</span>&amp; s, SArray&lt;T&gt; <span class="hljs-keyword">const</span>&amp; a)
+{
+    SArray&lt;T&gt; result(a.size());
+    <span class="hljs-keyword">for</span> (<span class="hljs-built_in">std</span>::<span class="hljs-keyword">size_t</span> k = <span class="hljs-number">0</span>; k&lt;a.size(); ++k) {
+        result[k] = s*a[k];
+    }
+    <span class="hljs-keyword">return</span> result;
+}
+
+<span class="hljs-comment">// multiplication of SArray and scalar</span>
+<span class="hljs-comment">// addition of scalar and SArray</span>
+<span class="hljs-comment">// addition of SArray and scalar</span>
+<span class="hljs-comment">// ...</span>
+</code></pre>
+<pre><code class="lang-cpp"><span class="hljs-comment">// exprtmpl/sarray1.cpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;sarray1.hpp&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;sarrayops1.hpp&quot;</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    SArray&lt;<span class="hljs-keyword">double</span>&gt; x(<span class="hljs-number">1000</span>), y(<span class="hljs-number">1000</span>);
+    <span class="hljs-comment">// ...</span>
+    x = <span class="hljs-number">1.2</span>*x + x*y;
+}
+</code></pre>
+<p>&#x7B97;&#x6CD5;&#x4E0D;&#x591F;&#x9AD8;&#x6548;&#x7684;&#x539F;&#x56E0;&#x5728;&#x4E8E;&#xFF1A;</p>
+<ol>
+<li>&#x521B;&#x5EFA;&#x4E86;3&#x4E2A;&#x4E34;&#x65F6;&#x91CF;&#xFF0C;&#x5927;&#x5C0F;&#x90FD;&#x4E3A;1000</li>
+<li>&#x8868;&#x8FBE;&#x5F0F;<code>x = 1.2*x + x*y</code>&#x4EA7;&#x751F;&#x4E86;6000&#x6B21;&#x8BFB;&#x548C;3000&#x6B21;&#x5199;</li>
+</ol>
+<p>&#x65E9;&#x671F;&#x7684;&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#x662F;&#x4F7F;&#x7528;&#x8FD0;&#x7B97;&#x8D4B;&#x503C;&#x8FD0;&#x7B97;&#x7B26;&#x6765;&#x907F;&#x514D;&#x521B;&#x5EFA;&#x4E34;&#x65F6;&#x91CF;&#x4EE5;&#x8282;&#x7701;&#x6784;&#x9020;&#x548C;&#x6790;&#x6784;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// exprtmpl/sarrayops2.hpp</span>
+<span class="hljs-comment">// additive assignment of SArray</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+SArray&lt;T&gt;&amp; SArray&lt;T&gt;::<span class="hljs-keyword">operator</span>+= (SArray&lt;T&gt; <span class="hljs-keyword">const</span>&amp; b)
+{
+    assert(size()==orig.size());
+    <span class="hljs-keyword">for</span> (<span class="hljs-built_in">std</span>::<span class="hljs-keyword">size_t</span> k = <span class="hljs-number">0</span>; k&lt;size(); ++k) {
+        (*<span class="hljs-keyword">this</span>)[k] += b[k];
+    }
+    <span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span>;
+}
+
+<span class="hljs-comment">// multiplicative assignment of SArray</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+SArray&lt;T&gt;&amp; SArray&lt;T&gt;::<span class="hljs-keyword">operator</span>*= (SArray&lt;T&gt; <span class="hljs-keyword">const</span>&amp; b)
+{
+    assert(size()==orig.size());
+    <span class="hljs-keyword">for</span> (<span class="hljs-built_in">std</span>::<span class="hljs-keyword">size_t</span> k = <span class="hljs-number">0</span>; k&lt;size(); ++k) {
+        (*<span class="hljs-keyword">this</span>)[k] *= b[k];
+    }
+    <span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span>;
+}
+
+<span class="hljs-comment">// multiplicative assignment of scalar</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+SArray&lt;T&gt;&amp; SArray&lt;T&gt;::<span class="hljs-keyword">operator</span>*= (T <span class="hljs-keyword">const</span>&amp; s)
+{
+    <span class="hljs-keyword">for</span> (<span class="hljs-built_in">std</span>::<span class="hljs-keyword">size_t</span> k = <span class="hljs-number">0</span>; k&lt;size(); ++k) {
+        (*<span class="hljs-keyword">this</span>)[k] *= s;
+    }
+    <span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span>;
+}
+</code></pre>
+<pre><code class="lang-cpp"><span class="hljs-comment">// exprtmpl/sarray2.cpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;sarray2.hpp&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;sarrayops1.hpp&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;sarrayops2.hpp&quot;</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    SArray&lt;<span class="hljs-keyword">double</span>&gt; x(<span class="hljs-number">1000</span>), y(<span class="hljs-number">1000</span>);
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-comment">// process x = 1.2*x + x*y</span>
+    SArray&lt;<span class="hljs-keyword">double</span>&gt; tmp(x);
+    tmp *= y;
+    x *= <span class="hljs-number">1.2</span>;
+    x += tmp;
+}
+</code></pre>
+<p>&#x7F3A;&#x70B9;&#x5728;&#x4E8E;&#x5199;&#x8D77;&#x6765;&#x5F88;&#x7E41;&#x7410;&#x3002;&#x6700;&#x7406;&#x60F3;&#x7684;&#x65B9;&#x5F0F;&#x662F;&#x7F16;&#x8BD1;&#x5668;&#x53EF;&#x4EE5;&#x5C06;&#x4EE3;&#x7801;&#x8F6C;&#x5316;&#x4E3A;&#x4E0B;&#x9762;&#x7684;&#x5F62;&#x5F0F;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    SArray&lt;<span class="hljs-keyword">double</span>&gt; x(<span class="hljs-number">1000</span>), y(<span class="hljs-number">1000</span>);
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> idx = <span class="hljs-number">0</span>; idx&lt;x.size(); ++idx) {
+        x[idx] = <span class="hljs-number">1.2</span>*x[idx] + x[idx]*y[idx];
+    }
+}
+</code></pre>
+<p>&#x51CF;&#x5C11;&#x5230;&#x53EA;&#x6709;2000&#x6B21;&#x8BFB;&#x548C;1000&#x6B21;&#x5199;&#x3002;</p>
+<h2 id="272-&#x5C06;&#x8868;&#x8FBE;&#x5F0F;&#x4F5C;&#x4E3A;&#x6A21;&#x677F;&#x5B9E;&#x53C2;">27.2 &#x5C06;&#x8868;&#x8FBE;&#x5F0F;&#x4F5C;&#x4E3A;&#x6A21;&#x677F;&#x5B9E;&#x53C2;</h2>
+<p><code>x = 1.2*x + x*y</code>&#x4EA7;&#x751F;&#x4E34;&#x65F6;&#x91CF;&#x548C;&#x8BFB;&#x5199;&#x6B21;&#x6570;&#x591A;&#x7684;&#x539F;&#x56E0;&#x5728;&#x4E8E;&#x7F16;&#x8BD1;&#x5668;&#x662F;&#x6839;&#x636E;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x8FDB;&#x884C;&#x8BA1;&#x7B97;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x5C06;&#x6574;&#x4E2A;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x8BA1;&#x7B97;&#x63A8;&#x8FDF;&#x5230;&#x6700;&#x7EC8;&#x7684;&#x8D4B;&#x503C;&#x8FD0;&#x7B97;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x751F;&#x6210;&#x6700;&#x4F18;&#x7684;&#x4EE3;&#x7801;&#x4E86;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5728;&#x8BA1;&#x7B97;<code>1.2*x + x*y</code>&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#x4FDD;&#x7559;&#x7ED3;&#x679C;&#x7684;&#x751F;&#x6210;&#x8FC7;&#x7A0B;&#xFF0C;&#x8FD9;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4E0B;&#x9762;&#x7684;&#x7C7B;&#x578B;&#x4FDD;&#x7559;&#xFF1A;</p>
+<pre><code class="lang-cpp">A_Add&lt;A_Mult&lt;A_Scalar&lt;<span class="hljs-keyword">double</span>&gt;,Array&lt;<span class="hljs-keyword">double</span>&gt;&gt;,
+        A_Mult&lt;Array&lt;<span class="hljs-keyword">double</span>&gt;, Array&lt;<span class="hljs-keyword">double</span>&gt;&gt;&gt;
+</code></pre>
+<h3 id="2721-&#x8868;&#x8FBE;&#x5F0F;&#x6A21;&#x677F;">27.2.1 &#x8868;&#x8FBE;&#x5F0F;&#x6A21;&#x677F;</h3>
+<p>&#x8868;&#x8FBE;&#x5F0F;&#x6A21;&#x677F;<code>A_Add&lt;&gt;</code>&#x3001;<code>A_Mult&lt;&gt;</code>&#x548C;<code>A_Scalar&lt;&gt;</code>&#x5B9A;&#x4E49;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// exprtmpl/exprops1.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstddef&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cassert&gt;</span></span>
+
+<span class="hljs-comment">// include helper class traits template to select whether to refer to an</span>
+<span class="hljs-comment">// expression template node either by value or by reference</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;exprops1a.hpp&quot;</span></span>
+
+<span class="hljs-comment">// class for objects that represent the addition of two operands</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span> OP1, <span class="hljs-keyword">typename</span> OP2&gt;
+<span class="hljs-keyword">class</span> A_Add {
+    <span class="hljs-keyword">private</span>:
+        <span class="hljs-keyword">typename</span> A_Traits&lt;OP1&gt;::ExprRef op1; <span class="hljs-comment">// first operand</span>
+        <span class="hljs-keyword">typename</span> A_Traits&lt;OP2&gt;::ExprRef op2; <span class="hljs-comment">// second operand</span>
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-comment">// constructor initializes references to operands</span>
+        A_Add (OP1 <span class="hljs-keyword">const</span>&amp; a, OP2 <span class="hljs-keyword">const</span>&amp; b)
+            : op1(a), op2(b) {
+        }
+
+        <span class="hljs-comment">// compute sum when value requested</span>
+        T <span class="hljs-keyword">operator</span>[] (<span class="hljs-built_in">std</span>::<span class="hljs-keyword">size_t</span> idx) <span class="hljs-keyword">const</span> {
+            <span class="hljs-keyword">return</span> op1[idx] + op2[idx];
+        }
+
+        <span class="hljs-comment">// size is maximum size</span>
+        <span class="hljs-built_in">std</span>::<span class="hljs-keyword">size_t</span> size() <span class="hljs-keyword">const</span> {
+            assert (op1.size()==<span class="hljs-number">0</span> || op2.size()==<span class="hljs-number">0</span> || op1.size()==op2.size());
+            <span class="hljs-keyword">return</span> op1.size()!=<span class="hljs-number">0</span> ? op1.size() : op2.size();
+        }
+};
+
+<span class="hljs-comment">// class for objects that represent the multiplication of two operands</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span> OP1, <span class="hljs-keyword">typename</span> OP2&gt;
+<span class="hljs-keyword">class</span> A_Mult {
+    <span class="hljs-keyword">private</span>:
+        <span class="hljs-keyword">typename</span> A_Traits&lt;OP1&gt;::ExprRef op1; <span class="hljs-comment">// first operand</span>
+        <span class="hljs-keyword">typename</span> A_Traits&lt;OP2&gt;::ExprRef op2; <span class="hljs-comment">// second operand</span>
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-comment">// constructor initializes references to operands</span>
+        A_Mult (OP1 <span class="hljs-keyword">const</span>&amp; a, OP2 <span class="hljs-keyword">const</span>&amp; b)
+            : op1(a), op2(b) {
+        }
+
+        <span class="hljs-comment">// compute product when value requested</span>
+        T <span class="hljs-keyword">operator</span>[] (<span class="hljs-built_in">std</span>::<span class="hljs-keyword">size_t</span> idx) <span class="hljs-keyword">const</span> {
+            <span class="hljs-keyword">return</span> op1[idx] * op2[idx];
+        }
+
+        <span class="hljs-comment">// size is maximum size</span>
+        <span class="hljs-built_in">std</span>::<span class="hljs-keyword">size_t</span> size() <span class="hljs-keyword">const</span> {
+            assert (op1.size()==<span class="hljs-number">0</span> || op2.size()==<span class="hljs-number">0</span> || op1.size()==op2.size());
+            <span class="hljs-keyword">return</span> op1.size()!=<span class="hljs-number">0</span> ? op1.size() : op2.size();
+        }
+};
+</code></pre>
+<pre><code class="lang-cpp">// exprtmpl/exprscalar.hpp
+// class for objects that represent scalars:
+template&lt;typename T&gt;
+class A_Scalar {
+    private:
+        T const&amp; s; // value of the scalar
+    public:
+        // constructor initializes value
+        constexpr A_Scalar (T const&amp; v)
+            : s(v) {
+        }
+
+        // for index operations, the scalar is the value of each element
+        constexpr T const&amp; operator[] (std::size_t) const {
+            return s;
+        }
+
+        // scalars have zero as size
+        constexpr std::size_t size() const {
+            return 0;
+        };
+};
+</code></pre>
+<pre><code class="lang-cpp"><span class="hljs-comment">// exprtmpl/exprops1a.hpp</span>
+<span class="hljs-comment">// helper traits class to select how to refer to an expression template node</span>
+<span class="hljs-comment">// - in general by reference</span>
+<span class="hljs-comment">// - for scalars by value</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt; <span class="hljs-keyword">class</span> A_Scalar;
+<span class="hljs-comment">// primary template</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">class</span> A_Traits {
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> ExprRef = T <span class="hljs-keyword">const</span>&amp;; <span class="hljs-comment">// type to refer to is constant reference</span>
+};
+
+<span class="hljs-comment">// partial specialization for scalars</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">class</span> A_Traits&lt;A_Scalar&lt;T&gt;&gt; {
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> ExprRef = A_Scalar&lt;T&gt;; <span class="hljs-comment">// type to refer to is ordinary value</span>
+};
+</code></pre>
+<p><code>A_Scalar::operator[]</code>&#x8FD4;&#x56DE;<code>s</code>&#x53EA;&#x662F;&#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x3002;</p>
+<h3 id="2722-&#x6570;&#x7EC4;&#x7C7B;&#x578B;">27.2.2 &#x6570;&#x7EC4;&#x7C7B;&#x578B;</h3>
+<p><code>A_Add&lt;&gt;</code>&#x548C;<code>A_Mult&lt;&gt;</code>&#x7684;&#x6A21;&#x677F;&#x53C2;&#x6570;<code>OP1</code>&#x548C;<code>OP2</code>&#x65E2;&#x53EF;&#x4EE5;&#x662F;&#x6570;&#x7EC4;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x6570;&#x7EC4;&#x7684;&#x8FD0;&#x7B97;&#x7ED3;&#x679C;&#xFF0C;&#x4E66;&#x4E2D;&#x4E3A;&#x4E86;&#x7EDF;&#x4E00;&#xFF0C;&#x5B9A;&#x4E49;&#x4E86;&#x65B0;&#x7684;&#x6570;&#x7EC4;&#x8868;&#x793A;&#x7C7B;&#x6A21;&#x677F;<code>Array&lt;&gt;</code>&#xFF0C;&#x5176;&#x4E2D;&#x4ECD;&#x7136;&#x4F7F;&#x7528;<code>SArray&lt;&gt;</code>&#x6765;&#x5B58;&#x50A8;&#x6570;&#x636E;&#xFF1A;</p>
+<pre><code class="lang-cpp">// exprtmpl/exprarray.hpp
+#include &lt;cstddef&gt;
+#include &lt;cassert&gt;
+#include &quot;sarray1.hpp&quot;
+
+template&lt;typename T, typename Rep = SArray&lt;T&gt;&gt;
+class Array {
+    private:
+        Rep expr_rep; // (access to) the data of the array
+    public:
+        // create array with initial size
+        explicit Array (std::size_t s)
+            : expr_rep(s) {
+        }
+
+        // create array from possible representation
+        Array (Rep const&amp; rb)
+            : expr_rep(rb) {
+        }
+
+        // assignment operator for same type
+        Array&amp; operator= (Array const&amp; b) {
+            assert(size()==b.size());
+            for (std::size_t idx = 0; idx&lt;b.size(); ++idx) {
+                expr_rep[idx] = b[idx];
+            }
+            return *this;
+        }
+
+        // assignment operator for arrays of different type
+        template&lt;typename T2, typename Rep2&gt;
+        Array&amp; operator= (Array&lt;T2, Rep2&gt; const&amp; b) {
+            assert(size()==b.size());
+            for (std::size_t idx = 0; idx&lt;b.size(); ++idx) {
+                expr_rep[idx] = b[idx];
+            }
+            return *this;
+        }
+
+        // size is size of represented data
+        std::size_t size() const {
+            return expr_rep.size();
+        }
+
+        // index operator for constants and variables
+        decltype(auto) operator[] (std::size_t idx) const {
+            assert(idx&lt;size());
+            return expr_rep[idx];
+        }
+        T&amp; operator[] (std::size_t idx) {
+            assert(idx&lt;size());
+            return expr_rep[idx];
+        }
+
+        // return what the array currently represents
+        Rep const&amp; rep() const {
+            return expr_rep;
+        }
+        Rep&amp; rep() {
+            return expr_rep;
+        }
+};
+</code></pre>
+<p><code>const</code>&#x7248;&#x672C;&#x7684;<code>Array::operator[]</code>&#x8FD4;&#x56DE;<code>decltype(auto)</code>&#x7684;&#x539F;&#x56E0;&#x662F;<code>A_Mult::operator[]</code>&#x548C;<code>A_Add::operator[]</code>&#x53EF;&#x80FD;&#x8FD4;&#x56DE;&#x4E34;&#x65F6;&#x91CF;&#xFF0C;&#x6B64;&#x65F6;&#x63A8;&#x5BFC;&#x7ED3;&#x679C;&#x4E3A;&#x975E;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x3002;</p>
+<h3 id="2723-&#x8868;&#x8FBE;&#x5F0F;&#x6A21;&#x677F;&#x7684;&#x8FD0;&#x7B97;&#x7B26;">27.2.3 &#x8868;&#x8FBE;&#x5F0F;&#x6A21;&#x677F;&#x7684;&#x8FD0;&#x7B97;&#x7B26;</h3>
+<p>&#x8868;&#x8FBE;&#x5F0F;&#x6A21;&#x677F;&#x7684;&#x8FD0;&#x7B97;&#x7B26;&#x53EA;&#x9700;&#x8981;&#x5C06;&#x8868;&#x793A;&#x8BA1;&#x7B97;&#x7ED3;&#x679C;&#x7684;&#x6570;&#x7EC4;&#x4EE5;&#x5F15;&#x7528;&#x7684;&#x65B9;&#x5F0F;&#x4F20;&#x9012;&#x5230;&#x8FD4;&#x56DE;&#x503C;&#x4E2D;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// exprtmpl/exprops2.hpp</span>
+<span class="hljs-comment">// addition of two Arrays:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span> R1, <span class="hljs-keyword">typename</span> R2&gt;
+Array&lt;T,A_Add&lt;T,R1,R2&gt;&gt; <span class="hljs-keyword">operator</span>+ (Array&lt;T,R1&gt; <span class="hljs-keyword">const</span>&amp; a, Array&lt;T,R2&gt; <span class="hljs-keyword">const</span>&amp; b) {
+    <span class="hljs-keyword">return</span> Array&lt;T,A_Add&lt;T,R1,R2&gt;&gt;(A_Add&lt;T,R1,R2&gt;(a.rep(),b.rep()));
+}
+
+<span class="hljs-comment">// multiplication of two Arrays:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span> R1, <span class="hljs-keyword">typename</span> R2&gt;
+Array&lt;T,A_Mult&lt;T,R1,R2&gt;&gt; <span class="hljs-keyword">operator</span>* (Array&lt;T,R1&gt; <span class="hljs-keyword">const</span>&amp; a, Array&lt;T,R2&gt; <span class="hljs-keyword">const</span>&amp; b) {
+    <span class="hljs-keyword">return</span> Array&lt;T,A_Mult&lt;T,R1,R2&gt;&gt;(A_Mult&lt;T,R1,R2&gt;(a.rep(), b.rep()));
+}
+
+<span class="hljs-comment">// multiplication of scalar and Array:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span> R2&gt;
+Array&lt;T,A_Mult&lt;T,A_Scalar&lt;T&gt;,R2&gt;&gt; <span class="hljs-keyword">operator</span>* (T <span class="hljs-keyword">const</span>&amp; s, Array&lt;T,R2&gt; <span class="hljs-keyword">const</span>&amp; b) {
+    <span class="hljs-keyword">return</span> Array&lt;T,A_Mult&lt;T,A_Scalar&lt;T&gt;,R2&gt;&gt;(A_Mult&lt;T,A_Scalar&lt;T&gt;,R2&gt;(A_Scalar&lt;T&gt;(s), b.rep()));
+}
+
+<span class="hljs-comment">// multiplication of Array and scalar, addition of scalar and Array</span>
+<span class="hljs-comment">// addition of Array and scalar:</span>
+<span class="hljs-comment">// ...</span>
+</code></pre>
+<h3 id="Review">27.2.4 &#x8868;&#x8FBE;&#x5F0F;&#x6C42;&#x503C; </h3>
+<p>&#x6539;&#x8FDB;&#x540E;&#x7684;&#x4EE3;&#x7801;&#x4E3A;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    Array&lt;<span class="hljs-keyword">double</span>&gt; x(<span class="hljs-number">1000</span>), y(<span class="hljs-number">1000</span>);
+    <span class="hljs-comment">// ...</span>
+    x = <span class="hljs-number">1.2</span>*x + x*y;
+}
+</code></pre>
+<p>&#x7531;&#x4E8E;&#x8FD0;&#x7B97;&#x7B26;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x6CA1;&#x6709;&#x6539;&#x53D8;&#xFF0C;&#x56E0;&#x6B64;&#x7F16;&#x8BD1;&#x5668;&#x7684;&#x8BA1;&#x7B97;&#x987A;&#x5E8F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ol>
+<li><code>1.2*x</code>&#x8FD4;&#x56DE;<code>Array&lt;double, A_Mult&lt;double, A_Scalar&lt;double&gt;, SArray&lt;double&gt;&gt;&gt;</code>&#x7C7B;&#x578B;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x867D;&#x7136;&#x8FD8;&#x662F;&#x4E34;&#x65F6;&#x5BF9;&#x8C61;&#xFF0C;&#x4F46;&#x662F;&#x8BE5;&#x4E34;&#x65F6;&#x5BF9;&#x8C61;&#x4E2D;&#x662F;<code>x</code>&#x7684;&#x5F15;&#x7528;&#xFF0C;&#x4E0D;&#x4F1A;&#x5E26;&#x6765;&#x62F7;&#x8D1D;</li>
+<li><code>x*y</code>&#x8FD4;&#x56DE;<code>Array&lt;double, A_Mult&lt;double, SArray&lt;double&gt;, SArray&lt;double&gt;&gt;&gt;</code>&#x7C7B;&#x578B;&#x7684;&#x4E34;&#x65F6;&#x5BF9;&#x8C61;</li>
+<li><code>1.2*x + x*y</code>&#x8FD4;&#x56DE;&#x7684;&#x4E34;&#x65F6;&#x5BF9;&#x8C61;&#x7C7B;&#x578B;&#x4E3A;&#xFF1A;</li>
+</ol>
+<pre><code class="lang-cpp">Array&lt;<span class="hljs-keyword">double</span>,
+    A_Add&lt;<span class="hljs-keyword">double</span>,
+        A_Mult&lt;<span class="hljs-keyword">double</span>, A_Scalar&lt;<span class="hljs-keyword">double</span>&gt;, SArray&lt;<span class="hljs-keyword">double</span>&gt;&gt;,
+        A_Mult&lt;<span class="hljs-keyword">double</span>, SArray&lt;<span class="hljs-keyword">double</span>&gt;, SArray&lt;<span class="hljs-keyword">double</span>&gt;&gt;&gt;&gt;
+</code></pre>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x4F1A;&#x8C03;&#x7528;<code>Array</code>&#x7684;&#x6210;&#x5458;&#x6A21;&#x677F;<code>operator=</code>&#xFF0C;&#x5FAA;&#x73AF;&#x4E2D;&#x7684;<code>expr_rep[idx] = b[idx]</code>&#x4F1A;&#x7531;&#x4E8E;<code>b[idx]</code>&#x7684;&#x9012;&#x5F52;&#x800C;&#x6700;&#x7EC8;&#x5C55;&#x5F00;&#x4E3A;<code>(1.2*x[idx]) + (x[idx]*y[idx])</code>&#x3002;</p>
+<h3 id="2725-&#x8868;&#x8FBE;&#x5F0F;&#x6A21;&#x677F;&#x7684;&#x8D4B;&#x503C;&#x64CD;&#x4F5C;">27.2.5 &#x8868;&#x8FBE;&#x5F0F;&#x6A21;&#x677F;&#x7684;&#x8D4B;&#x503C;&#x64CD;&#x4F5C;</h3>
+<p><code>A_Add&lt;&gt;</code>&#x548C;<code>A_Mult&lt;&gt;</code>&#x662F;&#x4E0D;&#x80FD;&#x51FA;&#x73B0;&#x5728;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x5DE6;&#x8FB9;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x5176;&#x4E2D;&#x7684;&#x4E0B;&#x6807;&#x8FD0;&#x7B97;&#x7B26;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x8FC7;&#x671F;&#x503C;&#xFF0C;&#x4F46;&#x662F;&#x67D0;&#x4E9B;&#x8868;&#x8FBE;&#x5F0F;&#x6A21;&#x677F;&#x5E94;&#x8BE5;&#x662F;&#x53EF;&#x4EE5;&#x8FD4;&#x56DE;&#x5DE6;&#x503C;&#x7684;&#xFF0C;&#x4F8B;&#x5982;<code>A_Subscript&lt;&gt;</code>&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// exprtmpl/exprops3.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span> A1, <span class="hljs-keyword">typename</span> A2&gt;
+<span class="hljs-keyword">class</span> A_Subscript {
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-comment">// constructor initializes references to operands</span>
+        A_Subscript (A1 <span class="hljs-keyword">const</span>&amp; a, A2 <span class="hljs-keyword">const</span>&amp; b)
+            : a1(a), a2(b) {
+        }
+
+        <span class="hljs-comment">// process subscription when value requested</span>
+        <span class="hljs-keyword">decltype</span>(<span class="hljs-keyword">auto</span>) <span class="hljs-keyword">operator</span>[] (<span class="hljs-built_in">std</span>::<span class="hljs-keyword">size_t</span> idx) <span class="hljs-keyword">const</span> {
+            <span class="hljs-keyword">return</span> a1[a2[idx]];
+        }
+        T&amp; <span class="hljs-keyword">operator</span>[] (<span class="hljs-built_in">std</span>::<span class="hljs-keyword">size_t</span> idx) {
+            <span class="hljs-keyword">return</span> a1[a2[idx]];
+        }
+
+        <span class="hljs-comment">// size is size of inner array</span>
+        <span class="hljs-built_in">std</span>::<span class="hljs-keyword">size_t</span> size() <span class="hljs-keyword">const</span> {
+            <span class="hljs-keyword">return</span> a2.size();
+        }
+    <span class="hljs-keyword">private</span>:
+        A1 <span class="hljs-keyword">const</span>&amp; a1; <span class="hljs-comment">// reference to first operand</span>
+        A2 <span class="hljs-keyword">const</span>&amp; a2; <span class="hljs-comment">// reference to second operand</span>
+};
+</code></pre>
+<p>&#x8FD9;&#x4E2A;&#x6A21;&#x677F;&#x53EA;&#x652F;&#x6301;<code>A_Subscript::a2</code>&#x4E2D;&#x5B58;&#x50A8;&#x7684;&#x662F;&#x6574;&#x6570;&#xFF0C;&#x6216;&#x8BB8;&#x5728;&#x5BF9;&#x79F0;&#x5BC6;&#x7801;&#x7B97;&#x6CD5;&#x7F6E;&#x6362;&#x4E2D;&#x7528;&#x5230;&#x3002;</p>
+<h2 id="273-&#x8868;&#x8FBE;&#x5F0F;&#x6A21;&#x677F;&#x7684;&#x6027;&#x80FD;&#x548C;&#x9650;&#x5236;">27.3 &#x8868;&#x8FBE;&#x5F0F;&#x6A21;&#x677F;&#x7684;&#x6027;&#x80FD;&#x548C;&#x9650;&#x5236;</h2>
+<p>&#x5B9E;&#x9645;&#x4E0A;<a href="#Review">27.2.4</a>&#x7684;&#x5206;&#x6790;&#x5E76;&#x4E0D;&#x662F;&#x6B63;&#x786E;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;<code>[]</code>&#x7684;&#x5728;&#x9012;&#x5F52;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#x4F1A;&#x8FDB;&#x884C;&#x51FD;&#x6570;&#x8C03;&#x7528;&#xFF0C;&#x4F46;&#x662F;&#x56E0;&#x4E3A;&#x51FD;&#x6570;&#x90FD;&#x5F88;&#x77ED;&#x5C0F;&#xFF0C;&#x6240;&#x4EE5;&#x5185;&#x8054;&#x53EF;&#x4EE5;&#x89E3;&#x51B3;&#x95EE;&#x9898;&#x3002;&#x540C;&#x65F6;&#x8868;&#x8FBE;&#x5F0F;&#x6A21;&#x677F;&#x8FD8;&#x8981;&#x6C42;&#x8D4B;&#x503C;&#x7684;&#x8FC7;&#x7A0B;&#x662F;&#x4E0D;&#x80FD;&#x8986;&#x76D6;&#x540E;&#x7EED;&#x8BA1;&#x7B97;&#x9700;&#x8981;&#x7684;&#x539F;&#x6570;&#x636E;&#x3002;</p>
+<h2 id="274-&#x540E;&#x8BB0;">27.4 &#x540E;&#x8BB0;</h2>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="2022-03-08-ch26-discriminated-unions.html" class="navigation navigation-prev " aria-label="Previous page: Chapter 26 Discriminated Unions">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="2022-03-09-ch28-debugging-templates.html" class="navigation navigation-next " aria-label="Next page: Chapter 28 Debugging Templates">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Chapter 27 Expression Templates","level":"1.28","depth":1,"next":{"title":"Chapter 28 Debugging Templates","level":"1.29","depth":1,"path":"2022-03-09-ch28-debugging-templates.md","ref":"2022-03-09-ch28-debugging-templates.md","articles":[]},"previous":{"title":"Chapter 26 Discriminated Unions","level":"1.27","depth":1,"path":"2022-03-08-ch26-discriminated-unions.md","ref":"2022-03-08-ch26-discriminated-unions.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"2022-03-09-ch27-expression-templates.md","mtime":"2022-11-13T05:00:16.206Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-11-13T05:01:04.198Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

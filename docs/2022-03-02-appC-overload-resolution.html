@@ -1,0 +1,934 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Appendix C Overload Resolution · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="2022-01-05-appB-value-categories.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="2021-12-15-ch1-function-templates.html">
+            
+                <a href="2021-12-15-ch1-function-templates.html">
+            
+                    
+                    Chapter 1 Funtion Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="2021-12-20-ch2-class-templates.html">
+            
+                <a href="2021-12-20-ch2-class-templates.html">
+            
+                    
+                    Chapter 2 Class Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="2021-12-20-ch3-nontype-template-parameters.html">
+            
+                <a href="2021-12-20-ch3-nontype-template-parameters.html">
+            
+                    
+                    Chapter 3 Nontype Template Parameters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="2021-12-20-ch4-variadic-templates.html">
+            
+                <a href="2021-12-20-ch4-variadic-templates.html">
+            
+                    
+                    Chapter 4 Variadic Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="2021-12-30-ch5-tricky-basics.html">
+            
+                <a href="2021-12-30-ch5-tricky-basics.html">
+            
+                    
+                    Chapter 5 Tricky Basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="2022-01-04-ch6-move-semantics-and-enable-if.html">
+            
+                <a href="2022-01-04-ch6-move-semantics-and-enable-if.html">
+            
+                    
+                    Chapter 6 Move Semantics and enable_if<>
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="2022-01-05-ch7-by-value-or-by-reference.html">
+            
+                <a href="2022-01-05-ch7-by-value-or-by-reference.html">
+            
+                    
+                    Chapter 7 By Value or by Reference?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="2022-01-06-ch8-compile-time-programming.html">
+            
+                <a href="2022-01-06-ch8-compile-time-programming.html">
+            
+                    
+                    Chapter 8 Compile-Time Programming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="2022-01-06-ch9-using-templates-in-practice.html">
+            
+                <a href="2022-01-06-ch9-using-templates-in-practice.html">
+            
+                    
+                    Chapter 9 Using Templates in Practice
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="2022-01-07-ch10-basic-template-terminology.html">
+            
+                <a href="2022-01-07-ch10-basic-template-terminology.html">
+            
+                    
+                    Chapter 10 Basic Template Terminology
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="2022-01-08-ch11-generic-libraries.html">
+            
+                <a href="2022-01-08-ch11-generic-libraries.html">
+            
+                    
+                    Chapter 11 Generic Libraries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="2022-01-12-ch12-fundamentals-in-depth.html">
+            
+                <a href="2022-01-12-ch12-fundamentals-in-depth.html">
+            
+                    
+                    Chapter 12 Fundamentals in Depth
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="2022-01-27-ch13-names-in-templates.html">
+            
+                <a href="2022-01-27-ch13-names-in-templates.html">
+            
+                    
+                    Chapter 13 Names in Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="2022-02-07-ch14-instantiation.html">
+            
+                <a href="2022-02-07-ch14-instantiation.html">
+            
+                    
+                    Chapter 14 Instantiation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="2022-02-15-ch15-template-argument-deduction.html">
+            
+                <a href="2022-02-15-ch15-template-argument-deduction.html">
+            
+                    
+                    Chapter 15 Template Argument Deduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="2022-02-17-ch16-specialization-and-overloading.html">
+            
+                <a href="2022-02-17-ch16-specialization-and-overloading.html">
+            
+                    
+                    Chapter 16 Specialization and Overloading
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="2022-02-22-ch17-future-directions.html">
+            
+                <a href="2022-02-22-ch17-future-directions.html">
+            
+                    
+                    Chapter 17 Future Directions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="2022-02-23-ch18-the-polymorphic-power-of-templates.html">
+            
+                <a href="2022-02-23-ch18-the-polymorphic-power-of-templates.html">
+            
+                    
+                    Chapter 18 The Polymorphic Power of Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="2022-03-01-ch19-implementing-traits.html">
+            
+                <a href="2022-03-01-ch19-implementing-traits.html">
+            
+                    
+                    Chapter 19 Implementing Traits
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="2022-03-02-ch20-overloading-on-type-properties.html">
+            
+                <a href="2022-03-02-ch20-overloading-on-type-properties.html">
+            
+                    
+                    Chapter 20 Overloading on Type Properties
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="2022-03-03-ch21-templates-and-inheritance.html">
+            
+                <a href="2022-03-03-ch21-templates-and-inheritance.html">
+            
+                    
+                    Chapter 21 Templates and Inheritance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="2022-03-05-ch22-bridging-static-and-dynamic-polymorphism.html">
+            
+                <a href="2022-03-05-ch22-bridging-static-and-dynamic-polymorphism.html">
+            
+                    
+                    Chapter 22 Bridging Static and Dynamic Polymorphism
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="2022-03-05-ch23-metaprogramming.html">
+            
+                <a href="2022-03-05-ch23-metaprogramming.html">
+            
+                    
+                    Chapter 23 Metaprogramming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="2022-03-06-ch24-typelists.html">
+            
+                <a href="2022-03-06-ch24-typelists.html">
+            
+                    
+                    Chapter 24 Typelists
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" data-path="2022-03-07-ch25-tuples.html">
+            
+                <a href="2022-03-07-ch25-tuples.html">
+            
+                    
+                    Chapter 25 Tuples
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27" data-path="2022-03-08-ch26-discriminated-unions.html">
+            
+                <a href="2022-03-08-ch26-discriminated-unions.html">
+            
+                    
+                    Chapter 26 Discriminated Unions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28" data-path="2022-03-09-ch27-expression-templates.html">
+            
+                <a href="2022-03-09-ch27-expression-templates.html">
+            
+                    
+                    Chapter 27 Expression Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29" data-path="2022-03-09-ch28-debugging-templates.html">
+            
+                <a href="2022-03-09-ch28-debugging-templates.html">
+            
+                    
+                    Chapter 28 Debugging Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.30" data-path="2022-01-05-appB-value-categories.html">
+            
+                <a href="2022-01-05-appB-value-categories.html">
+            
+                    
+                    Appendix B Value Categories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.31" data-path="2022-03-02-appC-overload-resolution.html">
+            
+                <a href="2022-03-02-appC-overload-resolution.html">
+            
+                    
+                    Appendix C Overload Resolution
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Appendix C Overload Resolution</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="c-&#x91CD;&#x8F7D;&#x89E3;&#x6790;&#x89C4;&#x5219;">C &#x91CD;&#x8F7D;&#x89E3;&#x6790;&#x89C4;&#x5219;</h1>
+<p>&#x8FD9;&#x4E00;&#x90E8;&#x5206;&#x5E94;&#x8BE5;&#x662F;&#x5728;&#x7B2C;16&#x7AE0;&#x4E4B;&#x540E;&#x7684;&#xFF0C;&#x4E0D;&#x8FC7;&#x5FD8;&#x8BB0;&#x4E86;&#x3002;</p>
+<h2 id="c1-&#x91CD;&#x8F7D;&#x89E3;&#x6790;&#x89C4;&#x5219;&#x7684;&#x5E94;&#x7528;&#x8303;&#x56F4;">C.1 &#x91CD;&#x8F7D;&#x89E3;&#x6790;&#x89C4;&#x5219;&#x7684;&#x5E94;&#x7528;&#x8303;&#x56F4;</h2>
+<p>&#x91CD;&#x8F7D;&#x89E3;&#x6790;&#x89C4;&#x5219;&#x5E94;&#x7528;&#x5728;&#x8C03;&#x7528;&#x5177;&#x540D;&#x51FD;&#x6570;&#x65F6;&#xFF0C;&#x5927;&#x81F4;&#x5206;&#x4E3A;&#x4EE5;&#x4E0B;&#x51E0;&#x4E2A;&#x6B65;&#x9AA4;&#xFF1A;</p>
+<ol>
+<li>&#x6839;&#x636E;&#x540D;&#x79F0;&#x5F62;&#x6210;&#x91CD;&#x8F7D;&#x51FD;&#x6570;&#x96C6;&#x5408;</li>
+<li>&#x5B9E;&#x4F8B;&#x5316;&#x51FD;&#x6570;&#x6A21;&#x677F;</li>
+<li>&#x5254;&#x9664;&#x4E0D;&#x5339;&#x914D;&#x7684;&#x51FD;&#x6570;&#x5F62;&#x6210;&#x53EF;&#x884C;&#x51FD;&#x6570;&#x96C6;&#x5408;</li>
+<li>&#x786E;&#x5B9A;&#x662F;&#x5426;&#x5B58;&#x5728;&#x6700;&#x5339;&#x914D;&#x7684;&#x8C03;&#x7528;&#x76EE;&#x6807;</li>
+<li>&#x5224;&#x65AD;&#x6700;&#x5339;&#x914D;&#x7684;&#x51FD;&#x6570;&#x662F;&#x5426;&#x88AB;&#x5220;&#x9664;</li>
+</ol>
+<h2 id="c2-&#x7B80;&#x5316;&#x7684;&#x91CD;&#x8F7D;&#x89E3;&#x6790;&#x89C4;&#x5219;">C.2 &#x7B80;&#x5316;&#x7684;&#x91CD;&#x8F7D;&#x89E3;&#x6790;&#x89C4;&#x5219;</h2>
+<p>&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x66F4;&#x4E3A;&#x5339;&#x914D;&#xFF0C;&#x90A3;&#x4E48;&#x6BCF;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x90FD;&#x81F3;&#x5C11;&#x5E94;&#x8BE5;&#x548C;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x4E00;&#x6837;&#x6216;&#x8005;&#x66F4;&#x4E3A;&#x5339;&#x914D;&#x3002;&#x539F;&#x6587;&#xFF1A;</p>
+<blockquote>
+<p>For one candidate to be considered better than another, the better candidate cannot have any of its parameters be a worse match than the corresponding parameter in the other candidate.</p>
+</blockquote>
+<p>&#x5B9E;&#x53C2;&#x548C;&#x5F62;&#x53C2;&#x7684;&#x5339;&#x914D;&#x7A0B;&#x5EA6;&#x4F18;&#x5148;&#x7EA7;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ol>
+<li>&#x5B8C;&#x7F8E;&#x5339;&#x914D;&#xFF0C;&#x5F62;&#x53C2;&#x548C;&#x5B9E;&#x53C2;&#x7C7B;&#x578B;&#x4E00;&#x6837;&#xFF0C;&#x6216;&#x8005;&#x5F62;&#x53C2;&#x7C7B;&#x578B;&#x662F;&#x5B9E;&#x53C2;&#x7C7B;&#x578B;&#x7684;&#x5F15;&#x7528;&#xFF08;&#x4E5F;&#x53EF;&#x4EE5;&#x5305;&#x542B;<code>const</code>&#x6216;&#x8005;<code>volatile</code>&#xFF09;</li>
+<li>&#x7ECF;&#x8FC7;&#x7B80;&#x5355;&#x8F6C;&#x6362;&#x540E;&#x7684;&#x5339;&#x914D;&#xFF0C;&#x4F8B;&#x5982;&#x6570;&#x7EC4;&#x9000;&#x5316;&#x4E3A;&#x6307;&#x9488;&#xFF0C;&#x6307;&#x9488;&#x53D8;&#x4E3A;<code>const</code>&#x6307;&#x9488;</li>
+<li>&#x7ECF;&#x8FC7;&#x7C7B;&#x578B;&#x63D0;&#x5347;&#x8F6C;&#x6362;&#x540E;&#x7684;&#x5339;&#x914D;&#xFF0C;&#x5373;&#x4F4D;&#x5BBD;&#x8F83;&#x5C0F;&#x7684;&#x7C7B;&#x578B;&#x63D0;&#x5347;&#x4E3A;&#x4F4D;&#x5BBD;&#x8F83;&#x5927;&#x7684;&#x7C7B;&#x578B;</li>
+<li>&#x7ECF;&#x8FC7;&#x6807;&#x51C6;&#x8F6C;&#x6362;&#x540E;&#x7684;&#x5339;&#x914D;&#xFF0C;&#x4F8B;&#x5982;&#x6574;&#x578B;&#x8F6C;&#x5316;&#x4E3A;&#x6D6E;&#x70B9;&#x578B;&#xFF0C;&#x6D3E;&#x751F;&#x7C7B;&#x8F6C;&#x6362;&#x4E3A;&#x516C;&#x6709;&#x7EE7;&#x627F;&#x7684;&#x57FA;&#x7C7B;</li>
+<li>&#x7ECF;&#x7528;&#x6237;&#x5B9A;&#x4E49;&#x8F6C;&#x6362;&#x540E;&#x7684;&#x5339;&#x914D;&#xFF0C;&#x4E5F;&#x5305;&#x62EC;&#x9690;&#x5F0F;&#x8F6C;&#x6362;&#xFF0C;&#x4F8B;&#x5982;&#x901A;&#x8FC7;&#x6784;&#x9020;&#x51FD;&#x6570;&#x8F6C;&#x6362;</li>
+<li>&#x548C;&#x53D8;&#x53C2;&#x51FD;&#x6570;&#x7684;&#x5339;&#x914D;&#xFF0C;&#x4EFB;&#x610F;&#x53C2;&#x6570;&#x90FD;&#x53EF;&#x4EE5;&#x548C;&#x53D8;&#x53C2;&#x51FD;&#x6570;&#x5339;&#x914D;&#xFF08;&#x9664;&#x4E86;&#x5177;&#x6709;&#x975E;&#x5E73;&#x51E1;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x7684;&#x7C7B;&#x7C7B;&#x578B;&#xFF09;</li>
+</ol>
+<pre><code class="lang-cpp"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">f1</span><span class="hljs-params">(<span class="hljs-keyword">int</span>)</span></span>;        <span class="hljs-comment">// #1</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">f1</span><span class="hljs-params">(<span class="hljs-keyword">double</span>)</span></span>;     <span class="hljs-comment">// #2</span>
+f1(<span class="hljs-number">4</span>);              <span class="hljs-comment">// calls #1 : perfect match (#2 requires a standard conversion)</span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">f2</span><span class="hljs-params">(<span class="hljs-keyword">int</span>)</span></span>;        <span class="hljs-comment">// #3</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">f2</span><span class="hljs-params">(<span class="hljs-keyword">char</span>)</span></span>;       <span class="hljs-comment">// #4</span>
+f2(<span class="hljs-literal">true</span>);           <span class="hljs-comment">// calls #3 : match with promotion (#4 requires stronger standard conversion)</span>
+
+<span class="hljs-keyword">class</span> X {
+    <span class="hljs-keyword">public</span>:
+        X(<span class="hljs-keyword">int</span>);
+};
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">f3</span><span class="hljs-params">(X)</span></span>;          <span class="hljs-comment">// #5</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">f3</span><span class="hljs-params">(...)</span></span>;        <span class="hljs-comment">// #6</span>
+f3(<span class="hljs-number">7</span>);              <span class="hljs-comment">// calls #5 : match with user-defined conversion (#6 requires a match with ellipsis)</span>
+</code></pre>
+<p>&#x6B64;&#x5916;&#x8FD9;&#x4E9B;&#x89C4;&#x5219;&#x662F;&#x5728;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x63A8;&#x5BFC;&#x4E4B;&#x540E;&#x8D77;&#x4F5C;&#x7528;&#x7684;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt; <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">strange</span><span class="hljs-params">(T&amp;&amp;, T&amp;&amp;)</span></span>;
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt; <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">bizarre</span><span class="hljs-params">(T&amp;&amp;, <span class="hljs-keyword">double</span>&amp;&amp;)</span></span>;
+
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    strange(<span class="hljs-number">1.2</span>, <span class="hljs-number">3.4</span>);  <span class="hljs-comment">// OK: with T deduced to double</span>
+    <span class="hljs-keyword">double</span> val = <span class="hljs-number">1.2</span>;
+    strange(val, val);  <span class="hljs-comment">// OK: with T deduced to double&amp;</span>
+    strange(val, <span class="hljs-number">3.4</span>);  <span class="hljs-comment">// ERROR: conflicting deductions</span>
+    bizarre(val, val);  <span class="hljs-comment">// ERROR: lvalue val doesn&#x2019;t match double&amp;&amp;</span>
+}
+</code></pre>
+<h3 id="The-Implied-Argument-for-Member-Functions">C.2.1 &#x6210;&#x5458;&#x51FD;&#x6570;&#x4E2D;&#x7684;&#x9690;&#x542B;&#x53C2;&#x6570; </h3>
+<p>&#x8C03;&#x7528;&#x975E;&#x9759;&#x6001;&#x6210;&#x5458;&#x51FD;&#x6570;&#x65F6;&#xFF0C;&#x53C2;&#x6570;&#x79CD;&#x5305;&#x542B;&#x9690;&#x542B;&#x53C2;&#x6570;<code>*this</code>&#xFF0C;&#x4E3A;&#x5DE6;&#x503C;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#xFF08;&#x5982;&#x679C;&#x662F;<code>const</code>&#x6210;&#x5458;&#x51FD;&#x6570;&#x5219;&#x4E3A;&#x5E38;&#x91CF;&#x5DE6;&#x503C;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#xFF09;&#xFF0C;<code>*this</code>&#x7684;&#x89E3;&#x6790;&#x8FC7;&#x7A0B;&#x548C;&#x5176;&#x5B83;&#x53C2;&#x6570;&#x7C7B;&#x4F3C;&#xFF0C;&#x56E0;&#x6B64;&#x53EF;&#x80FD;&#x4F1A;&#x5BFC;&#x81F4;&#x6A21;&#x7CCA;&#x8C03;&#x7528;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstddef&gt;</span></span>
+<span class="hljs-keyword">class</span> BadString {
+    <span class="hljs-keyword">public</span>:
+        BadString(<span class="hljs-keyword">char</span> <span class="hljs-keyword">const</span>*);
+        <span class="hljs-comment">// ...</span>
+
+        <span class="hljs-comment">// character access through subscripting:</span>
+        <span class="hljs-keyword">char</span>&amp; <span class="hljs-keyword">operator</span>[] (<span class="hljs-built_in">std</span>::<span class="hljs-keyword">size_t</span>);     <span class="hljs-comment">// #1</span>
+        <span class="hljs-keyword">char</span> <span class="hljs-keyword">const</span>&amp; <span class="hljs-keyword">operator</span>[] (<span class="hljs-built_in">std</span>::<span class="hljs-keyword">size_t</span>) <span class="hljs-keyword">const</span>;
+
+        <span class="hljs-comment">// implicit conversion to null-terminated byte string:</span>
+        <span class="hljs-keyword">operator</span> <span class="hljs-keyword">char</span>* ();                  <span class="hljs-comment">// #2</span>
+        <span class="hljs-keyword">operator</span> <span class="hljs-keyword">char</span> <span class="hljs-keyword">const</span>* ();
+        <span class="hljs-comment">// ...</span>
+};
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-function">BadString <span class="hljs-title">str</span><span class="hljs-params">(<span class="hljs-string">&quot;correkt&quot;</span>)</span></span>;
+    str[<span class="hljs-number">5</span>] = <span class="hljs-string">&apos;c&apos;</span>; <span class="hljs-comment">// possibly an overload resolution ambiguity!</span>
+}
+</code></pre>
+<p><code>str[5]</code>&#x5305;&#x542B;<code>*this</code>&#x548C;<code>5</code>&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x5982;&#x679C;&#x89E3;&#x6790;&#x4E3A;<code>BadString::operator[]</code>&#xFF0C;&#x7531;&#x4E8E;<code>std::size_t</code>&#x4E00;&#x822C;&#x4E3A;&#x65E0;&#x7B26;&#x53F7;&#x7C7B;&#x578B;&#xFF0C;&#x6240;&#x4EE5;<code>5</code>&#x9700;&#x8981;&#x8FDB;&#x884C;&#x7C7B;&#x578B;&#x63D0;&#x5347;&#x8F6C;&#x6362;&#xFF1B;&#x800C;&#x5982;&#x679C;&#x89E3;&#x6790;&#x4E3A;&#x8BED;&#x8A00;&#x5185;&#x7F6E;&#x7684;&#x4E0B;&#x6807;&#x8FD0;&#x7B97;&#x7B26;&#xFF0C;&#x7531;&#x4E8E;&#x5176;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x4E00;&#x822C;&#x4E3A;<code>ptrdiff_t</code>&#xFF08;&#x4E5F;&#x5C31;&#x662F;<code>int</code>&#xFF09;&#xFF0C;&#x5219;&#x53EA;&#x9700;&#x8981;&#x9690;&#x5F0F;&#x5C06;<code>*this</code>&#x8F6C;&#x6362;&#x4E3A;<code>char*</code>&#x5373;&#x53EF;&#x2014;&#x2014;&#x4E8C;&#x8005;&#x5BF9;&#x6BD4;&#x6CA1;&#x6709;&#x66F4;&#x4E3A;&#x5339;&#x914D;&#x7684;&#x91CD;&#x8F7D;&#x51FD;&#x6570;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x53EF;&#x884C;&#x51FD;&#x6570;&#x96C6;&#x5408;&#x4E2D;&#x65E2;&#x5305;&#x62EC;&#x9759;&#x6001;&#x6210;&#x5458;&#x51FD;&#x6570;&#xFF0C;&#x4E5F;&#x5305;&#x62EC;&#x975E;&#x9759;&#x6001;&#x6210;&#x5458;&#x51FD;&#x6570;&#xFF0C;&#x5219;&#x91CD;&#x8F7D;&#x89E3;&#x6790;&#x89C4;&#x5219;&#x4F1A;&#x5FFD;&#x7565;<code>this</code>&#x53C2;&#x6570;&#x3002;</p>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;<code>this</code>&#x4E3A;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#xFF0C;&#x4F46;&#x662F;&#x4ECE;C++11&#x5F00;&#x59CB;&#x53EF;&#x4EE5;&#x663E;&#x793A;&#x58F0;&#x660E;&#x4E3A;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#xFF0C;&#x540C;&#x65F6;&#x5141;&#x8BB8;&#x53F3;&#x503C;&#x5BF9;&#x8C61;&#x8C03;&#x7528;&#x9690;&#x5F0F;&#x58F0;&#x660E;&#x4E3A;&#x5DE6;&#x503C;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x7684;&#x6210;&#x5458;&#x51FD;&#x6570;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">struct</span> S {
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">f1</span><span class="hljs-params">()</span></span>;      <span class="hljs-comment">// implicit *this parameter is an lvalue reference (see below)</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">f2</span><span class="hljs-params">()</span> &amp;&amp;</span>;   <span class="hljs-comment">// implicit *this parameter is an rvalue reference</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">f3</span><span class="hljs-params">()</span> &amp;</span>;    <span class="hljs-comment">// implicit *this parameter is an lvalue reference</span>
+};
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    S().f1();   <span class="hljs-comment">// OK: old rule allows rvalue S() to match implied lvalue reference type S&amp; of *this</span>
+    S().f2();   <span class="hljs-comment">// OK: rvalue S() matches rvalue reference type of *this</span>
+    S().f3();   <span class="hljs-comment">// ERROR: rvalue S() cannot match explicit lvalue reference type of *this</span>
+}
+</code></pre>
+<h3 id="c22-&#x5B8C;&#x7F8E;&#x5339;&#x914D;&#x5BFC;&#x81F4;&#x7684;&#x6A21;&#x7CCA;&#x8C03;&#x7528;">C.2.2 &#x5B8C;&#x7F8E;&#x5339;&#x914D;&#x5BFC;&#x81F4;&#x7684;&#x6A21;&#x7CCA;&#x8C03;&#x7528;</h3>
+<p>&#x4ECE;C++11&#x5F00;&#x59CB;&#xFF0C;&#x67D0;&#x4E00;&#x7C7B;&#x578B;<code>X</code>&#x53EF;&#x4EE5;&#x5339;&#x914D;&#x7684;&#x7C7B;&#x578B;&#x5305;&#x62EC;<code>X</code>&#x3001;<code>X&amp;</code>&#x3001;<code>const X&amp;</code>&#x548C;<code>X&amp;&amp;</code>&#xFF0C;&#x5982;&#x679C;&#x91CD;&#x8F7D;&#x4E86;&#x4EE5;<code>X</code>&#x548C;<code>X&amp;</code>&#x4E3A;&#x53C2;&#x6570;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x5219;&#x6709;&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x6A21;&#x7CCA;&#x8C03;&#x7528;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">report</span><span class="hljs-params">(<span class="hljs-keyword">int</span>)</span></span>;           <span class="hljs-comment">// #1</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">report</span><span class="hljs-params">(<span class="hljs-keyword">int</span>&amp;)</span></span>;          <span class="hljs-comment">// #2</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">report</span><span class="hljs-params">(<span class="hljs-keyword">int</span> <span class="hljs-keyword">const</span>&amp;)</span></span>;    <span class="hljs-comment">// #3</span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> k = <span class="hljs-number">0</span>; k&lt;<span class="hljs-number">10</span>; ++k) {
+        report(k);  <span class="hljs-comment">// ambiguous: #1 and #2 match equally well</span>
+    }
+    report(<span class="hljs-number">42</span>);     <span class="hljs-comment">// ambiguous: #1 and #3 match equally well</span>
+}
+</code></pre>
+<h2 id="c3-&#x91CD;&#x8F7D;&#x7EC6;&#x8282;">C.3 &#x91CD;&#x8F7D;&#x7EC6;&#x8282;</h2>
+<h3 id="c31-&#x975E;&#x6A21;&#x677F;&#x548C;&#x7279;&#x5316;&#x6A21;&#x677F;&#x7684;&#x5339;&#x914D;">C.3.1 &#x975E;&#x6A21;&#x677F;&#x548C;&#x7279;&#x5316;&#x6A21;&#x677F;&#x7684;&#x5339;&#x914D;</h3>
+<p>&#x4EFB;&#x4F55;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x975E;&#x6A21;&#x677F;&#x51FD;&#x6570;&#x7684;&#x5339;&#x914D;&#x5EA6;&#x90FD;&#x6BD4;&#x6A21;&#x677F;&#x5B9E;&#x4F8B;&#x5316;&#x540E;&#x7684;&#x51FD;&#x6570;&#x5339;&#x914D;&#x5EA6;&#x9AD8;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt; <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">f</span><span class="hljs-params">(T)</span></span>;  <span class="hljs-comment">// #1</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">f</span><span class="hljs-params">(<span class="hljs-keyword">int</span>)</span></span>;                    <span class="hljs-comment">// #2</span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> f(<span class="hljs-number">7</span>); <span class="hljs-comment">// ERROR: selects #2 , which doesn&#x2019;t return a value</span>
+}
+</code></pre>
+<h3 id="c32-&#x9690;&#x5F0F;&#x8F6C;&#x6362;&#x5E8F;&#x5217;">C.3.2 &#x9690;&#x5F0F;&#x8F6C;&#x6362;&#x5E8F;&#x5217;</h3>
+<p>&#x9690;&#x5F0F;&#x8F6C;&#x6362;&#x53EF;&#x4EE5;&#x7531;&#x4E00;&#x7CFB;&#x5217;&#x8F6C;&#x6362;&#x7EC4;&#x6210;&#xFF0C;&#x4F46;&#x662F;&#x6700;&#x591A;&#x53EA;&#x80FD;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#x5B9A;&#x4E49;&#x7684;&#x8F6C;&#x6362;&#x3002;&#x4F8B;&#x5982;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x5305;&#x542B;&#x4E09;&#x4E2A;&#x9690;&#x5F0F;&#x8F6C;&#x6362;&#xFF0C;&#x4F46;&#x662F;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#x5B9A;&#x4E49;&#x7684;&#x9690;&#x5F0F;&#x8F6C;&#x6362;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">class</span> Base {
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-function"><span class="hljs-keyword">operator</span> <span class="hljs-title">short</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span></span>;
+};
+
+<span class="hljs-keyword">class</span> Derived : <span class="hljs-keyword">public</span> Base {
+};
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">count</span><span class="hljs-params">(<span class="hljs-keyword">int</span>)</span></span>;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">process</span><span class="hljs-params">(Derived <span class="hljs-keyword">const</span>&amp; object)</span>
+</span>{
+    count(object); <span class="hljs-comment">// matches with user-defined conversion</span>
+}
+</code></pre>
+<h3 id="c33-&#x6307;&#x9488;&#x8F6C;&#x6362;">C.3.3 &#x6307;&#x9488;&#x8F6C;&#x6362;</h3>
+<p>&#x5173;&#x4E8E;&#x6307;&#x9488;&#x7684;&#x6807;&#x51C6;&#x8F6C;&#x6362;&#x5305;&#x62EC;&#xFF1A;</p>
+<ol>
+<li>&#x6307;&#x9488;&#x5230;<code>bool</code>&#x7C7B;&#x578B;&#x7684;&#x8F6C;&#x6362;</li>
+<li>&#x4EFB;&#x610F;&#x6307;&#x9488;&#x7C7B;&#x578B;&#x5230;<code>void*</code>&#x7C7B;&#x578B;&#x7684;&#x8F6C;&#x6362;</li>
+<li>&#x6D3E;&#x751F;&#x7C7B;&#x6307;&#x9488;&#x5230;&#x57FA;&#x7C7B;&#x6307;&#x9488;&#x7684;&#x8F6C;&#x6362;</li>
+<li>&#x57FA;&#x7C7B;&#x6210;&#x5458;&#x6307;&#x9488;&#x5230;&#x6D3E;&#x751F;&#x7C7B;&#x6210;&#x5458;&#x6307;&#x9488;&#x7684;&#x8F6C;&#x6362;</li>
+</ol>
+<p>&#x7B2C;3&#x79CD;&#x548C;&#x7B2C;4&#x79CD;&#x8F6C;&#x6362;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x6BD4;&#x7B2C;2&#x79CD;&#x8F6C;&#x6362;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x9AD8;&#xFF0C;&#x7B2C;2&#x79CD;&#x8F6C;&#x6362;&#x6BD4;&#x7B2C;1&#x79CD;&#x8F6C;&#x6362;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x9AD8;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">check</span><span class="hljs-params">(<span class="hljs-keyword">void</span>*)</span></span>;  <span class="hljs-comment">// #1</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">check</span><span class="hljs-params">(<span class="hljs-keyword">bool</span>)</span></span>;   <span class="hljs-comment">// #2</span>
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">rearrange</span> <span class="hljs-params">(Matrix* m)</span>
+</span>{
+    check(m); <span class="hljs-comment">// calls #1</span>
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p>&#x5177;&#x6709;&#x7EE7;&#x627F;&#x5173;&#x7CFB;&#x7684;&#x7C7B;&#x4E4B;&#x95F4;&#x7684;&#x8F6C;&#x6362;&#x603B;&#x662F;&#x5728;&#x5177;&#x6709;&#x66F4;&#x8FD1;&#x7EE7;&#x627F;&#x5173;&#x7CFB;&#x7684;&#x7C7B;&#x4E4B;&#x95F4;&#x8FDB;&#x884C;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">class</span> Interface {
+    <span class="hljs-comment">// ...</span>
+};
+
+<span class="hljs-keyword">class</span> CommonProcesses : <span class="hljs-keyword">public</span> Interface {
+    <span class="hljs-comment">// ...</span>
+};
+
+<span class="hljs-keyword">class</span> Machine : <span class="hljs-keyword">public</span> CommonProcesses {
+    <span class="hljs-comment">// ...</span>
+};
+
+<span class="hljs-function"><span class="hljs-keyword">char</span>* <span class="hljs-title">serialize</span><span class="hljs-params">(Interface*)</span></span>;            <span class="hljs-comment">// #1</span>
+<span class="hljs-function"><span class="hljs-keyword">char</span>* <span class="hljs-title">serialize</span><span class="hljs-params">(CommonProcesses*)</span></span>;      <span class="hljs-comment">// #2</span>
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">dump</span> <span class="hljs-params">(Machine* machine)</span>
+</span>{
+    <span class="hljs-keyword">char</span>* buffer = serialize(machine);  <span class="hljs-comment">// calls #2</span>
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<h3 id="c34-&#x521D;&#x59CB;&#x5316;&#x5217;&#x8868;&#x7684;&#x8F6C;&#x6362;">C.3.4 &#x521D;&#x59CB;&#x5316;&#x5217;&#x8868;&#x7684;&#x8F6C;&#x6362;</h3>
+<p><code>{}</code>&#x4E2D;&#x7684;&#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x8F6C;&#x6362;&#x4E3A;<code>std::initializer_list</code>&#x3001;&#x901A;&#x8FC7;<code>std::initializer_list</code>&#x6784;&#x9020;&#x7684;&#x5BF9;&#x8C61;&#x3001;&#x901A;&#x8FC7;&#x591A;&#x4E2A;&#x53C2;&#x6570;&#x6784;&#x9020;&#x7684;&#x5BF9;&#x8C61;&#x548C;&#x805A;&#x5408;&#x7C7B;&#x578B;&#x7684;&#x5BF9;&#x8C61;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// overload/initlist.cpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;initializer_list&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;vector&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;complex&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">f</span><span class="hljs-params">(<span class="hljs-built_in">std</span>::<span class="hljs-built_in">initializer_list</span>&lt;<span class="hljs-keyword">int</span>&gt;)</span> </span>{
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;#1\n&quot;</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">f</span><span class="hljs-params">(<span class="hljs-built_in">std</span>::<span class="hljs-built_in">initializer_list</span>&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&gt;)</span> </span>{
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;#2\n&quot;</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">g</span><span class="hljs-params">(<span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-keyword">const</span>&amp; vec)</span> </span>{
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;#3\n&quot;</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">h</span><span class="hljs-params">(<span class="hljs-built_in">std</span>::<span class="hljs-keyword">complex</span>&lt;<span class="hljs-keyword">double</span>&gt; <span class="hljs-keyword">const</span>&amp; cmplx)</span> </span>{
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;#4\n&quot;</span>;
+}
+
+<span class="hljs-keyword">struct</span> Point {
+    <span class="hljs-keyword">int</span> x, y;
+};
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">i</span><span class="hljs-params">(Point <span class="hljs-keyword">const</span>&amp; pt)</span> </span>{
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;#5\n&quot;</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    f({<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>});                           <span class="hljs-comment">// prints #1</span>
+    f({<span class="hljs-string">&quot;hello&quot;</span>, <span class="hljs-string">&quot;initializer&quot;</span>, <span class="hljs-string">&quot;list&quot;</span>});    <span class="hljs-comment">// prints #2</span>
+    g({<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>});                     <span class="hljs-comment">// prints #3</span>
+    h({<span class="hljs-number">1.5</span>, <span class="hljs-number">2.5</span>});                          <span class="hljs-comment">// prints #4</span>
+    i({<span class="hljs-number">1</span>, <span class="hljs-number">2</span>});                              <span class="hljs-comment">// prints #5</span>
+}
+</code></pre>
+<p>&#x6CE8;&#x610F;&#xFF0C;&#x7C7B;&#x578B;&#x63D0;&#x5347;&#x8F6C;&#x6362;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x9AD8;&#x4E8E;&#x6807;&#x51C6;&#x8F6C;&#x6362;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// overload/initlistovl.cpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;initializer_list&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">ovl</span><span class="hljs-params">(<span class="hljs-built_in">std</span>::<span class="hljs-built_in">initializer_list</span>&lt;<span class="hljs-keyword">char</span>&gt;)</span> </span>{     <span class="hljs-comment">// #1</span>
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;#1\n&quot;</span>;
+}
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">ovl</span><span class="hljs-params">(<span class="hljs-built_in">std</span>::<span class="hljs-built_in">initializer_list</span>&lt;<span class="hljs-keyword">int</span>&gt;)</span> </span>{      <span class="hljs-comment">// #2</span>
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;#2\n&quot;</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    ovl({<span class="hljs-string">&apos;h&apos;</span>, <span class="hljs-string">&apos;e&apos;</span>, <span class="hljs-string">&apos;l&apos;</span>, <span class="hljs-string">&apos;l&apos;</span>, <span class="hljs-string">&apos;o&apos;</span>, <span class="hljs-string">&apos;\0&apos;</span>});   <span class="hljs-comment">// prints #1</span>
+    ovl({<span class="hljs-string">&apos;h&apos;</span>, <span class="hljs-string">&apos;e&apos;</span>, <span class="hljs-string">&apos;l&apos;</span>, <span class="hljs-string">&apos;l&apos;</span>, <span class="hljs-string">&apos;o&apos;</span>, <span class="hljs-number">0</span>});      <span class="hljs-comment">// prints #2</span>
+}
+</code></pre>
+<p>&#x5F53;&#x7528;&#x521D;&#x59CB;&#x5316;&#x5217;&#x8868;&#x6784;&#x9020;&#x5BF9;&#x8C61;&#x65F6;&#xFF0C;&#x91CD;&#x8F7D;&#x89E3;&#x6790;&#x5206;&#x4E3A;&#x4E24;&#x4E2A;&#x9636;&#x6BB5;&#xFF08;&#x4F8B;&#x5916;&#x7684;&#x60C5;&#x51B5;&#x662F;&#x521D;&#x59CB;&#x5316;&#x5217;&#x8868;&#x4E3A;&#x7A7A;&#x65F6;&#x4F1A;&#x5C06;&#x8DF3;&#x8FC7;&#x7B2C;1&#x9636;&#x6BB5;&#xFF09;&#xFF1A;</p>
+<ol>
+<li>&#x53EA;&#x8003;&#x8651;&#x4EE5;<code>std::initializer_list</code>&#x4E3A;&#x552F;&#x4E00;&#x975E;&#x9ED8;&#x8BA4;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;</li>
+<li>&#x5982;&#x679C;&#x7B2C;1&#x9636;&#x6BB5;&#x6CA1;&#x6709;&#x5339;&#x914D;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x5219;&#x5C1D;&#x8BD5;&#x5C06;&#x521D;&#x59CB;&#x5316;&#x5217;&#x8868;&#x5206;&#x5272;&#x4E3A;&#x591A;&#x4E2A;&#x53C2;&#x6570;&#x6765;&#x6784;&#x9020;&#x5BF9;&#x8C61;</li>
+</ol>
+<p>&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// overload/initlistctor.cpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;initializer_list&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> Array {
+    Array(<span class="hljs-built_in">std</span>::<span class="hljs-built_in">initializer_list</span>&lt;T&gt;) {
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;#1\n&quot;</span>;
+    }
+    Array(<span class="hljs-keyword">unsigned</span> n, T <span class="hljs-keyword">const</span>&amp;) {
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;#2\n&quot;</span>;
+    }
+};
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">arr1</span><span class="hljs-params">(Array&lt;<span class="hljs-keyword">int</span>&gt;)</span> </span>{
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">arr2</span><span class="hljs-params">(Array&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&gt;)</span> </span>{
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    arr1({<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>});                      <span class="hljs-comment">// prints #1</span>
+    arr1({<span class="hljs-number">1</span>, <span class="hljs-number">2</span>});                               <span class="hljs-comment">// prints #1</span>
+    arr1({<span class="hljs-number">10u</span>, <span class="hljs-number">5</span>});                             <span class="hljs-comment">// prints #1</span>
+    arr2({<span class="hljs-string">&quot;hello&quot;</span>, <span class="hljs-string">&quot;initializer&quot;</span>, <span class="hljs-string">&quot;list&quot;</span>});     <span class="hljs-comment">// prints #1</span>
+    arr2({<span class="hljs-number">10</span>, <span class="hljs-string">&quot;hello&quot;</span>});                        <span class="hljs-comment">// prints #2</span>
+}
+</code></pre>
+<h3 id="c35-&#x51FD;&#x6570;&#x548C;&#x4EE3;&#x7406;&#x51FD;&#x6570;">C.3.5 &#x51FD;&#x6570;&#x548C;&#x4EE3;&#x7406;&#x51FD;&#x6570;</h3>
+<p>&#x5F53;&#x4E00;&#x4E2A;&#x7C7B;&#x91CD;&#x8F7D;&#x4E86;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x8FD0;&#x7B97;&#x7B26;&#xFF0C;&#x6216;&#x8005;&#x53EF;&#x4EE5;&#x9690;&#x5F0F;&#x8F6C;&#x6362;&#x4E3A;&#x51FD;&#x6570;&#x6307;&#x9488;&#x6216;&#x8005;&#x51FD;&#x6570;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x65F6;&#xFF0C;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x6A21;&#x7CCA;&#x8C03;&#x7528;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">using</span> FuncType = <span class="hljs-keyword">void</span> (<span class="hljs-keyword">double</span>, <span class="hljs-keyword">int</span>);
+
+<span class="hljs-keyword">class</span> IndirectFunctor {
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-comment">// ...</span>
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">operator</span><span class="hljs-params">()</span><span class="hljs-params">(<span class="hljs-keyword">double</span>, <span class="hljs-keyword">double</span>)</span> <span class="hljs-keyword">const</span></span>;
+        <span class="hljs-keyword">operator</span> FuncType*() <span class="hljs-keyword">const</span>;
+};
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">activate</span><span class="hljs-params">(IndirectFunctor <span class="hljs-keyword">const</span>&amp; funcObj)</span>
+</span>{
+    funcObj(<span class="hljs-number">3</span>, <span class="hljs-number">5</span>); <span class="hljs-comment">// ERROR: ambiguous</span>
+}
+</code></pre>
+<p>&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x548C;<a href="#The-Implied-Argument-for-Member-Functions">C.2.1</a>&#x4E2D;&#x7684;&#x539F;&#x7406;&#x662F;&#x7C7B;&#x4F3C;&#x7684;&#x3002;<code>funcObj(3, 5)</code>&#x5305;&#x542B;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#xFF1A;<code>funcObj</code>&#x3001;<code>3</code>&#x548C;<code>5</code>&#x3002;&#x5982;&#x679C;&#x89E3;&#x6790;&#x4E3A;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x8FD0;&#x7B97;&#x7B26;&#xFF0C;&#x5219;&#x540E;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#x90FD;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x6807;&#x51C6;&#x8F6C;&#x6362;&#xFF1B;&#x800C;&#x5982;&#x679C;&#x89E3;&#x6790;&#x4E3A;<code>FuncType</code>&#x7C7B;&#x578B;&#x7684;&#x51FD;&#x6570;&#x6307;&#x9488;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x5C06;<code>funcObj</code>&#x9690;&#x5F0F;&#x8F6C;&#x6362;&#x4E3A;&#x51FD;&#x6570;&#x6307;&#x9488;&#x7C7B;&#x578B;&#x2014;&#x2014;&#x4E8C;&#x8005;&#x5BF9;&#x6BD4;&#x6CA1;&#x6709;&#x66F4;&#x4E3A;&#x5339;&#x914D;&#x7684;&#x91CD;&#x8F7D;&#x51FD;&#x6570;&#x3002;</p>
+<h3 id="c36-&#x5176;&#x5B83;&#x91CD;&#x8F7D;&#x60C5;&#x666F;">C.3.6 &#x5176;&#x5B83;&#x91CD;&#x8F7D;&#x60C5;&#x666F;</h3>
+<ul>
+<li>&#x83B7;&#x53D6;&#x51FD;&#x6570;&#x6307;&#x9488;</li>
+</ul>
+<pre><code class="lang-cpp"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">numElems</span><span class="hljs-params">(Matrix <span class="hljs-keyword">const</span>&amp;)</span></span>;    <span class="hljs-comment">// #1</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">numElems</span><span class="hljs-params">(Vector <span class="hljs-keyword">const</span>&amp;)</span></span>;    <span class="hljs-comment">// #2</span>
+<span class="hljs-comment">// ...</span>
+<span class="hljs-keyword">int</span> (*funcPtr)(Vector <span class="hljs-keyword">const</span>&amp;) = numElems; <span class="hljs-comment">// selects #2</span>
+</code></pre>
+<ul>
+<li>&#x5339;&#x914D;&#x6784;&#x9020;&#x51FD;&#x6570;</li>
+</ul>
+<pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string&gt;</span></span>
+<span class="hljs-keyword">class</span> BigNum {
+    <span class="hljs-keyword">public</span>:
+        BigNum(<span class="hljs-keyword">long</span> n);                 <span class="hljs-comment">// #1</span>
+        BigNum(<span class="hljs-keyword">double</span> n);               <span class="hljs-comment">// #2</span>
+        BigNum(<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> <span class="hljs-keyword">const</span>&amp;);     <span class="hljs-comment">// #3</span>
+        <span class="hljs-comment">// ...</span>
+        <span class="hljs-function"><span class="hljs-keyword">operator</span> <span class="hljs-title">double</span><span class="hljs-params">()</span></span>;              <span class="hljs-comment">// #4</span>
+        <span class="hljs-function"><span class="hljs-keyword">operator</span> <span class="hljs-title">long</span><span class="hljs-params">()</span></span>;                <span class="hljs-comment">// #5</span>
+        <span class="hljs-comment">// ...</span>
+};
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">initDemo</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-function">BigNum <span class="hljs-title">bn1</span><span class="hljs-params">(<span class="hljs-number">100103</span>)</span></span>;                 <span class="hljs-comment">// selects #1</span>
+    <span class="hljs-function">BigNum <span class="hljs-title">bn2</span><span class="hljs-params">(<span class="hljs-string">&quot;7057103224.095764&quot;</span>)</span></span>;    <span class="hljs-comment">// selects #3</span>
+    <span class="hljs-keyword">int</span> in = bn1;                       <span class="hljs-comment">// selects #5</span>
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="2022-01-05-appB-value-categories.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Appendix B Value Categories">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Appendix C Overload Resolution","level":"1.31","depth":1,"previous":{"title":"Appendix B Value Categories","level":"1.30","depth":1,"path":"2022-01-05-appB-value-categories.md","ref":"2022-01-05-appB-value-categories.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"2022-03-02-appC-overload-resolution.md","mtime":"2022-11-13T05:00:16.191Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-11-13T05:01:04.198Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

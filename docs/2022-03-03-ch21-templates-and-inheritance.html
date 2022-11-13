@@ -1,0 +1,1372 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Chapter 21 Templates and Inheritance · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="2022-03-05-ch22-bridging-static-and-dynamic-polymorphism.html" />
+    
+    
+    <link rel="prev" href="2022-03-02-ch20-overloading-on-type-properties.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="2021-12-15-ch1-function-templates.html">
+            
+                <a href="2021-12-15-ch1-function-templates.html">
+            
+                    
+                    Chapter 1 Funtion Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="2021-12-20-ch2-class-templates.html">
+            
+                <a href="2021-12-20-ch2-class-templates.html">
+            
+                    
+                    Chapter 2 Class Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="2021-12-20-ch3-nontype-template-parameters.html">
+            
+                <a href="2021-12-20-ch3-nontype-template-parameters.html">
+            
+                    
+                    Chapter 3 Nontype Template Parameters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="2021-12-20-ch4-variadic-templates.html">
+            
+                <a href="2021-12-20-ch4-variadic-templates.html">
+            
+                    
+                    Chapter 4 Variadic Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="2021-12-30-ch5-tricky-basics.html">
+            
+                <a href="2021-12-30-ch5-tricky-basics.html">
+            
+                    
+                    Chapter 5 Tricky Basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="2022-01-04-ch6-move-semantics-and-enable-if.html">
+            
+                <a href="2022-01-04-ch6-move-semantics-and-enable-if.html">
+            
+                    
+                    Chapter 6 Move Semantics and enable_if<>
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="2022-01-05-ch7-by-value-or-by-reference.html">
+            
+                <a href="2022-01-05-ch7-by-value-or-by-reference.html">
+            
+                    
+                    Chapter 7 By Value or by Reference?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="2022-01-06-ch8-compile-time-programming.html">
+            
+                <a href="2022-01-06-ch8-compile-time-programming.html">
+            
+                    
+                    Chapter 8 Compile-Time Programming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="2022-01-06-ch9-using-templates-in-practice.html">
+            
+                <a href="2022-01-06-ch9-using-templates-in-practice.html">
+            
+                    
+                    Chapter 9 Using Templates in Practice
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="2022-01-07-ch10-basic-template-terminology.html">
+            
+                <a href="2022-01-07-ch10-basic-template-terminology.html">
+            
+                    
+                    Chapter 10 Basic Template Terminology
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="2022-01-08-ch11-generic-libraries.html">
+            
+                <a href="2022-01-08-ch11-generic-libraries.html">
+            
+                    
+                    Chapter 11 Generic Libraries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="2022-01-12-ch12-fundamentals-in-depth.html">
+            
+                <a href="2022-01-12-ch12-fundamentals-in-depth.html">
+            
+                    
+                    Chapter 12 Fundamentals in Depth
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="2022-01-27-ch13-names-in-templates.html">
+            
+                <a href="2022-01-27-ch13-names-in-templates.html">
+            
+                    
+                    Chapter 13 Names in Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="2022-02-07-ch14-instantiation.html">
+            
+                <a href="2022-02-07-ch14-instantiation.html">
+            
+                    
+                    Chapter 14 Instantiation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="2022-02-15-ch15-template-argument-deduction.html">
+            
+                <a href="2022-02-15-ch15-template-argument-deduction.html">
+            
+                    
+                    Chapter 15 Template Argument Deduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="2022-02-17-ch16-specialization-and-overloading.html">
+            
+                <a href="2022-02-17-ch16-specialization-and-overloading.html">
+            
+                    
+                    Chapter 16 Specialization and Overloading
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="2022-02-22-ch17-future-directions.html">
+            
+                <a href="2022-02-22-ch17-future-directions.html">
+            
+                    
+                    Chapter 17 Future Directions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="2022-02-23-ch18-the-polymorphic-power-of-templates.html">
+            
+                <a href="2022-02-23-ch18-the-polymorphic-power-of-templates.html">
+            
+                    
+                    Chapter 18 The Polymorphic Power of Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="2022-03-01-ch19-implementing-traits.html">
+            
+                <a href="2022-03-01-ch19-implementing-traits.html">
+            
+                    
+                    Chapter 19 Implementing Traits
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="2022-03-02-ch20-overloading-on-type-properties.html">
+            
+                <a href="2022-03-02-ch20-overloading-on-type-properties.html">
+            
+                    
+                    Chapter 20 Overloading on Type Properties
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.22" data-path="2022-03-03-ch21-templates-and-inheritance.html">
+            
+                <a href="2022-03-03-ch21-templates-and-inheritance.html">
+            
+                    
+                    Chapter 21 Templates and Inheritance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="2022-03-05-ch22-bridging-static-and-dynamic-polymorphism.html">
+            
+                <a href="2022-03-05-ch22-bridging-static-and-dynamic-polymorphism.html">
+            
+                    
+                    Chapter 22 Bridging Static and Dynamic Polymorphism
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="2022-03-05-ch23-metaprogramming.html">
+            
+                <a href="2022-03-05-ch23-metaprogramming.html">
+            
+                    
+                    Chapter 23 Metaprogramming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="2022-03-06-ch24-typelists.html">
+            
+                <a href="2022-03-06-ch24-typelists.html">
+            
+                    
+                    Chapter 24 Typelists
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" data-path="2022-03-07-ch25-tuples.html">
+            
+                <a href="2022-03-07-ch25-tuples.html">
+            
+                    
+                    Chapter 25 Tuples
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27" data-path="2022-03-08-ch26-discriminated-unions.html">
+            
+                <a href="2022-03-08-ch26-discriminated-unions.html">
+            
+                    
+                    Chapter 26 Discriminated Unions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28" data-path="2022-03-09-ch27-expression-templates.html">
+            
+                <a href="2022-03-09-ch27-expression-templates.html">
+            
+                    
+                    Chapter 27 Expression Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29" data-path="2022-03-09-ch28-debugging-templates.html">
+            
+                <a href="2022-03-09-ch28-debugging-templates.html">
+            
+                    
+                    Chapter 28 Debugging Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.30" data-path="2022-01-05-appB-value-categories.html">
+            
+                <a href="2022-01-05-appB-value-categories.html">
+            
+                    
+                    Appendix B Value Categories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.31" data-path="2022-03-02-appC-overload-resolution.html">
+            
+                <a href="2022-03-02-appC-overload-resolution.html">
+            
+                    
+                    Appendix C Overload Resolution
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Chapter 21 Templates and Inheritance</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="21-&#x6A21;&#x677F;&#x548C;&#x7EE7;&#x627F;">21 &#x6A21;&#x677F;&#x548C;&#x7EE7;&#x627F;</h1>
+<h2 id="211-&#x7A7A;&#x57FA;&#x7C7B;&#x4F18;&#x5316;">21.1 &#x7A7A;&#x57FA;&#x7C7B;&#x4F18;&#x5316;</h2>
+<p>&#x53EA;&#x5305;&#x542B;&#x7C7B;&#x578B;&#x6210;&#x5458;&#x3001;&#x975E;&#x865A;&#x6210;&#x5458;&#x51FD;&#x6570;&#x548C;&#x9759;&#x6001;&#x6570;&#x636E;&#x6210;&#x5458;&#x7684;&#x7C7B;&#x578B;&#x4E3A;&#x7A7A;&#x7C7B;&#x578B;&#xFF0C;&#x4F46;&#x662F;&#x6240;&#x5360;&#x5185;&#x5B58;&#x5927;&#x5C0F;&#x5E76;&#x4E0D;&#x4E3A;0&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// inherit/empty.cpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+
+<span class="hljs-keyword">class</span> EmptyClass {
+};
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;sizeof(EmptyClass): &quot;</span> &lt;&lt; <span class="hljs-keyword">sizeof</span>(EmptyClass) &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+}
+</code></pre>
+<p>&#x5728;&#x6211;&#x7684;&#x673A;&#x5668;&#x4E0A;&#x8F93;&#x51FA;&#x4E3A;&#xFF1A;</p>
+<pre><code class="lang-log">sizeof(EmptyClass): 1
+</code></pre>
+<h3 id="2111-&#x7A7A;&#x57FA;&#x7C7B;&#x7684;&#x5E03;&#x5C40;">21.1.1 &#x7A7A;&#x57FA;&#x7C7B;&#x7684;&#x5E03;&#x5C40;</h3>
+<p>&#x7A7A;&#x57FA;&#x7C7B;&#x4F18;&#x5316;&#xFF08;Empty Base Class Optimization&#xFF0C;EBCO&#xFF09;&#x662F;&#x6307;&#x5F53;&#x540C;&#x4E00;&#x7C7B;&#x578B;&#x7684;&#x5BF9;&#x8C61;&#xFF08;&#x4E5F;&#x5305;&#x62EC;&#x6D3E;&#x751F;&#x7C7B;&#x5BF9;&#x8C61;&#xFF09;&#x4E0D;&#x4F1A;&#x88AB;&#x5206;&#x914D;&#x5230;&#x540C;&#x4E00;&#x8D77;&#x59CB;&#x5730;&#x5740;&#x65F6;&#x53EF;&#x4EE5;&#x4E0D;&#x4E3A;&#x7A7A;&#x57FA;&#x7C7B;&#x5206;&#x914D;&#x989D;&#x5916;&#x7684;&#x7A7A;&#x95F4;&#x3002;&#x539F;&#x6587;&#xFF1A;</p>
+<blockquote>
+<p>Even though there are no zero-size types in C++, the C++ standard does specify that when an empty class is used as a base class, no space needs to be allocated for it provided that it does not cause it to be allocated to the same address as another object or subobject of the same type.</p>
+</blockquote>
+<p>&#x770B;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// inherit/ebco1.cpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">class</span> Empty {
+    <span class="hljs-keyword">using</span> Int = <span class="hljs-keyword">int</span>; <span class="hljs-comment">// type alias members don&#x2019;t make a class nonempty</span>
+};
+
+<span class="hljs-keyword">class</span> EmptyToo : <span class="hljs-keyword">public</span> Empty {
+};
+
+<span class="hljs-keyword">class</span> EmptyThree : <span class="hljs-keyword">public</span> EmptyToo {
+};
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;sizeof(Empty): &quot;</span> &lt;&lt; <span class="hljs-keyword">sizeof</span>(Empty) &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;sizeof(EmptyToo): &quot;</span> &lt;&lt; <span class="hljs-keyword">sizeof</span>(EmptyToo) &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;sizeof(EmptyThree): &quot;</span> &lt;&lt; <span class="hljs-keyword">sizeof</span>(EmptyThree) &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+}
+</code></pre>
+<p>&#x5982;&#x679C;&#x7F16;&#x8BD1;&#x5668;&#x5B9E;&#x73B0;&#x4E86;&#x7A7A;&#x57FA;&#x7C7B;&#x4F18;&#x5316;&#xFF0C;&#x5219;&#x8F93;&#x51FA;&#x76F8;&#x540C;&#xFF08;&#x4F46;&#x662F;&#x4E0D;&#x4E3A;0&#xFF09;&#xFF1B;&#x5426;&#x5219;&#x4E0D;&#x540C;&#xFF0C;&#x5728;&#x6211;&#x7684;&#x673A;&#x5668;&#x4E0A;&#x8F93;&#x51FA;&#x4E3A;&#xFF1A;</p>
+<pre><code class="lang-log">sizeof(Empty):      1
+sizeof(EmptyToo):   1
+sizeof(EmptyThree): 1
+</code></pre>
+<p>&#x8FD8;&#x6709;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// inherit/ebco2.cpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+
+<span class="hljs-keyword">class</span> Empty {
+    <span class="hljs-keyword">using</span> Int = <span class="hljs-keyword">int</span>; <span class="hljs-comment">// type alias members don&#x2019;t make a class nonempty</span>
+};
+
+<span class="hljs-keyword">class</span> EmptyToo : <span class="hljs-keyword">public</span> Empty {
+};
+<span class="hljs-keyword">class</span> NonEmpty : <span class="hljs-keyword">public</span> Empty, <span class="hljs-keyword">public</span> EmptyToo {
+};
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;sizeof(Empty): &quot;</span> &lt;&lt; <span class="hljs-keyword">sizeof</span>(Empty) &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;sizeof(EmptyToo): &quot;</span> &lt;&lt; <span class="hljs-keyword">sizeof</span>(EmptyToo) &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;sizeof(NonEmpty): &quot;</span> &lt;&lt; <span class="hljs-keyword">sizeof</span>(NonEmpty) &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+}
+</code></pre>
+<p>&#x5728;&#x6211;&#x7684;&#x673A;&#x5668;&#x4E0A;&#x8F93;&#x51FA;&#x4E3A;&#xFF1A;</p>
+<pre><code class="lang-log">sizeof(Empty):      1
+sizeof(EmptyToo):   1
+sizeof(EmptyThree): 2
+</code></pre>
+<h3 id="2112-&#x5C06;&#x6210;&#x5458;&#x4F5C;&#x4E3A;&#x57FA;&#x7C7B;">21.1.2 &#x5C06;&#x6210;&#x5458;&#x4F5C;&#x4E3A;&#x57FA;&#x7C7B;</h3>
+<p>&#x4E66;&#x4E2D;&#x7ED9;&#x4E86;&#x4E00;&#x79CD;&#x5C06;&#x6A21;&#x677F;&#x5B9E;&#x53C2;&#x548C;&#x6570;&#x636E;&#x6210;&#x5458;&#x7ED1;&#x5B9A;&#x5728;&#x4E00;&#x8D77;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x4F46;&#x662F;&#x6CA1;&#x60F3;&#x660E;&#x767D;&#x4EE3;&#x7801;&#x7684;&#x4F7F;&#x7528;&#x573A;&#x666F;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> CustomClass&gt;
+<span class="hljs-keyword">class</span> Optimizable {
+    <span class="hljs-keyword">private</span>:
+        BaseMemberPair&lt;CustomClass, <span class="hljs-keyword">void</span>*&gt; info_and_storage;
+        <span class="hljs-comment">// ...</span>
+};
+</code></pre>
+<pre><code class="lang-cpp"><span class="hljs-comment">// inherit/basememberpair.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">ifndef</span> BASE_MEMBER_PAIR_HPP</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> BASE_MEMBER_PAIR_HPP</span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Base, <span class="hljs-keyword">typename</span> Member&gt;
+<span class="hljs-keyword">class</span> BaseMemberPair : <span class="hljs-keyword">private</span> Base {
+    <span class="hljs-keyword">private</span>:
+        Member mem;
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-comment">// constructor</span>
+        BaseMemberPair (Base <span class="hljs-keyword">const</span> &amp; b, Member <span class="hljs-keyword">const</span> &amp; m)
+            : Base(b), mem(m) {
+        }
+
+        <span class="hljs-comment">// access base class data via first()</span>
+        <span class="hljs-function">Base <span class="hljs-keyword">const</span>&amp; <span class="hljs-title">base</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> </span>{
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">static_cast</span>&lt;Base <span class="hljs-keyword">const</span>&amp;&gt;(*<span class="hljs-keyword">this</span>);
+        }
+        <span class="hljs-function">Base&amp; <span class="hljs-title">base</span><span class="hljs-params">()</span> </span>{
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">static_cast</span>&lt;Base&amp;&gt;(*<span class="hljs-keyword">this</span>);
+        }
+
+        <span class="hljs-comment">// access member data via second()</span>
+        <span class="hljs-function">Member <span class="hljs-keyword">const</span>&amp; <span class="hljs-title">member</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> </span>{
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>-&gt;mem;
+        }
+        <span class="hljs-function">Member&amp; <span class="hljs-title">member</span><span class="hljs-params">()</span> </span>{
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>-&gt;mem;
+        }
+};
+<span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span> <span class="hljs-comment">// BASE_MEMBER_PAIR_HPP</span></span>
+</code></pre>
+<h2 id="212-&#x5947;&#x5F02;&#x9012;&#x5F52;&#x6A21;&#x677F;&#x6A21;&#x5F0F;">21.2 &#x5947;&#x5F02;&#x9012;&#x5F52;&#x6A21;&#x677F;&#x6A21;&#x5F0F;</h2>
+<p>&#x5947;&#x5F02;&#x9012;&#x5F52;&#x6A21;&#x677F;&#x6A21;&#x5F0F;&#xFF08;Curiously Recurring Template Pattern&#xFF0C;CRTP&#xFF09;&#x662F;&#x6307;&#x5C06;&#x6D3E;&#x751F;&#x7C7B;&#x4F5C;&#x4E3A;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x4F20;&#x9012;&#x5230;&#x57FA;&#x7C7B;&#x4E2D;&#x6765;&#x4E3A;&#x6D3E;&#x751F;&#x7C7B;&#x63D0;&#x4F9B;&#x4E00;&#x4E9B;&#x529F;&#x80FD;&#xFF0C;&#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x5728;&#x907F;&#x514D;&#x4F7F;&#x7528;&#x865A;&#x51FD;&#x6570;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x5B9E;&#x73B0;&#x591A;&#x6001;&#x3002;&#x4F8B;&#x5982;&#x5229;&#x7528;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x5BF9;&#x8C61;&#x8BA1;&#x6570;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// inherit/objectcounter.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstddef&gt;</span></span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> CountedType&gt;
+<span class="hljs-keyword">class</span> ObjectCounter {
+    <span class="hljs-keyword">private</span>:
+        <span class="hljs-keyword">inline</span> <span class="hljs-keyword">static</span> <span class="hljs-built_in">std</span>::<span class="hljs-keyword">size_t</span> count = <span class="hljs-number">0</span>; <span class="hljs-comment">// number of existing objects</span>
+    <span class="hljs-keyword">protected</span>:
+        <span class="hljs-comment">// default constructor</span>
+        ObjectCounter() {
+            ++count;
+        }
+
+        <span class="hljs-comment">// copy constructor</span>
+        ObjectCounter (ObjectCounter&lt;CountedType&gt; <span class="hljs-keyword">const</span>&amp;) {
+            ++count;
+        }
+
+        <span class="hljs-comment">// move constructor</span>
+        ObjectCounter (ObjectCounter&lt;CountedType&gt; &amp;&amp;) {
+            ++count;
+        }
+
+        <span class="hljs-comment">// destructor</span>
+        ~ObjectCounter() {
+            --count;
+        }
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-comment">// return number of existing objects:</span>
+        <span class="hljs-keyword">static</span> <span class="hljs-built_in">std</span>::<span class="hljs-keyword">size_t</span> live() {
+            <span class="hljs-keyword">return</span> count;
+        }
+};
+</code></pre>
+<pre><code class="lang-cpp"><span class="hljs-comment">// inherit/countertest.cpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;objectcounter.hpp&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> CharT&gt;
+<span class="hljs-keyword">class</span> MyString : <span class="hljs-keyword">public</span> ObjectCounter&lt;MyString&lt;CharT&gt;&gt; {
+    <span class="hljs-comment">// ...</span>
+};
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    MyString&lt;<span class="hljs-keyword">char</span>&gt; s1, s2;
+    MyString&lt;<span class="hljs-keyword">wchar_t</span>&gt; ws;
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;num of MyString&lt;char&gt;: &quot;</span>
+        &lt;&lt; MyString&lt;<span class="hljs-keyword">char</span>&gt;::live() &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;num of MyString&lt;wchar_t&gt;: &quot;</span>
+        &lt;&lt; ws.live() &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+}
+</code></pre>
+<h3 id="2121-&#x5DF4;&#x987F;-&#x8BFA;&#x514B;&#x66FC;&#x6280;&#x5DE7;">21.2.1 &#x5DF4;&#x987F;-&#x8BFA;&#x514B;&#x66FC;&#x6280;&#x5DE7;</h3>
+<p>&#x65E9;&#x671F;C++&#x65E0;&#x6CD5;&#x5BF9;&#x51FD;&#x6570;&#x6A21;&#x677F;&#x8FDB;&#x884C;&#x91CD;&#x8F7D;&#xFF0C;&#x5DF4;&#x987F;-&#x8BFA;&#x514B;&#x66FC;&#x6280;&#x5DE7;&#x901A;&#x8FC7;&#x5C06;&#x51FD;&#x6570;&#x6A21;&#x677F;&#x5B9E;&#x73B0;&#x4E3A;&#x53CB;&#x5143;&#x6765;&#x7528;&#x6765;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">class</span> Array {
+        <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">bool</span> <span class="hljs-title">areEqual</span><span class="hljs-params">(Array&lt;T&gt; <span class="hljs-keyword">const</span>&amp; a, Array&lt;T&gt; <span class="hljs-keyword">const</span>&amp; b)</span></span>;
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-comment">// ...</span>
+        <span class="hljs-keyword">friend</span> <span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span>== (Array&lt;T&gt; <span class="hljs-keyword">const</span>&amp; a, Array&lt;T&gt; <span class="hljs-keyword">const</span>&amp; b) {
+            <span class="hljs-keyword">return</span> areEqual(a, b);
+        }
+};
+</code></pre>
+<p>&#x4F8B;&#x5982;&#x5B9E;&#x4F8B;&#x5316;<code>Array&lt;float&gt;</code>&#x65F6;&#xFF0C;&#x5B9E;&#x4F8B;&#x5316;&#x540E;&#x7684;&#x53CB;&#x5143;&#x51FD;&#x6570;&#x5B58;&#x5728;&#x4E8E;&#x5168;&#x5C40;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;<code>Array&lt;float&gt;</code>&#x7684;<code>protected</code>&#x548C;<code>private</code>&#x6210;&#x5458;&#xFF0C;&#x540C;&#x65F6;&#x53EA;&#x662F;&#x4E00;&#x4E2A;&#x666E;&#x901A;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x53EF;&#x4EE5;&#x88AB;&#x91CD;&#x8F7D;&#x3002;&#x5728;C++&#x652F;&#x6301;&#x51FD;&#x6570;&#x6A21;&#x677F;&#x91CD;&#x8F7D;&#x540E;&#xFF0C;&#x8FD9;&#x4E2A;&#x201C;&#x6CE8;&#x5165;&#x5230;&#x5168;&#x5C40;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x201D;&#x7684;&#x6280;&#x5DE7;&#x4E0D;&#x9002;&#x7528;&#x4E86;&#x3002;&#x73B0;&#x4EE3;C++&#x4E2D;&#x7684;&#x540D;&#x79F0;&#x67E5;&#x627E;&#x662F;&#x57FA;&#x4E8E;ADL&#x89C4;&#x5219;&#x7684;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// inherit/wrapper.cpp</span>
+<span class="hljs-keyword">class</span> S {
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">class</span> Wrapper {
+    <span class="hljs-keyword">private</span>:
+        T object;
+    <span class="hljs-keyword">public</span>:
+        Wrapper(T obj) : object(obj) { <span class="hljs-comment">// implicit conversion from T to Wrapper&lt;T&gt;</span>
+        }
+        <span class="hljs-function"><span class="hljs-keyword">friend</span> <span class="hljs-keyword">void</span> <span class="hljs-title">foo</span><span class="hljs-params">(Wrapper&lt;T&gt; <span class="hljs-keyword">const</span>&amp;)</span> </span>{
+        }
+};
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    S s;
+    Wrapper&lt;S&gt; w(s);
+    foo(w);     <span class="hljs-comment">// OK: Wrapper&lt;S&gt; is a class associated with w</span>
+    foo(s);     <span class="hljs-comment">// ERROR: Wrapper&lt;S&gt; is not associated with s</span>
+}
+</code></pre>
+<p><code>w</code>&#x5173;&#x8054;&#x7684;&#x7C7B;&#x662F;<code>Wrapper&lt;S&gt;</code>&#xFF0C;&#x5176;&#x4E2D;&#x5B9A;&#x4E49;&#x4E86;<code>foo()</code>&#xFF0C;&#x800C;<code>s</code>&#x5173;&#x8054;&#x7684;&#x7C7B;&#x662F;<code>S</code>&#xFF0C;&#x6CA1;&#x6709;&#x5B9A;&#x4E49;<code>foo()</code>&#x3002;</p>
+<h3 id="2122-&#x901A;&#x8FC7;crtp&#x5B9E;&#x73B0;&#x5173;&#x7CFB;&#x8FD0;&#x7B97;&#x7B26;">21.2.2 &#x901A;&#x8FC7;CRTP&#x5B9E;&#x73B0;&#x5173;&#x7CFB;&#x8FD0;&#x7B97;&#x7B26;</h3>
+<p>&#x5B9E;&#x73B0;&#x5173;&#x7CFB;&#x8FD0;&#x7B97;&#x7B26;&#x65F6;&#xFF0C;&#x4E00;&#x822C;&#x4F1A;&#x53EA;&#x5B9E;&#x73B0;<code>==</code>&#x548C;<code>&lt;</code>&#xFF0C;<code>!=</code>&#x3001;<code>&lt;=</code>&#x3001;<code>&gt;</code>&#x548C;<code>&gt;=</code>&#x90FD;&#x901A;&#x8FC7;&#x7EC4;&#x5408;&#x6765;&#x5B9E;&#x73B0;&#x3002;&#x5982;&#x679C;&#x5F88;&#x591A;&#x7C7B;&#x578B;&#x90FD;&#x6709;&#x8FD9;&#x79CD;&#x9700;&#x6C42;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x6CDB;&#x5316;&#x4E3A;&#x6A21;&#x677F;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span>!= (T <span class="hljs-keyword">const</span>&amp; x1, T <span class="hljs-keyword">const</span>&amp; x2) {
+    <span class="hljs-keyword">return</span> !(x1 == x2);
+}
+</code></pre>
+<p>&#x4F46;&#x662F;&#x8FD9;&#x4E2A;&#x6A21;&#x677F;&#x592A;&#x901A;&#x7528;&#x4E86;&#xFF0C;&#x53EF;&#x4EE5;&#x632A;&#x5230;&#x57FA;&#x7C7B;&#x4E2D;&#x7136;&#x540E;&#x901A;&#x8FC7;CRTP&#x4E3A;&#x7279;&#x5B9A;&#x7684;&#x6D3E;&#x751F;&#x7C7B;&#x6240;&#x7528;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// inherit/equalitycomparable.cpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Derived&gt;
+<span class="hljs-keyword">class</span> EqualityComparable
+{
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">friend</span> <span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span>!= (Derived <span class="hljs-keyword">const</span>&amp; x1, Derived <span class="hljs-keyword">const</span>&amp; x2) {
+            <span class="hljs-keyword">return</span> !(x1 == x2);
+        }
+};
+
+<span class="hljs-keyword">class</span> X : <span class="hljs-keyword">public</span> EqualityComparable&lt;X&gt;
+{
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">friend</span> <span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span>== (X <span class="hljs-keyword">const</span>&amp; x1, X <span class="hljs-keyword">const</span>&amp; x2) {
+            <span class="hljs-comment">// implement logic for comparing two objects of type X</span>
+        }
+};
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    X x1, x2;
+    <span class="hljs-keyword">if</span> (x1 != x2) { }
+}
+</code></pre>
+<h3 id="2123-&#x5916;&#x89C2;&#x6A21;&#x5F0F;">21.2.3 &#x5916;&#x89C2;&#x6A21;&#x5F0F;</h3>
+<p>&#x5916;&#x89C2;&#x6A21;&#x5F0F;&#x4E2D;&#x7684;&#x57FA;&#x7C7B;&#x5B9A;&#x4E49;&#x4E86;&#x5927;&#x91CF;&#x6216;&#x8005;&#x5168;&#x90E8;&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x8FD9;&#x4E9B;&#x63A5;&#x53E3;&#x501F;&#x52A9;&#x6D3E;&#x751F;&#x7C7B;&#x7684;&#x63A5;&#x53E3;&#x5B9E;&#x73B0;&#x3002;&#x5916;&#x89C2;&#x6A21;&#x5F0F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;CRTP&#x5B9E;&#x73B0;&#xFF0C;&#x672C;&#x8282;&#x4E2D;&#x7ED9;&#x51FA;&#x4E86;&#x4E00;&#x4E2A;&#x8FED;&#x4EE3;&#x5668;&#x5916;&#x89C2;&#x7C7B;&#x7684;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// inherit/iteratorfacadeskel.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Derived, <span class="hljs-keyword">typename</span> Value, <span class="hljs-keyword">typename</span> Category,
+            <span class="hljs-keyword">typename</span> Reference = Value&amp;, <span class="hljs-keyword">typename</span> Distance = <span class="hljs-built_in">std</span>::<span class="hljs-keyword">ptrdiff_t</span>&gt;
+<span class="hljs-keyword">class</span> IteratorFacade
+{
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> value_type = <span class="hljs-keyword">typename</span> <span class="hljs-built_in">std</span>::remove_const&lt;Value&gt;::type;<span class="hljs-number">502</span> Chapter <span class="hljs-number">21</span>: Templates and Inheritance
+        <span class="hljs-keyword">using</span> reference = Reference;
+        <span class="hljs-keyword">using</span> pointer = Value*;
+        <span class="hljs-keyword">using</span> difference_type = Distance;
+        <span class="hljs-keyword">using</span> iterator_category = Category;
+
+        <span class="hljs-comment">// input iterator interface:</span>
+        reference <span class="hljs-keyword">operator</span> *() <span class="hljs-keyword">const</span> { ... }
+        pointer <span class="hljs-keyword">operator</span> -&gt;() <span class="hljs-keyword">const</span> { ... }
+        Derived&amp; <span class="hljs-keyword">operator</span> ++() { ... }
+        Derived <span class="hljs-keyword">operator</span> ++(<span class="hljs-keyword">int</span>) { ... }
+        <span class="hljs-keyword">friend</span> <span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span>== (IteratorFacade <span class="hljs-keyword">const</span>&amp; lhs,
+        IteratorFacade <span class="hljs-keyword">const</span>&amp; rhs) { ... }
+        <span class="hljs-comment">// ...</span>
+
+        <span class="hljs-comment">// bidirectional iterator interface:</span>
+        Derived&amp; <span class="hljs-keyword">operator</span> --() { ... }
+        Derived <span class="hljs-keyword">operator</span> --(<span class="hljs-keyword">int</span>) { ... }
+
+        <span class="hljs-comment">// random access iterator interface:</span>
+        reference <span class="hljs-keyword">operator</span> [](difference_type n) <span class="hljs-keyword">const</span> { ... }
+        Derived&amp; <span class="hljs-keyword">operator</span> +=(difference_type n) { ... }
+        <span class="hljs-comment">// ...</span>
+        <span class="hljs-keyword">friend</span> difference_type <span class="hljs-keyword">operator</span> -(IteratorFacade <span class="hljs-keyword">const</span>&amp; lhs, IteratorFacade <span class="hljs-keyword">const</span>&amp; rhs) { ... }
+        <span class="hljs-keyword">friend</span> <span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span> &lt;(IteratorFacade <span class="hljs-keyword">const</span>&amp; lhs, IteratorFacade <span class="hljs-keyword">const</span>&amp; rhs) { ... }
+        <span class="hljs-comment">// ...</span>
+};
+</code></pre>
+<p>&#x7528;&#x6237;&#x4EE3;&#x7801;&#x8C03;&#x7528;<code>IteratorFacade&lt;&gt;</code>&#x4E2D;&#x7684;&#x5404;&#x79CD;&#x8FD0;&#x7B97;&#x7B26;&#xFF0C;&#x800C;&#x8FD9;&#x4E9B;&#x8FD0;&#x7B97;&#x7B26;&#x8C03;&#x7528;&#x6D3E;&#x751F;&#x7C7B;&#x7684;&#x63A5;&#x53E3;&#x5B9E;&#x73B0;&#xFF1A;</p>
+<ul>
+<li>&#x6240;&#x6709;&#x8FED;&#x4EE3;&#x5668;&#x5E94;&#x8BE5;&#x90FD;&#x652F;&#x6301;<code>dereference()</code>&#x3001;<code>increment()</code>&#x548C;<code>equals()</code></li>
+<li>&#x53CC;&#x5411;&#x8FED;&#x4EE3;&#x5668;&#x5E94;&#x8BE5;&#x652F;&#x6301;<code>decrement()</code></li>
+<li>&#x968F;&#x673A;&#x8BBF;&#x95EE;&#x8FED;&#x4EE3;&#x5668;&#x5E94;&#x8BE5;&#x652F;&#x6301;<code>advance()</code>&#x548C;<code>measureDistance()</code></li>
+</ul>
+<p><code>IteratorFacade&lt;&gt;</code>&#x901A;&#x8FC7;&#x4E0B;&#x9762;&#x7684;&#x65B9;&#x5F0F;&#x8C03;&#x7528;&#x6D3E;&#x751F;&#x7C7B;&#x4E2D;&#x7684;&#x5B9E;&#x73B0;&#xFF1A;</p>
+<pre><code class="lang-cpp">Derived&amp; asDerived() { return *static_cast&lt;Derived*&gt;(this); }
+
+Derived const&amp; asDerived() const {
+    return *static_cast&lt;Derived const*&gt;(this);
+}
+
+reference operator*() const {
+    return asDerived().dereference();
+}
+
+Derived&amp; operator++() {
+    asDerived().increment();
+    return asDerived();
+}
+
+Derived operator++(int) {
+    Derived result(asDerived());
+    asDerived().increment();
+    return result;
+}
+
+friend bool operator== (IteratorFacade const&amp; lhs, IteratorFacade const&amp; rhs) {
+    return lhs.asDerived().equals(rhs.asDerived());
+}
+</code></pre>
+<h4 id="&#x94FE;&#x8868;&#x8FED;&#x4EE3;&#x5668;">&#x94FE;&#x8868;&#x8FED;&#x4EE3;&#x5668;</h4>
+<p>&#x57FA;&#x4E8E;<code>IteratorFacade&lt;&gt;</code>&#x7684;&#x94FE;&#x8868;&#x8FED;&#x4EE3;&#x5668;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// inherit/listnode.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">class</span> ListNode
+{
+    <span class="hljs-keyword">public</span>:
+        T value;
+        ListNode&lt;T&gt;* next = <span class="hljs-literal">nullptr</span>;
+        ~ListNode() { <span class="hljs-keyword">delete</span> next; }
+};
+</code></pre>
+<pre><code class="lang-cpp"><span class="hljs-comment">// inherit/listnodeiterator0.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">class</span> ListNodeIterator
+    : <span class="hljs-keyword">public</span> IteratorFacade&lt;ListNodeIterator&lt;T&gt;, T, <span class="hljs-built_in">std</span>::forward_iterator_tag&gt;
+{
+        ListNode&lt;T&gt;* current = <span class="hljs-literal">nullptr</span>;
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-function">T&amp; <span class="hljs-title">dereference</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> </span>{
+            <span class="hljs-keyword">return</span> current-&gt;value;
+        }
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">increment</span><span class="hljs-params">()</span> </span>{
+            current = current-&gt;next;
+        }
+        <span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">equals</span><span class="hljs-params">(ListNodeIterator <span class="hljs-keyword">const</span>&amp; other)</span> <span class="hljs-keyword">const</span> </span>{
+            <span class="hljs-keyword">return</span> current == other.current;
+        }
+        ListNodeIterator(ListNode&lt;T&gt;* current = <span class="hljs-literal">nullptr</span>) : current(current) { }
+};
+</code></pre>
+<h4 id="&#x63A5;&#x53E3;&#x9690;&#x85CF;">&#x63A5;&#x53E3;&#x9690;&#x85CF;</h4>
+<p>&#x5728;&#x57FA;&#x7C7B;&#x4E2D;&#x8C03;&#x7528;&#x6D3E;&#x751F;&#x7C7B;&#x5BF9;&#x8C61;&#x7684;&#x63A5;&#x53E3;&#x8981;&#x6C42;&#x6D3E;&#x751F;&#x7C7B;&#x4E2D;&#x7684;&#x5B9E;&#x73B0;&#x662F;<code>public</code>&#x7684;&#xFF0C;&#x4E3A;&#x6B64;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x8BBF;&#x95EE;&#x7C7B;<code>IteratorFacadeAccess</code>&#xFF0C;&#x7136;&#x540E;&#x5728;<code>ListNodeIterator</code>&#x4E2D;&#x5C06;<code>IteratorFacadeAccess</code>&#x5B9A;&#x4E49;&#x4E3A;&#x53CB;&#x5143;&#x6765;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// inherit/iteratorfacadeaccessskel.hpp</span>
+<span class="hljs-comment">// &#x2018;friend&#x2019; this class to allow IteratorFacade access to core iterator operations:</span>
+<span class="hljs-keyword">class</span> IteratorFacadeAccess
+{
+    <span class="hljs-comment">// only IteratorFacade can use these definitions</span>
+    <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Derived, <span class="hljs-keyword">typename</span> Value, <span class="hljs-keyword">typename</span> Category,
+                <span class="hljs-keyword">typename</span> Reference, <span class="hljs-keyword">typename</span> Distance&gt;
+        <span class="hljs-keyword">friend</span> <span class="hljs-keyword">class</span> IteratorFacade;
+
+    <span class="hljs-comment">// required of all iterators:</span>
+    <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Reference, <span class="hljs-keyword">typename</span> Iterator&gt;
+    <span class="hljs-function"><span class="hljs-keyword">static</span> Reference <span class="hljs-title">dereference</span><span class="hljs-params">(Iterator <span class="hljs-keyword">const</span>&amp; i)</span> </span>{
+        <span class="hljs-keyword">return</span> i.dereference();
+    }
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-comment">// required of bidirectional iterators:</span>
+    <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Iterator&gt;
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">decrement</span><span class="hljs-params">(Iterator&amp; i)</span> </span>{
+        <span class="hljs-keyword">return</span> i.decrement();
+    }
+
+    <span class="hljs-comment">// required of random-access iterators:</span>
+    <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Iterator, <span class="hljs-keyword">typename</span> Distance&gt;
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">advance</span><span class="hljs-params">(Iterator&amp; i, Distance n)</span> </span>{
+        <span class="hljs-keyword">return</span> i.advance(n);
+    }
+    <span class="hljs-comment">// ...</span>
+};
+</code></pre>
+<h4 id="&#x8FED;&#x4EE3;&#x5668;&#x9002;&#x914D;&#x5668;">&#x8FED;&#x4EE3;&#x5668;&#x9002;&#x914D;&#x5668;</h4>
+<p>&#x6709;&#x4E86;<code>IteratorFacade&lt;&gt;</code>&#x540E;&#x53EF;&#x4EE5;&#x5F88;&#x5BB9;&#x6613;&#x7684;&#x5C06;&#x6784;&#x5EFA;&#x8FED;&#x4EE3;&#x5668;&#x9002;&#x914D;&#x5668;&#xFF0C;&#x4F8B;&#x5982;&#x901A;&#x8FC7;&#x5BF9;&#x8C61;&#x7684;&#x8FED;&#x4EE3;&#x5668;&#x6784;&#x5EFA;&#x6210;&#x5458;&#x7684;&#x8FED;&#x4EE3;&#x5668;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// inherit/person.hpp</span>
+<span class="hljs-keyword">struct</span> Person {
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> firstName;
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> lastName;
+    <span class="hljs-keyword">friend</span> <span class="hljs-built_in">std</span>::ostream&amp; <span class="hljs-keyword">operator</span>&lt;&lt;(<span class="hljs-built_in">std</span>::ostream&amp; strm, Person <span class="hljs-keyword">const</span>&amp; p) {
+        <span class="hljs-keyword">return</span> strm &lt;&lt; p.lastName &lt;&lt; <span class="hljs-string">&quot;, &quot;</span> &lt;&lt; p.firstName;
+    }
+};
+</code></pre>
+<pre><code class="lang-cpp"><span class="hljs-comment">// inherit/projectioniteratorskel.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Iterator, <span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">class</span> ProjectionIterator
+    : <span class="hljs-keyword">public</span> IteratorFacade&lt;ProjectionIterator&lt;Iterator, T&gt;,
+                            T,
+                            <span class="hljs-keyword">typename</span> <span class="hljs-built_in">std</span>::iterator_traits&lt;Iterator&gt;::iterator_category,
+                            T&amp;,
+                            <span class="hljs-keyword">typename</span> <span class="hljs-built_in">std</span>::iterator_traits&lt;Iterator&gt;::difference_type&gt;
+{
+        <span class="hljs-keyword">using</span> Base = <span class="hljs-keyword">typename</span> <span class="hljs-built_in">std</span>::iterator_traits&lt;Iterator&gt;::value_type;
+        <span class="hljs-keyword">using</span> Distance = <span class="hljs-keyword">typename</span> <span class="hljs-built_in">std</span>::iterator_traits&lt;Iterator&gt;::difference_type;
+
+        Iterator iter;
+        T Base::* member;
+
+        <span class="hljs-keyword">friend</span> <span class="hljs-keyword">class</span> IteratorFacadeAccess;
+        <span class="hljs-comment">// ... // implement core iterator operations for IteratorFacade</span>
+    <span class="hljs-keyword">public</span>:
+        ProjectionIterator(Iterator iter, T Base::* member)
+        : iter(iter), member(member) { }
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Iterator, <span class="hljs-keyword">typename</span> Base, <span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-function"><span class="hljs-keyword">auto</span> <span class="hljs-title">project</span><span class="hljs-params">(Iterator iter, T Base::* member)</span> </span>{
+    <span class="hljs-keyword">return</span> ProjectionIterator&lt;Iterator, T&gt;(iter, member);
+}
+</code></pre>
+<pre><code class="lang-cpp"><span class="hljs-comment">// inherit/projectioniterator.cpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;vector&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;algorithm&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iterator&gt;</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;Person&gt; authors = { {<span class="hljs-string">&quot;David&quot;</span>, <span class="hljs-string">&quot;Vandevoorde&quot;</span>},
+                                    {<span class="hljs-string">&quot;Nicolai&quot;</span>, <span class="hljs-string">&quot;Josuttis&quot;</span>},
+                                    {<span class="hljs-string">&quot;Douglas&quot;</span>, <span class="hljs-string">&quot;Gregor&quot;</span>} };
+
+    <span class="hljs-built_in">std</span>::copy(project(authors.begin(), &amp;Person::firstName),
+                project(authors.end(), &amp;Person::firstName),
+                <span class="hljs-built_in">std</span>::ostream_iterator&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&gt;(<span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span>, <span class="hljs-string">&quot;\n&quot;</span>));
+}
+</code></pre>
+<h4 id="&#x5B8C;&#x6574;&#x4EE3;&#x7801;">&#x5B8C;&#x6574;&#x4EE3;&#x7801;</h4>
+<p>&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x5F88;&#x4E71;&#xFF0C;&#x5B8C;&#x6574;&#x4EE3;&#x7801;&#x5E94;&#x8BE5;&#x4E3A;&#xFF1A;</p>
+<pre><code class="lang-cpp">#include &lt;algorithm&gt;
+#include &lt;iterator&gt;
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+
+struct Person
+{   
+    std::string firstName;
+    std::string lastName;
+};
+
+class IteratorFacadeAccess
+{
+    template&lt;typename Derived, typename Value, typename Category,
+                typename Reference, typename Distance&gt;
+    friend class IteratorFacade;
+
+    template&lt;typename Reference, typename Iterator&gt;
+    static Reference dereference(Iterator const&amp; i)
+    {   
+        return i.dereference();
+    }
+
+    template&lt;typename Iterator&gt;
+    static bool equals(Iterator&amp; il, Iterator&amp; ir)
+    {   
+        return il.equals(ir);
+    }
+
+    template&lt;typename Iterator&gt;
+    static void increment(Iterator&amp; i)
+    {
+        return i.increment();
+    }
+};
+
+template&lt;typename Derived, typename Value, typename Category,
+            typename Reference = Value&amp;, typename Distance = std::ptrdiff_t&gt;
+class IteratorFacade
+{
+    public:
+        using value_type = typename std::remove_const&lt;Value&gt;::type;
+        using reference = Reference;
+        using pointer = Value*;
+        using difference_type = Distance;
+        using iterator_category = Category;
+
+        Derived&amp; asDerived()
+        {
+            return *static_cast&lt;Derived*&gt;(this);
+        }
+        Derived const&amp; asDerived() const
+        {
+            return *static_cast&lt;Derived const*&gt;(this);
+        }
+
+        //input iterator interface
+        reference operator*() const
+        {
+            return IteratorFacadeAccess::dereference&lt;Reference&gt;(asDerived());
+        }
+        Derived&amp; operator++()
+        {
+            IteratorFacadeAccess::increment(asDerived());
+            return asDerived();
+        }
+        Derived operator++(int)
+        {
+            Derived result(asDerived());
+            IteratorFacadeAccess::increment(asDerived());
+            return result;
+        }
+
+        friend bool operator==(IteratorFacade const&amp; lhs, IteratorFacade const&amp; rhs)
+        {
+            return IteratorFacadeAccess::equals(lhs.asDerived(), rhs.asDerived());
+        }
+        friend bool operator!=(IteratorFacade const&amp; lhs, IteratorFacade const&amp; rhs)
+        {
+            return !(lhs == rhs);
+        }
+
+        friend difference_type operator-(IteratorFacade const&amp; lhs, IteratorFacade const&amp; rhs)
+        {
+            return &amp;(*lhs) - &amp;(*rhs);
+        }
+};
+
+template&lt;typename Iterator, typename T&gt;
+class ProjectionIterator
+    : public IteratorFacade&lt;ProjectionIterator&lt;Iterator, T&gt;,
+                            T,
+                            typename std::iterator_traits&lt;Iterator&gt;::iterator_category,
+                            T&amp;,
+                            typename std::iterator_traits&lt;Iterator&gt;::difference_type&gt;
+{
+        using Base = typename std::iterator_traits&lt;Iterator&gt;::value_type;
+        using Distance = typename std::iterator_traits&lt;Iterator&gt;::difference_type;
+
+        Iterator iter;
+        T Base::* member;
+
+        friend class IteratorFacadeAccess;
+
+        T&amp; dereference() const
+        {
+            return (*iter).*member;
+        }
+        void increment()
+        {
+            ++iter;
+        }
+        bool equals(ProjectionIterator const&amp; other) const
+        {
+            return iter == other.iter;
+        }
+    public:
+        ProjectionIterator(Iterator iter, T Base::* member) : iter(iter), member(member) {}
+};
+
+template&lt;typename Iterator, typename Base, typename T&gt;
+auto project(Iterator iter, T Base::* member)
+{
+    return ProjectionIterator&lt;Iterator, T&gt;(iter, member);
+}
+
+int main()
+{
+    std::vector&lt;Person&gt; authors = { {&quot;David&quot;, &quot;Vandevoorde&quot;},
+                                    {&quot;Nicolai&quot;, &quot;Josuttis&quot;},
+                                    {&quot;Douglas&quot;, &quot;Gregor&quot;} };
+
+    std::copy(project(authors.begin(), &amp;Person::lastName),
+                project(authors.end(), &amp;Person::lastName),
+                std::ostream_iterator&lt;std::string&gt;(std::cout, &quot;\n&quot;));
+}
+</code></pre>
+<p>&#x4F46;&#x662F;&#x8F93;&#x51FA;&#x5374;&#x591A;&#x4E86;&#x4E09;&#x884C;&#xFF1A;</p>
+<pre><code class="lang-log">Vandevoorde
+Josuttis
+Gregor
+</code></pre>
+<p>&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x6211;&#x673A;&#x5668;&#x4E0A;&#x7684;<code>std::copy</code>&#x901A;&#x8FC7;&#x51CF;&#x6CD5;&#x8BA1;&#x7B97;&#x4E86;&#x4E24;&#x4E2A;&#x8FED;&#x4EE3;&#x5668;&#x6307;&#x5411;&#x7684;<code>Person::lastName</code>&#x7684;&#x8DDD;&#x79BB;&#xFF0C;&#x5927;&#x5C0F;&#x662F;6&#x4E2A;<code>std::string</code>&#xFF0C;&#x800C;&#x4E0D;&#x662F;3&#x4E2A;<code>Person</code>&#xFF0C;&#x6240;&#x4EE5;&#x4F1A;&#x591A;&#x8F93;&#x51FA;&#x4E09;&#x884C;&#x3002;</p>
+<h2 id="213-&#x6DF7;&#x5165;">21.3 &#x6DF7;&#x5165;</h2>
+<p>&#x6DF7;&#x5165;&#xFF08;mixins&#xFF09;&#x662F;&#x4E00;&#x79CD;&#x901A;&#x8FC7;&#x53CD;&#x8F6C;&#x7EE7;&#x627F;&#x5173;&#x7CFB;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x5BF9;&#x7C7B;&#x578B;&#x8FDB;&#x884C;&#x5B9A;&#x5236;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x5047;&#x5982;&#x73B0;&#x5728;&#x6709;&#x4E00;&#x4E2A;<code>Point</code>&#x7C7B;&#x548C;<code>Polygon</code>&#x7C7B;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">class</span> Point
+{
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">double</span> x, y;
+        Point() : x(<span class="hljs-number">0.0</span>), y(<span class="hljs-number">0.0</span>) { }
+        Point(<span class="hljs-keyword">double</span> x, <span class="hljs-keyword">double</span> y) : x(x), y(y) { }
+};
+
+<span class="hljs-keyword">class</span> Polygon
+{
+    <span class="hljs-keyword">private</span>:
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;Point&gt; points;
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-comment">// ... // public operations</span>
+};
+</code></pre>
+<p>&#x5982;&#x679C;&#x518D;&#x4E3A;&#x6BCF;&#x4E2A;&#x70B9;&#x589E;&#x52A0;&#x989C;&#x8272;&#x548C;&#x6807;&#x7B7E;&#x7B49;&#x5C5E;&#x6027;&#xFF0C;&#x540C;&#x65F6;&#x8FD8;&#x8981;&#x4FDD;&#x8BC1;&#x53EF;&#x4EE5;&#x5728;<code>Polygon</code>&#x4E2D;&#x4F7F;&#x7528;&#x6269;&#x5C55;&#x7684;&#x70B9;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x4ECE;<code>Point</code>&#x6D3E;&#x751F;&#x51FA;&#x65B0;&#x7684;<code>LabeledPoint</code>&#xFF0C;&#x5E76;&#x5C06;<code>Polygon</code>&#x6CDB;&#x5316;&#x4E3A;&#x6A21;&#x677F;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">class</span> LabeledPoint : <span class="hljs-keyword">public</span> Point
+{
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> label;
+        LabeledPoint() : Point(), label(<span class="hljs-string">&quot;&quot;</span>) { }
+        LabeledPoint(<span class="hljs-keyword">double</span> x, <span class="hljs-keyword">double</span> y) : Point(x, y), label(<span class="hljs-string">&quot;&quot;</span>) { }
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> P&gt;
+<span class="hljs-keyword">class</span> Polygon
+{
+    <span class="hljs-keyword">private</span>:
+        <span class="hljs-comment">// std::vector&lt;P&gt; points;</span>
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-comment">// ... // public operations</span>
+};
+</code></pre>
+<p>&#x53E6;&#x4E00;&#x79CD;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;&#x662F;&#x901A;&#x8FC7;&#x6DF7;&#x5165;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>... Mixins&gt;
+<span class="hljs-keyword">class</span> Point : <span class="hljs-keyword">public</span> Mixins...
+{
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">double</span> x, y;
+        Point() : Mixins()..., x(<span class="hljs-number">0.0</span>), y(<span class="hljs-number">0.0</span>) { }
+        Point(<span class="hljs-keyword">double</span> x, <span class="hljs-keyword">double</span> y) : Mixins()..., x(x), y(y) { }
+};
+
+<span class="hljs-keyword">class</span> Label
+{
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> label;
+        Label() : label(<span class="hljs-string">&quot;&quot;</span>) { }
+};
+<span class="hljs-keyword">using</span> LabeledPoint = Point&lt;Label&gt;;
+
+<span class="hljs-keyword">class</span> Color
+{
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> red = <span class="hljs-number">0</span>, green = <span class="hljs-number">0</span>, blue = <span class="hljs-number">0</span>;
+};
+<span class="hljs-keyword">using</span> MyPoint = Point&lt;Label, Color&gt;;
+</code></pre>
+<h3 id="2131-&#x57FA;&#x4E8E;crtp&#x7684;&#x6DF7;&#x5165;">21.3.1 &#x57FA;&#x4E8E;CRTP&#x7684;&#x6DF7;&#x5165;</h3>
+<p>&#x6DF7;&#x5165;&#x4E5F;&#x53EF;&#x4EE5;&#x548C;CRTP&#x7ED3;&#x5408;&#x6765;&#x8FDB;&#x884C;&#x5B9A;&#x5236;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>&gt;... Mixins&gt;
+<span class="hljs-keyword">class</span> Point : <span class="hljs-keyword">public</span> Mixins&lt;Point&gt;...
+{
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">double</span> x, y;
+        Point() : Mixins&lt;Point&gt;()..., x(<span class="hljs-number">0.0</span>), y(<span class="hljs-number">0.0</span>) { }
+        Point(<span class="hljs-keyword">double</span> x, <span class="hljs-keyword">double</span> y) : Mixins&lt;Point&gt;()..., x(x), y(y) { }
+};
+</code></pre>
+<h3 id="2132-&#x53C2;&#x6570;&#x5316;&#x865A;&#x51FD;&#x6570;">21.3.2 &#x53C2;&#x6570;&#x5316;&#x865A;&#x51FD;&#x6570;</h3>
+<p>&#x6DF7;&#x5165;&#x4E5F;&#x53EF;&#x4EE5;&#x5C06;&#x6210;&#x5458;&#x51FD;&#x6570;&#x53D8;&#x4E3A;&#x865A;&#x51FD;&#x6570;&#xFF0C;&#x4F46;&#x662F;&#x611F;&#x89C9;&#x5F88;&#x6DF7;&#x4E71;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// inherit/virtual.cpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">class</span> NotVirtual {
+};
+
+<span class="hljs-keyword">class</span> Virtual {
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-function"><span class="hljs-keyword">virtual</span> <span class="hljs-keyword">void</span> <span class="hljs-title">foo</span><span class="hljs-params">()</span> </span>{
+        }
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>... Mixins&gt;
+<span class="hljs-keyword">class</span> Base : <span class="hljs-keyword">public</span> Mixins... {
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-comment">// the virtuality of foo() depends on its declaration</span>
+        <span class="hljs-comment">// (if any) in the base classes Mixins...</span>
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">foo</span><span class="hljs-params">()</span> </span>{
+            <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Base::foo()&quot;</span> &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+        }
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>... Mixins&gt;
+<span class="hljs-keyword">class</span> Derived : <span class="hljs-keyword">public</span> Base&lt;Mixins...&gt; {
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">foo</span><span class="hljs-params">()</span> </span>{
+            <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Derived::foo()&quot;</span> &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+        }
+};
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    Base&lt;NotVirtual&gt;* p1 = <span class="hljs-keyword">new</span> Derived&lt;NotVirtual&gt;;
+    p1-&gt;foo();  <span class="hljs-comment">// calls Base::foo()</span>
+    Base&lt;Virtual&gt;* p2 = <span class="hljs-keyword">new</span> Derived&lt;Virtual&gt;;
+    p2-&gt;foo();  <span class="hljs-comment">// calls Derived::foo()</span>
+}
+</code></pre>
+<h2 id="214-&#x6A21;&#x677F;&#x5B9E;&#x53C2;&#x6307;&#x5B9A;&#x521D;&#x59CB;&#x5316;">21.4 &#x6A21;&#x677F;&#x5B9E;&#x53C2;&#x6307;&#x5B9A;&#x521D;&#x59CB;&#x5316;</h2>
+<p>&#x5982;&#x679C;&#x6A21;&#x677F;&#x4E2D;&#x6709;&#x591A;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x4E14;&#x6BCF;&#x4E2A;&#x53C2;&#x6570;&#x90FD;&#x6709;&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x5F53;&#x524D;&#x6807;&#x51C6;&#x5E76;&#x4E0D;&#x652F;&#x6301;&#x6307;&#x5B9A;&#x521D;&#x59CB;&#x5316;&#x9760;&#x540E;&#x7684;&#x6A21;&#x677F;&#x53C2;&#x6570;&#xFF0C;&#x6240;&#x4EE5;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x5F97;&#x4E0D;&#x5230;&#x60F3;&#x8981;&#x7684;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Policy1 = DefaultPolicy1,
+            <span class="hljs-keyword">typename</span> Policy2 = DefaultPolicy2,
+            <span class="hljs-keyword">typename</span> Policy3 = DefaultPolicy3,
+            <span class="hljs-keyword">typename</span> Policy4 = DefaultPolicy4&gt;
+<span class="hljs-keyword">class</span> BreadSlicer {
+    <span class="hljs-comment">// ...</span>
+};
+
+BreadSlicer&lt;Policy3 = Custom&gt; bc;
+</code></pre>
+<p>&#x4E66;&#x4E2D;&#x7ED9;&#x4E86;&#x4E00;&#x79CD;&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// PolicySelector&lt;A,B,C,D&gt; creates A,B,C,D as base classes</span>
+<span class="hljs-comment">// Discriminator&lt;&gt; allows having even the same base class more than once</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Base, <span class="hljs-keyword">int</span> D&gt;
+<span class="hljs-keyword">class</span> Discriminator : <span class="hljs-keyword">public</span> Base {
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Setter1, <span class="hljs-keyword">typename</span> Setter2, <span class="hljs-keyword">typename</span> Setter3, <span class="hljs-keyword">typename</span> Setter4&gt;
+<span class="hljs-keyword">class</span> PolicySelector : <span class="hljs-keyword">public</span> Discriminator&lt;Setter1,<span class="hljs-number">1</span>&gt;,
+                        <span class="hljs-keyword">public</span> Discriminator&lt;Setter2,<span class="hljs-number">2</span>&gt;,
+                        <span class="hljs-keyword">public</span> Discriminator&lt;Setter3,<span class="hljs-number">3</span>&gt;,
+                        <span class="hljs-keyword">public</span> Discriminator&lt;Setter4,<span class="hljs-number">4</span>&gt; {
+};
+
+<span class="hljs-comment">// name default policies as P1, P2, P3, P4</span>
+<span class="hljs-keyword">class</span> DefaultPolicies {
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> P1 = DefaultPolicy1;
+        <span class="hljs-keyword">using</span> P2 = DefaultPolicy2;
+        <span class="hljs-keyword">using</span> P3 = DefaultPolicy3;
+        <span class="hljs-keyword">using</span> P4 = DefaultPolicy4;
+};
+
+<span class="hljs-comment">// class to define a use of the default policy values</span>
+<span class="hljs-comment">// avoids ambiguities if we derive from DefaultPolicies more than once</span>
+<span class="hljs-keyword">class</span> DefaultPolicyArgs : <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">public</span> DefaultPolicies {
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Policy&gt;
+<span class="hljs-keyword">class</span> Policy1_is : <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">public</span> DefaultPolicies {
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> P1 = Policy; <span class="hljs-comment">// overriding type alias</span>
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Policy&gt;
+<span class="hljs-keyword">class</span> Policy2_is : <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">public</span> DefaultPolicies {
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> P2 = Policy; <span class="hljs-comment">// overriding type alias</span>
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Policy&gt;
+<span class="hljs-keyword">class</span> Policy3_is : <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">public</span> DefaultPolicies {
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> P3 = Policy; <span class="hljs-comment">// overriding type alias</span>
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Policy&gt;
+<span class="hljs-keyword">class</span> Policy4_is : <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">public</span> DefaultPolicies {
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> P4 = Policy; <span class="hljs-comment">// overriding type alias</span>
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> PolicySetter1 = DefaultPolicyArgs,
+            <span class="hljs-keyword">typename</span> PolicySetter2 = DefaultPolicyArgs,
+            <span class="hljs-keyword">typename</span> PolicySetter3 = DefaultPolicyArgs,
+            <span class="hljs-keyword">typename</span> PolicySetter4 = DefaultPolicyArgs&gt;
+<span class="hljs-keyword">class</span> BreadSlicer {
+    <span class="hljs-keyword">using</span> Policies = PolicySelector&lt;PolicySetter1, PolicySetter2, PolicySetter3, PolicySetter4&gt;;
+    <span class="hljs-comment">// use Policies::P1, Policies::P2, ... to refer to the various policies</span>
+    <span class="hljs-comment">// ...</span>
+};
+
+BreadSlicer&lt;Policy3_is&lt;CustomPolicy&gt;&gt; bc;
+</code></pre>
+<h2 id="215-&#x540E;&#x8BB0;">21.5 &#x540E;&#x8BB0;</h2>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="2022-03-02-ch20-overloading-on-type-properties.html" class="navigation navigation-prev " aria-label="Previous page: Chapter 20 Overloading on Type Properties">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="2022-03-05-ch22-bridging-static-and-dynamic-polymorphism.html" class="navigation navigation-next " aria-label="Next page: Chapter 22 Bridging Static and Dynamic Polymorphism">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Chapter 21 Templates and Inheritance","level":"1.22","depth":1,"next":{"title":"Chapter 22 Bridging Static and Dynamic Polymorphism","level":"1.23","depth":1,"path":"2022-03-05-ch22-bridging-static-and-dynamic-polymorphism.md","ref":"2022-03-05-ch22-bridging-static-and-dynamic-polymorphism.md","articles":[]},"previous":{"title":"Chapter 20 Overloading on Type Properties","level":"1.21","depth":1,"path":"2022-03-02-ch20-overloading-on-type-properties.md","ref":"2022-03-02-ch20-overloading-on-type-properties.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"2022-03-03-ch21-templates-and-inheritance.md","mtime":"2022-11-13T05:00:16.191Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-11-13T05:01:04.198Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

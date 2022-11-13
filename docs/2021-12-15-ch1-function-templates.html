@@ -1,0 +1,931 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Chapter 1 Funtion Templates · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="2021-12-20-ch2-class-templates.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="2021-12-15-ch1-function-templates.html">
+            
+                <a href="2021-12-15-ch1-function-templates.html">
+            
+                    
+                    Chapter 1 Funtion Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="2021-12-20-ch2-class-templates.html">
+            
+                <a href="2021-12-20-ch2-class-templates.html">
+            
+                    
+                    Chapter 2 Class Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="2021-12-20-ch3-nontype-template-parameters.html">
+            
+                <a href="2021-12-20-ch3-nontype-template-parameters.html">
+            
+                    
+                    Chapter 3 Nontype Template Parameters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="2021-12-20-ch4-variadic-templates.html">
+            
+                <a href="2021-12-20-ch4-variadic-templates.html">
+            
+                    
+                    Chapter 4 Variadic Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="2021-12-30-ch5-tricky-basics.html">
+            
+                <a href="2021-12-30-ch5-tricky-basics.html">
+            
+                    
+                    Chapter 5 Tricky Basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="2022-01-04-ch6-move-semantics-and-enable-if.html">
+            
+                <a href="2022-01-04-ch6-move-semantics-and-enable-if.html">
+            
+                    
+                    Chapter 6 Move Semantics and enable_if<>
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="2022-01-05-ch7-by-value-or-by-reference.html">
+            
+                <a href="2022-01-05-ch7-by-value-or-by-reference.html">
+            
+                    
+                    Chapter 7 By Value or by Reference?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="2022-01-06-ch8-compile-time-programming.html">
+            
+                <a href="2022-01-06-ch8-compile-time-programming.html">
+            
+                    
+                    Chapter 8 Compile-Time Programming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="2022-01-06-ch9-using-templates-in-practice.html">
+            
+                <a href="2022-01-06-ch9-using-templates-in-practice.html">
+            
+                    
+                    Chapter 9 Using Templates in Practice
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="2022-01-07-ch10-basic-template-terminology.html">
+            
+                <a href="2022-01-07-ch10-basic-template-terminology.html">
+            
+                    
+                    Chapter 10 Basic Template Terminology
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="2022-01-08-ch11-generic-libraries.html">
+            
+                <a href="2022-01-08-ch11-generic-libraries.html">
+            
+                    
+                    Chapter 11 Generic Libraries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="2022-01-12-ch12-fundamentals-in-depth.html">
+            
+                <a href="2022-01-12-ch12-fundamentals-in-depth.html">
+            
+                    
+                    Chapter 12 Fundamentals in Depth
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="2022-01-27-ch13-names-in-templates.html">
+            
+                <a href="2022-01-27-ch13-names-in-templates.html">
+            
+                    
+                    Chapter 13 Names in Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="2022-02-07-ch14-instantiation.html">
+            
+                <a href="2022-02-07-ch14-instantiation.html">
+            
+                    
+                    Chapter 14 Instantiation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="2022-02-15-ch15-template-argument-deduction.html">
+            
+                <a href="2022-02-15-ch15-template-argument-deduction.html">
+            
+                    
+                    Chapter 15 Template Argument Deduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="2022-02-17-ch16-specialization-and-overloading.html">
+            
+                <a href="2022-02-17-ch16-specialization-and-overloading.html">
+            
+                    
+                    Chapter 16 Specialization and Overloading
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="2022-02-22-ch17-future-directions.html">
+            
+                <a href="2022-02-22-ch17-future-directions.html">
+            
+                    
+                    Chapter 17 Future Directions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="2022-02-23-ch18-the-polymorphic-power-of-templates.html">
+            
+                <a href="2022-02-23-ch18-the-polymorphic-power-of-templates.html">
+            
+                    
+                    Chapter 18 The Polymorphic Power of Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="2022-03-01-ch19-implementing-traits.html">
+            
+                <a href="2022-03-01-ch19-implementing-traits.html">
+            
+                    
+                    Chapter 19 Implementing Traits
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="2022-03-02-ch20-overloading-on-type-properties.html">
+            
+                <a href="2022-03-02-ch20-overloading-on-type-properties.html">
+            
+                    
+                    Chapter 20 Overloading on Type Properties
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="2022-03-03-ch21-templates-and-inheritance.html">
+            
+                <a href="2022-03-03-ch21-templates-and-inheritance.html">
+            
+                    
+                    Chapter 21 Templates and Inheritance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="2022-03-05-ch22-bridging-static-and-dynamic-polymorphism.html">
+            
+                <a href="2022-03-05-ch22-bridging-static-and-dynamic-polymorphism.html">
+            
+                    
+                    Chapter 22 Bridging Static and Dynamic Polymorphism
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="2022-03-05-ch23-metaprogramming.html">
+            
+                <a href="2022-03-05-ch23-metaprogramming.html">
+            
+                    
+                    Chapter 23 Metaprogramming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="2022-03-06-ch24-typelists.html">
+            
+                <a href="2022-03-06-ch24-typelists.html">
+            
+                    
+                    Chapter 24 Typelists
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" data-path="2022-03-07-ch25-tuples.html">
+            
+                <a href="2022-03-07-ch25-tuples.html">
+            
+                    
+                    Chapter 25 Tuples
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27" data-path="2022-03-08-ch26-discriminated-unions.html">
+            
+                <a href="2022-03-08-ch26-discriminated-unions.html">
+            
+                    
+                    Chapter 26 Discriminated Unions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28" data-path="2022-03-09-ch27-expression-templates.html">
+            
+                <a href="2022-03-09-ch27-expression-templates.html">
+            
+                    
+                    Chapter 27 Expression Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29" data-path="2022-03-09-ch28-debugging-templates.html">
+            
+                <a href="2022-03-09-ch28-debugging-templates.html">
+            
+                    
+                    Chapter 28 Debugging Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.30" data-path="2022-01-05-appB-value-categories.html">
+            
+                <a href="2022-01-05-appB-value-categories.html">
+            
+                    
+                    Appendix B Value Categories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.31" data-path="2022-03-02-appC-overload-resolution.html">
+            
+                <a href="2022-03-02-appC-overload-resolution.html">
+            
+                    
+                    Appendix C Overload Resolution
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Chapter 1 Funtion Templates</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="1-&#x51FD;&#x6570;&#x6A21;&#x677F;">1 &#x51FD;&#x6570;&#x6A21;&#x677F;</h1>
+<h2 id="11-&#x51FD;&#x6570;&#x6A21;&#x677F;&#x901F;&#x89C8;">1.1 &#x51FD;&#x6570;&#x6A21;&#x677F;&#x901F;&#x89C8;</h2>
+<h3 id="111-&#x5B9A;&#x4E49;&#x6A21;&#x677F;">1.1.1 &#x5B9A;&#x4E49;&#x6A21;&#x677F;</h3>
+<p>&#x51FD;&#x6570;&#x6A21;&#x677F;&#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x8BE5;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x64CD;&#x4F5C;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#x548C;&#x51FD;&#x6570;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x662F;&#x6682;&#x65F6;&#x4E0D;&#x786E;&#x5B9A;&#x7684;&#xFF0C;&#x4F8B;&#x5982;&#x6C42;&#x6700;&#x5927;&#x503C;&#x7684;&#x51FD;&#x6570;&#x6A21;&#x677F;&#xFF0C;&#x53EA;&#x8981;&#x7C7B;&#x578B;<code>T</code>&#x652F;&#x6301;<code>&lt;</code>&#x8FD0;&#x7B97;&#x7B26;&#xFF0C;&#x5219;<code>max()</code>&#x5C31;&#x80FD;&#x6B63;&#x5E38;&#x5DE5;&#x4F5C;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// basics/max1.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-function">T <span class="hljs-title">max</span> <span class="hljs-params">(T a, T b)</span>
+</span>{
+    <span class="hljs-comment">// if b &lt; a then yield a else yield b</span>
+    <span class="hljs-keyword">return</span> b &lt; a ? a : b;
+}
+</code></pre>
+<p>&#x8FD9;&#x4E00;&#x8282;&#x4E2D;&#x6709;&#x8FD9;&#x6837;&#x4E00;&#x4E2A;&#x6CE8;&#x91CA;&#xFF0C;&#x6CA1;&#x770B;&#x61C2;&#x662F;&#x4EC0;&#x4E48;&#x610F;&#x601D;&#xFF0C;&#x539F;&#x6587;&#xFF1A;</p>
+<blockquote>
+<p>Note that the max() template according to [Stepanov Notes] intentionally returns &#x201C;b &lt; a ? a : b&#x201D; instead of &#x201C;a &lt; b ? b : a&#x201D; to ensure that the function behaves correctly even if the two values are equivalent but not equal.</p>
+</blockquote>
+<h3 id="112-&#x4F7F;&#x7528;&#x6A21;&#x677F;">1.1.2 &#x4F7F;&#x7528;&#x6A21;&#x677F;</h3>
+<pre><code class="lang-cpp"><span class="hljs-comment">// basics/max1.cpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;max1.hpp&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string&gt;</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">int</span> i = <span class="hljs-number">42</span>;
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;max(7,i): &quot;</span> &lt;&lt; ::max(<span class="hljs-number">7</span>,i) &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+    <span class="hljs-keyword">double</span> f1 = <span class="hljs-number">3.4</span>;
+    <span class="hljs-keyword">double</span> f2 = <span class="hljs-number">-6.7</span>;
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;max(f1,f2): &quot;</span> &lt;&lt; ::max(f1,f2) &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> s1 = <span class="hljs-string">&quot;mathematics&quot;</span>;
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> s2 = <span class="hljs-string">&quot;math&quot;</span>;
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;max(s1,s2): &quot;</span> &lt;&lt; ::max(s1,s2) &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+}
+</code></pre>
+<p>&#x51FD;&#x6570;&#x6A21;&#x677F;&#x5E76;&#x4E0D;&#x662F;&#x8BA9;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x5904;&#x7406;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x800C;&#x662F;&#x4E3A;&#x6BCF;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x53C2;&#x6570;&#x5355;&#x72EC;&#x751F;&#x6210;&#x4E86;&#x4E00;&#x4EFD;&#x51FD;&#x6570;&#x5B9A;&#x4E49;&#x3002;&#x7528;&#x5177;&#x4F53;&#x7C7B;&#x578B;&#x66FF;&#x6362;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x7684;&#x8FC7;&#x7A0B;&#x79F0;&#x4E3A;<strong>&#x5B9E;&#x4F8B;&#x5316;&#xFF08;instantiation&#xFF09;</strong>&#xFF0C;&#x8BE5;&#x8FC7;&#x7A0B;&#x4EA7;&#x751F;&#x4E00;&#x4E2A;<strong>&#x5B9E;&#x4F8B;&#xFF08;instance&#xFF09;</strong>&#x3002;</p>
+<h3 id="113-&#x4E24;&#x9636;&#x6BB5;&#x7FFB;&#x8BD1;">1.1.3 &#x4E24;&#x9636;&#x6BB5;&#x7FFB;&#x8BD1;</h3>
+<ol>
+<li>&#x5728;&#x5B9A;&#x4E49;&#x9636;&#x6BB5;&#x68C0;&#x67E5;&#x8BED;&#x6CD5;&#x9519;&#x8BEF;&#x3001;&#x548C;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x65E0;&#x5173;&#x7684;&#x7C7B;&#x578B;&#x9519;&#x8BEF;&#x548C;&#x65AD;&#x8A00;</li>
+<li>&#x5728;&#x5B9E;&#x4F8B;&#x5316;&#x9636;&#x6BB5;&#x68C0;&#x67E5;&#x6240;&#x6709;&#x7684;&#x9519;&#x8BEF;</li>
+</ol>
+<h2 id="12-&#x6A21;&#x677F;&#x53C2;&#x6570;&#x63A8;&#x5BFC;">1.2 &#x6A21;&#x677F;&#x53C2;&#x6570;&#x63A8;&#x5BFC;</h2>
+<ol>
+<li>&#x6A21;&#x677F;&#x8C03;&#x7528;&#x53C2;&#x6570;&#x4E3A;&#x4F20;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x65F6;&#xFF0C;&#x4E0D;&#x4F1A;&#x8FDB;&#x884C;&#x4EFB;&#x4F55;&#x8F6C;&#x6362;&#xFF0C;&#x76F8;&#x540C;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x7684;&#x63A8;&#x5BFC;&#x7ED3;&#x679C;&#x5FC5;&#x987B;&#x4E00;&#x81F4;</li>
+<li>&#x6A21;&#x677F;&#x8C03;&#x7528;&#x53C2;&#x6570;&#x4E3A;&#x503C;&#x7C7B;&#x578B;&#x65F6;&#xFF0C;&#x4FEE;&#x9970;&#x7B26;<code>const</code>&#x548C;<code>volatile</code>&#x5C06;&#x4F1A;&#x88AB;&#x4E22;&#x5F03;&#xFF0C;&#x5F15;&#x7528;&#x8F6C;&#x6362;&#x4E3A;&#x5F15;&#x7528;&#x7684;&#x7C7B;&#x578B;&#x3001;&#x6570;&#x7EC4;&#x548C;&#x51FD;&#x6570;&#x8F6C;&#x5316;&#x4E3A;&#x6307;&#x9488;&#x7C7B;&#x578B;&#xFF0C;&#x76F8;&#x540C;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x540E;&#x7684;&#x63A8;&#x5BFC;&#x7ED3;&#x679C;&#x5FC5;&#x987B;&#x4E00;&#x81F4;</li>
+</ol>
+<h2 id="13-&#x591A;&#x6A21;&#x677F;&#x53C2;&#x6570;">1.3 &#x591A;&#x6A21;&#x677F;&#x53C2;&#x6570;</h2>
+<p>&#x53EF;&#x4EE5;&#x5728;&#x6A21;&#x677F;&#x5B9A;&#x4E49;&#x4E2D;&#x58F0;&#x660E;&#x591A;&#x4E2A;&#x6A21;&#x677F;&#x53C2;&#x6570;&#xFF0C;&#x4F8B;&#x5982;&#x53EF;&#x4EE5;&#x4E3A;<code>max()</code>&#x51FD;&#x6570;&#x5B9A;&#x4E49;&#x4E24;&#x4E2A;&#x4E0D;&#x7528;&#x7684;&#x6A21;&#x677F;&#x53C2;&#x6570;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T1, <span class="hljs-keyword">typename</span> T2&gt;
+<span class="hljs-function">T1 <span class="hljs-title">max</span> <span class="hljs-params">(T1 a, T2 b)</span>
+</span>{
+    <span class="hljs-keyword">return</span> b &lt; a ? a : b;
+}
+</code></pre>
+<p>&#x6B64;&#x65F6;&#x8981;&#x4FDD;&#x8BC1;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#x548C;&#x53C2;&#x6570;<code>a</code>&#x7684;&#x7C7B;&#x578B;&#x662F;&#x4E00;&#x81F4;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x5982;&#x679C;&#x8FD4;&#x56DE;<code>b</code>&#x7684;&#x8BDD;&#xFF0C;&#x5219;&#x5C31;&#x4F1A;&#x53D1;&#x751F;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x3002;C++&#x63D0;&#x4F9B;&#x4E86;&#x4E09;&#x79CD;&#x65B9;&#x6CD5;&#x6765;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x3002;</p>
+<h3 id="131-&#x4E3A;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#x5B9A;&#x4E49;&#x65B0;&#x7684;&#x6A21;&#x677F;&#x53C2;&#x6570;">1.3.1 &#x4E3A;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#x5B9A;&#x4E49;&#x65B0;&#x7684;&#x6A21;&#x677F;&#x53C2;&#x6570;</h3>
+<p>&#x5B9A;&#x4E49;&#x65B0;&#x7C7B;&#x578B;<code>RT</code>&#x6765;&#x8868;&#x793A;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#xFF0C;&#x4F46;&#x662F;&#x7F16;&#x8BD1;&#x5668;&#x662F;&#x4E0D;&#x80FD;&#x6839;&#x636E;&#x53C2;&#x6570;&#x63A8;&#x5BFC;<code>RT</code>&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x5728;&#x5728;&#x5B9E;&#x4F8B;&#x5316;&#x8FC7;&#x7A0B;&#x4E2D;&#x663E;&#x793A;&#x6307;&#x51FA;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#x3002;</p>
+<h3 id="132-&#x8BA9;&#x7F16;&#x8BD1;&#x5668;&#x63A8;&#x5BFC;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;">1.3.2 &#x8BA9;&#x7F16;&#x8BD1;&#x5668;&#x63A8;&#x5BFC;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;</h3>
+<ul>
+<li>&#x901A;&#x8FC7;<code>auto</code>&#x63A8;&#x5BFC;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-cpp"><span class="hljs-comment">// basics/maxauto.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T1, <span class="hljs-keyword">typename</span> T2&gt;
+<span class="hljs-function"><span class="hljs-keyword">auto</span> <span class="hljs-title">max</span> <span class="hljs-params">(T1 a, T2 b)</span>
+</span>{
+    <span class="hljs-keyword">return</span> b &lt; a ? a : b;
+}
+</code></pre>
+<ul>
+<li>&#x901A;&#x8FC7;<code>decltype</code>&#x548C;&#x5C3E;&#x7F6E;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#x63A8;&#x5BFC;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-cpp">// basics/maxdecltype.hpp
+template&lt;typename T1, typename T2&gt;
+auto max (T1 a, T2 b) -&gt; decltype(b&lt;a?a:b)
+{
+    return b &lt; a ? a : b;
+}
+</code></pre>
+<p>&#x5982;&#x679C;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x88AB;&#x63A8;&#x5BFC;&#x4E3A;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#xFF0C;&#x90A3;&#x4E48;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>std::decay</code>&#x6765;&#x53BB;&#x6389;&#x5F15;&#x7528;&#xFF1A;</p>
+<pre><code class="lang-cpp">// basics/maxdecltypedecay.hpp
+#include &lt;type_traits&gt;
+
+template&lt;typename T1, typename T2&gt;
+auto max (T1 a, T2 b) -&gt; typename std::decay&lt;decltype(true?a:b)&gt;::type
+{
+    return b &lt; a ? a : b;
+}
+</code></pre>
+<h3 id="133-&#x4F7F;&#x7528;&#x516C;&#x5171;&#x7C7B;&#x578B;">1.3.3 &#x4F7F;&#x7528;&#x516C;&#x5171;&#x7C7B;&#x578B;</h3>
+<pre><code class="lang-cpp"><span class="hljs-comment">// basics/maxcommon.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;type_traits&gt;</span></span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T1, <span class="hljs-keyword">typename</span> T2&gt;
+<span class="hljs-built_in">std</span>::<span class="hljs-keyword">common_type_t</span>&lt;T1,T2&gt; max (T1 a, T2 b)
+{
+    <span class="hljs-keyword">return</span> b &lt; a ? a : b;
+}
+</code></pre>
+<h2 id="14-&#x9ED8;&#x8BA4;&#x6A21;&#x677F;&#x53C2;&#x6570;">1.4 &#x9ED8;&#x8BA4;&#x6A21;&#x677F;&#x53C2;&#x6570;</h2>
+<p>&#x9664;&#x4E86;&#x4F7F;&#x7528;<code>auto</code>&#x5916;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x9ED8;&#x8BA4;&#x6A21;&#x677F;&#x53C2;&#x6570;&#xFF0C;&#x7136;&#x540E;&#x4F7F;&#x7528;<code>std::decay_t</code>&#x6216;&#x8005;<code>std::common_type_t</code>&#x4E3A;&#x5176;&#x8D4B;&#x9ED8;&#x8BA4;&#x7C7B;&#x578B;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// basics/maxdefault1.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;type_traits&gt;</span></span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T1, <span class="hljs-keyword">typename</span> T2,
+            <span class="hljs-keyword">typename</span> RT = <span class="hljs-built_in">std</span>::<span class="hljs-keyword">decay_t</span>&lt;<span class="hljs-keyword">decltype</span>(<span class="hljs-literal">true</span> ? T1() : T2())&gt;&gt;
+<span class="hljs-function">RT <span class="hljs-title">max</span> <span class="hljs-params">(T1 a, T2 b)</span>
+</span>{
+    <span class="hljs-keyword">return</span> b &lt; a ? a : b;
+}
+</code></pre>
+<pre><code class="lang-cpp"><span class="hljs-comment">// basics/maxdefault3.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;type_traits&gt;</span></span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T1, <span class="hljs-keyword">typename</span> T2,
+            <span class="hljs-keyword">typename</span> RT = <span class="hljs-built_in">std</span>::<span class="hljs-keyword">common_type_t</span>&lt;T1,T2&gt;&gt;
+<span class="hljs-function">RT <span class="hljs-title">max</span> <span class="hljs-params">(T1 a, T2 b)</span>
+</span>{
+    <span class="hljs-keyword">return</span> b &lt; a ? a : b;
+}
+</code></pre>
+<h2 id="15-&#x51FD;&#x6570;&#x6A21;&#x677F;&#x91CD;&#x8F7D;">1.5 &#x51FD;&#x6570;&#x6A21;&#x677F;&#x91CD;&#x8F7D;</h2>
+<p>&#x51FD;&#x6570;&#x5B9A;&#x4E49;&#x91CD;&#x8F7D;&#x51FD;&#x6570;&#x6A21;&#x677F;&#xFF0C;&#x7531;&#x4E8E;&#x666E;&#x901A;&#x51FD;&#x6570;&#x66F4;&#x4E3A;&#x7CBE;&#x786E;&#xFF0C;&#x7F16;&#x8BD1;&#x5668;&#x5728;&#x89E3;&#x6790;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#x4F1A;&#x4F18;&#x5148;&#x5339;&#x914D;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// basics/max2.cpp</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">max</span> <span class="hljs-params">(<span class="hljs-keyword">int</span> a, <span class="hljs-keyword">int</span> b)</span>
+</span>{
+    <span class="hljs-keyword">return</span> b &lt; a ? a : b;
+}
+
+<span class="hljs-comment">// maximum of two values of any type:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-function">T <span class="hljs-title">max</span> <span class="hljs-params">(T a, T b)</span>
+</span>{
+    <span class="hljs-keyword">return</span> b &lt; a ? a : b;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    ::max(<span class="hljs-number">7</span>, <span class="hljs-number">42</span>);           <span class="hljs-comment">// calls the nontemplate for two ints</span>
+    ::max(<span class="hljs-number">7.0</span>, <span class="hljs-number">42.0</span>);       <span class="hljs-comment">// calls max&lt;double&gt; (by argument deduction)</span>
+    ::max(<span class="hljs-string">&apos;a&apos;</span>, <span class="hljs-string">&apos;b&apos;</span>);        <span class="hljs-comment">// calls max&lt;char&gt; (by argument deduction)</span>
+    ::max&lt;&gt;(<span class="hljs-number">7</span>, <span class="hljs-number">42</span>);         <span class="hljs-comment">// calls max&lt;int&gt; (by argument deduction)</span>
+    ::max&lt;<span class="hljs-keyword">double</span>&gt;(<span class="hljs-number">7</span>, <span class="hljs-number">42</span>);   <span class="hljs-comment">// calls max&lt;double&gt; (no argument deduction)</span>
+    ::max(<span class="hljs-string">&apos;a&apos;</span>, <span class="hljs-number">42.7</span>);       <span class="hljs-comment">// calls the nontemplate for two ints</span>
+}
+</code></pre>
+<p>&#x901A;&#x8FC7;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x4E2A;&#x6570;&#x8FDB;&#x884C;&#x91CD;&#x8F7D;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// basics/maxdefault4.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T1, <span class="hljs-keyword">typename</span> T2&gt;
+<span class="hljs-function"><span class="hljs-keyword">auto</span> <span class="hljs-title">max</span> <span class="hljs-params">(T1 a, T2 b)</span>
+</span>{
+    <span class="hljs-keyword">return</span> b &lt; a ? a : b;
+}
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> RT, <span class="hljs-keyword">typename</span> T1, <span class="hljs-keyword">typename</span> T2&gt;
+<span class="hljs-function">RT <span class="hljs-title">max</span> <span class="hljs-params">(T1 a, T2 b)</span>
+</span>{
+    <span class="hljs-keyword">return</span> b &lt; a ? a : b;
+}
+</code></pre>
+<ol>
+<li><code>::max(4, 7.2)</code>&#x5339;&#x914D;&#x4E24;&#x53C2;&#x6570;&#x7248;&#x672C;&#xFF0C;&#x56E0;&#x4E3A;&#x4E09;&#x53C2;&#x6570;&#x7248;&#x672C;&#x4E2D;&#x7684;<code>RT</code>&#x6CA1;&#x6709;&#x9ED8;&#x8BA4;&#x6A21;&#x677F;&#x53C2;&#x6570;&#xFF0C;&#x65E0;&#x6CD5;&#x63A8;&#x5BFC;&#x5176;&#x7C7B;&#x578B;</li>
+<li><code>::max&lt;long double&gt;(7.2, 4)</code>&#x5339;&#x914D;&#x4E09;&#x53C2;&#x6570;&#x7248;&#x672C;&#xFF0C;&#x56E0;&#x4E3A;<code>7.2</code>&#x9ED8;&#x8BA4;&#x4E3A;<code>double</code>&#x7C7B;&#x578B;&#xFF0C;&#x800C;<code>long double</code>&#x548C;<code>double</code>&#x4E0D;&#x662F;&#x540C;&#x4E00;&#x7C7B;&#x578B;</li>
+<li><code>::max&lt;int&gt;(4, 7.2)</code>&#x65E0;&#x6CD5;&#x5339;&#x914D;</li>
+</ol>
+<p>&#x51FD;&#x6570;&#x6A21;&#x677F;&#x91CD;&#x8F7D;&#x66F4;&#x591A;&#x7528;&#x4E8E;&#x91CD;&#x8F7D;C&#x6307;&#x9488;&#x548C;C&#x5B57;&#x7B26;&#x4E32;&#x7248;&#x672C;&#x7684;&#x51FD;&#x6570;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// basics/max3val.cpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstring&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string&gt;</span></span>
+
+<span class="hljs-comment">// maximum of two values of any type:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-function">T <span class="hljs-title">max</span> <span class="hljs-params">(T a, T b)</span>
+</span>{
+    <span class="hljs-keyword">return</span> b &lt; a ? a : b;
+}
+
+<span class="hljs-comment">// maximum of two pointers:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-function">T* <span class="hljs-title">max</span> <span class="hljs-params">(T* a, T* b)</span>
+</span>{
+    <span class="hljs-keyword">return</span> *b &lt; *a ? a : b;
+}
+
+<span class="hljs-comment">// maximum of two C-strings:</span>
+<span class="hljs-function"><span class="hljs-keyword">char</span> <span class="hljs-keyword">const</span>* <span class="hljs-title">max</span> <span class="hljs-params">(<span class="hljs-keyword">char</span> <span class="hljs-keyword">const</span>* a, <span class="hljs-keyword">char</span> <span class="hljs-keyword">const</span>* b)</span>
+</span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">strcmp</span>(b,a) &lt; <span class="hljs-number">0</span> ? a : b;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span> <span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">int</span> a = <span class="hljs-number">7</span>;
+    <span class="hljs-keyword">int</span> b = <span class="hljs-number">42</span>;
+    <span class="hljs-keyword">auto</span> m1 = ::max(a,b);       <span class="hljs-comment">// max() for two values of type int</span>
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> s1 = <span class="hljs-string">&quot;hey&quot;</span>;
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> s2 = <span class="hljs-string">&quot;you&quot;</span>;
+    <span class="hljs-keyword">auto</span> m2 = ::max(s1,s2);     <span class="hljs-comment">// max() for two values of type std::string</span>
+    <span class="hljs-keyword">int</span>* p1 = &amp;b;
+    <span class="hljs-keyword">int</span>* p2 = &amp;a;
+    <span class="hljs-keyword">auto</span> m3 = ::max(p1,p2);     <span class="hljs-comment">// max() for two pointers</span>
+    <span class="hljs-keyword">char</span> <span class="hljs-keyword">const</span>* x = <span class="hljs-string">&quot;hello&quot;</span>;
+    <span class="hljs-keyword">char</span> <span class="hljs-keyword">const</span>* y = <span class="hljs-string">&quot;world&quot;</span>;
+    <span class="hljs-keyword">auto</span> m4 = ::max(x,y);       <span class="hljs-comment">// max() for two C-strings</span>
+}
+</code></pre>
+<p>&#x5982;&#x679C;&#x51FD;&#x6570;&#x6A21;&#x677F;&#x4E2D;&#x7684;&#x53C2;&#x6570;&#x4E3A;&#x4F20;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#xFF0C;&#x540C;&#x65F6;&#x91CD;&#x8F7D;&#x4E86;&#x4F20;C&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;&#x7684;&#x7248;&#x672C;&#xFF0C;&#x5C31;&#x4F1A;&#x51FA;&#x73B0;&#x95EE;&#x9898;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// basics/max3ref.cpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstring&gt;</span></span>
+
+<span class="hljs-comment">// maximum of two values of any type (call-by-reference)</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-function">T <span class="hljs-keyword">const</span>&amp; <span class="hljs-title">max</span> <span class="hljs-params">(T <span class="hljs-keyword">const</span>&amp; a, T <span class="hljs-keyword">const</span>&amp; b)</span>
+</span>{
+    <span class="hljs-keyword">return</span> b &lt; a ? a : b;
+}
+
+<span class="hljs-comment">// maximum of two C-strings (call-by-value)</span>
+<span class="hljs-function"><span class="hljs-keyword">char</span> <span class="hljs-keyword">const</span>* <span class="hljs-title">max</span> <span class="hljs-params">(<span class="hljs-keyword">char</span> <span class="hljs-keyword">const</span>* a, <span class="hljs-keyword">char</span> <span class="hljs-keyword">const</span>* b)</span>
+</span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">strcmp</span>(b,a) &lt; <span class="hljs-number">0</span> ? a : b;
+}
+
+<span class="hljs-comment">// maximum of three values of any type (call-by-reference)</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-function">T <span class="hljs-keyword">const</span>&amp; <span class="hljs-title">max</span> <span class="hljs-params">(T <span class="hljs-keyword">const</span>&amp; a, T <span class="hljs-keyword">const</span>&amp; b, T <span class="hljs-keyword">const</span>&amp; c)</span>
+</span>{
+    <span class="hljs-keyword">return</span> max (max(a,b), c); <span class="hljs-comment">// error if max(a,b) uses call-by-value</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span> <span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">auto</span> m1 = ::max(<span class="hljs-number">7</span>, <span class="hljs-number">42</span>, <span class="hljs-number">68</span>);     <span class="hljs-comment">// OK</span>
+
+    <span class="hljs-keyword">char</span> <span class="hljs-keyword">const</span>* s1 = <span class="hljs-string">&quot;frederic&quot;</span>;
+    <span class="hljs-keyword">char</span> <span class="hljs-keyword">const</span>* s2 = <span class="hljs-string">&quot;anica&quot;</span>;
+    <span class="hljs-keyword">char</span> <span class="hljs-keyword">const</span>* s3 = <span class="hljs-string">&quot;lucas&quot;</span>;
+    <span class="hljs-keyword">auto</span> m2 = ::max(s1, s2, s3);    <span class="hljs-comment">// run-time ERROR</span>
+}
+</code></pre>
+<p>g++&#x7684;&#x7F16;&#x8BD1;&#x8B66;&#x544A;&#x4E3A;&#xFF1A;</p>
+<pre><code class="lang-log">max3ref.cpp: In instantiation of &#x2018;const T&amp; max(const T&amp;, const T&amp;, const T&amp;) [with T = const char*]&#x2019;:
+max3ref.cpp:30:29:   required from here
+max3ref.cpp:20:26: warning: returning reference to temporary [-Wreturn-local-addr]
+   return max (max(a,b), c);       // error if max(a,b) uses call-by-value
+                          ^
+</code></pre>
+<p>&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#x4E09;&#x53C2;&#x6570;&#x7248;&#x672C;&#x7684;<code>max()</code>&#x4E2D;<code>T</code>&#x88AB;&#x63A8;&#x5BFC;&#x4E3A;<code>const char*</code>&#xFF0C;&#x6240;&#x4EE5;&#x4F1A;&#x8C03;&#x7528;&#x975E;&#x6A21;&#x677F;&#x7684;<code>max()</code>&#xFF0C;&#x800C;&#x8BE5;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x503C;&#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4E34;&#x65F6;&#x53D8;&#x91CF;&#xFF0C;&#x4E14;&#x4E09;&#x53C2;&#x6570;&#x7248;&#x672C;&#x7684;<code>max()</code>&#x53C8;&#x8FD4;&#x56DE;&#x4E86;&#x8BE5;&#x4E34;&#x65F6;&#x53D8;&#x91CF;&#x7684;&#x5F15;&#x7528;&#xFF0C;&#x8FD9;&#x5C31;&#x5BFC;&#x81F4;<code>main()</code>&#x4E2D;&#x4F1A;&#x51FA;&#x73B0;&#x60AC;&#x5782;&#x5F15;&#x7528;&#x3002;&#x539F;&#x6587;&#xFF1A;</p>
+<blockquote>
+<p>Because for C-strings, max(a,b) creates a new, temporary local value that is returned by reference, but that temporary value expires as soon as the return statement is complete, leaving main() with a dangling reference.</p>
+</blockquote>
+<p>&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#x5B9A;&#x4E49;&#x7684;&#x987A;&#x5E8F;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// basics/max4.cpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+
+<span class="hljs-comment">// maximum of two values of any type:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-function">T <span class="hljs-title">max</span> <span class="hljs-params">(T a, T b)</span>
+</span>{
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;max&lt;T&gt;() \n&quot;</span>;
+    <span class="hljs-keyword">return</span> b &lt; a ? a : b;
+}
+
+<span class="hljs-comment">// maximum of three values of any type:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-function">T <span class="hljs-title">max</span> <span class="hljs-params">(T a, T b, T c)</span>
+</span>{
+    <span class="hljs-keyword">return</span> max (max(a,b), c);   <span class="hljs-comment">// uses the template version even for ints</span>
+}                               <span class="hljs-comment">// because the following declaration comes</span>
+                                <span class="hljs-comment">// too late:</span>
+<span class="hljs-comment">// maximum of two int values:</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">max</span> <span class="hljs-params">(<span class="hljs-keyword">int</span> a, <span class="hljs-keyword">int</span> b)</span>
+</span>{
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;max(int,int) \n&quot;</span>;
+    <span class="hljs-keyword">return</span> b &lt; a ? a : b;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    ::max(<span class="hljs-number">47</span>,<span class="hljs-number">11</span>,<span class="hljs-number">33</span>); <span class="hljs-comment">// OOPS: uses max&lt;T&gt;() instead of max(int,int)</span>
+}
+</code></pre>
+<h2 id="16-&#x4E09;&#x4E2A;&#x95EE;&#x9898;">1.6 &#x4E09;&#x4E2A;&#x95EE;&#x9898;</h2>
+<h3 id="161-&#x4F20;&#x503C;&#x8FD8;&#x662F;&#x4F20;&#x5F15;&#x7528;">1.6.1 &#x4F20;&#x503C;&#x8FD8;&#x662F;&#x4F20;&#x5F15;&#x7528;</h3>
+<p>&#x4E00;&#x822C;&#x6765;&#x8BF4;&#x4F20;&#x503C;&#xFF0C;&#x56E0;&#x4E3A;&#xFF1A;</p>
+<ol>
+<li>&#x8BED;&#x6CD5;&#x7B80;&#x5355;</li>
+<li>&#x4FBF;&#x4E8E;&#x4F18;&#x5316;</li>
+<li>C++11&#x4E2D;&#x5F15;&#x5165;&#x4E86;&#x79FB;&#x52A8;&#x8BED;&#x4E49;</li>
+<li>&#x67D0;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#x4E0D;&#x4F1A;&#x53D1;&#x751F;&#x62F7;&#x8D1D;&#x548C;&#x79FB;&#x52A8;</li>
+</ol>
+<h3 id="162-&#x5185;&#x8054;">1.6.2 &#x5185;&#x8054;</h3>
+<p>&#x4E00;&#x822C;&#x6765;&#x8BF4;&#x53EA;&#x5C06;&#x7279;&#x5316;&#x7248;&#x672C;&#x5B9A;&#x4E49;&#x4E3A;&#x5185;&#x8054;&#xFF0C;&#x800C;&#x4E0D;&#x5C06;&#x51FD;&#x6570;&#x6A21;&#x677F;&#x5B9A;&#x4E49;&#x4E3A;&#x5185;&#x8054;&#x3002;</p>
+<h3 id="163-&#x5E38;&#x91CF;&#x8868;&#x8FBE;&#x5F0F;">1.6.3 &#x5E38;&#x91CF;&#x8868;&#x8FBE;&#x5F0F;</h3>
+<p><code>constexpr</code>&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x6A21;&#x677F;&#xFF0C;&#x7528;&#x4E8E;&#x63D0;&#x793A;&#x7F16;&#x8BD1;&#x5668;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x53EF;&#x4EE5;&#x5728;&#x7F16;&#x8BD1;&#x671F;&#x95F4;&#x88AB;&#x8BA1;&#x7B97;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// basics/maxconstexpr.hpp</span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T1, <span class="hljs-keyword">typename</span> T2&gt;
+<span class="hljs-function"><span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">auto</span> <span class="hljs-title">max</span> <span class="hljs-params">(T1 a, T2 b)</span>
+</span>{
+    <span class="hljs-keyword">return</span> b &lt; a ? a : b;
+}
+</code></pre>
+<h2 id="17-&#x603B;&#x7ED3;">1.7 &#x603B;&#x7ED3;</h2>
+<ol>
+<li>&#x51FD;&#x6570;&#x6A21;&#x677F;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x7C7B;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x4E0D;&#x540C;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x7684;&#x51FD;&#x6570;</li>
+<li>&#x8C03;&#x7528;&#x901A;&#x8FC7;&#x51FD;&#x6570;&#x6A21;&#x677F;&#x5B9A;&#x4E49;&#x7684;&#x51FD;&#x6570;&#x65F6;&#xFF0C;&#x7F16;&#x8BD1;&#x5668;&#x4F1A;&#x63A8;&#x5BFC;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x7684;&#x7C7B;&#x578B;</li>
+<li>&#x8C03;&#x7528;&#x65F6;&#x53EF;&#x4EE5;&#x663E;&#x793A;&#x6307;&#x5B9A;&#x524D;&#x51E0;&#x4E2A;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x7684;&#x7C7B;&#x578B;</li>
+<li>&#x53EF;&#x4EE5;&#x4E3A;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x63D0;&#x4F9B;&#x9ED8;&#x8BA4;&#x53C2;&#x6570;&#xFF0C;&#x4E14;&#x9ED8;&#x8BA4;&#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x4F9D;&#x8D56;&#x4E8E;&#x524D;&#x9762;&#x7684;&#x53C2;&#x6570;</li>
+<li>&#x51FD;&#x6570;&#x6A21;&#x677F;&#x53EF;&#x4EE5;&#x88AB;&#x91CD;&#x8F7D;</li>
+<li>&#x91CD;&#x8F7D;&#x65F6;&#x8981;&#x4FDD;&#x8BC1;&#x7F16;&#x8BD1;&#x5668;&#x53EA;&#x80FD;&#x5339;&#x914D;&#x4E00;&#x4E2A;</li>
+<li>&#x91CD;&#x8F7D;&#x65F6;&#x5C3D;&#x91CF;&#x4FDD;&#x8BC1;&#x53EA;&#x6709;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x4E0D;&#x540C;</li>
+<li>&#x5728;&#x8C03;&#x7528;&#x51FD;&#x6570;&#x6A21;&#x677F;&#x65F6;&#x4FDD;&#x8BC1;&#x7F16;&#x8BD1;&#x5668;&#x53EF;&#x4EE5;&#x770B;&#x89C1;&#x6240;&#x6709;&#x7684;&#x91CD;&#x8F7D;&#x7248;&#x672C;</li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="2021-12-20-ch2-class-templates.html" class="navigation navigation-next " aria-label="Next page: Chapter 2 Class Templates">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Chapter 1 Funtion Templates","level":"1.2","depth":1,"next":{"title":"Chapter 2 Class Templates","level":"1.3","depth":1,"path":"2021-12-20-ch2-class-templates.md","ref":"2021-12-20-ch2-class-templates.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"2021-12-15-ch1-function-templates.md","mtime":"2022-11-13T05:00:16.159Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-11-13T05:01:04.198Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

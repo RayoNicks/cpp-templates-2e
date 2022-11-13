@@ -1,0 +1,1043 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Chapter 2 Class Templates · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="2021-12-20-ch3-nontype-template-parameters.html" />
+    
+    
+    <link rel="prev" href="2021-12-15-ch1-function-templates.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="2021-12-15-ch1-function-templates.html">
+            
+                <a href="2021-12-15-ch1-function-templates.html">
+            
+                    
+                    Chapter 1 Funtion Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="2021-12-20-ch2-class-templates.html">
+            
+                <a href="2021-12-20-ch2-class-templates.html">
+            
+                    
+                    Chapter 2 Class Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="2021-12-20-ch3-nontype-template-parameters.html">
+            
+                <a href="2021-12-20-ch3-nontype-template-parameters.html">
+            
+                    
+                    Chapter 3 Nontype Template Parameters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="2021-12-20-ch4-variadic-templates.html">
+            
+                <a href="2021-12-20-ch4-variadic-templates.html">
+            
+                    
+                    Chapter 4 Variadic Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="2021-12-30-ch5-tricky-basics.html">
+            
+                <a href="2021-12-30-ch5-tricky-basics.html">
+            
+                    
+                    Chapter 5 Tricky Basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="2022-01-04-ch6-move-semantics-and-enable-if.html">
+            
+                <a href="2022-01-04-ch6-move-semantics-and-enable-if.html">
+            
+                    
+                    Chapter 6 Move Semantics and enable_if<>
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="2022-01-05-ch7-by-value-or-by-reference.html">
+            
+                <a href="2022-01-05-ch7-by-value-or-by-reference.html">
+            
+                    
+                    Chapter 7 By Value or by Reference?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="2022-01-06-ch8-compile-time-programming.html">
+            
+                <a href="2022-01-06-ch8-compile-time-programming.html">
+            
+                    
+                    Chapter 8 Compile-Time Programming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="2022-01-06-ch9-using-templates-in-practice.html">
+            
+                <a href="2022-01-06-ch9-using-templates-in-practice.html">
+            
+                    
+                    Chapter 9 Using Templates in Practice
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="2022-01-07-ch10-basic-template-terminology.html">
+            
+                <a href="2022-01-07-ch10-basic-template-terminology.html">
+            
+                    
+                    Chapter 10 Basic Template Terminology
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="2022-01-08-ch11-generic-libraries.html">
+            
+                <a href="2022-01-08-ch11-generic-libraries.html">
+            
+                    
+                    Chapter 11 Generic Libraries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="2022-01-12-ch12-fundamentals-in-depth.html">
+            
+                <a href="2022-01-12-ch12-fundamentals-in-depth.html">
+            
+                    
+                    Chapter 12 Fundamentals in Depth
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="2022-01-27-ch13-names-in-templates.html">
+            
+                <a href="2022-01-27-ch13-names-in-templates.html">
+            
+                    
+                    Chapter 13 Names in Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="2022-02-07-ch14-instantiation.html">
+            
+                <a href="2022-02-07-ch14-instantiation.html">
+            
+                    
+                    Chapter 14 Instantiation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="2022-02-15-ch15-template-argument-deduction.html">
+            
+                <a href="2022-02-15-ch15-template-argument-deduction.html">
+            
+                    
+                    Chapter 15 Template Argument Deduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="2022-02-17-ch16-specialization-and-overloading.html">
+            
+                <a href="2022-02-17-ch16-specialization-and-overloading.html">
+            
+                    
+                    Chapter 16 Specialization and Overloading
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="2022-02-22-ch17-future-directions.html">
+            
+                <a href="2022-02-22-ch17-future-directions.html">
+            
+                    
+                    Chapter 17 Future Directions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="2022-02-23-ch18-the-polymorphic-power-of-templates.html">
+            
+                <a href="2022-02-23-ch18-the-polymorphic-power-of-templates.html">
+            
+                    
+                    Chapter 18 The Polymorphic Power of Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="2022-03-01-ch19-implementing-traits.html">
+            
+                <a href="2022-03-01-ch19-implementing-traits.html">
+            
+                    
+                    Chapter 19 Implementing Traits
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="2022-03-02-ch20-overloading-on-type-properties.html">
+            
+                <a href="2022-03-02-ch20-overloading-on-type-properties.html">
+            
+                    
+                    Chapter 20 Overloading on Type Properties
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="2022-03-03-ch21-templates-and-inheritance.html">
+            
+                <a href="2022-03-03-ch21-templates-and-inheritance.html">
+            
+                    
+                    Chapter 21 Templates and Inheritance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="2022-03-05-ch22-bridging-static-and-dynamic-polymorphism.html">
+            
+                <a href="2022-03-05-ch22-bridging-static-and-dynamic-polymorphism.html">
+            
+                    
+                    Chapter 22 Bridging Static and Dynamic Polymorphism
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="2022-03-05-ch23-metaprogramming.html">
+            
+                <a href="2022-03-05-ch23-metaprogramming.html">
+            
+                    
+                    Chapter 23 Metaprogramming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="2022-03-06-ch24-typelists.html">
+            
+                <a href="2022-03-06-ch24-typelists.html">
+            
+                    
+                    Chapter 24 Typelists
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" data-path="2022-03-07-ch25-tuples.html">
+            
+                <a href="2022-03-07-ch25-tuples.html">
+            
+                    
+                    Chapter 25 Tuples
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27" data-path="2022-03-08-ch26-discriminated-unions.html">
+            
+                <a href="2022-03-08-ch26-discriminated-unions.html">
+            
+                    
+                    Chapter 26 Discriminated Unions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28" data-path="2022-03-09-ch27-expression-templates.html">
+            
+                <a href="2022-03-09-ch27-expression-templates.html">
+            
+                    
+                    Chapter 27 Expression Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29" data-path="2022-03-09-ch28-debugging-templates.html">
+            
+                <a href="2022-03-09-ch28-debugging-templates.html">
+            
+                    
+                    Chapter 28 Debugging Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.30" data-path="2022-01-05-appB-value-categories.html">
+            
+                <a href="2022-01-05-appB-value-categories.html">
+            
+                    
+                    Appendix B Value Categories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.31" data-path="2022-03-02-appC-overload-resolution.html">
+            
+                <a href="2022-03-02-appC-overload-resolution.html">
+            
+                    
+                    Appendix C Overload Resolution
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Chapter 2 Class Templates</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="2-&#x7C7B;&#x6A21;&#x677F;">2 &#x7C7B;&#x6A21;&#x677F;</h1>
+<h2 id="21-&#x6808;&#x7C7B;&#x6A21;&#x677F;&#x5B9E;&#x73B0;">2.1 &#x6808;&#x7C7B;&#x6A21;&#x677F;&#x5B9E;&#x73B0;</h2>
+<pre><code class="lang-cpp"><span class="hljs-comment">// basics/stack1.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;vector&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cassert&gt;</span></span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">class</span> Stack {
+    <span class="hljs-keyword">private</span>:
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;T&gt; elems;       <span class="hljs-comment">// elements</span>
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">push</span><span class="hljs-params">(T <span class="hljs-keyword">const</span>&amp; elem)</span></span>;   <span class="hljs-comment">// push element</span>
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">pop</span><span class="hljs-params">()</span></span>;                 <span class="hljs-comment">// pop element</span>
+        <span class="hljs-function">T <span class="hljs-keyword">const</span>&amp; <span class="hljs-title">top</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span></span>;       <span class="hljs-comment">// return top element</span>
+        <span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">empty</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> </span>{        <span class="hljs-comment">// return whether the stack is empty</span>
+            <span class="hljs-keyword">return</span> elems.empty();
+        }
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">void</span> Stack&lt;T&gt;::push (T <span class="hljs-keyword">const</span>&amp; elem)
+{
+    elems.push_back(elem); <span class="hljs-comment">// append copy of passed elem</span>
+}
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">void</span> Stack&lt;T&gt;::pop ()
+{
+    assert(!elems.empty());
+    elems.pop_back(); <span class="hljs-comment">// remove last element</span>
+}
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+T <span class="hljs-keyword">const</span>&amp; Stack&lt;T&gt;::top () <span class="hljs-keyword">const</span>
+{
+    assert(!elems.empty());
+    <span class="hljs-keyword">return</span> elems.back(); <span class="hljs-comment">// return copy of last element</span>
+}
+</code></pre>
+<h3 id="211-&#x7C7B;&#x6A21;&#x677F;&#x58F0;&#x660E;">2.1.1 &#x7C7B;&#x6A21;&#x677F;&#x58F0;&#x660E;</h3>
+<p>&#x5728;&#x7C7B;&#x6A21;&#x677F;&#x5185;&#x90E8;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>T</code>&#x6765;&#x58F0;&#x660E;&#x548C;&#x5B9A;&#x4E49;&#x4EFB;&#x4F55;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x3002;&#x7C7B;&#x7684;<strong>&#x7C7B;&#x578B;</strong>&#x4E3A;<code>Stack&lt;T&gt;</code>&#xFF0C;&#x6240;&#x4EE5;&#x5F53;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x7C7B;&#x7684;&#x7C7B;&#x578B;&#x65F6;&#x9700;&#x8981;&#x5199;&#x660E;<code>Stack&lt;T&gt;</code>&#xFF08;&#x9664;&#x975E;<code>T</code>&#x53EF;&#x4EE5;&#x88AB;&#x63A8;&#x5BFC;&#xFF09;&#x3002;&#x4F46;&#x662F;&#x5728;&#x7C7B;&#x7684;&#x5185;&#x90E8;&#x4E5F;&#x662F;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x7C7B;<strong>&#x540D;&#x5B57;</strong><code>Stack</code>&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x4E0B;&#x9762;&#x4E24;&#x79CD;&#x5B9A;&#x4E49;&#x62F7;&#x8D1D;&#x6784;&#x9020;&#x51FD;&#x6570;&#x548C;&#x62F7;&#x8D1D;&#x8D4B;&#x503C;&#x8FD0;&#x7B97;&#x7B26;&#x7684;&#x65B9;&#x5F0F;&#x662F;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x4E66;&#x4E2D;&#x63A8;&#x8350;&#x7B2C;&#x4E00;&#x79CD;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">class</span> Stack {
+    <span class="hljs-comment">// ...</span>
+    Stack (Stack <span class="hljs-keyword">const</span>&amp;);               <span class="hljs-comment">// copy constructor</span>
+    Stack&amp; <span class="hljs-keyword">operator</span>= (Stack <span class="hljs-keyword">const</span>&amp;);    <span class="hljs-comment">// assignment operator</span>
+    <span class="hljs-comment">// ...</span>
+};
+</code></pre>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">class</span> Stack {
+    <span class="hljs-comment">// ...</span>
+    Stack (Stack&lt;T&gt; <span class="hljs-keyword">const</span>&amp;);                <span class="hljs-comment">// copy constructor</span>
+    Stack&lt;T&gt;&amp; <span class="hljs-keyword">operator</span>= (Stack&lt;T&gt; <span class="hljs-keyword">const</span>&amp;);  <span class="hljs-comment">// assignment operator</span>
+    <span class="hljs-comment">// ...</span>
+};
+</code></pre>
+<p>&#x4F46;&#x662F;&#x5728;&#x7C7B;&#x7684;&#x5916;&#x90E8;&#x5FC5;&#x987B;&#x8981;&#x4F7F;&#x7528;&#x5B8C;&#x6574;&#x7684;&#x7C7B;&#x578B;&#x540D;&#xFF0C;&#x9664;&#x975E;&#x9700;&#x8981;&#x7684;&#x662F;&#x7C7B;&#x7684;&#x540D;&#x5B57;&#x800C;&#x4E0D;&#x662F;&#x7C7B;&#x7684;&#x7C7B;&#x578B;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span>== (Stack&lt;T&gt; <span class="hljs-keyword">const</span>&amp; lhs, Stack&lt;T&gt; <span class="hljs-keyword">const</span>&amp; rhs);
+</code></pre>
+<h3 id="212-&#x6210;&#x5458;&#x51FD;&#x6570;&#x5B9A;&#x4E49;">2.1.2 &#x6210;&#x5458;&#x51FD;&#x6570;&#x5B9A;&#x4E49;</h3>
+<p>&#x5728;&#x5B9A;&#x4E49;&#x7C7B;&#x7684;&#x6210;&#x5458;&#x51FD;&#x6570;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x6307;&#x51FA;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x6A21;&#x677F;&#xFF0C;&#x6240;&#x4EE5;&#x524D;&#x9762;&#x8981;&#x52A0;&#x4E0A;<code>template&lt;typename T&gt;</code>&#x3002;</p>
+<h2 id="22-&#x4F7F;&#x7528;&#x7C7B;&#x6A21;&#x677F;">2.2 &#x4F7F;&#x7528;&#x7C7B;&#x6A21;&#x677F;</h2>
+<pre><code class="lang-cpp"><span class="hljs-comment">// basics/stack1test.cpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;stack1.hpp&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string&gt;</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    Stack&lt;<span class="hljs-keyword">int</span>&gt; intStack;                <span class="hljs-comment">// stack of ints</span>
+    Stack&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&gt; stringStack;     <span class="hljs-comment">// stack of strings</span>
+
+    <span class="hljs-comment">// manipulate int stack</span>
+    intStack.push(<span class="hljs-number">7</span>);
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; intStack.top() &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+
+    <span class="hljs-comment">// manipulate string stack</span>
+    stringStack.push(<span class="hljs-string">&quot;hello&quot;</span>);
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; stringStack.top() &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+    stringStack.pop();
+}
+</code></pre>
+<p>&#x53EA;&#x6709;&#x771F;&#x6B63;&#x88AB;&#x8C03;&#x7528;&#x7684;&#x51FD;&#x6570;&#x624D;&#x4F1A;&#x88AB;&#x5B9E;&#x4F8B;&#x5316;&#xFF0C;&#x4F8B;&#x5982;&#x5728;&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x7F16;&#x8BD1;&#x5668;&#x5206;&#x522B;&#x5B9E;&#x4F8B;&#x5316;&#x4E86;&#x63A5;&#x6536;<code>int</code>&#x548C;<code>std::string</code>&#x7C7B;&#x578B;&#x7684;<code>push()</code>&#x548C;<code>top()</code>&#xFF0C;&#x4F46;&#x662F;&#x4E5F;&#x53EA;&#x5B9E;&#x4F8B;&#x5316;&#x4E86;&#x5143;&#x7D20;&#x7C7B;&#x578B;&#x4E3A;<code>std::string</code>&#x7684;<code>pop()</code>&#x3002;&#x5982;&#x679C;&#x7C7B;&#x6A21;&#x677F;&#x4E2D;&#x6709;&#x9759;&#x6001;&#x6210;&#x5458;&#xFF0C;&#x90A3;&#x4E48;&#x5F53;&#x7C7B;&#x88AB;&#x4F7F;&#x7528;&#x65F6;&#xFF0C;&#x9759;&#x6001;&#x6210;&#x5458;&#x5C31;&#x4F1A;&#x88AB;&#x5B9E;&#x4F8B;&#x5316;&#x3002;</p>
+<p>&#x88AB;&#x5B9E;&#x4F8B;&#x5316;&#x7684;&#x7C7B;&#x6A21;&#x677F;&#x7C7B;&#x578B;&#x53EF;&#x4EE5;&#x88AB;<code>const</code>&#x548C;<code>volatile</code>&#x5173;&#x952E;&#x5B57;&#x4FEE;&#x9970;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x8BE5;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x7EC4;&#x548C;&#x8BE5;&#x7C7B;&#x578B;&#x7684;&#x5F15;&#x7528;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x7528;<code>typedef</code>&#x548C;<code>using</code>&#x6765;&#x58F0;&#x660E;&#x65B0;&#x7684;&#x7C7B;&#x578B;&#x548C;&#x4F5C;&#x4E3A;&#x5176;&#x5B83;&#x6A21;&#x677F;&#x7684;&#x53C2;&#x6570;&#x3002;</p>
+<h2 id="23-&#x90E8;&#x5206;&#x4F7F;&#x7528;&#x7C7B;&#x6A21;&#x677F;">2.3 &#x90E8;&#x5206;&#x4F7F;&#x7528;&#x7C7B;&#x6A21;&#x677F;</h2>
+<p>&#x7C7B;&#x6A21;&#x677F;&#x901A;&#x5E38;&#x9700;&#x8981;&#x5BF9;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x8FDB;&#x884C;&#x591A;&#x79CD;&#x64CD;&#x4F5C;&#xFF0C;&#x8FD9;&#x5E76;&#x4E0D;&#x610F;&#x5473;&#x7740;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x5E94;&#x8BE5;&#x652F;&#x6301;&#x7C7B;&#x6A21;&#x677F;&#x4E2D;&#x6240;&#x6709;&#x6D89;&#x53CA;&#x5230;&#x7684;&#x5728;&#x8BE5;&#x7C7B;&#x578B;&#x4E0A;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x800C;&#x53EA;&#x9700;&#x8981;&#x652F;&#x6301;&#x5FC5;&#x8981;&#x7684;&#x64CD;&#x4F5C;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002;&#x539F;&#x6587;&#xFF1A;</p>
+<blockquote>
+<p>A class template usually applies multiple operations on the template arguments it is instantiated for (including construction and destruction). This might lead to the impression that these template arguments have to provide all operations necessary for all member functions of a class template. But this is not the case: Template arguments only have to provide all necessary operations that are needed (instead of that could be needed).</p>
+</blockquote>
+<p>&#x4F8B;&#x5982;&#x4E3A;<code>Stack&lt;&gt;</code>&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;<code>printOn()</code>&#x65B9;&#x6CD5;&#xFF0C;&#x540C;&#x65F6;&#x5B9E;&#x4F8B;&#x5316;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x4E3A;<code>std::pair&lt;int,int&gt;</code>&#x7684;&#x7C7B;&#x6A21;&#x677F;&#xFF0C;&#x90A3;&#x4E48;&#x53EA;&#x8981;&#x4E0D;&#x8C03;&#x7528;<code>printOn()</code>&#x51FD;&#x6570;&#xFF0C;&#x5C31;&#x4E0D;&#x9700;&#x8981;&#x4E3A;<code>std::pair&lt;int,int&gt;</code>&#x91CD;&#x8F7D;<code>&lt;&lt;</code>&#x8FD0;&#x7B97;&#x7B26;&#x3002;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">class</span> Stack {
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printOn</span><span class="hljs-params">()</span> <span class="hljs-params">(<span class="hljs-built_in">std</span>::ostream&amp; strm)</span> <span class="hljs-keyword">const</span> </span>{
+        <span class="hljs-keyword">for</span> (T <span class="hljs-keyword">const</span>&amp; elem : elems) {
+            strm &lt;&lt; elem &lt;&lt; <span class="hljs-string">&apos; &apos;</span>; <span class="hljs-comment">// call &lt;&lt; for each element</span>
+        }
+    }
+};
+
+Stack&lt;<span class="hljs-built_in">std</span>::pair&lt;<span class="hljs-keyword">int</span>,<span class="hljs-keyword">int</span>&gt;&gt; ps;           <span class="hljs-comment">// note: std::pair&lt;&gt; has no operator&lt;&lt; defined</span>
+ps.push({<span class="hljs-number">4</span>, <span class="hljs-number">5</span>});                        <span class="hljs-comment">// OK</span>
+ps.push({<span class="hljs-number">6</span>, <span class="hljs-number">7</span>});                        <span class="hljs-comment">// OK</span>
+<span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; ps.top().first &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;    <span class="hljs-comment">// OK</span>
+<span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; ps.top().second &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;   <span class="hljs-comment">// OK</span>
+</code></pre>
+<h3 id="231-concept">2.3.1 Concept</h3>
+<p>&#x597D;&#x50CF;&#x5728;C++20&#x4E2D;&#x624D;&#x6709;&#xFF0C;&#x4E66;&#x4E0A;&#x8BF4;&#x4E86;&#x4E00;&#x6BB5;&#x6CA1;&#x4EC0;&#x4E48;&#x5B9E;&#x8D28;&#x5185;&#x5BB9;&#x7684;&#x8BDD;&#x3002;</p>
+<h2 id="24-&#x53CB;&#x5143;">2.4 &#x53CB;&#x5143;</h2>
+<p>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x91CD;&#x8F7D;<code>&lt;&lt;</code>&#x8FD0;&#x7B97;&#x7B26;&#x5E76;&#x5C06;&#x5176;&#x5B9A;&#x4E49;&#x4E3A;&#x53CB;&#x5143;&#x51FD;&#x6570;&#x6765;&#x5B9E;&#x73B0;&#x6253;&#x5370;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">class</span> Stack {
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printOn</span><span class="hljs-params">()</span> <span class="hljs-params">(<span class="hljs-built_in">std</span>::ostream&amp; strm)</span> <span class="hljs-keyword">const</span> </span>{
+        <span class="hljs-comment">// ...</span>
+    }
+    <span class="hljs-keyword">friend</span> <span class="hljs-built_in">std</span>::ostream&amp; <span class="hljs-keyword">operator</span>&lt;&lt; (<span class="hljs-built_in">std</span>::ostream&amp; strm, Stack&lt;T&gt; <span class="hljs-keyword">const</span>&amp; s) {
+        s.printOn(strm);
+        <span class="hljs-keyword">return</span> strm;
+    }
+};
+</code></pre>
+<p>&#x5728;&#x4E0A;&#x9762;&#x8FD9;&#x79CD;&#x5185;&#x8054;&#x7684;&#x5F62;&#x5F0F;&#x4E2D;&#xFF0C;&#x91CD;&#x8F7D;&#x7684;<code>&lt;&lt;</code>&#x8FD0;&#x7B97;&#x7B26;&#x5E76;&#x4E0D;&#x662F;&#x51FD;&#x6570;&#x6A21;&#x677F;&#xFF0C;&#x800C;&#x662F;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#x5316;&#x7684;&#x666E;&#x901A;&#x51FD;&#x6570;&#x3002;&#x539F;&#x6587;&#xFF1A;</p>
+<blockquote>
+<p>Note that this means that operator &lt;&lt; for class Stack&lt;&gt; is not a function template, but an &quot;ordinary&quot; function instantiated with the class template if needed.</p>
+</blockquote>
+<p>&#x4F46;&#x662F;&#x4E00;&#x822C;&#x662F;&#x4E0D;&#x4F1A;&#x5C06;&#x91CD;&#x8F7D;&#x7684;<code>&lt;&lt;</code>&#x8FD0;&#x7B97;&#x7B26;&#x5B9E;&#x73B0;&#x4E3A;&#x5185;&#x8054;&#x51FD;&#x6570;&#x7684;&#xFF0C;&#x800C;&#x662F;&#x58F0;&#x660E;&#x5176;&#x4E3A;&#x53CB;&#x5143;&#xFF0C;&#x7136;&#x540E;&#x7C7B;&#x5916;&#x90E8;&#x8FDB;&#x884C;&#x5B9A;&#x4E49;&#xFF0C;&#x6709;&#x4E0B;&#x9762;&#x4E24;&#x79CD;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<ul>
+<li>&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x6A21;&#x677F;&#x53C2;&#x6570;<code>U</code>&#xFF1A;</li>
+</ul>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">class</span> Stack {
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> U&gt;
+    <span class="hljs-keyword">friend</span> <span class="hljs-built_in">std</span>::ostream&amp; <span class="hljs-keyword">operator</span>&lt;&lt; (<span class="hljs-built_in">std</span>::ostream&amp;, Stack&lt;U&gt; <span class="hljs-keyword">const</span>&amp;);
+};
+</code></pre>
+<ul>
+<li>&#x5148;&#x58F0;&#x660E;&#x7C7B;&#x6A21;&#x677F;&#x548C;&#x8FD0;&#x7B97;&#x7B26;&#xFF0C;&#x7136;&#x540E;&#x58F0;&#x660E;&#x53CB;&#x5143;&#xFF0C;&#x6CE8;&#x610F;&#x53CB;&#x5143;&#x58F0;&#x660E;&#x4E2D;&#x7684;<code>&lt;T&gt;</code>:</li>
+</ul>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">class</span> Stack;
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-built_in">std</span>::ostream&amp; <span class="hljs-keyword">operator</span>&lt;&lt; (<span class="hljs-built_in">std</span>::ostream&amp;, Stack&lt;T&gt; <span class="hljs-keyword">const</span>&amp;);
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">class</span> Stack {
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-keyword">friend</span> <span class="hljs-built_in">std</span>::ostream&amp; <span class="hljs-keyword">operator</span>&lt;&lt; &lt;T&gt; (<span class="hljs-built_in">std</span>::ostream&amp;, Stack&lt;T&gt; <span class="hljs-keyword">const</span>&amp;);
+};
+</code></pre>
+<h2 id="25-&#x6A21;&#x677F;&#x7279;&#x5316;">2.5 &#x6A21;&#x677F;&#x7279;&#x5316;</h2>
+<p>&#x6A21;&#x677F;&#x7279;&#x5316;&#x662F;&#x4E3A;&#x7C7B;&#x6A21;&#x677F;&#x63D0;&#x4F9B;&#x67D0;&#x79CD;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x7684;&#x7279;&#x6B8A;&#x5B9E;&#x73B0;&#xFF0C;&#x4F8B;&#x5982;&#x4E3A;<code>std::string</code>&#x7C7B;&#x578B;&#x7684;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x8FDB;&#x884C;&#x7279;&#x5316;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// basics/stack2.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;stack1.hpp&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;deque&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cassert&gt;</span></span>
+
+<span class="hljs-keyword">template</span>&lt;&gt;
+<span class="hljs-keyword">class</span> Stack&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&gt; {
+    <span class="hljs-keyword">private</span>:
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">deque</span>&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&gt; elems;      <span class="hljs-comment">// elements</span>
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">push</span><span class="hljs-params">(<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> <span class="hljs-keyword">const</span>&amp;)</span></span>;      <span class="hljs-comment">// push element</span>
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">pop</span><span class="hljs-params">()</span></span>;                         <span class="hljs-comment">// pop element</span>
+        <span class="hljs-built_in">std</span>::<span class="hljs-function"><span class="hljs-built_in">string</span> <span class="hljs-keyword">const</span>&amp; <span class="hljs-title">top</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span></span>;     <span class="hljs-comment">// return top element</span>
+        <span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">empty</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> </span>{                <span class="hljs-comment">// return whether the stack is empty</span>
+            <span class="hljs-keyword">return</span> elems.empty();
+        }
+};
+
+<span class="hljs-keyword">void</span> Stack&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&gt;::push (<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> <span class="hljs-keyword">const</span>&amp; elem)
+{
+    elems.push_back(elem); <span class="hljs-comment">// append copy of passed elem</span>
+}
+
+<span class="hljs-keyword">void</span> Stack&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&gt;::pop ()
+{
+    assert(!elems.empty());
+    elems.pop_back(); <span class="hljs-comment">// remove last element</span>
+}
+
+<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> <span class="hljs-keyword">const</span>&amp; Stack&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&gt;::top () <span class="hljs-keyword">const</span>
+{
+    assert(!elems.empty());
+    <span class="hljs-keyword">return</span> elems.back(); <span class="hljs-comment">// return copy of last element</span>
+}
+</code></pre>
+<h2 id="26-&#x6A21;&#x677F;&#x504F;&#x7279;&#x5316;&#xFF08;partial-sepcialization&#xFF09;">2.6 &#x6A21;&#x677F;&#x504F;&#x7279;&#x5316;&#xFF08;Partial Sepcialization&#xFF09;</h2>
+<p>&#x6A21;&#x677F;&#x504F;&#x7279;&#x5316;&#x662F;&#x4E3A;&#x90E8;&#x5206;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x63D0;&#x4F9B;&#x7279;&#x6B8A;&#x5B9E;&#x73B0;&#xFF0C;&#x4F8B;&#x5982;&#x4E3A;<code>T*</code>&#x7C7B;&#x578B;&#x7684;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x8FDB;&#x884C;&#x504F;&#x7279;&#x5316;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// basics/stackpartspec.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;stack1.hpp&quot;</span></span>
+
+<span class="hljs-comment">// partial specialization of class Stack&lt;&gt; for pointers:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">class</span> Stack&lt;T*&gt; {
+    <span class="hljs-keyword">private</span>:
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;T*&gt; elems;  <span class="hljs-comment">// elements</span>
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">push</span><span class="hljs-params">(T*)</span></span>;          <span class="hljs-comment">// push element</span>
+        <span class="hljs-function">T* <span class="hljs-title">pop</span><span class="hljs-params">()</span></span>;               <span class="hljs-comment">// pop element</span>
+        <span class="hljs-function">T* <span class="hljs-title">top</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span></span>;         <span class="hljs-comment">// return top element</span>
+        <span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">empty</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> </span>{    <span class="hljs-comment">// return whether the stack is empty</span>
+            <span class="hljs-keyword">return</span> elems.empty();
+        }
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">void</span> Stack&lt;T*&gt;::push (T* elem)
+{
+    elems.push_back(elem); <span class="hljs-comment">// append copy of passed elem</span>
+}
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+T* Stack&lt;T*&gt;::pop ()
+{
+    assert(!elems.empty());
+    T* p = elems.back();
+    elems.pop_back();       <span class="hljs-comment">// remove last element</span>
+    <span class="hljs-keyword">return</span> p;               <span class="hljs-comment">// and return it (unlike in the general case)</span>
+}
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+T* Stack&lt;T*&gt;::top () <span class="hljs-keyword">const</span>
+{
+    assert(!elems.empty());
+    <span class="hljs-keyword">return</span> elems.back(); <span class="hljs-comment">// return copy of last element</span>
+}
+</code></pre>
+<p>&#x5728;&#x6709;&#x591A;&#x4E2A;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x53EA;&#x5BF9;&#x90E8;&#x5206;&#x53C2;&#x6570;&#x8FDB;&#x884C;&#x7279;&#x5316;&#x4E5F;&#x662F;&#x504F;&#x7279;&#x5316;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T1, <span class="hljs-keyword">typename</span> T2&gt;
+<span class="hljs-keyword">class</span> MyClass {
+};
+
+<span class="hljs-comment">// partial specialization: both template parameters have same type</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">class</span> MyClass&lt;T,T&gt; {
+};
+
+<span class="hljs-comment">// partial specialization: second type is int</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">class</span> MyClass&lt;T,<span class="hljs-keyword">int</span>&gt; {
+};
+
+<span class="hljs-comment">// partial specialization: both template parameters are pointer types</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T1, <span class="hljs-keyword">typename</span> T2&gt;
+<span class="hljs-keyword">class</span> MyClass&lt;T1*,T2*&gt; {
+};
+
+MyClass&lt;<span class="hljs-keyword">int</span>,<span class="hljs-keyword">float</span>&gt; mif;     <span class="hljs-comment">// uses MyClass&lt;T1,T2&gt;</span>
+MyClass&lt;<span class="hljs-keyword">float</span>,<span class="hljs-keyword">float</span>&gt; mff;   <span class="hljs-comment">// uses MyClass&lt;T,T&gt;</span>
+MyClass&lt;<span class="hljs-keyword">float</span>,<span class="hljs-keyword">int</span>&gt; mfi;     <span class="hljs-comment">// uses MyClass&lt;T,int&gt;</span>
+MyClass&lt;<span class="hljs-keyword">int</span>*,<span class="hljs-keyword">float</span>*&gt; mp;    <span class="hljs-comment">// uses MyClass&lt;T1*,T2*&gt;</span>
+
+MyClass&lt;<span class="hljs-keyword">int</span>,<span class="hljs-keyword">int</span>&gt; m;     <span class="hljs-comment">// ERROR: matches MyClass&lt;T,T&gt; and MyClass&lt;T,int&gt;</span>
+MyClass&lt;<span class="hljs-keyword">int</span>*,<span class="hljs-keyword">int</span>*&gt; m;   <span class="hljs-comment">// ERROR: matches MyClass&lt;T,T&gt; and MyClass&lt;T1*,T2*&gt;</span>
+</code></pre>
+<h2 id="27-&#x9ED8;&#x8BA4;&#x6A21;&#x677F;&#x53C2;&#x6570;">2.7 &#x9ED8;&#x8BA4;&#x6A21;&#x677F;&#x53C2;&#x6570;</h2>
+<p>&#x53EF;&#x4EE5;&#x4E3A;&#x7C7B;&#x6A21;&#x677F;&#x63D0;&#x4F9B;&#x9ED8;&#x8BA4;&#x7684;&#x6A21;&#x677F;&#x53C2;&#x6570;&#xFF0C;&#x4F8B;&#x5982;&#x4E3A;<code>Stack&lt;&gt;</code>&#x63D0;&#x4F9B;&#x9ED8;&#x8BA4;&#x7684;&#x5185;&#x90E8;&#x5BB9;&#x5668;&#x7C7B;&#x578B;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// basics/stack3.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;vector&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cassert&gt;</span></span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span> Cont = <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;T&gt;&gt;
+<span class="hljs-keyword">class</span> Stack {
+    <span class="hljs-keyword">private</span>:
+        Cont elems;                 <span class="hljs-comment">// elements</span>
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">push</span><span class="hljs-params">(T <span class="hljs-keyword">const</span>&amp; elem)</span></span>;   <span class="hljs-comment">// push element</span>
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">pop</span><span class="hljs-params">()</span></span>;                 <span class="hljs-comment">// pop element</span>
+        <span class="hljs-function">T <span class="hljs-keyword">const</span>&amp; <span class="hljs-title">top</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span></span>;       <span class="hljs-comment">// return top element</span>
+        <span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">empty</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> </span>{        <span class="hljs-comment">// return whether the stack is empty</span>
+            <span class="hljs-keyword">return</span> elems.empty();
+        }
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span> Cont&gt;
+<span class="hljs-keyword">void</span> Stack&lt;T,Cont&gt;::push (T <span class="hljs-keyword">const</span>&amp; elem)
+{
+    elems.push_back(elem); <span class="hljs-comment">// append copy of passed elem</span>
+}
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span> Cont&gt;
+<span class="hljs-keyword">void</span> Stack&lt;T,Cont&gt;::pop ()
+{
+    assert(!elems.empty());
+    elems.pop_back(); <span class="hljs-comment">// remove last element</span>
+}
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span> Cont&gt;
+T <span class="hljs-keyword">const</span>&amp; Stack&lt;T,Cont&gt;::top () <span class="hljs-keyword">const</span>
+{
+    assert(!elems.empty());
+    <span class="hljs-keyword">return</span> elems.back(); <span class="hljs-comment">// return copy of last element</span>
+}
+</code></pre>
+<p>&#x5F53;&#x7136;&#x4E5F;&#x53EF;&#x4EE5;&#x4E3A;&#x9ED8;&#x8BA4;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x63D0;&#x4F9B;&#x5177;&#x4F53;&#x7684;&#x53C2;&#x6570;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// basics/stack3test.cpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;stack3.hpp&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;deque&gt;</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// stack of ints:</span>
+    Stack&lt;<span class="hljs-keyword">int</span>&gt; intStack;
+
+    <span class="hljs-comment">// stack of doubles using a std::deque&lt;&gt; to manage the elements</span>
+    Stack&lt;<span class="hljs-keyword">double</span>,<span class="hljs-built_in">std</span>::<span class="hljs-built_in">deque</span>&lt;<span class="hljs-keyword">double</span>&gt;&gt; dblStack;
+
+    <span class="hljs-comment">// manipulate int stack</span>
+    intStack.push(<span class="hljs-number">7</span>);
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; intStack.top() &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+    intStack.pop();
+
+    <span class="hljs-comment">// manipulate double stack</span>
+    dblStack.push(<span class="hljs-number">42.42</span>);
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; dblStack.top() &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+    dblStack.pop();
+}
+</code></pre>
+<h2 id="28-&#x7C7B;&#x578B;&#x522B;&#x540D;">2.8 &#x7C7B;&#x578B;&#x522B;&#x540D;</h2>
+<p>&#x6CA1;&#x4EC0;&#x4E48;&#x53EF;&#x5199;&#x7684;&#xFF0C;&#x63A8;&#x8350;&#x7528;<code>using</code>&#x800C;&#x4E0D;&#x662F;<code>typedef</code>&#x3002;</p>
+<h2 id="29-&#x7C7B;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x63A8;&#x5BFC;">2.9 &#x7C7B;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x63A8;&#x5BFC;</h2>
+<p>&#x4ECE;C++17&#x5F00;&#x59CB;&#xFF0C;&#x6709;&#x65F6;&#x53EF;&#x4EE5;&#x7701;&#x7565;&#x6A21;&#x677F;&#x53C2;&#x6570;&#xFF0C;&#x800C;&#x8BA9;&#x7F16;&#x8BD1;&#x5668;&#x53BB;&#x63A8;&#x5BFC;&#xFF0C;&#x4F8B;&#x5982;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-cpp">Stack&lt;<span class="hljs-keyword">int</span>&gt; intStack1;               <span class="hljs-comment">// stack of strings</span>
+Stack&lt;<span class="hljs-keyword">int</span>&gt; intStack2 = intStack1;   <span class="hljs-comment">// OK in all versions</span>
+Stack intStack3 = intStack1;        <span class="hljs-comment">// OK since C++17</span>
+</code></pre>
+<p>&#x5047;&#x5982;&#x518D;&#x4E3A;<code>Stack&lt;&gt;</code>&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x4EE5;<code>T</code>&#x7C7B;&#x578B;&#x7684;&#x5F15;&#x7528;&#x4E3A;&#x53C2;&#x6570;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;<code>Stack (T const&amp; elem)</code>&#xFF0C;&#x90A3;&#x4E48;&#x4FBF;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x521D;&#x503C;&#x6765;&#x5B9E;&#x4F8B;&#x5316;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">class</span> Stack {
+    <span class="hljs-keyword">private</span>:
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;T&gt; elems;   <span class="hljs-comment">// elements</span>
+    <span class="hljs-keyword">public</span>:
+        Stack () = <span class="hljs-keyword">default</span>;
+        Stack (T <span class="hljs-keyword">const</span>&amp; elem)   <span class="hljs-comment">// initialize stack with one element</span>
+            : elems({elem}) {
+        }
+    <span class="hljs-comment">// ...</span>
+};
+
+Stack intStack = <span class="hljs-number">0</span>;     <span class="hljs-comment">// Stack&lt;int&gt; deduced since C++17</span>
+</code></pre>
+<p>&#x5982;&#x679C;&#x8FD9;&#x4E2A;&#x521D;&#x503C;&#x662F;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x5E38;&#x91CF;&#xFF08;&#x4F8B;&#x5982;<code>Stack stringStack = &quot;bottom&quot;</code>&#xFF09;&#xFF0C;&#x5C31;&#x4F1A;&#x6709;&#x4E00;&#x70B9;&#x590D;&#x6742;&#x3002;&#x7531;&#x4E8E;<code>Stack (T const&amp; elem)</code>&#x662F;&#x4F20;&#x5F15;&#x7528;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x4F1A;&#x53D1;&#x751F;&#x4EFB;&#x4F55;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#xFF0C;&#x56E0;&#x6B64;&#x7C7B;&#x6A21;&#x677F;&#x5B9E;&#x4F8B;&#x5316;&#x540E;&#x7684;&#x7C7B;&#x578B;&#x4E3A;<code>Stack&lt;char const[7]&gt;</code>&#x3002;&#x4F46;&#x662F;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x7684;&#x7C7B;&#x578B;&#x662F;<code>Stack&lt;char const*&gt;</code>&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x4F20;&#x503C;&#x7C7B;&#x578B;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x5E76;&#x4E14;&#x5C06;&#x5176;&#x79FB;&#x52A8;&#x5230;<code>Stack&lt;T&gt;</code>&#x4E2D;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">class</span> Stack {
+    <span class="hljs-keyword">private</span>:
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;T&gt; elems;   <span class="hljs-comment">// elements</span>
+    <span class="hljs-keyword">public</span>:
+        Stack (T elem)          <span class="hljs-comment">// initialize stack with one element by value</span>
+            : elems({<span class="hljs-built_in">std</span>::move(elem)}) {
+        }
+    <span class="hljs-comment">// ...</span>
+};
+</code></pre>
+<p>&#x540E;&#x9762;&#x662F;&#x5173;&#x4E8E;<strong>&#x63A8;&#x5BFC;&#x6307;&#x5F15;&#xFF08;deduction guide&#xFF09;</strong>&#x7684;&#xFF0C;&#x6CA1;&#x6709;&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#xFF0C;&#x6211;&#x6839;&#x636E;&#x539F;&#x6587;&#x7684;&#x610F;&#x601D;&#x5199;&#x4EE3;&#x7801;&#x6D4B;&#x8BD5;&#x4E86;&#x4E00;&#x4E0B;&#xFF0C;&#x7F16;&#x8BD1;&#x547D;&#x4EE4;&#x4E3A;<code>g++ test.cpp -o test -std=c++17</code>&#xFF0C;&#x8F93;&#x51FA;&#x4E3A;<code>true</code>&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;vector&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iomanip&gt;</span></span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">class</span> Stack {
+    <span class="hljs-keyword">private</span>:
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;T&gt; elems;   <span class="hljs-comment">// elements</span>
+    <span class="hljs-keyword">public</span>:
+        Stack (T elem)          <span class="hljs-comment">// initialize stack with one element by value</span>
+            : elems({<span class="hljs-built_in">std</span>::move(elem)}) {
+        }
+};
+
+Stack(<span class="hljs-keyword">char</span> <span class="hljs-keyword">const</span>*) -&gt; Stack&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&gt;;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    Stack stringStack{<span class="hljs-string">&quot;bottom&quot;</span>};    <span class="hljs-comment">// Stack&lt;std::string&gt; deduced and valid</span>
+    Stack stack2{stringStack};      <span class="hljs-comment">// Stack&lt;std::string&gt; deduced</span>
+    <span class="hljs-function">Stack <span class="hljs-title">stack3</span><span class="hljs-params">(stringStack)</span></span>;      <span class="hljs-comment">// Stack&lt;std::string&gt; deduced</span>
+    Stack stack4 = {stringStack};   <span class="hljs-comment">// Stack&lt;std::string&gt; deduced</span>
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">std</span>::boolalpha &lt;&lt; (<span class="hljs-keyword">typeid</span>(stringStack) == <span class="hljs-keyword">typeid</span>(Stack&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&gt;)) &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<h2 id="210-&#x805A;&#x5408;&#x7C7B;&#x7684;&#x6A21;&#x677F;&#xFF08;templatized-aggregates&#xFF09;">2.10 &#x805A;&#x5408;&#x7C7B;&#x7684;&#x6A21;&#x677F;&#xFF08;Templatized Aggregates&#xFF09;</h2>
+<p>&#x805A;&#x5408;&#x7C7B;&#x4E5F;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x6A21;&#x677F;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string&gt;</span></span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> ValueWithComment {
+    T value;
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> comment;
+};
+
+ValueWithComment(<span class="hljs-keyword">char</span> <span class="hljs-keyword">const</span>*, <span class="hljs-keyword">char</span> <span class="hljs-keyword">const</span>*) -&gt; ValueWithComment&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&gt;;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    ValueWithComment&lt;<span class="hljs-keyword">int</span>&gt; vc;
+    vc.value = <span class="hljs-number">42</span>;
+    vc.comment = <span class="hljs-string">&quot;initial value&quot;</span>;
+
+    ValueWithComment vc2 = {<span class="hljs-string">&quot;hello&quot;</span>, <span class="hljs-string">&quot;initial value&quot;</span>};
+}
+</code></pre>
+<h2 id="211-&#x603B;&#x7ED3;">2.11 &#x603B;&#x7ED3;</h2>
+<ol>
+<li>&#x7C7B;&#x6A21;&#x677F;&#x662F;&#x4E00;&#x4E2A;&#x6216;&#x8005;&#x591A;&#x4E2A;&#x7C7B;&#x578B;&#x53C2;&#x6570;&#x5F85;&#x786E;&#x5B9A;&#x7684;&#x7C7B;</li>
+<li>&#x5B9E;&#x4F8B;&#x5316;&#x7C7B;&#x6A21;&#x677F;&#x65F6;&#x9700;&#x8981;&#x4F20;&#x9012;&#x5177;&#x4F53;&#x7684;&#x7C7B;&#x578B;&#x4F5C;&#x4E3A;&#x7C7B;&#x6A21;&#x677F;&#x53C2;&#x6570;</li>
+<li>&#x53EA;&#x6709;&#x88AB;&#x8C03;&#x7528;&#x7684;&#x7C7B;&#x6A21;&#x677F;&#x624D;&#x4F1A;&#x88AB;&#x5B9E;&#x4F8B;&#x5316;</li>
+<li>&#x7C7B;&#x6A21;&#x677F;&#x53EF;&#x4EE5;&#x7279;&#x5316;</li>
+<li>&#x7C7B;&#x6A21;&#x677F;&#x4E5F;&#x53EF;&#x4EE5;&#x88AB;&#x504F;&#x7279;&#x5316;</li>
+<li>C++17&#x652F;&#x6301;&#x7C7B;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x63A8;&#x5BFC;</li>
+<li>&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x5B9E;&#x4F8B;&#x5316;&#x805A;&#x5408;&#x7C7B;&#x7684;&#x6A21;&#x677F;</li>
+<li>&#x5982;&#x679C;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x662F;&#x4F20;&#x503C;&#x7684;&#xFF0C;&#x90A3;&#x4E48;&#x53C2;&#x6570;&#x4F1A;&#x9000;&#x5316;&#x4E3A;&#x539F;&#x59CB;&#x7C7B;&#x578B;</li>
+<li>&#x6A21;&#x677F;&#x53EA;&#x80FD;&#x88AB;&#x58F0;&#x660E;&#x548C;&#x5B9A;&#x4E49;&#x5728;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x6216;&#x8005;&#x7C7B;&#x58F0;&#x660E;&#x7684;&#x5185;&#x90E8;</li>
+</ol>
+<p>&#x7B2C;8&#x6761;&#x539F;&#x6587;&#xFF1A;</p>
+<blockquote>
+<p>Call parameters of a template type decay if declared to be called by value.</p>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="2021-12-15-ch1-function-templates.html" class="navigation navigation-prev " aria-label="Previous page: Chapter 1 Funtion Templates">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="2021-12-20-ch3-nontype-template-parameters.html" class="navigation navigation-next " aria-label="Next page: Chapter 3 Nontype Template Parameters">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Chapter 2 Class Templates","level":"1.3","depth":1,"next":{"title":"Chapter 3 Nontype Template Parameters","level":"1.4","depth":1,"path":"2021-12-20-ch3-nontype-template-parameters.md","ref":"2021-12-20-ch3-nontype-template-parameters.md","articles":[]},"previous":{"title":"Chapter 1 Funtion Templates","level":"1.2","depth":1,"path":"2021-12-15-ch1-function-templates.md","ref":"2021-12-15-ch1-function-templates.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"2021-12-20-ch2-class-templates.md","mtime":"2022-11-13T05:00:16.159Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-11-13T05:01:04.198Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

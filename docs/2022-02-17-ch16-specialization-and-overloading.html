@@ -1,0 +1,1211 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Chapter 16 Specialization and Overloading · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="2022-02-22-ch17-future-directions.html" />
+    
+    
+    <link rel="prev" href="2022-02-15-ch15-template-argument-deduction.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="2021-12-15-ch1-function-templates.html">
+            
+                <a href="2021-12-15-ch1-function-templates.html">
+            
+                    
+                    Chapter 1 Funtion Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="2021-12-20-ch2-class-templates.html">
+            
+                <a href="2021-12-20-ch2-class-templates.html">
+            
+                    
+                    Chapter 2 Class Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="2021-12-20-ch3-nontype-template-parameters.html">
+            
+                <a href="2021-12-20-ch3-nontype-template-parameters.html">
+            
+                    
+                    Chapter 3 Nontype Template Parameters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="2021-12-20-ch4-variadic-templates.html">
+            
+                <a href="2021-12-20-ch4-variadic-templates.html">
+            
+                    
+                    Chapter 4 Variadic Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="2021-12-30-ch5-tricky-basics.html">
+            
+                <a href="2021-12-30-ch5-tricky-basics.html">
+            
+                    
+                    Chapter 5 Tricky Basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="2022-01-04-ch6-move-semantics-and-enable-if.html">
+            
+                <a href="2022-01-04-ch6-move-semantics-and-enable-if.html">
+            
+                    
+                    Chapter 6 Move Semantics and enable_if<>
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="2022-01-05-ch7-by-value-or-by-reference.html">
+            
+                <a href="2022-01-05-ch7-by-value-or-by-reference.html">
+            
+                    
+                    Chapter 7 By Value or by Reference?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="2022-01-06-ch8-compile-time-programming.html">
+            
+                <a href="2022-01-06-ch8-compile-time-programming.html">
+            
+                    
+                    Chapter 8 Compile-Time Programming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="2022-01-06-ch9-using-templates-in-practice.html">
+            
+                <a href="2022-01-06-ch9-using-templates-in-practice.html">
+            
+                    
+                    Chapter 9 Using Templates in Practice
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="2022-01-07-ch10-basic-template-terminology.html">
+            
+                <a href="2022-01-07-ch10-basic-template-terminology.html">
+            
+                    
+                    Chapter 10 Basic Template Terminology
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="2022-01-08-ch11-generic-libraries.html">
+            
+                <a href="2022-01-08-ch11-generic-libraries.html">
+            
+                    
+                    Chapter 11 Generic Libraries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="2022-01-12-ch12-fundamentals-in-depth.html">
+            
+                <a href="2022-01-12-ch12-fundamentals-in-depth.html">
+            
+                    
+                    Chapter 12 Fundamentals in Depth
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="2022-01-27-ch13-names-in-templates.html">
+            
+                <a href="2022-01-27-ch13-names-in-templates.html">
+            
+                    
+                    Chapter 13 Names in Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="2022-02-07-ch14-instantiation.html">
+            
+                <a href="2022-02-07-ch14-instantiation.html">
+            
+                    
+                    Chapter 14 Instantiation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="2022-02-15-ch15-template-argument-deduction.html">
+            
+                <a href="2022-02-15-ch15-template-argument-deduction.html">
+            
+                    
+                    Chapter 15 Template Argument Deduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.17" data-path="2022-02-17-ch16-specialization-and-overloading.html">
+            
+                <a href="2022-02-17-ch16-specialization-and-overloading.html">
+            
+                    
+                    Chapter 16 Specialization and Overloading
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="2022-02-22-ch17-future-directions.html">
+            
+                <a href="2022-02-22-ch17-future-directions.html">
+            
+                    
+                    Chapter 17 Future Directions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="2022-02-23-ch18-the-polymorphic-power-of-templates.html">
+            
+                <a href="2022-02-23-ch18-the-polymorphic-power-of-templates.html">
+            
+                    
+                    Chapter 18 The Polymorphic Power of Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="2022-03-01-ch19-implementing-traits.html">
+            
+                <a href="2022-03-01-ch19-implementing-traits.html">
+            
+                    
+                    Chapter 19 Implementing Traits
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="2022-03-02-ch20-overloading-on-type-properties.html">
+            
+                <a href="2022-03-02-ch20-overloading-on-type-properties.html">
+            
+                    
+                    Chapter 20 Overloading on Type Properties
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="2022-03-03-ch21-templates-and-inheritance.html">
+            
+                <a href="2022-03-03-ch21-templates-and-inheritance.html">
+            
+                    
+                    Chapter 21 Templates and Inheritance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="2022-03-05-ch22-bridging-static-and-dynamic-polymorphism.html">
+            
+                <a href="2022-03-05-ch22-bridging-static-and-dynamic-polymorphism.html">
+            
+                    
+                    Chapter 22 Bridging Static and Dynamic Polymorphism
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="2022-03-05-ch23-metaprogramming.html">
+            
+                <a href="2022-03-05-ch23-metaprogramming.html">
+            
+                    
+                    Chapter 23 Metaprogramming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="2022-03-06-ch24-typelists.html">
+            
+                <a href="2022-03-06-ch24-typelists.html">
+            
+                    
+                    Chapter 24 Typelists
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" data-path="2022-03-07-ch25-tuples.html">
+            
+                <a href="2022-03-07-ch25-tuples.html">
+            
+                    
+                    Chapter 25 Tuples
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27" data-path="2022-03-08-ch26-discriminated-unions.html">
+            
+                <a href="2022-03-08-ch26-discriminated-unions.html">
+            
+                    
+                    Chapter 26 Discriminated Unions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28" data-path="2022-03-09-ch27-expression-templates.html">
+            
+                <a href="2022-03-09-ch27-expression-templates.html">
+            
+                    
+                    Chapter 27 Expression Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29" data-path="2022-03-09-ch28-debugging-templates.html">
+            
+                <a href="2022-03-09-ch28-debugging-templates.html">
+            
+                    
+                    Chapter 28 Debugging Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.30" data-path="2022-01-05-appB-value-categories.html">
+            
+                <a href="2022-01-05-appB-value-categories.html">
+            
+                    
+                    Appendix B Value Categories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.31" data-path="2022-03-02-appC-overload-resolution.html">
+            
+                <a href="2022-03-02-appC-overload-resolution.html">
+            
+                    
+                    Appendix C Overload Resolution
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Chapter 16 Specialization and Overloading</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="16-&#x7279;&#x5316;&#x548C;&#x91CD;&#x8F7D;">16 &#x7279;&#x5316;&#x548C;&#x91CD;&#x8F7D;</h1>
+<h2 id="161-&#x6CDB;&#x578B;&#x4EE3;&#x7801;&#x65E0;&#x6CD5;&#x89E3;&#x51B3;&#x7684;&#x95EE;&#x9898;">16.1 &#x6CDB;&#x578B;&#x4EE3;&#x7801;&#x65E0;&#x6CD5;&#x89E3;&#x51B3;&#x7684;&#x95EE;&#x9898;</h2>
+<p>&#x8003;&#x8651;&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">class</span> Array {
+    <span class="hljs-keyword">private</span>:
+        T* data;
+        <span class="hljs-comment">// ...</span>
+    <span class="hljs-keyword">public</span>:
+        Array(Array&lt;T&gt; <span class="hljs-keyword">const</span>&amp;);
+        Array&lt;T&gt;&amp; <span class="hljs-keyword">operator</span>= (Array&lt;T&gt; <span class="hljs-keyword">const</span>&amp;);
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">exchangeWith</span> <span class="hljs-params">(Array&lt;T&gt;* b)</span> </span>{
+            T* tmp = data;
+            data = b-&gt;data;
+            b-&gt;data = tmp;
+        }
+        T&amp; <span class="hljs-keyword">operator</span>[] (<span class="hljs-built_in">std</span>::<span class="hljs-keyword">size_t</span> k) {
+            <span class="hljs-keyword">return</span> data[k];
+        }
+        <span class="hljs-comment">// ...</span>
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt; <span class="hljs-function"><span class="hljs-keyword">inline</span>
+<span class="hljs-keyword">void</span> <span class="hljs-title">exchange</span> <span class="hljs-params">(T* a, T* b)</span>
+</span>{
+    <span class="hljs-function">T <span class="hljs-title">tmp</span><span class="hljs-params">(*a)</span></span>;
+    *a = *b;
+    *b = tmp;
+}
+</code></pre>
+<p>&#x4E0A;&#x4F8B;&#x4E2D;&#x7684;<code>exchange()</code>&#x9002;&#x7528;&#x4E8E;&#x7B80;&#x5355;&#x7C7B;&#x578B;&#xFF0C;&#x5BF9;&#x4E8E;&#x5177;&#x6709;&#x8F83;&#x5927;&#x62F7;&#x8D1D;&#x5F00;&#x9500;&#x7684;<code>Array&lt;&gt;</code>&#x4E0D;&#x662F;&#x6700;&#x597D;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x6210;&#x5458;&#x51FD;&#x6570;<code>exchangeWith()</code>&#x662F;&#x66F4;&#x597D;&#x7684;&#x9009;&#x62E9;&#xFF0C;&#x4F46;&#x662F;&#x5374;&#x65E0;&#x6CD5;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x6CDB;&#x578B;&#x7B97;&#x6CD5;&#x3002;</p>
+<h3 id="1611-&#x901A;&#x8FC7;&#x7279;&#x5316;&#x63D0;&#x4F9B;&#x76F8;&#x540C;&#x7684;&#x63A5;&#x53E3;">16.1.1 &#x901A;&#x8FC7;&#x7279;&#x5316;&#x63D0;&#x4F9B;&#x76F8;&#x540C;&#x7684;&#x63A5;&#x53E3;</h3>
+<p>&#x4E3A;&#x4E86;&#x5B9E;&#x73B0;&#x6CDB;&#x578B;&#x7B97;&#x6CD5;&#xFF0C;&#x9700;&#x8981;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x7279;&#x5316;&#x7248;&#x672C;&#xFF0C;&#x5E76;&#x5728;&#x5176;&#x4E2D;&#x8C03;&#x7528;<code>exchangeWith()</code>&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">quickExchange</span><span class="hljs-params">(T* a, T* b)</span> <span class="hljs-comment">// #1</span>
+</span>{
+    <span class="hljs-function">T <span class="hljs-title">tmp</span><span class="hljs-params">(*a)</span></span>;
+    *a = *b;
+    *b = tmp;
+}
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">quickExchange</span><span class="hljs-params">(Array&lt;T&gt;* a, Array&lt;T&gt;* b)</span> <span class="hljs-comment">// #2</span>
+</span>{
+    a-&gt;exchangeWith(b);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">demo</span><span class="hljs-params">(Array&lt;<span class="hljs-keyword">int</span>&gt;* p1, Array&lt;<span class="hljs-keyword">int</span>&gt;* p2)</span>
+</span>{
+    <span class="hljs-keyword">int</span> x=<span class="hljs-number">42</span>, y=<span class="hljs-number">-7</span>;
+    quickExchange(&amp;x, &amp;y);  <span class="hljs-comment">// uses #1</span>
+    quickExchange(p1, p2);  <span class="hljs-comment">// uses #2</span>
+}
+</code></pre>
+<p>&#x867D;&#x7136;<code>quickExchange(p1, p2)</code>&#x53EF;&#x4EE5;&#x5339;&#x914D;&#x4E24;&#x4E2A;&#x7248;&#x672C;&#x7684;<code>quickExchange()</code>&#xFF0C;&#x4F46;&#x662F;&#x7B2C;&#x4E8C;&#x4E2A;&#x6BD4;&#x7B2C;&#x4E00;&#x4E2A;&#x66F4;&#x4E3A;&#x7279;&#x5316;&#xFF08;&#x5177;&#x4F53;&#x89C4;&#x5219;&#x89C1;<a href="#Formal-Ordering-Rules">16.2.3</a>&#xFF09;&#x3002;</p>
+<h3 id="1612-&#x7279;&#x5316;&#x548C;&#x8BED;&#x4E49;&#x4E00;&#x81F4;&#x6027;">16.1.2 &#x7279;&#x5316;&#x548C;&#x8BED;&#x4E49;&#x4E00;&#x81F4;&#x6027;</h3>
+<p>&#x5728;&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;<code>quickExchange()</code>&#x5E76;&#x4E0D;&#x80FD;&#x4FDD;&#x8BC1;&#x8BED;&#x4E49;&#x4E00;&#x81F4;&#x6027;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">struct</span> S {
+    <span class="hljs-keyword">int</span> x;
+} s1, s2;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">distinguish</span> <span class="hljs-params">(Array&lt;<span class="hljs-keyword">int</span>&gt; a1, Array&lt;<span class="hljs-keyword">int</span>&gt; a2)</span>
+</span>{
+    <span class="hljs-keyword">int</span>* p = &amp;a1[<span class="hljs-number">0</span>];
+    <span class="hljs-keyword">int</span>* q = &amp;s1.x;
+    a1[<span class="hljs-number">0</span>] = s1.x = <span class="hljs-number">1</span>;
+    a2[<span class="hljs-number">0</span>] = s2.x = <span class="hljs-number">2</span>;
+    quickExchange(&amp;a1, &amp;a2);    <span class="hljs-comment">// *p == 1 after this (still)</span>
+    quickExchange(&amp;s1, &amp;s2);    <span class="hljs-comment">// *q == 2 after this</span>
+}
+</code></pre>
+<p>&#x5728;&#x7B2C;&#x4E00;&#x4E2A;<code>quickExchange()</code>&#x540E;&#xFF0C;<code>p</code>&#x548C;<code>a2.data</code>&#x6307;&#x5411;&#x540C;&#x4E00;&#x7F13;&#x51B2;&#x533A;&#xFF0C;&#x5982;&#x679C;&#x4FDD;&#x8BC1;&#x8BED;&#x4E49;&#x4E00;&#x81F4;&#x6027;&#xFF0C;&#x5E94;&#x8BE5;&#x8FD9;&#x6837;&#x5199;&#xFF08;&#x867D;&#x7136;&#x6709;bug&#xFF09;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">exchange</span> <span class="hljs-params">(Array&lt;T&gt;* a, Array&lt;T&gt;* b)</span>
+</span>{
+    T* p = &amp;(*a)[<span class="hljs-number">0</span>];
+    T* q = &amp;(*b)[<span class="hljs-number">0</span>];
+    <span class="hljs-keyword">for</span> (<span class="hljs-built_in">std</span>::<span class="hljs-keyword">size_t</span> k = a-&gt;size(); k-- != <span class="hljs-number">0</span>; ) {
+        exchange(p++, q++);
+    }
+}
+</code></pre>
+<h2 id="Overloading-Function-Templates">16.2 &#x51FD;&#x6570;&#x6A21;&#x677F;&#x7684;&#x91CD;&#x8F7D; </h2>
+<p>&#x5047;&#x8BBE;&#x6709;&#x4E0B;&#x9762;&#x4E24;&#x4E2A;&#x6A21;&#x677F;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// details/funcoverload1.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">f</span><span class="hljs-params">(T)</span>
+</span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+}
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">f</span><span class="hljs-params">(T*)</span>
+</span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-number">2</span>;
+}
+</code></pre>
+<p>&#x5F53;&#x7528;<code>int*</code>&#x5B9E;&#x4F8B;&#x5316;<code>f(T)</code>&#x4E14;&#x7528;<code>int</code>&#x5B9E;&#x4F8B;&#x5316;<code>f(T*)</code>&#x65F6;&#xFF0C;&#x5C06;&#x4F1A;&#x5F97;&#x5230;&#x4E24;&#x4E2A;&#x76F8;&#x540C;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x8FD9;&#x4E24;&#x4E2A;&#x51FD;&#x6570;&#x4E5F;&#x662F;&#x53EF;&#x4EE5;&#x5171;&#x5B58;&#x7684;&#xFF0C;&#x4F8B;&#x5982;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// details/funcoverload1.cpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;funcoverload1.hpp&quot;</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; f&lt;<span class="hljs-keyword">int</span>*&gt;((<span class="hljs-keyword">int</span>*)<span class="hljs-literal">nullptr</span>);    <span class="hljs-comment">// calls f&lt;T&gt;(T)</span>
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; f&lt;<span class="hljs-keyword">int</span>&gt;((<span class="hljs-keyword">int</span>*)<span class="hljs-literal">nullptr</span>);     <span class="hljs-comment">// calls f&lt;T&gt;(T*)</span>
+}
+</code></pre>
+<h3 id="1621-&#x51FD;&#x6570;&#x7B7E;&#x540D;">16.2.1 &#x51FD;&#x6570;&#x7B7E;&#x540D;</h3>
+<p>&#x4E0A;&#x4F8B;&#x4E2D;&#x5B9E;&#x4F8B;&#x5316;&#x540E;&#x7684;&#x51FD;&#x6570;&#x4E4B;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x5171;&#x5B58;&#x662F;&#x56E0;&#x4E3A;&#x51FD;&#x6570;&#x7B7E;&#x540D;&#x4E0D;&#x540C;&#xFF0C;&#x51FD;&#x6570;&#x7B7E;&#x540D;&#x5305;&#x542B;&#x4EE5;&#x4E0B;&#x5185;&#x5BB9;&#xFF1A;</p>
+<ol>
+<li>&#x51FD;&#x6570;&#x7684;&#x975E;&#x53D7;&#x9650;&#x540D;&#x79F0;</li>
+<li>&#x51FD;&#x6570;&#x540D;&#x79F0;&#x6240;&#x5728;&#x7684;&#x7C7B;&#x548C;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x5185;&#x90E8;&#x94FE;&#x63A5;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x8FD8;&#x5305;&#x62EC;&#x7FFB;&#x8BD1;&#x5355;&#x5143;&#x7684;&#x540D;&#x79F0;</li>
+<li><code>const</code>&#x3001;<code>volatile</code>&#x4FEE;&#x9970;&#x7B26;</li>
+<li>&#x5982;&#x679C;&#x662F;&#x6210;&#x5458;&#x51FD;&#x6570;&#xFF0C;&#x8FD8;&#x4F1A;&#x5305;&#x542B;&#x5DE6;&#x503C;&#x3001;&#x53F3;&#x503C;&#x5F15;&#x7528;&#x9650;&#x5B9A;&#x7B26;</li>
+<li>&#x51FD;&#x6570;&#x7684;&#x5F62;&#x53C2;&#x7C7B;&#x578B;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x51FD;&#x6570;&#x6A21;&#x677F;&#xFF0C;&#x5219;&#x662F;&#x4EE3;&#x6362;&#x524D;&#x7684;&#x7C7B;&#x578B;</li>
+<li>&#x5982;&#x679C;&#x662F;&#x51FD;&#x6570;&#x6A21;&#x677F;&#xFF0C;&#x8FD8;&#x5305;&#x62EC;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;</li>
+<li>&#x5982;&#x679C;&#x662F;&#x51FD;&#x6570;&#x6A21;&#x677F;&#xFF0C;&#x8FD8;&#x5305;&#x62EC;&#x6A21;&#x677F;&#x5F62;&#x53C2;&#x7C7B;&#x578B;&#x548C;&#x6A21;&#x677F;&#x5B9E;&#x53C2;&#x7C7B;&#x578B;</li>
+</ol>
+<p>&#x8FD9;&#x5C31;&#x610F;&#x5473;&#x4E0B;&#x9762;&#x7684;&#x7684;&#x51FD;&#x6570;&#x6A21;&#x677F;&#x53CA;&#x5B9E;&#x4F8B;&#x5316;&#x7684;&#x7ED3;&#x679C;&#x53EF;&#x80FD;&#x53EF;&#x4EE5;&#x5171;&#x5B58;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T1, <span class="hljs-keyword">typename</span> T2&gt;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">f1</span><span class="hljs-params">(T1, T2)</span></span>;
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T1, <span class="hljs-keyword">typename</span> T2&gt;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">f1</span><span class="hljs-params">(T2, T1)</span></span>;
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-function"><span class="hljs-keyword">long</span> <span class="hljs-title">f2</span><span class="hljs-params">(T)</span></span>;
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-function"><span class="hljs-keyword">char</span> <span class="hljs-title">f2</span><span class="hljs-params">(T)</span></span>;
+</code></pre>
+<p>&#x4F46;&#x662F;&#x5728;&#x89E3;&#x6790;<code>f1&lt;char, char&gt;(&apos;a&apos;, &apos;b&apos;)</code>&#x65F6;&#xFF0C;&#x53EF;&#x80FD;&#x627E;&#x4E0D;&#x5230;&#x6700;&#x4F73;&#x5339;&#x914D;&#x7684;&#x51FD;&#x6570;&#x3002;</p>
+<h3 id="Partial-Ordering-of-Overloaded-Function-Templates">16.2.2 &#x91CD;&#x8F7D;&#x7684;&#x51FD;&#x6570;&#x6A21;&#x677F;&#x7684;&#x5339;&#x914D;&#x987A;&#x5E8F; </h3>
+<p>&#x5047;&#x8BBE;&#x5C06;<a href="#Overloading-Function-Templates">16.2</a>&#x4E2D;&#x7684;<code>details/funcoverload1.cpp</code>&#x66FF;&#x6362;&#x4E3A;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// details/funcoverload2.cpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">f</span><span class="hljs-params">(T)</span>
+</span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+}
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">f</span><span class="hljs-params">(T*)</span>
+</span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-number">2</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; f(<span class="hljs-number">0</span>);              <span class="hljs-comment">// calls f&lt;T&gt;(T)</span>
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; f(<span class="hljs-literal">nullptr</span>);        <span class="hljs-comment">// calls f&lt;T&gt;(T)</span>
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; f((<span class="hljs-keyword">int</span>*)<span class="hljs-literal">nullptr</span>);  <span class="hljs-comment">// calls f&lt;T&gt;(T*)</span>
+}
+</code></pre>
+<p>&#x5339;&#x914D;&#x8FC7;&#x7A0B;&#x4E3A;&#xFF1A;</p>
+<ul>
+<li><code>0</code>&#x7684;&#x7C7B;&#x578B;&#x662F;<code>int</code>&#xFF0C;&#x663E;&#x7136;&#x53EA;&#x80FD;&#x5339;&#x914D;<code>f&lt;int&gt;(int)</code></li>
+<li><code>nullptr</code>&#x7684;&#x7C7B;&#x578B;&#x662F;<code>std::nullptr_t</code>&#xFF0C;&#x4E5F;&#x53EA;&#x80FD;&#x5339;&#x914D;<code>f&lt;std::nullptr_t&gt;(std::nullptr_t)</code></li>
+<li><code>(int*)nullptr</code>&#x7684;&#x7C7B;&#x578B;&#x662F;<code>int*</code>&#xFF0C;&#x53EF;&#x4EE5;&#x5339;&#x914D;<code>f&lt;int*&gt;(int*)</code>&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5339;&#x914D;<code>f&lt;int&gt;(int*)</code>&#xFF0C;&#x800C;<code>f&lt;T&gt;(T*)</code>&#x76F8;&#x5BF9;&#x4E8E;<code>f&lt;T&gt;(T)</code>&#x5219;&#x662F;&#x66F4;&#x4E3A;&#x7279;&#x5316;&#x7684;&#x7248;&#x672C;&#xFF08;&#x5177;&#x4F53;&#x89C4;&#x5219;&#x89C1;<a href="#Formal-Ordering-Rules">16.2.3</a>&#xFF09;&#xFF0C;&#x6240;&#x4EE5;&#x5C06;&#x5339;&#x914D;<code>f&lt;T&gt;(T*)</code></li>
+</ul>
+<h3 id="Formal-Ordering-Rules">16.2.3 &#x91CD;&#x8F7D;&#x7684;&#x51FD;&#x6570;&#x6A21;&#x677F;&#x7684;&#x5339;&#x914D;&#x89C4;&#x5219; </h3>
+<p>&#x91CD;&#x8F7D;&#x7684;&#x51FD;&#x6570;&#x6A21;&#x677F;&#x4E4B;&#x95F4;&#x4EC5;&#x53EF;&#x80FD;&#x5B58;&#x5728;&#x504F;&#x5E8F;&#x7684;&#x5173;&#x7CFB;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x53EF;&#x80FD;&#x6BD4;&#x53E6;&#x4E00;&#x4E2A;&#x66F4;&#x4E3A;&#x7279;&#x5316;&#x3002;&#x91CD;&#x8F7D;&#x89E3;&#x6790;&#x7684;&#x8FC7;&#x7A0B;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ol>
+<li>&#x6CA1;&#x6709;&#x4F7F;&#x7528;&#x7684;&#x5177;&#x6709;&#x9ED8;&#x8BA4;&#x5B9E;&#x53C2;&#x7684;&#x5F62;&#x53C2;&#x548C;&#x6CA1;&#x6709;&#x4F7F;&#x7528;&#x7684;&#x53EF;&#x53D8;&#x53C2;&#x6570;&#x90E8;&#x5206;&#x5C06;&#x88AB;&#x5FFD;&#x7565;</li>
+<li>&#x6839;&#x636E;&#x4EE5;&#x4E0B;&#x89C4;&#x5219;&#x5F62;&#x6210;&#x53C2;&#x6570;&#x5217;&#x8868;&#xFF1A;<ul>
+<li>&#x4F7F;&#x7528;&#x72EC;&#x7279;&#x7684;&#x6784;&#x9020;&#x7C7B;&#x578B;&#xFF08;a unique invented type&#xFF09;&#x66FF;&#x6362;&#x6A21;&#x677F;&#x5F62;&#x53C2;</li>
+<li>&#x4F7F;&#x7528;&#x72EC;&#x7279;&#x7684;&#x6784;&#x9020;&#x7C7B;&#x7C7B;&#x578B;&#xFF08;a unique invented class template&#xFF09;&#x66FF;&#x6362;&#x6A21;&#x677F;&#x7684;&#x6A21;&#x677F;&#x5F62;&#x53C2;</li>
+<li>&#x4F7F;&#x7528;&#x72EC;&#x7279;&#x7684;&#x6784;&#x9020;&#x503C;&#xFF08;a unique invented value&#xFF09;&#x66FF;&#x6362;&#x975E;&#x7C7B;&#x578B;&#x6A21;&#x677F;&#x5F62;&#x53C2;</li>
+</ul>
+</li>
+<li>&#x5982;&#x679C;&#x51FD;&#x6570;&#x6A21;&#x677F;2&#x7684;&#x63A8;&#x5BFC;&#x7C7B;&#x578B;&#x548C;&#x53C2;&#x6570;&#x5217;&#x8868;1&#x5B8C;&#x5168;&#x5339;&#x914D;&#xFF0C;&#x4F46;&#x662F;&#x53CD;&#x8FC7;&#x6765;&#x4E0D;&#x80FD;&#xFF0C;&#x5219;&#x5F97;&#x5230;&#x53C2;&#x6570;&#x5217;&#x8868;1&#x7684;&#x51FD;&#x6570;&#x6A21;&#x677F;&#x66F4;&#x4E3A;&#x7279;&#x5316;&#xFF0C;&#x5426;&#x5219;&#x4E24;&#x4E2A;&#x51FD;&#x6570;&#x6A21;&#x677F;&#x4E4B;&#x95F4;&#x4E0D;&#x5B58;&#x5728;&#x66F4;&#x4E3A;&#x7279;&#x5316;&#x7684;&#x504F;&#x5E8F;&#x5173;&#x7CFB;</li>
+</ol>
+<p>&#x5339;&#x914D;&#x89C4;&#x5219;&#x7684;&#x539F;&#x6587;&#xFF1A;</p>
+<blockquote>
+<p>If template argument deduction of the second template against the first synthesized list of argument types succeeds with an exact match, but not vice versa, then the first template is more specialized than the second. Conversely, if template argument deduction of the first template against the second synthesized list of argument types succeeds with an exact match, but not vice versa, then the second template is more specialized than the first. Otherwise (either no deduction succeeds or both succeed), there is no ordering between the two templates.</p>
+</blockquote>
+<p>&#x4EE5;&#x524D;&#x4E00;&#x8282;&#xFF08;<a href="#Partial-Ordering-of-Overloaded-Function-Templates">16.2.2</a>&#xFF09;&#x4E2D;&#x4EE3;&#x7801;&#x4E3A;&#x4F8B;&#xFF1A;&#x89E3;&#x6790;<code>f((int*)nullptr)</code>&#x65F6;&#xFF0C;&#x4E24;&#x4E2A;&#x51FD;&#x6570;&#x6A21;&#x677F;&#x5B9E;&#x4F8B;&#x5316;&#x7684;&#x7ED3;&#x679C;&#x5206;&#x522B;&#x4E3A;<code>f&lt;int*&gt;(int*)</code>&#x548C;<code>f&lt;int&gt;(int*)</code>&#xFF0C;&#x5F62;&#x53C2;&#x662F;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x53C2;&#x6570;&#x5217;&#x8868;&#x5206;&#x522B;&#x4E3A;<code>(A1)</code>&#x548C;<code>(A2*)</code>&#xFF0C;&#x7528;<code>A2*</code>&#x4EE3;&#x6362;&#x7B2C;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x6A21;&#x677F;&#x4E2D;&#x7684;<code>T</code>&#x540E;&#x53EF;&#x4EE5;&#x548C;&#x53C2;&#x6570;&#x5217;&#x8868;2&#x5B8C;&#x5168;&#x5339;&#x914D;&#xFF0C;&#x800C;&#x7528;&#x4EFB;&#x4F55;&#x7C7B;&#x578B;&#x4EE3;&#x6362;&#x7B2C;&#x4E8C;&#x4E2A;&#x51FD;&#x6570;&#x6A21;&#x677F;&#x4E2D;&#x7684;<code>T*</code>&#x90FD;&#x5C06;&#x5F97;&#x5230;&#x6307;&#x9488;&#x7C7B;&#x578B;&#xFF0C;&#x548C;&#x53C2;&#x6570;&#x5217;&#x8868;1&#x65E0;&#x6CD5;&#x5339;&#x914D;&#xFF0C;&#x56E0;&#x6B64;<code>f&lt;T&gt;(T*)</code>&#x66F4;&#x4E3A;&#x7279;&#x5316;&#x3002;</p>
+<p>&#x4E66;&#x4E2D;&#x8FD8;&#x6709;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">t</span><span class="hljs-params">(T*, T <span class="hljs-keyword">const</span>* = <span class="hljs-literal">nullptr</span>, ...)</span></span>;
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">t</span><span class="hljs-params">(T <span class="hljs-keyword">const</span>*, T*, T* = <span class="hljs-literal">nullptr</span>)</span></span>;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">example</span><span class="hljs-params">(<span class="hljs-keyword">int</span>* p)</span>
+</span>{
+    t(p, p);
+}
+</code></pre>
+<p>&#x7B2C;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x6A21;&#x677F;&#x4E2D;&#x7684;&#x53EF;&#x53D8;&#x5F62;&#x53C2;&#x548C;&#x7B2C;&#x4E8C;&#x4E2A;&#x51FD;&#x6570;&#x6A21;&#x677F;&#x4E2D;&#x7684;&#x5177;&#x6709;&#x9ED8;&#x8BA4;&#x5B9E;&#x53C2;&#x7684;&#x7B2C;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#x6CA1;&#x6709;&#x4F7F;&#x7528;&#xFF0C;&#x6240;&#x4EE5;&#x5C06;&#x88AB;&#x5FFD;&#x7565;&#x3002;&#x6839;&#x636E;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x63A8;&#x5BFC;&#x89C4;&#x5219;&#xFF0C;&#x53C2;&#x6570;&#x5217;&#x8868;1&#x4E3A;<code>(A1*, A1 const*)</code>&#xFF0C;&#x53C2;&#x6570;&#x5217;&#x8868;2&#x4E3A;<code>(A2 const*, A2*)</code>&#xFF0C;&#x56E0;&#x6B64;&#x6CA1;&#x6709;&#x529E;&#x6CD5;&#x5C06;&#x53C2;&#x6570;&#x5217;&#x8868;1&#x4EE3;&#x6362;&#x4E3A;&#x53C2;&#x6570;&#x5217;&#x8868;2&#xFF0C;&#x4E5F;&#x6CA1;&#x6709;&#x529E;&#x6CD5;&#x5C06;&#x53C2;&#x6570;&#x5217;&#x8868;2&#x4EE3;&#x6362;&#x4E3A;&#x53C2;&#x6570;&#x5217;&#x8868;1&#xFF0C;&#x6240;&#x4EE5;&#x4E24;&#x4E2A;&#x51FD;&#x6570;&#x6A21;&#x677F;&#x4E4B;&#x95F4;&#x4E0D;&#x5B58;&#x5728;&#x504F;&#x5E8F;&#x5173;&#x7CFB;&#xFF0C;&#x91CD;&#x8F7D;&#x89E3;&#x6790;&#x8FC7;&#x7A0B;&#x5C06;&#x4F1A;&#x5931;&#x8D25;&#x3002;</p>
+<p>&#x770B;&#x5B8C;&#x6574;&#x672C;&#x4E66;&#x540E;&#x518D;&#x56DE;&#x5934;&#x5728;&#x770B;&#x8FD9;&#x91CC;&#xFF0C;&#x89C9;&#x5F97;&#x4E66;&#x4E0A;&#x89E3;&#x91CA;&#x4E0D;&#x662F;&#x7279;&#x522B;&#x6070;&#x5F53;&#x3002;&#x89E3;&#x6790;<code>t(p, p)</code>&#x65F6;&#xFF0C;&#x4E24;&#x4E2A;&#x51FD;&#x6570;&#x6A21;&#x677F;&#x5B9E;&#x4F8B;&#x5316;&#x540E;&#x7684;&#x7ED3;&#x679C;&#x5206;&#x522B;&#x4E3A;<code>t&lt;int&gt;(int*, int const*)</code>&#x548C;<code>t&lt;int&gt;(int const*, int*)</code>&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5F62;&#x53C2;&#x6BD4;&#x7B2C;&#x4E8C;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5F62;&#x53C2;&#x66F4;&#x4E3A;&#x5339;&#x914D;&#xFF0C;&#x800C;&#x7B2C;&#x4E8C;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x5F62;&#x53C2;&#x5374;&#x6BD4;&#x7B2C;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x5F62;&#x53C2;&#x66F4;&#x4E3A;&#x5339;&#x914D;&#xFF0C;&#x56E0;&#x6B64;&#x8FD9;&#x91CC;&#x5B58;&#x5728;&#x6A21;&#x7CCA;&#x8C03;&#x7528;&#x3002;</p>
+<h3 id="1624-&#x51FD;&#x6570;&#x6A21;&#x677F;&#x548C;&#x666E;&#x901A;&#x51FD;&#x6570;&#x4E4B;&#x95F4;&#x91CD;&#x8F7D;">16.2.4 &#x51FD;&#x6570;&#x6A21;&#x677F;&#x548C;&#x666E;&#x901A;&#x51FD;&#x6570;&#x4E4B;&#x95F4;&#x91CD;&#x8F7D;</h3>
+<p>&#x91CD;&#x8F7D;&#x89E3;&#x6790;&#x8FC7;&#x7A0B;&#x5C06;&#x9996;&#x5148;&#x5339;&#x914D;&#x666E;&#x901A;&#x51FD;&#x6570;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// details/nontmpl1.cpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-built_in">std</span>::<span class="hljs-function"><span class="hljs-built_in">string</span> <span class="hljs-title">f</span><span class="hljs-params">(T)</span>
+</span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Template&quot;</span>;
+}
+
+<span class="hljs-built_in">std</span>::<span class="hljs-function"><span class="hljs-built_in">string</span> <span class="hljs-title">f</span><span class="hljs-params">(<span class="hljs-keyword">int</span>&amp;)</span>
+</span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Nontemplate&quot;</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">int</span> x = <span class="hljs-number">7</span>;
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; f(x) &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>; <span class="hljs-comment">// prints: Nontemplate</span>
+}
+</code></pre>
+<p>&#x5F53;&#x9700;&#x8981;<code>const</code>&#x8F6C;&#x6362;&#x6216;&#x8005;&#x5F15;&#x7528;&#x8F6C;&#x6362;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x666E;&#x901A;&#x51FD;&#x6570;&#x4E0D;&#x80FD;&#x7CBE;&#x786E;&#x5339;&#x914D;&#xFF0C;&#x5219;&#x91CD;&#x8F7D;&#x89E3;&#x6790;&#x8FC7;&#x7A0B;&#x4F1A;&#x5C1D;&#x8BD5;&#x5339;&#x914D;&#x51FD;&#x6570;&#x6A21;&#x677F;&#xFF1B;&#x5982;&#x679C;&#x5176;&#x4F59;&#x65B9;&#x9762;&#x90FD;&#x76F8;&#x540C;&#xFF0C;&#x5219;&#x91CD;&#x8F7D;&#x89E3;&#x6790;&#x8FC7;&#x7A0B;&#x4F1A;&#x4F18;&#x5148;&#x5339;&#x914D;&#x666E;&#x901A;&#x51FD;&#x6570;&#xFF0C;&#x4F8B;&#x5982;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// details/nontmpl2.cpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-built_in">std</span>::<span class="hljs-function"><span class="hljs-built_in">string</span> <span class="hljs-title">f</span><span class="hljs-params">(T&amp;)</span>
+</span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Template&quot;</span>;
+}
+
+<span class="hljs-built_in">std</span>::<span class="hljs-function"><span class="hljs-built_in">string</span> <span class="hljs-title">f</span><span class="hljs-params">(<span class="hljs-keyword">int</span> <span class="hljs-keyword">const</span>&amp;)</span>
+</span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Nontemplate&quot;</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">int</span> x = <span class="hljs-number">7</span>;
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; f(x) &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;  <span class="hljs-comment">// prints: Template</span>
+    <span class="hljs-keyword">int</span> <span class="hljs-keyword">const</span> c = <span class="hljs-number">7</span>;
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; f(c) &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;  <span class="hljs-comment">// prints: Nontemplate</span>
+}
+</code></pre>
+<p>&#x5F53;&#x6210;&#x5458;&#x51FD;&#x6570;&#x6A21;&#x677F;&#x4F5C;&#x4E3A;&#x6784;&#x9020;&#x51FD;&#x6570;&#x65F6;&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x6BD4;&#x666E;&#x901A;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x5339;&#x914D;&#x5EA6;&#x66F4;&#x9AD8;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// details/tmplconstr.cpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+
+<span class="hljs-keyword">class</span> C {
+    <span class="hljs-keyword">public</span>:
+        C() = <span class="hljs-keyword">default</span>;
+        C (C <span class="hljs-keyword">const</span>&amp;) {
+            <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;copy constructor\n&quot;</span>;
+        }
+        C (C&amp;&amp;) {
+            <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;move constructor\n&quot;</span>;
+        }
+        <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+        C (T&amp;&amp;) {
+            <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;template constructor\n&quot;</span>;
+        }
+};
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    C x;
+    C x2{x};                <span class="hljs-comment">// prints: template constructor</span>
+    C x3{<span class="hljs-built_in">std</span>::move(x)};     <span class="hljs-comment">// prints: move constructor</span>
+    C <span class="hljs-keyword">const</span> c;
+    C x4{c};                <span class="hljs-comment">// prints: copy constructor</span>
+    C x5{<span class="hljs-built_in">std</span>::move(c)};     <span class="hljs-comment">// prints: template constructor</span>
+}
+</code></pre>
+<p>&#x5339;&#x914D;&#x8FC7;&#x7A0B;&#x4E3A;&#xFF1A;</p>
+<ul>
+<li>&#x521D;&#x59CB;&#x5316;<code>x2</code>&#x65F6;&#xFF0C;<code>T</code>&#x7684;&#x63A8;&#x5BFC;&#x7C7B;&#x578B;&#x4E3A;<code>C&amp;</code>&#xFF0C;&#x6298;&#x53E0;&#x540E;&#x6A21;&#x677F;&#x6784;&#x9020;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x4E3A;<code>C&amp;</code>&#xFF0C;&#x6BD4;&#x62F7;&#x8D1D;&#x6784;&#x9020;&#x51FD;&#x6570;&#x66F4;&#x4E3A;&#x5339;&#x914D;</li>
+<li>&#x521D;&#x59CB;&#x5316;<code>x3</code>&#x65F6;&#xFF0C;<code>T</code>&#x7684;&#x63A8;&#x5BFC;&#x7C7B;&#x578B;&#x4E3A;<code>C&amp;&amp;</code>&#xFF0C;&#x6298;&#x53E0;&#x540E;&#x6A21;&#x677F;&#x6784;&#x9020;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x4E3A;<code>C&amp;&amp;</code>&#xFF0C;&#x548C;&#x79FB;&#x52A8;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E00;&#x81F4;&#xFF0C;&#x4F18;&#x5148;&#x5339;&#x914D;&#x975E;&#x6A21;&#x677F;&#x51FD;&#x6570;</li>
+<li>&#x521D;&#x59CB;&#x5316;<code>x4</code>&#x65F6;&#xFF0C;<code>T</code>&#x7684;&#x63A8;&#x5BFC;&#x7C7B;&#x578B;&#x4E3A;<code>C const&amp;</code>&#xFF0C;&#x6298;&#x53E0;&#x540E;&#x6A21;&#x677F;&#x6784;&#x9020;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x4E3A;<code>C const&amp;</code>&#xFF0C;&#x548C;&#x62F7;&#x8D1D;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E00;&#x81F4;&#xFF0C;&#x4F18;&#x5148;&#x5339;&#x914D;&#x975E;&#x6A21;&#x677F;&#x51FD;&#x6570;</li>
+<li>&#x521D;&#x59CB;&#x5316;<code>x5</code>&#x65F6;&#xFF0C;<code>T</code>&#x7684;&#x63A8;&#x5BFC;&#x7C7B;&#x578B;&#x4E3A;<code>C const&amp;&amp;</code>&#xFF0C;&#x6298;&#x53E0;&#x540E;&#x6A21;&#x677F;&#x6784;&#x9020;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x4E3A;<code>C const&amp;&amp;</code>&#xFF0C;&#x6BD4;&#x79FB;&#x52A8;&#x6784;&#x9020;&#x51FD;&#x6570;&#x66F4;&#x4E3A;&#x5339;&#x914D;</li>
+</ul>
+<h3 id="1625-&#x53EF;&#x53D8;&#x53C2;&#x6570;&#x6A21;&#x677F;&#x7684;&#x91CD;&#x8F7D;">16.2.5 &#x53EF;&#x53D8;&#x53C2;&#x6570;&#x6A21;&#x677F;&#x7684;&#x91CD;&#x8F7D;</h3>
+<p>&#x7531;&#x4E8E;&#x53EF;&#x53D8;&#x53C2;&#x6570;&#x6A21;&#x677F;&#x7684;&#x4E00;&#x4E2A;&#x5F62;&#x53C2;&#x7C7B;&#x578B;&#x4F1A;&#x5BF9;&#x5E94;&#x591A;&#x4E2A;&#x5B9E;&#x53C2;&#x7C7B;&#x578B;&#xFF0C;&#x5339;&#x914D;&#x60C5;&#x51B5;&#x5C31;&#x4F1A;&#x6709;&#x4E9B;&#x590D;&#x6742;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// details/variadicoverload.cpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">f</span><span class="hljs-params">(T*)</span>
+</span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+}
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>... Ts&gt;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">f</span><span class="hljs-params">(Ts...)</span>
+</span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-number">2</span>;
+}
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>... Ts&gt;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">f</span><span class="hljs-params">(Ts*...)</span>
+</span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-number">3</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; f(<span class="hljs-number">0</span>, <span class="hljs-number">0.0</span>);                             <span class="hljs-comment">// calls f&lt;&gt;(Ts...)</span>
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; f((<span class="hljs-keyword">int</span>*)<span class="hljs-literal">nullptr</span>, (<span class="hljs-keyword">double</span>*)<span class="hljs-literal">nullptr</span>);    <span class="hljs-comment">// calls f&lt;&gt;(Ts*...)</span>
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; f((<span class="hljs-keyword">int</span>*)<span class="hljs-literal">nullptr</span>);                      <span class="hljs-comment">// calls f&lt;&gt;(T*)</span>
+}
+</code></pre>
+<p>&#x5339;&#x914D;&#x8FC7;&#x7A0B;&#x4E3A;&#xFF1A;</p>
+<ul>
+<li><code>f(0, 0.0)</code>&#x6709;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x4E14;&#x6CA1;&#x6709;&#x6307;&#x9488;&#x7C7B;&#x578B;&#xFF0C;&#x6240;&#x4EE5;&#x53EA;&#x80FD;&#x5339;&#x914D;<code>f&lt;&gt;(Ts...)</code></li>
+<li><code>f((int*)nullptr, (double*)nullptr)</code>&#x53EF;&#x4EE5;&#x540C;&#x65F6;&#x5339;&#x914D;&#x4E24;&#x4E2A;&#x53EF;&#x53D8;&#x53C2;&#x6570;&#x6A21;&#x677F;&#xFF0C;&#x53C2;&#x6570;&#x5217;&#x8868;&#x5206;&#x522B;&#x4E3A;<code>(A1)</code>&#x548C;<code>(A2*)</code>&#xFF0C;&#x663E;&#x7136;&#x53C2;&#x6570;&#x5217;&#x8868;1&#x53EF;&#x4EE5;&#x4EE3;&#x6362;&#x4E3A;&#x53C2;&#x6570;&#x5217;&#x8868;2&#xFF0C;&#x4F46;&#x662F;&#x53CD;&#x8FC7;&#x6765;&#x4E0D;&#x80FD;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5F97;&#x5230;&#x53C2;&#x6570;&#x5217;&#x8868;2&#x7684;&#x51FD;&#x6570;&#x6A21;&#x677F;&#x66F4;&#x4E3A;&#x7279;&#x5316;</li>
+<li><code>f((int*)nullptr)</code>&#x53EF;&#x4EE5;&#x540C;&#x65F6;&#x5339;&#x914D;&#x4E09;&#x4E2A;&#x51FD;&#x6570;&#x6A21;&#x677F;&#xFF0C;&#x53C2;&#x6570;&#x5217;&#x8868;&#x5206;&#x522B;&#x4E3A;<code>(A1*)</code>&#x3001;<code>(A2)</code>&#x548C;<code>(A3*)</code>&#xFF0C;&#x663E;&#x7136;&#x53C2;&#x6570;&#x5217;&#x8868;2&#x4E0D;&#x591F;&#x7279;&#x5316;&#xFF0C;&#x6240;&#x4EE5;&#x63A5;&#x4E0B;&#x6765;&#x8981;&#x6BD4;&#x8F83;&#x53C2;&#x6570;&#x5217;&#x8868;1&#x548C;&#x53C2;&#x6570;&#x5217;&#x8868;3&#x7279;&#x5316;&#x504F;&#x5E8F;&#x5173;&#x7CFB;&#x3002;&#x867D;&#x7136;&#x53EF;&#x4EE5;&#x53CC;&#x5411;&#x4EE3;&#x6362;&#xFF0C;&#x4F46;&#x662F;&#x7531;&#x4E8E;<code>A3</code>&#x662F;&#x53C2;&#x6570;&#x5305;&#xFF0C;&#x5355;&#x4E2A;&#x53C2;&#x6570;<code>A1</code>&#x4E0D;&#x80FD;&#x8F6C;&#x6362;&#x4E3A;&#x53C2;&#x6570;&#x5305;&#xFF0C;&#x6240;&#x4EE5;&#x5F97;&#x5230;&#x53C2;&#x6570;&#x5217;&#x8868;1&#x7684;&#x51FD;&#x6570;&#x6A21;&#x677F;&#x66F4;&#x4E3A;&#x7279;&#x5316;&#x2014;&#x2014;&#x8FD9;&#x6761;&#x89C4;&#x5219;&#x4E5F;&#x610F;&#x5473;&#x7740;&#x666E;&#x901A;&#x51FD;&#x6570;&#x6A21;&#x677F;&#x6BD4;&#x53EF;&#x53D8;&#x53C2;&#x6570;&#x51FD;&#x6570;&#x6A21;&#x677F;&#x66F4;&#x4E3A;&#x7279;&#x5316;</li>
+</ul>
+<p>&#x4E0A;&#x8FF0;&#x89C4;&#x5219;&#x4E5F;&#x9002;&#x7528;&#x4E8E;&#x9700;&#x8981;&#x53C2;&#x6570;&#x5305;&#x5C55;&#x5F00;&#x7684;&#x53EF;&#x53D8;&#x53C2;&#x6570;&#x6A21;&#x677F;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// details/tupleoverload.cpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>... Ts&gt; <span class="hljs-keyword">class</span> Tuple
+{
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">f</span><span class="hljs-params">(Tuple&lt;T*&gt;)</span>
+</span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+}
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>... Ts&gt;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">f</span><span class="hljs-params">(Tuple&lt;Ts...&gt;)</span>
+</span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-number">2</span>;
+}
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>... Ts&gt;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">f</span><span class="hljs-params">(Tuple&lt;Ts*...&gt;)</span>
+</span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-number">3</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; f(Tuple&lt;<span class="hljs-keyword">int</span>, <span class="hljs-keyword">double</span>&gt;());       <span class="hljs-comment">// calls f&lt;&gt;(Tuple&lt;Ts...&gt;)</span>
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; f(Tuple&lt;<span class="hljs-keyword">int</span>*, <span class="hljs-keyword">double</span>*&gt;());     <span class="hljs-comment">// calls f&lt;&gt;(Tuple&lt;Ts*...&gt;)</span>
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; f(Tuple&lt;<span class="hljs-keyword">int</span>*&gt;());              <span class="hljs-comment">// calls f&lt;&gt;(Tuple&lt;T*&gt;)</span>
+}
+</code></pre>
+<h2 id="163-&#x663E;&#x793A;&#x7279;&#x5316;">16.3 &#x663E;&#x793A;&#x7279;&#x5316;</h2>
+<p>&#x663E;&#x793A;&#x7279;&#x5316;&#x4E00;&#x822C;&#x662F;&#x6307;&#x5C06;&#x5168;&#x90E8;&#x7684;&#x6A21;&#x677F;&#x5F62;&#x53C2;&#x4EE3;&#x6362;&#x4E3A;&#x6A21;&#x677F;&#x5B9E;&#x53C2;&#x540E;&#x5F97;&#x5230;&#x7684;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x4EE3;&#x7801;&#xFF0C;&#x4E5F;&#x79F0;&#x4E3A;&#x5168;&#x7279;&#x5316;&#xFF08;full specialization&#xFF09;&#x3002;&#x7C7B;&#x6A21;&#x677F;&#x3001;&#x51FD;&#x6570;&#x6A21;&#x677F;&#x3001;&#x53D8;&#x91CF;&#x6A21;&#x677F;&#x548C;&#x6210;&#x5458;&#x6A21;&#x677F;&#x53EF;&#x4EE5;&#x88AB;&#x5168;&#x7279;&#x5316;&#x3002;</p>
+<h3 id="1631-&#x7C7B;&#x6A21;&#x677F;&#x7684;&#x5168;&#x7279;&#x5316;">16.3.1 &#x7C7B;&#x6A21;&#x677F;&#x7684;&#x5168;&#x7279;&#x5316;</h3>
+<p>&#x5168;&#x7279;&#x5316;&#x7C7B;&#x6A21;&#x677F;&#x4EE5;<code>template&lt;&gt;</code>&#x5F00;&#x59CB;&#xFF0C;&#x4E14;&#x7279;&#x5316;&#x7684;&#x7ED3;&#x679C;&#x53EF;&#x4EE5;&#x548C;&#x539F;&#x59CB;&#x6A21;&#x677F;&#x6CA1;&#x6709;&#x5173;&#x7CFB;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">class</span> S {
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">info</span><span class="hljs-params">()</span> </span>{
+            <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;generic (S&lt;T&gt;::info())\n&quot;</span>;
+        }
+};
+
+<span class="hljs-keyword">template</span>&lt;&gt;
+<span class="hljs-keyword">class</span> S&lt;<span class="hljs-keyword">void</span>&gt; {
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">msg</span><span class="hljs-params">()</span> </span>{
+            <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;fully specialized (S&lt;void&gt;::msg())\n&quot;</span>;
+        }
+};
+</code></pre>
+<p>&#x5168;&#x7279;&#x5316;&#x65F6;&#x8981;&#x4E3A;&#x6240;&#x6709;&#x7684;&#x6A21;&#x677F;&#x5F62;&#x53C2;&#x63D0;&#x4F9B;&#x6A21;&#x677F;&#x5B9E;&#x53C2;&#xFF08;&#x5177;&#x6709;&#x9ED8;&#x8BA4;&#x5B9E;&#x53C2;&#x7684;&#x6A21;&#x677F;&#x5F62;&#x53C2;&#x9664;&#x5916;&#xFF09;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">class</span> Types {
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> I = <span class="hljs-keyword">int</span>;
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span> U = <span class="hljs-keyword">typename</span> Types&lt;T&gt;::I&gt;
+<span class="hljs-keyword">class</span> S;                            <span class="hljs-comment">// #1</span>
+
+<span class="hljs-keyword">template</span>&lt;&gt;
+<span class="hljs-keyword">class</span> S&lt;<span class="hljs-keyword">void</span>&gt; {                     <span class="hljs-comment">// #2</span>
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">f</span><span class="hljs-params">()</span></span>;
+};
+
+<span class="hljs-keyword">template</span>&lt;&gt; <span class="hljs-keyword">class</span> S&lt;<span class="hljs-keyword">char</span>, <span class="hljs-keyword">char</span>&gt;;     <span class="hljs-comment">// #3</span>
+
+<span class="hljs-keyword">template</span>&lt;&gt; <span class="hljs-keyword">class</span> S&lt;<span class="hljs-keyword">char</span>, <span class="hljs-number">0</span>&gt;;        <span class="hljs-comment">// ERROR: 0 cannot substitute U</span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    S&lt;<span class="hljs-keyword">int</span>&gt;* pi;         <span class="hljs-comment">// OK: uses #1 , no definition needed</span>
+    S&lt;<span class="hljs-keyword">int</span>&gt; e1;          <span class="hljs-comment">// ERROR: uses #1, but no definition available</span>
+    S&lt;<span class="hljs-keyword">void</span>&gt;* pv;        <span class="hljs-comment">// OK: uses #2</span>
+    S&lt;<span class="hljs-keyword">void</span>,<span class="hljs-keyword">int</span>&gt; sv;     <span class="hljs-comment">// OK: uses #2, definition available</span>
+    S&lt;<span class="hljs-keyword">void</span>,<span class="hljs-keyword">char</span>&gt; e2;    <span class="hljs-comment">// ERROR: uses #1, but no definition available</span>
+    S&lt;<span class="hljs-keyword">char</span>,<span class="hljs-keyword">char</span>&gt; e3;    <span class="hljs-comment">// ERROR: uses #3, but no definition available</span>
+}
+
+<span class="hljs-keyword">template</span>&lt;&gt;
+<span class="hljs-keyword">class</span> S&lt;<span class="hljs-keyword">char</span>, <span class="hljs-keyword">char</span>&gt; {   <span class="hljs-comment">// definition for #3</span>
+};
+</code></pre>
+<p>&#x4E0A;&#x4F8B;&#x8FD8;&#x8868;&#x660E;&#xFF0C;&#x5168;&#x7279;&#x5316;&#x53EF;&#x4EE5;&#x53EA;&#x662F;&#x58F0;&#x660E;&#x3002;&#x4E00;&#x65E6;&#x5168;&#x7279;&#x5316;&#x88AB;&#x58F0;&#x660E;&#xFF0C;&#x7F16;&#x8BD1;&#x5668;&#x5C06;&#x4E0D;&#x518D;&#x8003;&#x8651;&#x6A21;&#x677F;&#x5B9A;&#x4E49;&#xFF0C;&#x5373;&#x5168;&#x7279;&#x5316;&#x7684;&#x5B9E;&#x4F8B;&#x548C;&#x666E;&#x901A;&#x7C7B;&#x662F;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x552F;&#x4E00;&#x7684;&#x4E0D;&#x540C;&#x5C31;&#x662F;&#x9700;&#x8981;&#x5BF9;&#x5E94;&#x4E00;&#x4E2A;&#x6A21;&#x677F;&#x5B9A;&#x4E49;&#xFF0C;&#x56E0;&#x6B64;&#x5B9A;&#x4E49;&#x6210;&#x5458;&#x51FD;&#x6570;&#x65F6;&#x4E0D;&#x9700;&#x8981;&#x524D;&#x7F00;<code>template&lt;&gt;</code>&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">class</span> S;
+
+<span class="hljs-keyword">template</span>&lt;&gt; <span class="hljs-keyword">class</span> S&lt;<span class="hljs-keyword">char</span>**&gt; {
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span></span>;
+};
+
+<span class="hljs-comment">// the following definition cannot be preceded by template&lt;&gt;</span>
+<span class="hljs-keyword">void</span> S&lt;<span class="hljs-keyword">char</span>**&gt;::print() <span class="hljs-keyword">const</span>
+{
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;pointer to pointer to char\n&quot;</span>;
+}
+</code></pre>
+<p>&#x5F53;&#x7F16;&#x8BD1;&#x5668;&#x5DF2;&#x7ECF;&#x901A;&#x8FC7;&#x6A21;&#x677F;&#x5B9A;&#x4E49;&#x751F;&#x6210;&#x4E86;&#x7279;&#x5316;&#x7248;&#x672C;&#x540E;&#xFF0C;&#x5C06;&#x4E0D;&#x80FD;&#x518D;&#x58F0;&#x660E;&#x5168;&#x7279;&#x5316;&#x7248;&#x672C;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">class</span> Invalid {
+};
+
+Invalid&lt;<span class="hljs-keyword">double</span>&gt; x1;     <span class="hljs-comment">// causes the instantiation of Invalid&lt;double&gt;</span>
+
+<span class="hljs-keyword">template</span>&lt;&gt;
+<span class="hljs-keyword">class</span> Invalid&lt;<span class="hljs-keyword">double</span>&gt;;  <span class="hljs-comment">// ERROR: Invalid&lt;double&gt; already instantiated</span>
+</code></pre>
+<h3 id="1632-&#x51FD;&#x6570;&#x6A21;&#x677F;&#x7684;&#x5168;&#x7279;&#x5316;">16.3.2 &#x51FD;&#x6570;&#x6A21;&#x677F;&#x7684;&#x5168;&#x7279;&#x5316;</h3>
+<p>&#x51FD;&#x6570;&#x6A21;&#x677F;&#x7684;&#x5168;&#x7279;&#x5316;&#x4F1A;&#x8003;&#x8651;&#x6A21;&#x677F;&#x4E4B;&#x95F4;&#x7684;&#x7279;&#x5316;&#x504F;&#x5E8F;&#x5173;&#x7CFB;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">f</span><span class="hljs-params">(T)</span>    <span class="hljs-comment">// #1</span>
+</span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+}
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">f</span><span class="hljs-params">(T*)</span>   <span class="hljs-comment">// #2</span>
+</span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-number">2</span>;
+}
+
+<span class="hljs-keyword">template</span>&lt;&gt; <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">f</span><span class="hljs-params">(<span class="hljs-keyword">int</span>)</span>   <span class="hljs-comment">// OK: specialization of #1</span>
+</span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-number">3</span>;
+}
+
+<span class="hljs-keyword">template</span>&lt;&gt; <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">f</span><span class="hljs-params">(<span class="hljs-keyword">int</span>*)</span>  <span class="hljs-comment">// OK: specialization of #2</span>
+</span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-number">4</span>;
+}
+</code></pre>
+<p>&#x51FD;&#x6570;&#x6A21;&#x677F;&#x5168;&#x7279;&#x5316;&#x65F6;&#x4E0D;&#x80FD;&#x5305;&#x542B;&#x9ED8;&#x8BA4;&#x5B9E;&#x53C2;&#xFF0C;&#x56E0;&#x4E3A;&#x4F1A;&#x88AB;&#x89C6;&#x4E3A;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x51FD;&#x6570;&#x5B9A;&#x4E49;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">f</span><span class="hljs-params">(T, T x = <span class="hljs-number">42</span>)</span>
+</span>{
+    <span class="hljs-keyword">return</span> x;
+}
+
+<span class="hljs-keyword">template</span>&lt;&gt; <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">f</span><span class="hljs-params">(<span class="hljs-keyword">int</span>, <span class="hljs-keyword">int</span> = <span class="hljs-number">35</span>)</span> <span class="hljs-comment">// ERROR</span>
+</span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<h3 id="1633-&#x53D8;&#x91CF;&#x6A21;&#x677F;&#x7684;&#x5168;&#x7279;&#x5316;">16.3.3 &#x53D8;&#x91CF;&#x6A21;&#x677F;&#x7684;&#x5168;&#x7279;&#x5316;</h3>
+<p>&#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt; <span class="hljs-keyword">constexpr</span> <span class="hljs-built_in">std</span>::<span class="hljs-keyword">size_t</span> SZ = <span class="hljs-keyword">sizeof</span>(T);
+
+<span class="hljs-keyword">template</span>&lt;&gt; <span class="hljs-keyword">constexpr</span> <span class="hljs-built_in">std</span>::<span class="hljs-keyword">size_t</span> SZ&lt;<span class="hljs-keyword">void</span>&gt; = <span class="hljs-number">0</span>;
+</code></pre>
+<h3 id="1634-&#x6210;&#x5458;&#x6A21;&#x677F;&#x7684;&#x5168;&#x7279;&#x5316;">16.3.4 &#x6210;&#x5458;&#x6A21;&#x677F;&#x7684;&#x5168;&#x7279;&#x5316;</h3>
+<p>&#x672C;&#x8282;&#x4E2D;&#x9996;&#x5148;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x7C7B;&#x6A21;&#x677F;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">class</span> Outer {                       <span class="hljs-comment">// #1</span>
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> U&gt;
+        <span class="hljs-keyword">class</span> Inner {               <span class="hljs-comment">// #2</span>
+            <span class="hljs-keyword">private</span>:
+                <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> count;   <span class="hljs-comment">// #3</span>
+        };
+        <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> code;            <span class="hljs-comment">// #4</span>
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> </span>{        <span class="hljs-comment">// #5</span>
+            <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;generic&quot;</span>;
+        }
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">int</span> Outer&lt;T&gt;::code = <span class="hljs-number">6</span>;             <span class="hljs-comment">// #6</span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt; <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> U&gt;
+<span class="hljs-keyword">int</span> Outer&lt;T&gt;::Inner&lt;U&gt;::count = <span class="hljs-number">7</span>;  <span class="hljs-comment">// #7</span>
+</code></pre>
+<p>&#x5E76;&#x5BF9;&#x5916;&#x5C42;&#x7C7B;&#x6A21;&#x677F;&#x8FDB;&#x884C;&#x4E86;&#x7279;&#x5316;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;&gt;
+<span class="hljs-keyword">class</span> Outer&lt;<span class="hljs-keyword">bool</span>&gt; {                 <span class="hljs-comment">// #8</span>
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> U&gt;
+        <span class="hljs-keyword">class</span> Inner {               <span class="hljs-comment">// #9</span>
+            <span class="hljs-keyword">private</span>:
+                <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> count;   <span class="hljs-comment">// #10</span>
+        };
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> </span>{        <span class="hljs-comment">// #11</span>
+        }
+};
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x4EC5;&#x5BF9;&#x7C7B;&#x7684;&#x9759;&#x6001;&#x6570;&#x636E;&#x6210;&#x5458;&#x548C;&#x6210;&#x5458;&#x51FD;&#x6570;&#x8FDB;&#x884C;&#x7279;&#x5316;&#xFF0C;&#x7C7B;&#x4E2D;&#x5176;&#x4F59;&#x90E8;&#x5206;&#x5C06;&#x4ECD;&#x7136;&#x4ECE;&#x6A21;&#x677F;&#x5B9A;&#x4E49;&#x751F;&#x6210;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;&gt;
+<span class="hljs-keyword">int</span> Outer&lt;<span class="hljs-keyword">void</span>&gt;::code = <span class="hljs-number">12</span>;
+
+<span class="hljs-keyword">template</span>&lt;&gt;
+<span class="hljs-keyword">void</span> Outer&lt;<span class="hljs-keyword">void</span>&gt;::print() <span class="hljs-keyword">const</span>
+{
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Outer&lt;void&gt;&quot;</span>;
+}
+</code></pre>
+<p>&#x5982;&#x679C;&#x4EC5;&#x5BF9;&#x7C7B;&#x7684;&#x9759;&#x6001;&#x6570;&#x636E;&#x6210;&#x5458;&#x548C;&#x6210;&#x5458;&#x51FD;&#x6570;&#x8FDB;&#x884C;&#x58F0;&#x660E;&#xFF0C;&#x5E94;&#x8BE5;&#x5199;&#x4E3A;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;&gt;
+<span class="hljs-keyword">int</span> Outer&lt;<span class="hljs-keyword">void</span>&gt;::code;
+
+<span class="hljs-keyword">template</span>&lt;&gt;
+<span class="hljs-keyword">void</span> Outer&lt;<span class="hljs-keyword">void</span>&gt;::print() <span class="hljs-keyword">const</span>;
+</code></pre>
+<p>&#x9759;&#x6001;&#x6570;&#x636E;&#x6210;&#x5458;&#x7684;&#x5168;&#x7279;&#x5316;&#x58F0;&#x660E;&#x867D;&#x7136;&#x770B;&#x8D77;&#x6765;&#x50CF;&#x901A;&#x8FC7;&#x9ED8;&#x8BA4;&#x503C;&#x8FDB;&#x884C;&#x521D;&#x59CB;&#x5316;&#x7684;&#x5B9A;&#x4E49;&#xFF0C;&#x4F46;&#x662F;&#x5BF9;&#x4E8E;&#x6A21;&#x677F;&#x6765;&#x8BF4;&#x8FD9;&#x88AB;&#x89E3;&#x91CA;&#x4E3A;&#x58F0;&#x660E;&#x3002;</p>
+<p>&#x672C;&#x8282;&#x5F00;&#x5934;&#x5B9A;&#x4E49;&#x7684;&#x6A21;&#x677F;&#x4E2D;&#x8FD8;&#x5305;&#x542B;&#x5185;&#x5D4C;&#x7C7B;&#xFF0C;&#x53EA;&#x53EF;&#x4EE5;&#x9010;&#x6B21;&#x7279;&#x5316;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;&gt;
+    <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> X&gt;
+    <span class="hljs-keyword">class</span> Outer&lt;<span class="hljs-keyword">wchar_t</span>&gt;::Inner {
+        <span class="hljs-keyword">public</span>:
+            <span class="hljs-keyword">static</span> <span class="hljs-keyword">long</span> count; <span class="hljs-comment">// member type changed</span>
+    };
+
+<span class="hljs-keyword">template</span>&lt;&gt;
+    <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> X&gt;
+    <span class="hljs-keyword">long</span> Outer&lt;<span class="hljs-keyword">wchar_t</span>&gt;::Inner&lt;X&gt;::count;
+
+<span class="hljs-keyword">template</span>&lt;&gt;
+    <span class="hljs-keyword">template</span>&lt;&gt;
+    <span class="hljs-keyword">class</span> Outer&lt;<span class="hljs-keyword">char</span>&gt;::Inner&lt;<span class="hljs-keyword">wchar_t</span>&gt; {
+        <span class="hljs-keyword">public</span>:
+            <span class="hljs-keyword">enum</span> { count = <span class="hljs-number">1</span> };
+    };
+
+<span class="hljs-comment">// the following is not valid C++: template&lt;&gt; cannot follow a template parameter list</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> X&gt;
+<span class="hljs-keyword">template</span>&lt;&gt; <span class="hljs-keyword">class</span> Outer&lt;X&gt;::Inner&lt;<span class="hljs-keyword">void</span>&gt;; <span class="hljs-comment">// ERROR</span>
+
+<span class="hljs-keyword">template</span>&lt;&gt;
+<span class="hljs-keyword">class</span> Outer&lt;<span class="hljs-keyword">bool</span>&gt;::Inner&lt;<span class="hljs-keyword">wchar_t</span>&gt; {
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">enum</span> { count = <span class="hljs-number">2</span> };
+};
+</code></pre>
+<h2 id="164-&#x7C7B;&#x6A21;&#x677F;&#x7684;&#x504F;&#x7279;&#x5316;">16.4 &#x7C7B;&#x6A21;&#x677F;&#x7684;&#x504F;&#x7279;&#x5316;</h2>
+<p>&#x504F;&#x7279;&#x5316;&#xFF08;partial specialization&#xFF09;&#x662F;&#x6307;&#x4EE3;&#x6362;&#x6A21;&#x677F;&#x4E2D;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x53C2;&#x6570;&#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x6A21;&#x677F;&#xFF0C;&#x539F;&#x59CB;&#x6A21;&#x677F;&#x79F0;&#x4E3A;&#x4E3B;&#x6A21;&#x677F;&#x3002;&#x504F;&#x7279;&#x5316;&#x7684;&#x9650;&#x5236;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ol>
+<li>&#x504F;&#x7279;&#x5316;&#x7684;&#x6A21;&#x677F;&#x5E94;&#x8BE5;&#x548C;&#x4E3B;&#x6A21;&#x677F;&#x5BF9;&#x5E94;</li>
+<li>&#x504F;&#x7279;&#x5316;&#x7684;&#x6A21;&#x677F;&#x4E2D;&#x4E0D;&#x80FD;&#x5305;&#x542B;&#x9ED8;&#x8BA4;&#x5B9E;&#x53C2;</li>
+<li>&#x504F;&#x7279;&#x5316;&#x7684;&#x975E;&#x7C7B;&#x578B;&#x6A21;&#x677F;&#x5B9E;&#x53C2;&#x5E94;&#x8BE5;&#x662F;&#x975E;&#x4F9D;&#x8D56;&#x578B;&#x7684;&#x503C;&#x6216;&#x8005;&#x5176;&#x5B83;&#x7684;&#x975E;&#x7C7B;&#x578B;&#x6A21;&#x677F;&#x5F62;&#x53C2;</li>
+<li>&#x504F;&#x7279;&#x5316;&#x7684;&#x6A21;&#x677F;&#x5B9E;&#x53C2;&#x5217;&#x8868;&#x5E94;&#x8BE5;&#x548C;&#x4E3B;&#x6A21;&#x7248;&#x7684;&#x5F62;&#x53C2;&#x5217;&#x8868;&#x4E0D;&#x540C;</li>
+<li>&#x53EF;&#x53D8;&#x53C2;&#x6570;&#x5E94;&#x8BE5;&#x5728;&#x504F;&#x7279;&#x5316;&#x6A21;&#x677F;&#x7684;&#x6700;&#x540E;</li>
+</ol>
+<p>&#x4E0A;&#x8FF0;&#x9650;&#x5236;&#x5BF9;&#x5E94;&#x7684;&#x4F8B;&#x5B50;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">int</span> I = <span class="hljs-number">3</span>&gt;
+<span class="hljs-keyword">class</span> S;                            <span class="hljs-comment">// primary template</span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">class</span> S&lt;<span class="hljs-keyword">int</span>, T&gt;;                    <span class="hljs-comment">// ERROR: parameter kind mismatch</span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T = <span class="hljs-keyword">int</span>&gt;
+<span class="hljs-keyword">class</span> S&lt;T, <span class="hljs-number">10</span>&gt;;                     <span class="hljs-comment">// ERROR: no default arguments</span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">int</span> I&gt;
+<span class="hljs-keyword">class</span> S&lt;<span class="hljs-keyword">int</span>, I*<span class="hljs-number">2</span>&gt;;                  <span class="hljs-comment">// ERROR: no nontype expressions</span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> U, <span class="hljs-keyword">int</span> K&gt;
+<span class="hljs-keyword">class</span> S&lt;U, K&gt;;                      <span class="hljs-comment">// ERROR: no significant difference from primary template</span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>... Ts&gt;
+<span class="hljs-keyword">class</span> Tuple;
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Tail, <span class="hljs-keyword">typename</span>... Ts&gt;
+<span class="hljs-keyword">class</span> Tuple&lt;Ts..., Tail&gt;;           <span class="hljs-comment">// ERROR: pack expansion not at the end</span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Tail, <span class="hljs-keyword">typename</span>... Ts&gt;
+<span class="hljs-keyword">class</span> Tuple&lt;Tuple&lt;Ts...&gt;, Tail&gt;;    <span class="hljs-comment">// OK: pack expansion is at the end of a nested template argument list</span>
+</code></pre>
+<h2 id="165-&#x53D8;&#x91CF;&#x6A21;&#x677F;&#x7684;&#x504F;&#x7279;&#x5316;">16.5 &#x53D8;&#x91CF;&#x6A21;&#x677F;&#x7684;&#x504F;&#x7279;&#x5316;</h2>
+<p>C++&#x6807;&#x51C6;&#x4E2D;&#x9488;&#x5BF9;&#x53D8;&#x91CF;&#x6A21;&#x677F;&#x504F;&#x7279;&#x5316;&#x8FD8;&#x6709;&#x5F88;&#x591A;&#x95EE;&#x9898;&#x6CA1;&#x6709;&#x89C4;&#x5B9A;&#xFF0C;&#x53D6;&#x51B3;&#x4E8E;&#x7F16;&#x8BD1;&#x5668;&#x7684;&#x5B9E;&#x73B0;&#x3002;&#x4E66;&#x4E2D;&#x53EA;&#x6709;&#x4E24;&#x4E2A;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt; <span class="hljs-keyword">constexpr</span> <span class="hljs-built_in">std</span>::<span class="hljs-keyword">size_t</span> SZ = <span class="hljs-keyword">sizeof</span>(T);
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt; <span class="hljs-keyword">constexpr</span> <span class="hljs-built_in">std</span>::<span class="hljs-keyword">size_t</span> SZ&lt;T&amp;&gt; = <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">void</span>*);
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt; <span class="hljs-keyword">typename</span> T::iterator null_iterator;
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-built_in">std</span>::<span class="hljs-keyword">size_t</span> N&gt; T* null_iterator&lt;T[N]&gt; = null_ptr; <span class="hljs-comment">// T* doesn&#x2019;t match T::iterator, and that is fine</span>
+</code></pre>
+<h2 id="166-&#x540E;&#x8BB0;">16.6 &#x540E;&#x8BB0;</h2>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="2022-02-15-ch15-template-argument-deduction.html" class="navigation navigation-prev " aria-label="Previous page: Chapter 15 Template Argument Deduction">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="2022-02-22-ch17-future-directions.html" class="navigation navigation-next " aria-label="Next page: Chapter 17 Future Directions">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Chapter 16 Specialization and Overloading","level":"1.17","depth":1,"next":{"title":"Chapter 17 Future Directions","level":"1.18","depth":1,"path":"2022-02-22-ch17-future-directions.md","ref":"2022-02-22-ch17-future-directions.md","articles":[]},"previous":{"title":"Chapter 15 Template Argument Deduction","level":"1.16","depth":1,"path":"2022-02-15-ch15-template-argument-deduction.md","ref":"2022-02-15-ch15-template-argument-deduction.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"2022-02-17-ch16-specialization-and-overloading.md","mtime":"2022-11-13T05:00:16.191Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-11-13T05:01:04.198Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,970 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Chapter 22 Bridging Static and Dynamic Polymorphism · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="2022-03-05-ch23-metaprogramming.html" />
+    
+    
+    <link rel="prev" href="2022-03-03-ch21-templates-and-inheritance.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="2021-12-15-ch1-function-templates.html">
+            
+                <a href="2021-12-15-ch1-function-templates.html">
+            
+                    
+                    Chapter 1 Funtion Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="2021-12-20-ch2-class-templates.html">
+            
+                <a href="2021-12-20-ch2-class-templates.html">
+            
+                    
+                    Chapter 2 Class Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="2021-12-20-ch3-nontype-template-parameters.html">
+            
+                <a href="2021-12-20-ch3-nontype-template-parameters.html">
+            
+                    
+                    Chapter 3 Nontype Template Parameters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="2021-12-20-ch4-variadic-templates.html">
+            
+                <a href="2021-12-20-ch4-variadic-templates.html">
+            
+                    
+                    Chapter 4 Variadic Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="2021-12-30-ch5-tricky-basics.html">
+            
+                <a href="2021-12-30-ch5-tricky-basics.html">
+            
+                    
+                    Chapter 5 Tricky Basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="2022-01-04-ch6-move-semantics-and-enable-if.html">
+            
+                <a href="2022-01-04-ch6-move-semantics-and-enable-if.html">
+            
+                    
+                    Chapter 6 Move Semantics and enable_if<>
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="2022-01-05-ch7-by-value-or-by-reference.html">
+            
+                <a href="2022-01-05-ch7-by-value-or-by-reference.html">
+            
+                    
+                    Chapter 7 By Value or by Reference?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="2022-01-06-ch8-compile-time-programming.html">
+            
+                <a href="2022-01-06-ch8-compile-time-programming.html">
+            
+                    
+                    Chapter 8 Compile-Time Programming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="2022-01-06-ch9-using-templates-in-practice.html">
+            
+                <a href="2022-01-06-ch9-using-templates-in-practice.html">
+            
+                    
+                    Chapter 9 Using Templates in Practice
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="2022-01-07-ch10-basic-template-terminology.html">
+            
+                <a href="2022-01-07-ch10-basic-template-terminology.html">
+            
+                    
+                    Chapter 10 Basic Template Terminology
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="2022-01-08-ch11-generic-libraries.html">
+            
+                <a href="2022-01-08-ch11-generic-libraries.html">
+            
+                    
+                    Chapter 11 Generic Libraries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="2022-01-12-ch12-fundamentals-in-depth.html">
+            
+                <a href="2022-01-12-ch12-fundamentals-in-depth.html">
+            
+                    
+                    Chapter 12 Fundamentals in Depth
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="2022-01-27-ch13-names-in-templates.html">
+            
+                <a href="2022-01-27-ch13-names-in-templates.html">
+            
+                    
+                    Chapter 13 Names in Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="2022-02-07-ch14-instantiation.html">
+            
+                <a href="2022-02-07-ch14-instantiation.html">
+            
+                    
+                    Chapter 14 Instantiation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="2022-02-15-ch15-template-argument-deduction.html">
+            
+                <a href="2022-02-15-ch15-template-argument-deduction.html">
+            
+                    
+                    Chapter 15 Template Argument Deduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="2022-02-17-ch16-specialization-and-overloading.html">
+            
+                <a href="2022-02-17-ch16-specialization-and-overloading.html">
+            
+                    
+                    Chapter 16 Specialization and Overloading
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="2022-02-22-ch17-future-directions.html">
+            
+                <a href="2022-02-22-ch17-future-directions.html">
+            
+                    
+                    Chapter 17 Future Directions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="2022-02-23-ch18-the-polymorphic-power-of-templates.html">
+            
+                <a href="2022-02-23-ch18-the-polymorphic-power-of-templates.html">
+            
+                    
+                    Chapter 18 The Polymorphic Power of Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="2022-03-01-ch19-implementing-traits.html">
+            
+                <a href="2022-03-01-ch19-implementing-traits.html">
+            
+                    
+                    Chapter 19 Implementing Traits
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="2022-03-02-ch20-overloading-on-type-properties.html">
+            
+                <a href="2022-03-02-ch20-overloading-on-type-properties.html">
+            
+                    
+                    Chapter 20 Overloading on Type Properties
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="2022-03-03-ch21-templates-and-inheritance.html">
+            
+                <a href="2022-03-03-ch21-templates-and-inheritance.html">
+            
+                    
+                    Chapter 21 Templates and Inheritance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.23" data-path="2022-03-05-ch22-bridging-static-and-dynamic-polymorphism.html">
+            
+                <a href="2022-03-05-ch22-bridging-static-and-dynamic-polymorphism.html">
+            
+                    
+                    Chapter 22 Bridging Static and Dynamic Polymorphism
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="2022-03-05-ch23-metaprogramming.html">
+            
+                <a href="2022-03-05-ch23-metaprogramming.html">
+            
+                    
+                    Chapter 23 Metaprogramming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="2022-03-06-ch24-typelists.html">
+            
+                <a href="2022-03-06-ch24-typelists.html">
+            
+                    
+                    Chapter 24 Typelists
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" data-path="2022-03-07-ch25-tuples.html">
+            
+                <a href="2022-03-07-ch25-tuples.html">
+            
+                    
+                    Chapter 25 Tuples
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27" data-path="2022-03-08-ch26-discriminated-unions.html">
+            
+                <a href="2022-03-08-ch26-discriminated-unions.html">
+            
+                    
+                    Chapter 26 Discriminated Unions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28" data-path="2022-03-09-ch27-expression-templates.html">
+            
+                <a href="2022-03-09-ch27-expression-templates.html">
+            
+                    
+                    Chapter 27 Expression Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29" data-path="2022-03-09-ch28-debugging-templates.html">
+            
+                <a href="2022-03-09-ch28-debugging-templates.html">
+            
+                    
+                    Chapter 28 Debugging Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.30" data-path="2022-01-05-appB-value-categories.html">
+            
+                <a href="2022-01-05-appB-value-categories.html">
+            
+                    
+                    Appendix B Value Categories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.31" data-path="2022-03-02-appC-overload-resolution.html">
+            
+                <a href="2022-03-02-appC-overload-resolution.html">
+            
+                    
+                    Appendix C Overload Resolution
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Chapter 22 Bridging Static and Dynamic Polymorphism</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="22-&#x6865;&#x63A5;&#x9759;&#x6001;&#x548C;&#x52A8;&#x6001;&#x591A;&#x6001;">22 &#x6865;&#x63A5;&#x9759;&#x6001;&#x548C;&#x52A8;&#x6001;&#x591A;&#x6001;</h1>
+<p>&#x672C;&#x7AE0;&#x5B9E;&#x73B0;&#x4E86;<code>FunctionPtr&lt;&gt;</code>&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;<code>std::function</code>&#x3002;</p>
+<h2 id="221-&#x4ECE;&#x51FD;&#x6570;&#x5BF9;&#x8C61;&#x5230;&#x51FD;&#x6570;&#x6307;&#x9488;&#x518D;&#x5230;stdfunction">22.1 &#x4ECE;&#x51FD;&#x6570;&#x5BF9;&#x8C61;&#x5230;&#x51FD;&#x6570;&#x6307;&#x9488;&#x518D;&#x5230;<code>std::function</code></h2>
+<p>&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x63A5;&#x6536;&#x4EFB;&#x610F;&#x51FD;&#x6570;&#x5BF9;&#x8C61;&#x5E76;&#x8C03;&#x7528;&#x7684;&#x6A21;&#x677F;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// bridge/forupto1.cpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;vector&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> F&gt;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">forUpTo</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n, F f)</span>
+</span>{
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i != n; ++i)
+    {
+        f(i); <span class="hljs-comment">// call passed function f for i</span>
+    }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printInt</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i)</span>
+</span>{
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="hljs-string">&apos; &apos;</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; values;
+
+    <span class="hljs-comment">// insert values from 0 to 4:</span>
+    forUpTo(<span class="hljs-number">5</span>,
+            [&amp;values](<span class="hljs-keyword">int</span> i) {
+            values.push_back(i);
+            });
+
+    <span class="hljs-comment">// print elements:</span>
+    forUpTo(<span class="hljs-number">5</span>,
+            printInt); <span class="hljs-comment">// prints 0 1 2 3 4</span>
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+}
+</code></pre>
+<p>&#x57FA;&#x672C;&#x6BCF;&#x4E00;&#x6B21;&#x8C03;&#x7528;<code>forUpto()</code>&#x90FD;&#x4F1A;&#x5B9E;&#x4F8B;&#x5316;&#x65B0;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x8FD9;&#x4F1A;&#x589E;&#x52A0;&#x4EE3;&#x7801;&#x4F53;&#x79EF;&#xFF0C;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#x662F;&#x4E0D;&#x5B9E;&#x73B0;&#x4E3A;&#x6A21;&#x677F;&#x800C;&#x662F;&#x901A;&#x8FC7;&#x51FD;&#x6570;&#x6307;&#x9488;&#xFF1A;</p>
+<pre><code class="lang-cpp">// bridge/forupto2.hpp
+void forUpTo(int n, void (*f)(int))
+{
+    for (int i = 0; i != n; ++i)
+    {
+        f(i); // call passed function f for i
+    }
+}
+</code></pre>
+<p>&#x4F46;&#x662F;&#x8FD9;&#x5C31;&#x4E0D;&#x80FD;&#x4F20;&#x9012;lambda&#x5BF9;&#x8C61;&#x4E86;&#xFF08;&#x56E0;&#x4E3A;&#x662F;&#x7C7B;&#xFF09;&#xFF0C;&#x4E3A;&#x6B64;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>std::function</code>&#xFF1A;</p>
+<pre><code class="lang-cpp">// bridge/forupto3.hpp
+#include &lt;functional&gt;
+
+void forUpTo(int n, std::function&lt;void(int)&gt; f)
+{
+    for (int i = 0; i != n; ++i)
+    {
+        f(i); // call passed function f for i
+    }
+}
+</code></pre>
+<h2 id="222-&#x6CDB;&#x5316;&#x7684;&#x51FD;&#x6570;&#x6307;&#x9488;">22.2 &#x6CDB;&#x5316;&#x7684;&#x51FD;&#x6570;&#x6307;&#x9488;</h2>
+<p>&#x672C;&#x7AE0;&#x63A5;&#x4E0B;&#x6765;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x66FF;&#x4EE3;<code>std::funtion</code>&#x7684;<code>FuntionPtr&lt;&gt;</code>&#xFF1A;</p>
+<pre><code class="lang-cpp">// bridge/forupto4.cpp
+#include &quot;functionptr.hpp&quot;
+#include &lt;vector&gt;
+#include &lt;iostream&gt;
+
+void forUpTo(int n, FunctionPtr&lt;void(int)&gt; f)
+{
+    for (int i = 0; i != n; ++i)
+    {
+        f(i); // call passed function f for i
+    }
+}
+
+void printInt(int i)
+{
+    std::cout &lt;&lt; i &lt;&lt; &apos; &apos;;
+}
+
+int main()
+{
+    std::vector&lt;int&gt; values;
+    // insert values from 0 to 4:
+    forUpTo(5,
+            [&amp;values](int i) {
+            values.push_back(i);
+            });
+
+    // print elements:
+    forUpTo(5,
+            printInt); // prints 0 1 2 3 4
+            std::cout &lt;&lt; &apos;\n&apos;;
+}
+</code></pre>
+<p><code>FuntionPtr&lt;&gt;</code>&#x7684;&#x7279;&#x6027;&#x5305;&#x62EC;&#xFF1A;</p>
+<ul>
+<li>&#x8C03;&#x7528;&#x4FDD;&#x5B58;&#x4EFB;&#x610F;&#x7684;&#x53EF;&#x8C03;&#x7528;&#x5BF9;&#x8C61;</li>
+<li>&#x53EF;&#x4EE5;&#x62F7;&#x8D1D;&#x3001;&#x79FB;&#x52A8;&#x548C;&#x8D4B;&#x503C;</li>
+<li>&#x53EF;&#x4EE5;&#x4E3A;&#x7A7A;</li>
+</ul>
+<p>&#x6839;&#x636E;&#x4EE5;&#x4E0A;&#x9700;&#x6C42;&#xFF0C;&#x5B9E;&#x73B0;&#x7684;<code>FunctionPtr&lt;&gt;</code>&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-cpp">// bridge/functionptr.hpp
+// primary template:
+template&lt;typename Signature&gt;
+class FunctionPtr;
+
+// partial specialization:
+template&lt;typename R, typename... Args&gt;
+class FunctionPtr&lt;R(Args...)&gt;
+{
+    private:
+        FunctorBridge&lt;R, Args...&gt;* bridge;
+    public:
+        // constructors:
+        FunctionPtr() : bridge(nullptr) {
+        }
+        FunctionPtr(FunctionPtr const&amp; other); // see functionptr-cpinv.hpp
+        FunctionPtr(FunctionPtr&amp; other)
+            : FunctionPtr(static_cast&lt;FunctionPtr const&amp;&gt;(other)) {
+        }
+        FunctionPtr(FunctionPtr&amp;&amp; other) : bridge(other.bridge) {
+            other.bridge = nullptr;
+        }
+        // construction from arbitrary function objects:
+        template&lt;typename F&gt; FunctionPtr(F&amp;&amp; f); // see functionptr-init.hpp
+
+        // assignment operators:
+        FunctionPtr&amp; operator=(FunctionPtr const&amp; other) {
+            FunctionPtr tmp(other);
+            swap(*this, tmp);
+            return *this;
+        }
+        FunctionPtr&amp; operator=(FunctionPtr&amp;&amp; other) {
+            delete bridge;
+            bridge = other.bridge;
+            other.bridge = nullptr;
+            return *this;
+        }
+        // construction and assignment from arbitrary function objects:
+        template&lt;typename F&gt; FunctionPtr&amp; operator=(F&amp;&amp; f) {
+            FunctionPtr tmp(std::forward&lt;F&gt;(f));
+            swap(*this, tmp);522 Chapter 22: Bridging Static and Dynamic Polymorphism
+            return *this;
+        }
+
+        // destructor:
+        ~FunctionPtr() {
+            delete bridge;
+        }
+
+        friend void swap(FunctionPtr&amp; fp1, FunctionPtr&amp; fp2) {
+            std::swap(fp1.bridge, fp2.bridge);
+        }
+        explicit operator bool() const {
+            return bridge == nullptr;
+        }
+
+        // invocation:
+        R operator()(Args... args) const; // see functionptr-cpinv.hpp
+};
+</code></pre>
+<p><code>FunctionPtr&lt;&gt;</code>&#x53EA;&#x5305;&#x542B;&#x4E00;&#x4E2A;<code>FunctorBridge&lt;&gt;</code>&#x7C7B;&#x578B;&#x7684;&#x6307;&#x9488;<code>bridge</code>&#x3002;</p>
+<h2 id="223-&#x6865;&#x63A5;&#x63A5;&#x53E3;">22.3 &#x6865;&#x63A5;&#x63A5;&#x53E3;</h2>
+<p><code>FunctorBridge&lt;&gt;</code>&#x5B9E;&#x73B0;&#x4E3A;&#x4E00;&#x4E2A;&#x62BD;&#x8C61;&#x57FA;&#x7C7B;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// bridge/functorbridge.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> R, <span class="hljs-keyword">typename</span>... Args&gt;
+<span class="hljs-keyword">class</span> FunctorBridge
+{
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">virtual</span> ~FunctorBridge() {
+        }
+        <span class="hljs-function"><span class="hljs-keyword">virtual</span> FunctorBridge* <span class="hljs-title">clone</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> </span>= <span class="hljs-number">0</span>;
+        <span class="hljs-function"><span class="hljs-keyword">virtual</span> R <span class="hljs-title">invoke</span><span class="hljs-params">(Args... args)</span> <span class="hljs-keyword">const</span> </span>= <span class="hljs-number">0</span>;
+};
+</code></pre>
+<p><code>clone()</code>&#x63A5;&#x53E3;&#x7528;&#x6765;&#x5B9E;&#x73B0;&#x62F7;&#x8D1D;&#xFF0C;<code>invoke()</code>&#x63A5;&#x53E3;&#x7528;&#x6765;&#x5B9E;&#x73B0;&#x8C03;&#x7528;&#xFF0C;&#x6240;&#x4EE5;<code>FunctionPtr&lt;&gt;</code>&#x4E2D;&#x7684;&#x62F7;&#x8D1D;&#x6784;&#x9020;&#x548C;&#x8C03;&#x7528;&#x5C31;&#x53EF;&#x4EE5;&#x50CF;&#x4E0B;&#x9762;&#x8FD9;&#x6837;&#x5B9E;&#x73B0;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// bridge/functionptr-cpinv.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> R, <span class="hljs-keyword">typename</span>... Args&gt;
+FunctionPtr&lt;R(Args...)&gt;::FunctionPtr(FunctionPtr <span class="hljs-keyword">const</span>&amp; other)
+    : bridge(<span class="hljs-literal">nullptr</span>)
+{
+    <span class="hljs-keyword">if</span> (other.bridge) {
+        bridge = other.bridge-&gt;clone();
+    }
+}
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> R, <span class="hljs-keyword">typename</span>... Args&gt;
+R FunctionPtr&lt;R(Args...)&gt;::<span class="hljs-keyword">operator</span>()(Args... args) <span class="hljs-keyword">const</span>
+{
+    <span class="hljs-keyword">return</span> bridge-&gt;invoke(<span class="hljs-built_in">std</span>::forward&lt;Args&gt;(args)...);
+}
+</code></pre>
+<h2 id="224-&#x7C7B;&#x578B;&#x64E6;&#x9664;">22.4 &#x7C7B;&#x578B;&#x64E6;&#x9664;</h2>
+<p>&#x4E3A;&#x4E86;&#x80FD;&#x591F;&#x63A5;&#x6536;&#x4EFB;&#x610F;&#x51FD;&#x6570;&#x5BF9;&#x8C61;&#xFF0C;&#x9700;&#x8981;&#x5C06;<code>FunctorBridge&lt;&gt;</code>&#x7684;&#x6D3E;&#x751F;&#x7C7B;&#x5B9E;&#x73B0;&#x4E3A;<code>SpecificFunctorBridge&lt;&gt;</code>&#x4EE5;&#x63A5;&#x6536;&#x4EFB;&#x610F;&#x51FD;&#x6570;&#x5BF9;&#x8C61;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// bridge/specificfunctorbridge.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Functor, <span class="hljs-keyword">typename</span> R, <span class="hljs-keyword">typename</span>... Args&gt;
+<span class="hljs-keyword">class</span> SpecificFunctorBridge : <span class="hljs-keyword">public</span> FunctorBridge&lt;R, Args...&gt; {
+    <span class="hljs-keyword">private</span>:
+        Functor functor;
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> FunctorFwd&gt;
+        SpecificFunctorBridge(FunctorFwd&amp;&amp; functor)
+            : functor(<span class="hljs-built_in">std</span>::forward&lt;FunctorFwd&gt;(functor)) {
+        }
+        <span class="hljs-function"><span class="hljs-keyword">virtual</span> SpecificFunctorBridge* <span class="hljs-title">clone</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> override </span>{
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> SpecificFunctorBridge(functor);
+        }
+        <span class="hljs-function"><span class="hljs-keyword">virtual</span> R <span class="hljs-title">invoke</span><span class="hljs-params">(Args... args)</span> <span class="hljs-keyword">const</span> override </span>{
+            <span class="hljs-keyword">return</span> functor(<span class="hljs-built_in">std</span>::forward&lt;Args&gt;(args)...);
+        }
+};
+</code></pre>
+<p><code>FunctionPtr&lt;&gt;</code>&#x901A;&#x8FC7;&#x4EFB;&#x610F;&#x51FD;&#x6570;&#x5BF9;&#x8C61;&#x8FDB;&#x884C;&#x6784;&#x9020;&#x7684;&#x4EE3;&#x7801;&#x4E3A;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// bridge/functionptr-init.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> R, <span class="hljs-keyword">typename</span>... Args&gt;
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> F&gt;
+FunctionPtr&lt;R(Args...)&gt;::FunctionPtr(F&amp;&amp; f)
+    : bridge(<span class="hljs-literal">nullptr</span>)
+{
+    <span class="hljs-keyword">using</span> Functor = <span class="hljs-built_in">std</span>::<span class="hljs-keyword">decay_t</span>&lt;F&gt;;
+    <span class="hljs-keyword">using</span> Bridge = SpecificFunctorBridge&lt;Functor, R, Args...&gt;;
+    bridge = <span class="hljs-keyword">new</span> Bridge(<span class="hljs-built_in">std</span>::forward&lt;F&gt;(f));
+}
+</code></pre>
+<p><code>SpecificFunctorBridge&lt;&gt;</code>&#x4FDD;&#x5B58;&#x4E86;&#x51FD;&#x6570;&#x7684;&#x7C7B;&#x578B;<code>F</code>&#xFF0C;&#x4F46;&#x662F;<code>FunctionPtr::bridge</code>&#x662F;&#x62BD;&#x8C61;&#x57FA;&#x7C7B;<code>FunctorBridge&lt;&gt;</code>&#x7684;&#x6307;&#x9488;&#xFF0C;&#x65E0;&#x6CD5;&#x8BBF;&#x95EE;<code>SpecificFunctorBridge::functor</code>&#xFF0C;&#x6240;&#x4EE5;&#x51FD;&#x6570;&#x7684;&#x7C7B;&#x578B;&#x4E0D;&#x53EF;&#x89C1;&#x4E86;&#xFF0C;&#x53EA;&#x80FD;&#x8FDB;&#x884C;&#x8C03;&#x7528;&#xFF0C;&#x8FD9;&#x5C31;&#x662F;&#x5C06;&#x9759;&#x6001;&#x591A;&#x6001;&#x7684;&#x7C7B;&#x578B;&#x4FE1;&#x606F;&#x64E6;&#x9664;&#x8F6C;&#x6362;&#x4E3A;&#x52A8;&#x6001;&#x591A;&#x6001;&#x7684;&#x65B9;&#x5F0F;&#x3002;</p>
+<h2 id="225-&#x53EF;&#x9009;&#x7684;&#x6865;&#x63A5;">22.5 &#x53EF;&#x9009;&#x7684;&#x6865;&#x63A5;</h2>
+<p>&#x5982;&#x679C;&#x8FD8;&#x9700;&#x8981;&#x5224;&#x65AD;&#x4E24;&#x4E2A;<code>FunctionPtr&lt;&gt;</code>&#x662F;&#x5426;&#x4F1A;&#x8C03;&#x7528;&#x540C;&#x4E00;&#x51FD;&#x6570;&#xFF0C;&#x5C31;&#x9700;&#x8981;&#x4E3A;<code>FunctionPtr&lt;&gt;</code>&#x91CD;&#x8F7D;<code>==</code>&#x8FD0;&#x7B97;&#x7B26;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span>==(FunctionPtr <span class="hljs-keyword">const</span>&amp; f1, FunctionPtr <span class="hljs-keyword">const</span>&amp; f2) {
+    <span class="hljs-keyword">if</span> (f1 || f2) {
+        <span class="hljs-keyword">return</span> f1 &amp;&amp; f2;
+    }
+    <span class="hljs-keyword">return</span> f1.bridge-&gt;equals(f2.bridge);
+}
+
+<span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span>!=(FunctionPtr <span class="hljs-keyword">const</span>&amp; f1, FunctionPtr <span class="hljs-keyword">const</span>&amp; f2) {
+    <span class="hljs-keyword">return</span> !(f1 == f2);
+}
+</code></pre>
+<p>&#x4E66;&#x4E2D;&#x7684;&#x4EE3;&#x7801;&#x5224;&#x65AD;&#x6709;&#x9519;&#x8BEF;&#xFF0C;&#x5E94;&#x8BE5;&#x662F;&#x53EA;&#x6709;&#x5728;&#x4E24;&#x4E2A;&#x51FD;&#x6570;&#x90FD;&#x4E0D;&#x4E3A;&#x7A7A;&#x65F6;&#x624D;&#x8C03;&#x7528;<code>equals()</code>&#x8FDB;&#x884C;&#x6BD4;&#x8F83;&#x3002;&#x7136;&#x540E;&#x5728;<code>FunctorPtr&lt;&gt;</code>&#x4E2D;&#x6DFB;&#x52A0;&#x63A5;&#x53E3;&#xFF0C;&#x5E76;&#x5728;<code>SpecificFunctorBridge&lt;&gt;</code>&#x4E2D;&#x5B9E;&#x73B0;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> R, <span class="hljs-keyword">typename</span>... Args&gt;
+<span class="hljs-keyword">class</span> FunctorBridge
+{
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">virtual</span> ~FunctorBridge() {
+        }
+        <span class="hljs-function"><span class="hljs-keyword">virtual</span> FunctorBridge* <span class="hljs-title">clone</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> </span>= <span class="hljs-number">0</span>;
+        <span class="hljs-function"><span class="hljs-keyword">virtual</span> R <span class="hljs-title">invoke</span><span class="hljs-params">(Args... args)</span> <span class="hljs-keyword">const</span> </span>= <span class="hljs-number">0</span>;
+        <span class="hljs-function"><span class="hljs-keyword">virtual</span> <span class="hljs-keyword">bool</span> <span class="hljs-title">equals</span><span class="hljs-params">(FunctorBridge <span class="hljs-keyword">const</span>* fb)</span> <span class="hljs-keyword">const</span> </span>= <span class="hljs-number">0</span>;
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Functor, <span class="hljs-keyword">typename</span> R, <span class="hljs-keyword">typename</span>... Args&gt;
+<span class="hljs-keyword">class</span> SpecificFunctorBridge : <span class="hljs-keyword">public</span> FunctorBridge&lt;R, Args...&gt; {
+    <span class="hljs-keyword">private</span>:
+        Functor functor;
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> FunctorFwd&gt;
+        SpecificFunctorBridge(FunctorFwd&amp;&amp; functor)
+            : functor(<span class="hljs-built_in">std</span>::forward&lt;FunctorFwd&gt;(functor)) {
+        }
+        <span class="hljs-function"><span class="hljs-keyword">virtual</span> SpecificFunctorBridge* <span class="hljs-title">clone</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> override </span>{
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> SpecificFunctorBridge(functor);
+        }
+        <span class="hljs-function"><span class="hljs-keyword">virtual</span> R <span class="hljs-title">invoke</span><span class="hljs-params">(Args... args)</span> <span class="hljs-keyword">const</span> override </span>{
+            <span class="hljs-keyword">return</span> functor(<span class="hljs-built_in">std</span>::forward&lt;Args&gt;(args)...);
+        }
+        <span class="hljs-function"><span class="hljs-keyword">virtual</span> <span class="hljs-keyword">bool</span> <span class="hljs-title">equals</span><span class="hljs-params">(FunctorBridge&lt;R, Args...&gt; <span class="hljs-keyword">const</span>* fb)</span> <span class="hljs-keyword">const</span> override </span>{
+            <span class="hljs-keyword">if</span> (<span class="hljs-keyword">auto</span> specFb = <span class="hljs-keyword">dynamic_cast</span>&lt;SpecificFunctorBridge <span class="hljs-keyword">const</span>*&gt;(fb)) {
+                <span class="hljs-keyword">return</span> functor == specFb-&gt;functor;
+            }
+            <span class="hljs-comment">// functors with different types are never equal:</span>
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+        }
+};
+</code></pre>
+<p>&#x8FD9;&#x91CC;&#x7684;&#x95EE;&#x9898;&#x5728;&#x4E8E;&#x8981;&#x6C42;<code>Functor</code>&#x5FC5;&#x987B;&#x5B9E;&#x73B0;&#x4E86;<code>==</code>&#x8FD0;&#x7B97;&#x7B26;&#xFF0C;&#x8FD9;&#x5BF9;&#x51FD;&#x6570;&#x6307;&#x9488;&#x6CA1;&#x6709;&#x95EE;&#x9898;&#xFF0C;&#x6709;&#x95EE;&#x9898;&#x7684;&#x662F;lambda&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x4E3A;&#x4E86;&#x907F;&#x514D;&#x7F16;&#x8BD1;&#x9519;&#x8BEF;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x57FA;&#x4E8E;SFINAE&#x89C4;&#x5219;&#x7684;&#x7C7B;&#x578B;&#x7279;&#x5F81;&#x6A21;&#x677F;&#x89E3;&#x51B3;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// bridge/isequalitycomparable.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;utility&gt;</span>      // for declval()</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;type_traits&gt;</span>  // for true_type and false_type</span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">class</span> IsEqualityComparable
+{
+    <span class="hljs-keyword">private</span>:
+        <span class="hljs-comment">// test convertibility of == and ! == to bool:</span>
+        <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span>* <span class="hljs-title">conv</span><span class="hljs-params">(<span class="hljs-keyword">bool</span>)</span></span>; <span class="hljs-comment">// to check convertibility to bool</span>
+        <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> U&gt;
+        <span class="hljs-keyword">static</span> <span class="hljs-built_in">std</span>::<span class="hljs-function">true_type <span class="hljs-title">test</span><span class="hljs-params">(<span class="hljs-keyword">decltype</span>(conv(<span class="hljs-built_in">std</span>::declval&lt;U <span class="hljs-keyword">const</span>&amp;&gt;()</span> </span>==
+                                                    <span class="hljs-built_in">std</span>::declval&lt;U <span class="hljs-keyword">const</span>&amp;&gt;())),
+                                    <span class="hljs-keyword">decltype</span>(conv(!(<span class="hljs-built_in">std</span>::declval&lt;U <span class="hljs-keyword">const</span>&amp;&gt;() ==
+                                                    <span class="hljs-built_in">std</span>::declval&lt;U <span class="hljs-keyword">const</span>&amp;&gt;())))
+                                    );
+        <span class="hljs-comment">// fallback:</span>
+        <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> U&gt;
+        <span class="hljs-keyword">static</span> <span class="hljs-built_in">std</span>::<span class="hljs-function">false_type <span class="hljs-title">test</span><span class="hljs-params">(...)</span></span>;
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">static</span> <span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">bool</span> value = <span class="hljs-keyword">decltype</span>(test&lt;T&gt;(<span class="hljs-literal">nullptr</span>, <span class="hljs-literal">nullptr</span>))::value;
+};
+</code></pre>
+<pre><code class="lang-cpp"><span class="hljs-comment">// bridge/tryequals.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;exception&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;isequalitycomparable.hpp&quot;</span></span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">bool</span> EqComparable = IsEqualityComparable&lt;T&gt;::value&gt;
+<span class="hljs-keyword">struct</span> TryEquals
+{
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">bool</span> <span class="hljs-title">equals</span><span class="hljs-params">(T <span class="hljs-keyword">const</span>&amp; x1, T <span class="hljs-keyword">const</span>&amp; x2)</span> </span>{
+        <span class="hljs-keyword">return</span> x1 == x2;
+    }
+};
+
+<span class="hljs-keyword">class</span> NotEqualityComparable : <span class="hljs-keyword">public</span> <span class="hljs-built_in">std</span>::exception
+{
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> TryEquals&lt;T, <span class="hljs-literal">false</span>&gt;
+{
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">bool</span> <span class="hljs-title">equals</span><span class="hljs-params">(T <span class="hljs-keyword">const</span>&amp; x1, T <span class="hljs-keyword">const</span>&amp; x2)</span> </span>{
+        <span class="hljs-keyword">throw</span> NotEqualityComparable();
+    }
+};
+</code></pre>
+<p>&#x6700;&#x7EC8;&#x865A;&#x51FD;&#x6570;<code>equals()</code>&#x5B9E;&#x73B0;&#x4E3A;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Functor, <span class="hljs-keyword">typename</span> R, <span class="hljs-keyword">typename</span>... Args&gt;
+<span class="hljs-keyword">class</span> SpecificFunctorBridge : <span class="hljs-keyword">public</span> FunctorBridge&lt;R, Args...&gt; {
+    <span class="hljs-keyword">private</span>:
+        Functor functor;
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> FunctorFwd&gt;
+        SpecificFunctorBridge(FunctorFwd&amp;&amp; functor)
+            : functor(<span class="hljs-built_in">std</span>::forward&lt;FunctorFwd&gt;(functor)) {
+        }
+        <span class="hljs-function"><span class="hljs-keyword">virtual</span> SpecificFunctorBridge* <span class="hljs-title">clone</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> override </span>{
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> SpecificFunctorBridge(functor);
+        }
+        <span class="hljs-function"><span class="hljs-keyword">virtual</span> R <span class="hljs-title">invoke</span><span class="hljs-params">(Args... args)</span> <span class="hljs-keyword">const</span> override </span>{
+            <span class="hljs-keyword">return</span> functor(<span class="hljs-built_in">std</span>::forward&lt;Args&gt;(args)...);
+        }
+        <span class="hljs-function"><span class="hljs-keyword">virtual</span> <span class="hljs-keyword">bool</span> <span class="hljs-title">equals</span><span class="hljs-params">(FunctorBridge&lt;R, Args...&gt; <span class="hljs-keyword">const</span>* fb)</span> <span class="hljs-keyword">const</span> override </span>{
+            <span class="hljs-keyword">if</span> (<span class="hljs-keyword">auto</span> specFb = <span class="hljs-keyword">dynamic_cast</span>&lt;SpecificFunctorBridge <span class="hljs-keyword">const</span>*&gt;(fb)) {
+                <span class="hljs-keyword">return</span> TryEquals&lt;Functor&gt;::equals(functor, specFb-&gt;functor);
+            }
+            <span class="hljs-comment">// functors with different types are never equal:</span>
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+        }
+};
+</code></pre>
+<h2 id="226-&#x6027;&#x80FD;&#x65B9;&#x9762;&#x7684;&#x8003;&#x8651;">22.6 &#x6027;&#x80FD;&#x65B9;&#x9762;&#x7684;&#x8003;&#x8651;</h2>
+<p>&#x672C;&#x7AE0;&#x4E2D;&#x5B9E;&#x73B0;&#x7684;<code>FunctionPtr&lt;&gt;</code>&#x867D;&#x7136;&#x662F;&#x6A21;&#x677F;&#xFF0C;&#x6700;&#x7EC8;&#x5374;&#x662F;&#x901A;&#x8FC7;<code>bridge</code>&#x53D8;&#x91CF;&#x5B9E;&#x73B0;&#x7684;&#x51FD;&#x6570;&#x8C03;&#x7528;&#xFF0C;&#x5B8C;&#x6574;&#x4E86;&#x9759;&#x6001;&#x591A;&#x6001;&#x5230;&#x52A8;&#x6001;&#x591A;&#x6001;&#x7684;&#x8F6C;&#x6362;&#xFF0C;&#x8FD9;&#x6837;&#x505A;&#x662F;&#x5426;&#x503C;&#x5F97;&#x9700;&#x8981;&#x540C;&#x65F6;&#x8003;&#x91CF;&#x865A;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x7684;&#x5F00;&#x9500;&#x548C;&#x8C03;&#x7528;&#x51FD;&#x6570;&#x5BF9;&#x8C61;&#x7684;&#x5F00;&#x9500;&#x3002;</p>
+<h2 id="227-&#x540E;&#x8BB0;">22.7 &#x540E;&#x8BB0;</h2>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="2022-03-03-ch21-templates-and-inheritance.html" class="navigation navigation-prev " aria-label="Previous page: Chapter 21 Templates and Inheritance">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="2022-03-05-ch23-metaprogramming.html" class="navigation navigation-next " aria-label="Next page: Chapter 23 Metaprogramming">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Chapter 22 Bridging Static and Dynamic Polymorphism","level":"1.23","depth":1,"next":{"title":"Chapter 23 Metaprogramming","level":"1.24","depth":1,"path":"2022-03-05-ch23-metaprogramming.md","ref":"2022-03-05-ch23-metaprogramming.md","articles":[]},"previous":{"title":"Chapter 21 Templates and Inheritance","level":"1.22","depth":1,"path":"2022-03-03-ch21-templates-and-inheritance.md","ref":"2022-03-03-ch21-templates-and-inheritance.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"2022-03-05-ch22-bridging-static-and-dynamic-polymorphism.md","mtime":"2022-11-13T05:00:16.191Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-11-13T05:01:04.198Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

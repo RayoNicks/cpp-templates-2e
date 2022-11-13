@@ -1,0 +1,2273 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Chapter 19 Implementing Traits · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="2022-03-02-ch20-overloading-on-type-properties.html" />
+    
+    
+    <link rel="prev" href="2022-02-23-ch18-the-polymorphic-power-of-templates.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="2021-12-15-ch1-function-templates.html">
+            
+                <a href="2021-12-15-ch1-function-templates.html">
+            
+                    
+                    Chapter 1 Funtion Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="2021-12-20-ch2-class-templates.html">
+            
+                <a href="2021-12-20-ch2-class-templates.html">
+            
+                    
+                    Chapter 2 Class Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="2021-12-20-ch3-nontype-template-parameters.html">
+            
+                <a href="2021-12-20-ch3-nontype-template-parameters.html">
+            
+                    
+                    Chapter 3 Nontype Template Parameters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="2021-12-20-ch4-variadic-templates.html">
+            
+                <a href="2021-12-20-ch4-variadic-templates.html">
+            
+                    
+                    Chapter 4 Variadic Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="2021-12-30-ch5-tricky-basics.html">
+            
+                <a href="2021-12-30-ch5-tricky-basics.html">
+            
+                    
+                    Chapter 5 Tricky Basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="2022-01-04-ch6-move-semantics-and-enable-if.html">
+            
+                <a href="2022-01-04-ch6-move-semantics-and-enable-if.html">
+            
+                    
+                    Chapter 6 Move Semantics and enable_if<>
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="2022-01-05-ch7-by-value-or-by-reference.html">
+            
+                <a href="2022-01-05-ch7-by-value-or-by-reference.html">
+            
+                    
+                    Chapter 7 By Value or by Reference?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="2022-01-06-ch8-compile-time-programming.html">
+            
+                <a href="2022-01-06-ch8-compile-time-programming.html">
+            
+                    
+                    Chapter 8 Compile-Time Programming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="2022-01-06-ch9-using-templates-in-practice.html">
+            
+                <a href="2022-01-06-ch9-using-templates-in-practice.html">
+            
+                    
+                    Chapter 9 Using Templates in Practice
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="2022-01-07-ch10-basic-template-terminology.html">
+            
+                <a href="2022-01-07-ch10-basic-template-terminology.html">
+            
+                    
+                    Chapter 10 Basic Template Terminology
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="2022-01-08-ch11-generic-libraries.html">
+            
+                <a href="2022-01-08-ch11-generic-libraries.html">
+            
+                    
+                    Chapter 11 Generic Libraries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="2022-01-12-ch12-fundamentals-in-depth.html">
+            
+                <a href="2022-01-12-ch12-fundamentals-in-depth.html">
+            
+                    
+                    Chapter 12 Fundamentals in Depth
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="2022-01-27-ch13-names-in-templates.html">
+            
+                <a href="2022-01-27-ch13-names-in-templates.html">
+            
+                    
+                    Chapter 13 Names in Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="2022-02-07-ch14-instantiation.html">
+            
+                <a href="2022-02-07-ch14-instantiation.html">
+            
+                    
+                    Chapter 14 Instantiation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="2022-02-15-ch15-template-argument-deduction.html">
+            
+                <a href="2022-02-15-ch15-template-argument-deduction.html">
+            
+                    
+                    Chapter 15 Template Argument Deduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="2022-02-17-ch16-specialization-and-overloading.html">
+            
+                <a href="2022-02-17-ch16-specialization-and-overloading.html">
+            
+                    
+                    Chapter 16 Specialization and Overloading
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="2022-02-22-ch17-future-directions.html">
+            
+                <a href="2022-02-22-ch17-future-directions.html">
+            
+                    
+                    Chapter 17 Future Directions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="2022-02-23-ch18-the-polymorphic-power-of-templates.html">
+            
+                <a href="2022-02-23-ch18-the-polymorphic-power-of-templates.html">
+            
+                    
+                    Chapter 18 The Polymorphic Power of Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.20" data-path="2022-03-01-ch19-implementing-traits.html">
+            
+                <a href="2022-03-01-ch19-implementing-traits.html">
+            
+                    
+                    Chapter 19 Implementing Traits
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="2022-03-02-ch20-overloading-on-type-properties.html">
+            
+                <a href="2022-03-02-ch20-overloading-on-type-properties.html">
+            
+                    
+                    Chapter 20 Overloading on Type Properties
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="2022-03-03-ch21-templates-and-inheritance.html">
+            
+                <a href="2022-03-03-ch21-templates-and-inheritance.html">
+            
+                    
+                    Chapter 21 Templates and Inheritance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="2022-03-05-ch22-bridging-static-and-dynamic-polymorphism.html">
+            
+                <a href="2022-03-05-ch22-bridging-static-and-dynamic-polymorphism.html">
+            
+                    
+                    Chapter 22 Bridging Static and Dynamic Polymorphism
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="2022-03-05-ch23-metaprogramming.html">
+            
+                <a href="2022-03-05-ch23-metaprogramming.html">
+            
+                    
+                    Chapter 23 Metaprogramming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="2022-03-06-ch24-typelists.html">
+            
+                <a href="2022-03-06-ch24-typelists.html">
+            
+                    
+                    Chapter 24 Typelists
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" data-path="2022-03-07-ch25-tuples.html">
+            
+                <a href="2022-03-07-ch25-tuples.html">
+            
+                    
+                    Chapter 25 Tuples
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27" data-path="2022-03-08-ch26-discriminated-unions.html">
+            
+                <a href="2022-03-08-ch26-discriminated-unions.html">
+            
+                    
+                    Chapter 26 Discriminated Unions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28" data-path="2022-03-09-ch27-expression-templates.html">
+            
+                <a href="2022-03-09-ch27-expression-templates.html">
+            
+                    
+                    Chapter 27 Expression Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29" data-path="2022-03-09-ch28-debugging-templates.html">
+            
+                <a href="2022-03-09-ch28-debugging-templates.html">
+            
+                    
+                    Chapter 28 Debugging Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.30" data-path="2022-01-05-appB-value-categories.html">
+            
+                <a href="2022-01-05-appB-value-categories.html">
+            
+                    
+                    Appendix B Value Categories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.31" data-path="2022-03-02-appC-overload-resolution.html">
+            
+                <a href="2022-03-02-appC-overload-resolution.html">
+            
+                    
+                    Appendix C Overload Resolution
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Chapter 19 Implementing Traits</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="19-&#x7C7B;&#x578B;&#x7279;&#x5F81;&#x6A21;&#x677F;">19 &#x7C7B;&#x578B;&#x7279;&#x5F81;&#x6A21;&#x677F;</h1>
+<h2 id="191-&#x5E8F;&#x5217;&#x7D2F;&#x52A0;&#x7684;&#x4F8B;&#x5B50;">19.1 &#x5E8F;&#x5217;&#x7D2F;&#x52A0;&#x7684;&#x4F8B;&#x5B50;</h2>
+<h3 id="1911-&#x56FA;&#x5B9A;&#x7C7B;&#x578B;&#x7279;&#x5F81;">19.1.1 &#x56FA;&#x5B9A;&#x7C7B;&#x578B;&#x7279;&#x5F81;</h3>
+<p>&#x5047;&#x8BBE;&#x6709;&#x4E00;&#x4E2A;&#x5BF9;&#x5BB9;&#x5668;&#x4E2D;&#x5143;&#x7D20;&#x7D2F;&#x52A0;&#x7684;&#x6A21;&#x677F;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/accum1.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">ifndef</span> ACCUM_HPP</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ACCUM_HPP</span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-function">T <span class="hljs-title">accum</span> <span class="hljs-params">(T <span class="hljs-keyword">const</span>* beg, T <span class="hljs-keyword">const</span>* end)</span>
+</span>{
+    T total{}; <span class="hljs-comment">// assume this actually creates a zero value</span>
+    <span class="hljs-keyword">while</span> (beg != end) {
+        total += *beg;
+        ++beg;
+    }
+    <span class="hljs-keyword">return</span> total;
+}
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span> <span class="hljs-comment">// ACCUM_HPP</span></span>
+</code></pre>
+<p>&#x5206;&#x522B;&#x4F7F;&#x7528;&#x8BE5;&#x6A21;&#x677F;&#x5BF9;&#x6574;&#x578B;&#x6570;&#x7EC4;&#x548C;&#x5B57;&#x7B26;&#x8FDB;&#x884C;&#x7D2F;&#x52A0;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/accum1.cpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;accum1.hpp&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// create array of 5 integer values</span>
+    <span class="hljs-keyword">int</span> num[] = { <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span> };
+
+    <span class="hljs-comment">// print average value</span>
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;the average value of the integer values is &quot;</span>
+                &lt;&lt; accum(num, num+<span class="hljs-number">5</span>) / <span class="hljs-number">5</span>
+                &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+
+    <span class="hljs-comment">// create array of character values</span>
+    <span class="hljs-keyword">char</span> name[] = <span class="hljs-string">&quot;templates&quot;</span>;
+    <span class="hljs-keyword">int</span> length = <span class="hljs-keyword">sizeof</span>(name)<span class="hljs-number">-1</span>;
+
+    <span class="hljs-comment">// (try to) print average character value</span>
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;the average value of the characters in \&quot;&quot;</span>
+                &lt;&lt; name &lt;&lt; <span class="hljs-string">&quot;\&quot; is &quot;</span>
+                &lt;&lt; accum(name, name+length) / length
+                &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+}
+</code></pre>
+<p>&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x4E3A;&#xFF1A;</p>
+<pre><code class="lang-log">the average value of the integer values is 3
+the average value of the characters in &quot;templates&quot; is -5
+</code></pre>
+<p>&#x7531;&#x4E8E;<code>char</code>&#x6240;&#x8868;&#x793A;&#x7684;&#x6570;&#x636E;&#x8303;&#x56F4;&#x8F83;&#x5C0F;&#xFF0C;&#x7D2F;&#x52A0;&#x7684;&#x8FC7;&#x7A0B;&#x53EF;&#x80FD;&#x5B58;&#x5728;&#x6EA2;&#x51FA;&#x6216;&#x8005;&#x622A;&#x65AD;&#xFF0C;&#x6240;&#x4EE5;&#x4F1A;&#x51FA;&#x73B0;&#x8D1F;&#x503C;&#x3002;&#x5F53;&#x7136;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5C06;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#x4E5F;&#x4F5C;&#x4E3A;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x4F46;&#x662F;&#x4F1A;&#x6BD4;&#x8F83;&#x9EBB;&#x70E6;&#x3002;</p>
+<p>&#x53E6;&#x4E00;&#x79CD;&#x65B9;&#x5F0F;&#x662F;&#x4E3A;&#x4E0D;&#x540C;&#x7684;&#x7C7B;&#x578B;<code>T</code>&#x5173;&#x8054;&#x4E00;&#x4E2A;&#x8FD4;&#x56DE;&#x503C;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x8FD9;&#x4E2A;&#x76F8;&#x5173;&#x8054;&#x7684;&#x7C7B;&#x578B;&#x53EF;&#x4EE5;&#x89C6;&#x4E3A;<code>T</code>&#x7684;&#x7C7B;&#x578B;&#x7279;&#x5F81;&#x3002;&#x539F;&#x6587;&#xFF1A;</p>
+<blockquote>
+<p>An alternative approach to the extra parameter is to create an association between each type T for which accum() is called and the corresponding type that should be used to hold the accumulated value. This association could be considered characteristic of the type T, and therefore the type in which the sum is computed is sometimes called a trait of T.</p>
+</blockquote>
+<p>&#x7C7B;&#x578B;&#x7279;&#x5F81;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6A21;&#x677F;&#x7279;&#x5316;&#x5B9E;&#x73B0;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/accumtraits2.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> AccumulationTraits;
+
+<span class="hljs-keyword">template</span>&lt;&gt;
+<span class="hljs-keyword">struct</span> AccumulationTraits&lt;<span class="hljs-keyword">char</span>&gt; {
+    <span class="hljs-keyword">using</span> AccT = <span class="hljs-keyword">int</span>;
+};
+
+<span class="hljs-keyword">template</span>&lt;&gt;
+<span class="hljs-keyword">struct</span> AccumulationTraits&lt;<span class="hljs-keyword">short</span>&gt; {
+    <span class="hljs-keyword">using</span> AccT = <span class="hljs-keyword">int</span>;
+};
+
+<span class="hljs-keyword">template</span>&lt;&gt;
+<span class="hljs-keyword">struct</span> AccumulationTraits&lt;<span class="hljs-keyword">int</span>&gt; {
+    <span class="hljs-keyword">using</span> AccT = <span class="hljs-keyword">long</span>;
+};
+
+<span class="hljs-keyword">template</span>&lt;&gt;
+<span class="hljs-keyword">struct</span> AccumulationTraits&lt;<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span>&gt; {
+    <span class="hljs-keyword">using</span> AccT = <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span>;
+};
+
+<span class="hljs-keyword">template</span>&lt;&gt;
+<span class="hljs-keyword">struct</span> AccumulationTraits&lt;<span class="hljs-keyword">float</span>&gt; {
+    <span class="hljs-keyword">using</span> AccT = <span class="hljs-keyword">double</span>;
+};
+</code></pre>
+<p>&#x7136;&#x540E;&#x5C06;&#x6A21;&#x677F;&#x4FEE;&#x6539;&#x4E3A;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/accum2.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">ifndef</span> ACCUM_HPP</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ACCUM_HPP</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;accumtraits2.hpp&quot;</span></span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-function"><span class="hljs-keyword">auto</span> <span class="hljs-title">accum</span> <span class="hljs-params">(T <span class="hljs-keyword">const</span>* beg, T <span class="hljs-keyword">const</span>* end)</span>
+</span>{
+    <span class="hljs-comment">// return type is traits of the element type</span>
+    <span class="hljs-keyword">using</span> AccT = <span class="hljs-keyword">typename</span> AccumulationTraits&lt;T&gt;::AccT;
+
+    AccT total{}; <span class="hljs-comment">// assume this actually creates a zero value</span>
+    <span class="hljs-keyword">while</span> (beg != end) {
+        total += *beg;
+        ++beg;
+    }
+    <span class="hljs-keyword">return</span> total;
+}
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span> <span class="hljs-comment">// ACCUM_HPP</span></span>
+</code></pre>
+<p>&#x8FD9;&#x5C31;&#x4F1A;&#x5F97;&#x5230;&#x6B63;&#x786E;&#x7684;&#x8F93;&#x51FA;&#xFF1A;</p>
+<pre><code class="lang-log">the average value of the integer values is 3
+the average value of the characters in &quot;templates&quot; is 108
+</code></pre>
+<h3 id="1912-&#x503C;&#x7279;&#x5F81;">19.1.2 &#x503C;&#x7279;&#x5F81;</h3>
+<p>&#x7C7B;&#x578B;&#x7279;&#x5F81;&#x7684;&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#x5F88;&#x597D;&#x7684;&#x89E3;&#x51B3;&#x4E86;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x4F46;&#x662F;&#x5374;&#x4E0D;&#x80FD;&#x4FDD;&#x8BC1;&#x521D;&#x503C;<code>total</code>&#x662F;&#x4E00;&#x4E2A;&#x5408;&#x7406;&#x503C;&#xFF0C;&#x4E3A;&#x6B64;&#x53EF;&#x4EE5;&#x518D;&#x4E3A;&#x7C7B;&#x578B;<code>T</code>&#x63D0;&#x4F9B;&#x503C;&#x7279;&#x5F81;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/accumtraits3.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> AccumulationTraits;
+
+<span class="hljs-keyword">template</span>&lt;&gt;
+<span class="hljs-keyword">struct</span> AccumulationTraits&lt;<span class="hljs-keyword">char</span>&gt; {
+    <span class="hljs-keyword">using</span> AccT = <span class="hljs-keyword">int</span>;
+    <span class="hljs-keyword">static</span> AccT <span class="hljs-keyword">const</span> zero = <span class="hljs-number">0</span>;
+};
+
+<span class="hljs-keyword">template</span>&lt;&gt;
+<span class="hljs-keyword">struct</span> AccumulationTraits&lt;<span class="hljs-keyword">short</span>&gt; {
+    <span class="hljs-keyword">using</span> AccT = <span class="hljs-keyword">int</span>;
+    <span class="hljs-keyword">static</span> AccT <span class="hljs-keyword">const</span> zero = <span class="hljs-number">0</span>;
+};
+
+<span class="hljs-keyword">template</span>&lt;&gt;
+<span class="hljs-keyword">struct</span> AccumulationTraits&lt;<span class="hljs-keyword">int</span>&gt; {
+    <span class="hljs-keyword">using</span> AccT = <span class="hljs-keyword">long</span>;
+    <span class="hljs-keyword">static</span> AccT <span class="hljs-keyword">const</span> zero = <span class="hljs-number">0</span>;
+};
+<span class="hljs-comment">// ...</span>
+</code></pre>
+<p>&#x5E76;&#x7528;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#x6539;&#x5199;&#x6A21;&#x677F;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/accum3.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">ifndef</span> ACCUM_HPP</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ACCUM_HPP</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;accumtraits3.hpp&quot;</span></span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-function"><span class="hljs-keyword">auto</span> <span class="hljs-title">accum</span> <span class="hljs-params">(T <span class="hljs-keyword">const</span>* beg, T <span class="hljs-keyword">const</span>* end)</span>
+</span>{
+    <span class="hljs-comment">// return type is traits of the element type</span>
+    <span class="hljs-keyword">using</span> AccT = <span class="hljs-keyword">typename</span> AccumulationTraits&lt;T&gt;::AccT;
+
+    AccT total = AccumulationTraits&lt;T&gt;::zero; <span class="hljs-comment">// init total by trait value</span>
+    <span class="hljs-keyword">while</span> (beg != end) {
+    total += *beg;
+    ++beg;
+    }
+    <span class="hljs-keyword">return</span> total;
+}
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span> <span class="hljs-comment">// ACCUM_HPP</span></span>
+</code></pre>
+<p>&#x4F46;&#x662F;C++&#x53EA;&#x5141;&#x8BB8;&#x7C7B;&#x7684;&#x9759;&#x6001;&#x5E38;&#x91CF;&#x6570;&#x636E;&#x6210;&#x5458;&#x662F;&#x6574;&#x578B;&#x6216;&#x8005;&#x679A;&#x4E3E;&#x7C7B;&#x578B;&#xFF0C;&#x5BF9;&#x4E8E;&#x6D6E;&#x70B9;&#x578B;&#xFF0C;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;<code>constexpr</code>&#xFF1B;&#x5BF9;&#x4E8E;&#x81EA;&#x5B9A;&#x4E49;&#x7C7B;&#x578B;&#xFF0C;&#x53EA;&#x80FD;&#x901A;&#x8FC7;&#x9759;&#x6001;&#x51FD;&#x6570;&#x7684;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/accumtraits4.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> AccumulationTraits;
+
+<span class="hljs-keyword">template</span>&lt;&gt;
+<span class="hljs-keyword">struct</span> AccumulationTraits&lt;<span class="hljs-keyword">char</span>&gt; {
+    <span class="hljs-keyword">using</span> AccT = <span class="hljs-keyword">int</span>;
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">constexpr</span> AccT <span class="hljs-title">zero</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+    }
+};
+
+<span class="hljs-keyword">template</span>&lt;&gt;
+<span class="hljs-keyword">struct</span> AccumulationTraits&lt;<span class="hljs-keyword">short</span>&gt; {
+    <span class="hljs-keyword">using</span> AccT = <span class="hljs-keyword">int</span>;
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">constexpr</span> AccT <span class="hljs-title">zero</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+    }
+};
+
+<span class="hljs-keyword">template</span>&lt;&gt;
+<span class="hljs-keyword">struct</span> AccumulationTraits&lt;<span class="hljs-keyword">int</span>&gt; {
+    <span class="hljs-keyword">using</span> AccT = <span class="hljs-keyword">long</span>;
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">constexpr</span> AccT <span class="hljs-title">zero</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+    }
+};
+
+<span class="hljs-keyword">template</span>&lt;&gt;
+<span class="hljs-keyword">struct</span> AccumulationTraits&lt;<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span>&gt; {
+    <span class="hljs-keyword">using</span> AccT = <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span>;
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">constexpr</span> AccT <span class="hljs-title">zero</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+    }
+};
+
+<span class="hljs-keyword">template</span>&lt;&gt;
+<span class="hljs-keyword">struct</span> AccumulationTraits&lt;<span class="hljs-keyword">float</span>&gt; {
+    <span class="hljs-keyword">using</span> AccT = <span class="hljs-keyword">double</span>;
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">constexpr</span> AccT <span class="hljs-title">zero</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+    }
+};
+<span class="hljs-comment">// ...</span>
+</code></pre>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/accumtraits4bigint.hpp</span>
+<span class="hljs-keyword">template</span>&lt;&gt;
+<span class="hljs-keyword">struct</span> AccumulationTraits&lt;BigInt&gt; {
+    <span class="hljs-keyword">using</span> AccT = BigInt;
+    <span class="hljs-function"><span class="hljs-keyword">static</span> BigInt <span class="hljs-title">zero</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> BigInt{<span class="hljs-number">0</span>};
+    }
+};
+</code></pre>
+<p>&#x4E0D;&#x8FC7;&#x5728;C++17&#x4E2D;&#xFF0C;&#x5BF9;&#x4E8E;&#x81EA;&#x5B9A;&#x4E49;&#x7C7B;&#x578B;&#x8FD8;&#x53EF;&#x4EE5;&#x5199;&#x4E3A;<code>inline</code>&#x7684;&#x5F62;&#x5F0F;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;&gt;
+<span class="hljs-keyword">struct</span> AccumulationTraits&lt;BigInt&gt; {
+    <span class="hljs-keyword">using</span> AccT = BigInt;
+    <span class="hljs-keyword">inline</span> <span class="hljs-keyword">static</span> BigInt <span class="hljs-keyword">const</span> zero = BigInt{<span class="hljs-number">0</span>}; <span class="hljs-comment">// OK since C++17</span>
+};
+</code></pre>
+<h3 id="Parameterized-Traits">19.1.3 &#x5C06;&#x7C7B;&#x578B;&#x7279;&#x5F81;&#x4F5C;&#x4E3A;&#x6A21;&#x677F;&#x53C2;&#x6570; </h3>
+<p>&#x7C7B;&#x578B;&#x7279;&#x5F81;&#x4E5F;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x6A21;&#x677F;&#x53C2;&#x6570;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/accum5.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">ifndef</span> ACCUM_HPP</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ACCUM_HPP</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;accumtraits4.hpp&quot;</span></span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span> AT = AccumulationTraits&lt;T&gt;&gt;
+<span class="hljs-function"><span class="hljs-keyword">auto</span> <span class="hljs-title">accum</span> <span class="hljs-params">(T <span class="hljs-keyword">const</span>* beg, T <span class="hljs-keyword">const</span>* end)</span>
+</span>{
+    <span class="hljs-keyword">typename</span> AT::AccT total = AT::zero();
+    <span class="hljs-keyword">while</span> (beg != end) {
+        total += *beg;
+        ++beg;
+    }
+    <span class="hljs-keyword">return</span> total;
+}
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span> <span class="hljs-comment">// ACCUM_HPP</span></span>
+</code></pre>
+<h2 id="192-&#x7C7B;&#x578B;&#x7279;&#x5F81;&#x548C;&#x7B56;&#x7565;">19.2 &#x7C7B;&#x578B;&#x7279;&#x5F81;&#x548C;&#x7B56;&#x7565;</h2>
+<p>&#x7D2F;&#x52A0;&#x6A21;&#x677F;&#x7684;&#x8FC7;&#x7A0B;&#x53EF;&#x4EE5;&#x62BD;&#x8C61;&#x4E3A;&#x904D;&#x5386;&#x5E8F;&#x5217;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x5E76;&#x548C;&#x5F53;&#x524D;&#x5F97;&#x5230;&#x7684;&#x7D2F;&#x52A0;&#x503C;&#x8FDB;&#x884C;&#x52A0;&#x6CD5;&#x6C42;&#x548C;&#xFF0C;&#x8FD9;&#x91CC;&#x5C06;&#x6C42;&#x548C;&#x64CD;&#x4F5C;&#x79F0;&#x4E3A;&#x7B56;&#x7565;&#xFF08;policy&#xFF09;&#xFF0C;&#x56E0;&#x6B64;&#x53EF;&#x4EE5;&#x5C06;&#x6A21;&#x677F;&#x7B56;&#x7565;&#x53C2;&#x6570;&#x5316;&#xFF0C;&#x901A;&#x8FC7;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x6765;&#x63A7;&#x5236;&#x6C42;&#x548C;&#x3001;&#x6C42;&#x79EF;&#x7684;&#x8FC7;&#x7A0B;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/accum6.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">ifndef</span> ACCUM_HPP</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ACCUM_HPP</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;accumtraits4.hpp&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;sumpolicy1.hpp&quot;</span></span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T,
+            <span class="hljs-keyword">typename</span> Policy = SumPolicy,
+            <span class="hljs-keyword">typename</span> Traits = AccumulationTraits&lt;T&gt;&gt;
+<span class="hljs-function"><span class="hljs-keyword">auto</span> <span class="hljs-title">accum</span> <span class="hljs-params">(T <span class="hljs-keyword">const</span>* beg, T <span class="hljs-keyword">const</span>* end)</span>
+</span>{
+    <span class="hljs-keyword">using</span> AccT = <span class="hljs-keyword">typename</span> Traits::AccT;
+    AccT total = Traits::zero();
+    <span class="hljs-keyword">while</span> (beg != end) {
+        Policy::accumulate(total, *beg);
+        ++beg;
+    }
+    <span class="hljs-keyword">return</span> total;
+}
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span> <span class="hljs-comment">// ACCUM_HPP</span></span>
+</code></pre>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/sumpolicy1.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">ifndef</span> SUMPOLICY_HPP</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> SUMPOLICY_HPP</span>
+
+<span class="hljs-keyword">class</span> SumPolicy {
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T1, <span class="hljs-keyword">typename</span> T2&gt;
+        <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">accumulate</span> <span class="hljs-params">(T1&amp; total, T2 <span class="hljs-keyword">const</span>&amp; value)</span> </span>{
+            total += value;
+        }
+};
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span> <span class="hljs-comment">// SUMPOLICY_HPP</span></span>
+</code></pre>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/accum6.cpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;accum6.hpp&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+
+<span class="hljs-keyword">class</span> MultPolicy {
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T1, <span class="hljs-keyword">typename</span> T2&gt;
+        <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">accumulate</span> <span class="hljs-params">(T1&amp; total, T2 <span class="hljs-keyword">const</span>&amp; value)</span> </span>{
+            total *= value;
+        }
+};
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// create array of 5 integer values</span>
+    <span class="hljs-keyword">int</span> num[] = { <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span> };
+
+    <span class="hljs-comment">// print product of all values</span>
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;the product of the integer values is &quot;</span>
+                &lt;&lt; accum&lt;<span class="hljs-keyword">int</span>,MultPolicy&gt;(num, num+<span class="hljs-number">5</span>)
+                &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+}
+</code></pre>
+<p>&#x7531;&#x4E8E;&#x521D;&#x503C;&#x4ECD;&#x7136;&#x4E3A;0&#xFF0C;&#x6240;&#x4EE5;&#x4EE3;&#x7801;&#x5E76;&#x4E0D;&#x6B63;&#x786E;&#xFF0C;&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x4E00;&#x4E2A;&#x662F;&#x5C06;&#x521D;&#x503C;&#x4F5C;&#x4E3A;&#x7B56;&#x7565;&#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF0C;&#x8FD8;&#x6709;&#x5C31;&#x662F;&#x4EFF;&#x7167;&#x6807;&#x6CE8;&#x5E93;<code>std::accumulate</code>&#x5C06;&#x521D;&#x503C;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x3002;</p>
+<h3 id="1921-&#x7C7B;&#x578B;&#x7279;&#x5F81;&#x548C;&#x7B56;&#x7565;&#x7684;&#x533A;&#x522B;">19.2.1 &#x7C7B;&#x578B;&#x7279;&#x5F81;&#x548C;&#x7B56;&#x7565;&#x7684;&#x533A;&#x522B;</h3>
+<ul>
+<li>&#x7C7B;&#x578B;&#x7279;&#x5F81;&#xFF08;trait&#xFF09;&#x8868;&#x793A;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x7684;&#x989D;&#x5916;&#x5C5E;&#x6027;&#xFF1A;<ol>
+<li>&#x53EF;&#x4EE5;&#x4E0D;&#x4F5C;&#x4E3A;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x4F20;&#x9012;</li>
+<li>&#x5728;&#x4F5C;&#x4E3A;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x4E00;&#x822C;&#x5177;&#x6709;&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x8C03;&#x7528;&#x65F6;&#x57FA;&#x672C;&#x4E0D;&#x9700;&#x8981;&#x63D0;&#x4F9B;&#x6A21;&#x677F;&#x5B9E;&#x53C2;&#xFF0C;&#x89C1;<a href="#Parameterized-Traits">19.1.3</a></li>
+<li>&#x4E00;&#x822C;&#x548C;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x5BC6;&#x5207;&#x76F8;&#x5173;</li>
+<li>&#x4E00;&#x822C;&#x662F;&#x7C7B;&#x578B;&#x6216;&#x8005;&#x5E38;&#x91CF;</li>
+<li>&#x4E00;&#x822C;&#x901A;&#x8FC7;&#x7C7B;&#x578B;&#x7279;&#x5F81;&#x6A21;&#x677F;&#x83B7;&#x53D6;</li>
+</ol>
+</li>
+<li>&#x7B56;&#x7565;&#xFF08;policy&#xFF09;&#x8868;&#x793A;&#x51FD;&#x6570;&#x6216;&#x8005;&#x7C7B;&#x578B;&#x4E2D;&#x53EF;&#x4EE5;&#x914D;&#x7F6E;&#x7684;&#x884C;&#x4E3A;&#xFF08;&#x4E2A;&#x4EBA;&#x8BA4;&#x4E3A;&#x91CD;&#x70B9;&#x5728;&#x53EF;&#x914D;&#x7F6E;&#xFF09;<ol>
+<li>&#x5927;&#x591A;&#x6570;&#x60C5;&#x51B5;&#x4E0B;&#x8981;&#x901A;&#x8FC7;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x4F20;&#x9012;&#x624D;&#x80FD;&#x53D1;&#x6325;&#x4F5C;&#x7528;</li>
+<li>&#x4E00;&#x822C;&#x4E0D;&#x63D0;&#x4F9B;&#x9ED8;&#x8BA4;&#x6A21;&#x677F;&#x5B9E;&#x53C2;&#xFF0C;&#x9700;&#x8981;&#x663E;&#x793A;&#x6307;&#x5B9A;</li>
+<li>&#x4E00;&#x822C;&#x548C;&#x5176;&#x5B83;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x5173;&#x7CFB;&#x4E0D;&#x5927;</li>
+<li>&#x4E00;&#x822C;&#x901A;&#x8FC7;&#x6210;&#x5458;&#x51FD;&#x6570;&#x5B9E;&#x73B0;</li>
+<li>&#x4E00;&#x822C;&#x5B9E;&#x73B0;&#x5728;&#x666E;&#x901A;&#x7C7B;&#x6216;&#x8005;&#x7C7B;&#x6A21;&#x677F;</li>
+</ol>
+</li>
+</ul>
+<h3 id="1922-&#x901A;&#x8FC7;&#x7C7B;&#x6A21;&#x677F;&#x5B9E;&#x73B0;&#x7B56;&#x7565;">19.2.2 &#x901A;&#x8FC7;&#x7C7B;&#x6A21;&#x677F;&#x5B9E;&#x73B0;&#x7B56;&#x7565;</h3>
+<p>&#x7B56;&#x7565;&#x8FD8;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x4E3A;&#x7C7B;&#x6A21;&#x677F;&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x5176;&#x4F5C;&#x4E3A;&#x6A21;&#x677F;&#x7684;&#x6A21;&#x677F;&#x53C2;&#x6570;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/sumpolicy2.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">ifndef</span> SUMPOLICY_HPP</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> SUMPOLICY_HPP</span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T1, <span class="hljs-keyword">typename</span> T2&gt;
+<span class="hljs-keyword">class</span> SumPolicy {
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">accumulate</span> <span class="hljs-params">(T1&amp; total, T2 <span class="hljs-keyword">const</span>&amp; value)</span> </span>{
+            total += value;
+        }
+};
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span> <span class="hljs-comment">// SUMPOLICY_HPP</span></span>
+</code></pre>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/accum7.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">ifndef</span> ACCUM_HPP</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ACCUM_HPP</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;accumtraits4.hpp&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;sumpolicy2.hpp&quot;</span></span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T,
+            <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>,<span class="hljs-keyword">typename</span>&gt; <span class="hljs-keyword">class</span> Policy = SumPolicy,
+            <span class="hljs-keyword">typename</span> Traits = AccumulationTraits&lt;T&gt;&gt;
+<span class="hljs-function"><span class="hljs-keyword">auto</span> <span class="hljs-title">accum</span> <span class="hljs-params">(T <span class="hljs-keyword">const</span>* beg, T <span class="hljs-keyword">const</span>* end)</span>
+</span>{
+    <span class="hljs-keyword">using</span> AccT = <span class="hljs-keyword">typename</span> Traits::AccT;
+    AccT total = Traits::zero();
+    <span class="hljs-keyword">while</span> (beg != end) {
+        Policy&lt;AccT,T&gt;::accumulate(total, *beg);
+        ++beg;
+    }
+    <span class="hljs-keyword">return</span> total;
+}
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span> <span class="hljs-comment">// ACCUM_HPP</span></span>
+</code></pre>
+<h3 id="1923-&#x7EC4;&#x5408;&#x4F7F;&#x7528;&#x7C7B;&#x578B;&#x7279;&#x5F81;&#x548C;&#x7B56;&#x7565;">19.2.3 &#x7EC4;&#x5408;&#x4F7F;&#x7528;&#x7C7B;&#x578B;&#x7279;&#x5F81;&#x548C;&#x7B56;&#x7565;</h3>
+<p>&#x5F53;&#x90FD;&#x901A;&#x8FC7;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x4F20;&#x9012;&#x7C7B;&#x578B;&#x7279;&#x5F81;&#x548C;&#x7B56;&#x7565;&#x65F6;&#xFF0C;&#x4E00;&#x822C;&#x5C06;&#x7B56;&#x7565;&#x653E;&#x5728;&#x7C7B;&#x578B;&#x7279;&#x5F81;&#x4E4B;&#x524D;&#xFF0C;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x7B56;&#x7565;&#x53EF;&#x80FD;&#x4E0D;&#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x6A21;&#x677F;&#x5B9E;&#x53C2;&#xFF0C;&#x800C;&#x7C7B;&#x578B;&#x7279;&#x5F81;&#x4E00;&#x822C;&#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x6A21;&#x677F;&#x5B9E;&#x53C2;&#x3002;</p>
+<h3 id="1924-&#x901A;&#x8FC7;&#x8FED;&#x4EE3;&#x5668;&#x5B9E;&#x73B0;&#x7D2F;&#x52A0;">19.2.4 &#x901A;&#x8FC7;&#x8FED;&#x4EE3;&#x5668;&#x5B9E;&#x73B0;&#x7D2F;&#x52A0;</h3>
+<p>&#x524D;&#x9762;&#x7684;&#x7D2F;&#x52A0;&#x6A21;&#x677F;&#x90FD;&#x662F;&#x901A;&#x8FC7;&#x6307;&#x9488;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x6807;&#x51C6;&#x5E93;&#x4E2D;&#x66F4;&#x901A;&#x7528;&#x7684;&#x65B9;&#x5F0F;&#x662F;&#x901A;&#x8FC7;&#x8FED;&#x4EE3;&#x5668;&#xFF08;&#x4E66;&#x4E2D;&#x7684;&#x4F8B;&#x5B50;&#x8FD8;&#x662F;&#x4F1A;&#x5BFC;&#x81F4;&#x6EA2;&#x51FA;&#x548C;&#x622A;&#x65AD;&#xFF09;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/accum0.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">ifndef</span> ACCUM_HPP</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ACCUM_HPP</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iterator&gt;</span></span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Iter&gt;
+<span class="hljs-function"><span class="hljs-keyword">auto</span> <span class="hljs-title">accum</span> <span class="hljs-params">(Iter start, Iter end)</span>
+</span>{
+    <span class="hljs-keyword">using</span> VT = <span class="hljs-keyword">typename</span> <span class="hljs-built_in">std</span>::iterator_traits&lt;Iter&gt;::value_type;
+    VT total{}; <span class="hljs-comment">// assume this actually creates a zero value</span>
+    <span class="hljs-keyword">while</span> (start != end) {
+        total += *start;
+        ++start;
+    }
+    <span class="hljs-keyword">return</span> total;
+}
+<span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span> <span class="hljs-comment">// ACCUM_HPP</span></span>
+</code></pre>
+<h2 id="193-&#x7C7B;&#x578B;&#x51FD;&#x6570;">19.3 &#x7C7B;&#x578B;&#x51FD;&#x6570;</h2>
+<p>&#x7C7B;&#x578B;&#x51FD;&#x6570;&#x662F;&#x4EE5;&#x7C7B;&#x578B;&#x4E3A;&#x53C2;&#x6570;&#x5E76;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;&#x6216;&#x8005;&#x503C;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x5982;&#x679C;&#x5C06;<code>sizeof</code>&#x89C6;&#x4E3A;&#x51FD;&#x6570;&#x7684;&#x8BDD;&#xFF0C;&#x90A3;&#x4E48;&#x5176;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;&#x51FD;&#x6570;&#xFF0C;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x8BA4;&#x4E3A;&#x662F;<code>sizeof</code>&#x7684;&#x51FD;&#x6570;&#x7248;&#x672C;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/sizeof.cpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstddef&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> TypeSize {
+    <span class="hljs-keyword">static</span> <span class="hljs-built_in">std</span>::<span class="hljs-keyword">size_t</span> <span class="hljs-keyword">const</span> value = <span class="hljs-keyword">sizeof</span>(T);
+};
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;TypeSize&lt;int&gt;::value = &quot;</span>
+                &lt;&lt; TypeSize&lt;<span class="hljs-keyword">int</span>&gt;::value &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+}
+</code></pre>
+<h3 id="1931-&#x83B7;&#x53D6;&#x5BB9;&#x5668;&#x4E2D;&#x5143;&#x7D20;&#x7C7B;&#x578B;&#x7684;&#x6A21;&#x677F;">19.3.1 &#x83B7;&#x53D6;&#x5BB9;&#x5668;&#x4E2D;&#x5143;&#x7D20;&#x7C7B;&#x578B;&#x7684;&#x6A21;&#x677F;</h3>
+<p>&#x4E0B;&#x9762;&#x7684;&#x504F;&#x7279;&#x5316;&#x6A21;&#x677F;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x5BB9;&#x5668;&#x4E2D;&#x5143;&#x7D20;&#x7684;&#x7C7B;&#x578B;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/elementtype.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;vector&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;list&gt;</span></span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> ElementT;                    <span class="hljs-comment">// primary template</span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> ElementT&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;T&gt;&gt; {   <span class="hljs-comment">// partial specialization for std::vector</span>
+    <span class="hljs-keyword">using</span> Type = T;
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> ElementT&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">list</span>&lt;T&gt;&gt; {     <span class="hljs-comment">// partial specialization for std::list</span>
+    <span class="hljs-keyword">using</span> Type = T;
+};
+<span class="hljs-comment">// ...</span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-built_in">std</span>::<span class="hljs-keyword">size_t</span> N&gt;
+<span class="hljs-keyword">struct</span> ElementT&lt;T[N]&gt; {             <span class="hljs-comment">// partial specialization for arrays of known bounds</span>
+    <span class="hljs-keyword">using</span> Type = T;
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> ElementT&lt;T[]&gt; {              <span class="hljs-comment">// partial specialization for arrays of unknown bounds</span>
+    <span class="hljs-keyword">using</span> Type = T;
+};
+<span class="hljs-comment">// ...</span>
+</code></pre>
+<p>&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x4E3A;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/elementtype.cpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;elementtype.hpp&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;vector&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;typeinfo&gt;</span></span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printElementType</span> <span class="hljs-params">(T <span class="hljs-keyword">const</span>&amp; c)</span>
+</span>{
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Container of &quot;</span>
+                &lt;&lt; <span class="hljs-keyword">typeid</span>(<span class="hljs-keyword">typename</span> ElementT&lt;T&gt;::Type).name()
+                &lt;&lt; <span class="hljs-string">&quot; elements.\n&quot;</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">bool</span>&gt; s;
+    printElementType(s);
+    <span class="hljs-keyword">int</span> arr[<span class="hljs-number">42</span>];
+    printElementType(arr);
+}
+</code></pre>
+<h3 id="1932-&#x7C7B;&#x578B;&#x4FEE;&#x9970;&#x6A21;&#x677F;&#xFF08;transformation-traits&#xFF09;">19.3.2 &#x7C7B;&#x578B;&#x4FEE;&#x9970;&#x6A21;&#x677F;&#xFF08;Transformation Traits&#xFF09;</h3>
+<p>&#x7C7B;&#x578B;&#x4FEE;&#x9970;&#x6A21;&#x677F;&#x53EF;&#x4EE5;&#x79FB;&#x9664;&#x548C;&#x6DFB;&#x52A0;&#x7C7B;&#x578B;&#x4E2D;&#x7684;&#x5F15;&#x7528;&#x3001;&#x79FB;&#x9664;&#x9650;&#x5B9A;&#x7B26;&#x548C;&#x5B9E;&#x73B0;&#x7C7B;&#x578B;&#x9000;&#x5316;&#xFF08;decay&#xFF09;&#x3002;</p>
+<h4 id="&#x79FB;&#x9664;&#x5F15;&#x7528;">&#x79FB;&#x9664;&#x5F15;&#x7528;</h4>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/removereference.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> RemoveReferenceT {
+    <span class="hljs-keyword">using</span> Type = T;
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> RemoveReferenceT&lt;T&amp;&gt; {
+    <span class="hljs-keyword">using</span> Type = T;
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> RemoveReferenceT&lt;T&amp;&amp;&gt; {
+    <span class="hljs-keyword">using</span> Type = T;
+};
+</code></pre>
+<h4 id="&#x6DFB;&#x52A0;&#x5F15;&#x7528;">&#x6DFB;&#x52A0;&#x5F15;&#x7528;</h4>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/addreference.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> AddLValueReferenceT {
+    <span class="hljs-keyword">using</span> Type = T&amp;;
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">using</span> AddLValueReference = <span class="hljs-keyword">typename</span> AddLValueReferenceT&lt;T&gt;::Type;
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> AddRValueReferenceT {
+    <span class="hljs-keyword">using</span> Type = T&amp;&amp;;
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">using</span> AddRValueReference = <span class="hljs-keyword">typename</span> AddRValueReferenceT&lt;T&gt;::Type;
+</code></pre>
+<p>&#x5F15;&#x7528;&#x6298;&#x53E0;&#x89C4;&#x5219;&#x9002;&#x7528;&#x4E8E;&#x8FD9;&#x91CC;&#x3002;&#x7531;&#x4E8E;<code>void</code>&#x662F;&#x4E0D;&#x5B8C;&#x6574;&#x7C7B;&#x578B;&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x5B9E;&#x73B0;&#x4EE5;&#x4E0B;&#x7279;&#x5316;&#xFF08;&#x8FD9;&#x91CC;&#x53EA;&#x662F;<code>AddLValueReferenceT&lt;&gt;</code>&#x7684;&#x4F8B;&#x5B50;&#xFF09;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;&gt;
+<span class="hljs-keyword">struct</span> AddLValueReferenceT&lt;<span class="hljs-keyword">void</span>&gt; {
+    <span class="hljs-keyword">using</span> Type = <span class="hljs-keyword">void</span>;
+};
+
+<span class="hljs-keyword">template</span>&lt;&gt;
+<span class="hljs-keyword">struct</span> AddLValueReferenceT&lt;<span class="hljs-keyword">void</span> <span class="hljs-keyword">const</span>&gt; {
+    <span class="hljs-keyword">using</span> Type = <span class="hljs-keyword">void</span> <span class="hljs-keyword">const</span>;
+};
+
+<span class="hljs-keyword">template</span>&lt;&gt;
+<span class="hljs-keyword">struct</span> AddLValueReferenceT&lt;<span class="hljs-keyword">void</span> <span class="hljs-keyword">volatile</span>&gt; {
+    <span class="hljs-keyword">using</span> Type = <span class="hljs-keyword">void</span> <span class="hljs-keyword">volatile</span>;
+};
+
+<span class="hljs-keyword">template</span>&lt;&gt;
+<span class="hljs-keyword">struct</span> AddLValueReferenceT&lt;<span class="hljs-keyword">void</span> <span class="hljs-keyword">const</span> <span class="hljs-keyword">volatile</span>&gt; {
+    <span class="hljs-keyword">using</span> Type = <span class="hljs-keyword">void</span> <span class="hljs-keyword">const</span> <span class="hljs-keyword">volatile</span>;
+};
+</code></pre>
+<h4 id="&#x79FB;&#x9664;&#x9650;&#x5B9A;&#x7B26;">&#x79FB;&#x9664;&#x9650;&#x5B9A;&#x7B26;</h4>
+<p>&#x79FB;&#x9664;<code>const</code>&#x9650;&#x5B9A;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/removeconst.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> RemoveConstT {
+    <span class="hljs-keyword">using</span> Type = T;
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> RemoveConstT&lt;T <span class="hljs-keyword">const</span>&gt; {
+    <span class="hljs-keyword">using</span> Type = T;
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">using</span> RemoveConst = <span class="hljs-keyword">typename</span> RemoveConstT&lt;T&gt;::Type;
+</code></pre>
+<p>&#x540C;&#x65F6;&#x79FB;&#x9664;<code>const</code>&#x548C;<code>volatile</code>&#x9650;&#x5B9A;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/removecv.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;removeconst.hpp&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;removevolatile.hpp&quot;</span></span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> RemoveCVT : RemoveConstT&lt;<span class="hljs-keyword">typename</span> RemoveVolatileT&lt;T&gt;::Type&gt; {
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">using</span> RemoveCV = <span class="hljs-keyword">typename</span> RemoveCVT&lt;T&gt;::Type;
+</code></pre>
+<p><code>RemoveCVT&lt;&gt;</code>&#x901A;&#x8FC7;<code>RemoveVolatileT&lt;&gt;</code>&#x79FB;&#x9664;&#x4E86;<code>volatile</code>&#x9650;&#x5B9A;&#xFF0C;&#x8FD8;&#x901A;&#x8FC7;&#x7EE7;&#x627F;&#x7684;&#x65B9;&#x5F0F;&#x7EE7;&#x627F;&#x4E86;<code>RemoveConstT::Type</code>&#x3002;</p>
+<h4 id="&#x5B9E;&#x73B0;&#x7C7B;&#x578B;&#x9000;&#x5316;">&#x5B9E;&#x73B0;&#x7C7B;&#x578B;&#x9000;&#x5316;</h4>
+<p>&#x5F53;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x4E3A;&#x4F20;&#x503C;&#x7C7B;&#x578B;&#x65F6;&#xFF0C;&#x4F1A;&#x53D1;&#x751F;&#x7C7B;&#x578B;&#x9000;&#x5316;&#xFF1A;</p>
+<pre><code class="lang-cpp">// traits/passbyvalue.cpp
+#include &lt;iostream&gt;
+#include &lt;typeinfo&gt;
+#include &lt;type_traits&gt;
+
+template&lt;typename T&gt;
+void f(T)
+{
+}
+
+template&lt;typename A&gt;
+void printParameterType(void (*)(A))
+{
+    std::cout &lt;&lt; &quot;Parameter type: &quot; &lt;&lt; typeid(A).name() &lt;&lt; &apos;\n&apos;;
+    std::cout &lt;&lt; &quot;- is int: &quot; &lt;&lt; std::is_same&lt;A,int&gt;::value &lt;&lt; &apos;\n&apos;;
+    std::cout &lt;&lt; &quot;- is const: &quot; &lt;&lt; std::is_const&lt;A&gt;::value &lt;&lt; &apos;\n&apos;;
+    std::cout &lt;&lt; &quot;- is pointer: &quot; &lt;&lt; std::is_pointer&lt;A&gt;::value &lt;&lt; &apos;\n&apos;;
+}
+
+int main()
+{
+    printParameterType(&amp;f&lt;int&gt;);
+    printParameterType(&amp;f&lt;int const&gt;);
+    printParameterType(&amp;f&lt;int[7]&gt;);
+    printParameterType(&amp;f&lt;int(int)&gt;);
+}
+</code></pre>
+<p>&#x8F93;&#x51FA;&#x4E3A;&#xFF1A;</p>
+<pre><code class="lang-log">Parameter type: i
+- is int:     1
+- is const:   0
+- is pointer: 0
+Parameter type: i
+- is int:     1
+- is const:   0
+- is pointer: 0
+Parameter type: Pi
+- is int:     0
+- is const:   0
+- is pointer: 1
+Parameter type: PFiiE
+- is int:     0
+- is const:   0
+- is pointer: 1
+</code></pre>
+<p>&#x6A21;&#x62DF;&#x7C7B;&#x578B;&#x9000;&#x5316;&#x7684;&#x6A21;&#x677F;&#x4E3A;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> DecayT : RemoveCVT&lt;T&gt; {
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> DecayT&lt;T[]&gt; {
+    <span class="hljs-keyword">using</span> Type = T*;
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-built_in">std</span>::<span class="hljs-keyword">size_t</span> N&gt;
+<span class="hljs-keyword">struct</span> DecayT&lt;T[N]&gt; {
+    <span class="hljs-keyword">using</span> Type = T*;
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> R, <span class="hljs-keyword">typename</span>... Args&gt;
+<span class="hljs-keyword">struct</span> DecayT&lt;R(Args...)&gt; {
+    <span class="hljs-keyword">using</span> Type = R (*)(Args...);
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> R, <span class="hljs-keyword">typename</span>... Args&gt;
+<span class="hljs-keyword">struct</span> DecayT&lt;R(Args..., ...)&gt; {
+    <span class="hljs-keyword">using</span> Type = R (*)(Args..., ...);
+};
+</code></pre>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/decay.cpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;typeinfo&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;type_traits&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;decay.hpp&quot;</span></span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printDecayedType</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">using</span> A = <span class="hljs-keyword">typename</span> DecayT&lt;T&gt;::Type;
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Parameter type: &quot;</span> &lt;&lt; <span class="hljs-keyword">typeid</span>(A).name() &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;- is int: &quot;</span> &lt;&lt; <span class="hljs-built_in">std</span>::is_same&lt;A,<span class="hljs-keyword">int</span>&gt;::value &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;- is const: &quot;</span> &lt;&lt; <span class="hljs-built_in">std</span>::is_const&lt;A&gt;::value &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;- is pointer: &quot;</span> &lt;&lt; <span class="hljs-built_in">std</span>::is_pointer&lt;A&gt;::value &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    printDecayedType&lt;<span class="hljs-keyword">int</span>&gt;();
+    printDecayedType&lt;<span class="hljs-keyword">int</span> <span class="hljs-keyword">const</span>&gt;();
+    printDecayedType&lt;<span class="hljs-keyword">int</span>[<span class="hljs-number">7</span>]&gt;();
+    printDecayedType&lt;<span class="hljs-keyword">int</span>(<span class="hljs-keyword">int</span>)&gt;();
+}
+</code></pre>
+<p>&#x5BF9;&#x4E8E;&#x4E3A;&#x4EC0;&#x4E48;&#x9700;&#x8981;&#x7B2C;&#x4E8C;&#x4E2A;&#x53EF;&#x53D8;&#x53C2;&#x6570;&#x7279;&#x5316;&#x6A21;&#x677F;&#x6211;&#x4E5F;&#x6CA1;&#x770B;&#x61C2;&#x3002;&#x539F;&#x6587;&#xFF1A;</p>
+<blockquote>
+<p>Strictly speaking, the comma prior to the second ellipsis (...) is optional but is provided here for clarity. Due to the ellipsis being optional, the function type in the first partial specialization is actually syntactically ambiguous: It can be parsed as either R(Args, ...) (a C-style varargs parameter) or R(Args... name) (a parameter pack). The second interpretation is picked because Args is an unexpanded parameter pack. We can explicitly add the comma in the (rare) cases where the other interpretation is desired.</p>
+</blockquote>
+<h3 id="1933-&#x8C13;&#x8BCD;&#x6A21;&#x677F;">19.3.3 &#x8C13;&#x8BCD;&#x6A21;&#x677F;</h3>
+<p>&#x8C13;&#x8BCD;&#x6A21;&#x677F;&#x63A5;&#x53D7;&#x591A;&#x4E2A;&#x7C7B;&#x578B;&#x53C2;&#x6570;&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5E03;&#x5C14;&#x503C;&#x3002;</p>
+<h4 id="&#x5224;&#x65AD;&#x7C7B;&#x578B;&#x662F;&#x5426;&#x76F8;&#x540C;">&#x5224;&#x65AD;&#x7C7B;&#x578B;&#x662F;&#x5426;&#x76F8;&#x540C;</h4>
+<p><code>IsSameT&lt;&gt;</code>&#x5224;&#x65AD;&#x4E24;&#x4E2A;&#x7C7B;&#x578B;&#x662F;&#x5426;&#x76F8;&#x540C;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/issame0.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T1, <span class="hljs-keyword">typename</span> T2&gt;
+<span class="hljs-keyword">struct</span> IsSameT {
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">bool</span> value = <span class="hljs-literal">false</span>;
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> IsSameT&lt;T, T&gt; {
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">bool</span> value = <span class="hljs-literal">true</span>;
+};
+</code></pre>
+<h4 id="&#x5C06;&#x5E03;&#x5C14;&#x503C;&#x8F6C;&#x6362;&#x4E3A;&#x7C7B;&#x578B;">&#x5C06;&#x5E03;&#x5C14;&#x503C;&#x8F6C;&#x6362;&#x4E3A;&#x7C7B;&#x578B;</h4>
+<p>&#x901A;&#x8FC7;&#x4E0B;&#x9762;&#x7684;&#x6A21;&#x677F;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x5C06;&#x5E03;&#x5C14;&#x503C;&#x8F6C;&#x6362;&#x4E3A;&#x7C7B;&#x578B;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/boolconstant.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">bool</span> val&gt;
+<span class="hljs-keyword">struct</span> BoolConstant {
+    <span class="hljs-keyword">using</span> Type = BoolConstant&lt;val&gt;;
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">bool</span> value = val;
+};
+
+<span class="hljs-keyword">using</span> TrueType = BoolConstant&lt;<span class="hljs-literal">true</span>&gt;;
+<span class="hljs-keyword">using</span> FalseType = BoolConstant&lt;<span class="hljs-literal">false</span>&gt;;
+</code></pre>
+<p>&#x8FD9;&#x6837;<code>IsSameT&lt;&gt;</code>&#x5C31;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x7EE7;&#x627F;&#x7684;&#x65B9;&#x5F0F;&#x5B9E;&#x73B0;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/issame.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;boolconstant.hpp&quot;</span></span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T1, <span class="hljs-keyword">typename</span> T2&gt;
+<span class="hljs-keyword">struct</span> IsSameT : FalseType
+{
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> IsSameT&lt;T, T&gt; : TrueType
+{
+};
+</code></pre>
+<p>&#x5C06;&#x5E03;&#x5C14;&#x503C;&#x8F6C;&#x6362;&#x4E3A;&#x7C7B;&#x578B;&#x7684;&#x597D;&#x5904;&#x662F;&#x53EF;&#x4EE5;&#x5728;&#x7F16;&#x8BD1;&#x65F6;&#x5B9E;&#x73B0;&#x51FD;&#x6570;&#x5206;&#x53D1;&#xFF0C;&#x76F8;&#x6BD4;&#x4E8E;&#x5411;&#x51FD;&#x6570;&#x4E2D;&#x4F20;&#x9012;<code>true</code>&#x548C;<code>false</code>&#x4ECE;&#x800C;&#x5B9E;&#x73B0;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x6267;&#x884C;&#x4E0D;&#x540C;&#x5206;&#x652F;&#x7684;&#x4EE3;&#x7801;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x8BF4;&#x4F1A;&#x66F4;&#x5FEB;&#x4E00;&#x4E9B;&#xFF08;&#x6211;&#x89C9;&#x5F97;&#x662F;&#x8FD9;&#x6837;&#x5B50;&#xFF09;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/issame.cpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;issame.hpp&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">fooImpl</span><span class="hljs-params">(T, TrueType)</span>
+</span>{
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;fooImpl(T,true) for int called\n&quot;</span>;
+}
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">fooImpl</span><span class="hljs-params">(T, FalseType)</span>
+</span>{
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;fooImpl(T,false) for other type called\n&quot;</span>;
+}
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">foo</span><span class="hljs-params">(T t)</span>
+</span>{
+    fooImpl(t, IsSameT&lt;T,<span class="hljs-keyword">int</span>&gt;{}); <span class="hljs-comment">// choose impl. depending on whether T is int</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    foo(<span class="hljs-number">42</span>);    <span class="hljs-comment">// calls fooImpl(42, TrueType)</span>
+    foo(<span class="hljs-number">7.7</span>);   <span class="hljs-comment">// calls fooImpl(42, FalseType)</span>
+}
+</code></pre>
+<h3 id="Result-Type-Traits">19.3.4 &#x7ED3;&#x679C;&#x7C7B;&#x578B;&#x6A21;&#x677F; </h3>
+<p>&#x7ED3;&#x679C;&#x7C7B;&#x578B;&#x6A21;&#x677F;&#x7ED9;&#x51FA;&#x591A;&#x4E2A;&#x7C7B;&#x578B;&#x7684;&#x8FD0;&#x7B97;&#x7ED3;&#x679C;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#x5BF9;&#x4E8E;&#x52A0;&#x6CD5;&#xFF0C;&#x6700;&#x7B80;&#x5355;&#x7684;&#x5B9E;&#x73B0;&#x4E3A;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/plus1.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T1, <span class="hljs-keyword">typename</span> T2&gt;
+<span class="hljs-keyword">struct</span> PlusResultT {
+    <span class="hljs-keyword">using</span> Type = <span class="hljs-keyword">decltype</span>(T1() + T2());
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T1, <span class="hljs-keyword">typename</span> T2&gt;
+<span class="hljs-keyword">using</span> PlusResult = <span class="hljs-keyword">typename</span> PlusResultT&lt;T1, T2&gt;::Type;
+</code></pre>
+<p>&#x4F46;&#x662F;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x8981;&#x6C42;<code>T1</code>&#x548C;<code>T2</code>&#x53EF;&#x4EE5;&#x88AB;&#x9ED8;&#x8BA4;&#x6784;&#x9020;&#xFF0C;&#x4E3A;&#x4E86;&#x6D88;&#x9664;&#x8FD9;&#x4E2A;&#x9650;&#x5236;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>std::declval</code>&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/plus2.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;utility&gt;</span></span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T1, <span class="hljs-keyword">typename</span> T2&gt;
+<span class="hljs-keyword">struct</span> PlusResultT {
+    <span class="hljs-keyword">using</span> Type = <span class="hljs-keyword">decltype</span>(<span class="hljs-built_in">std</span>::declval&lt;T1&gt;() + <span class="hljs-built_in">std</span>::declval&lt;T2&gt;());
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T1, <span class="hljs-keyword">typename</span> T2&gt;
+<span class="hljs-keyword">using</span> PlusResult = <span class="hljs-keyword">typename</span> PlusResultT&lt;T1, T2&gt;::Type;
+</code></pre>
+<p><code>std::declval</code>&#x7684;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span> {
+    <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+    <span class="hljs-keyword">add_rvalue_reference_t</span>&lt;T&gt; declval() <span class="hljs-keyword">noexcept</span>;
+}
+</code></pre>
+<p>&#x56E0;&#x4E3A;&#x8FD9;&#x4E2A;&#x6A21;&#x677F;&#x53EA;&#x7528;&#x5728;<code>decltype</code>&#x548C;<code>sizeof</code>&#xFF0C;&#x6240;&#x4EE5;&#x6807;&#x51C6;&#x5E93;&#x5E76;&#x4E0D;&#x63D0;&#x4F9B;&#x5B9A;&#x4E49;&#x3002;&#x539F;&#x6587;&#xFF1A;</p>
+<blockquote>
+<p>This function template is intentionally left undefined because it&#x2019;s only meant to be used within
+decltype, sizeof, or some other context where no definition is ever needed.</p>
+</blockquote>
+<h2 id="194-&#x57FA;&#x4E8E;sfinae&#x89C4;&#x5219;&#x7684;&#x7C7B;&#x578B;&#x7279;&#x5F81;&#x6A21;&#x677F;">19.4 &#x57FA;&#x4E8E;SFINAE&#x89C4;&#x5219;&#x7684;&#x7C7B;&#x578B;&#x7279;&#x5F81;&#x6A21;&#x677F;</h2>
+<h3 id="SFINAE-Out-Function-Overloads">19.4.1 &#x901A;&#x8FC7;SFINAE&#x89C4;&#x5219;&#x5B9E;&#x73B0;&#x51FD;&#x6570;&#x91CD;&#x8F7D; </h3>
+<p>&#x57FA;&#x4E8E;SFINAE&#x89C4;&#x5219;&#x5B9E;&#x73B0;&#x7684;&#x51FD;&#x6570;&#x91CD;&#x8F7D;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x5224;&#x65AD;&#x7C7B;&#x578B;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x88AB;&#x9ED8;&#x8BA4;&#x6784;&#x9020;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/isdefaultconstructible1.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;issame.hpp&quot;</span></span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> IsDefaultConstructibleT {
+    <span class="hljs-keyword">private</span>:
+        <span class="hljs-comment">// test() trying substitute call of a default constructor for T passed as U:</span>
+        <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> U, <span class="hljs-keyword">typename</span> = <span class="hljs-keyword">decltype</span>(U())&gt;
+            <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">char</span> <span class="hljs-title">test</span><span class="hljs-params">(<span class="hljs-keyword">void</span>*)</span></span>;
+        <span class="hljs-comment">// test() fallback:</span>
+        <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>&gt;
+            <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">long</span> <span class="hljs-title">test</span><span class="hljs-params">(...)</span></span>;
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">static</span> <span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">bool</span> value
+            = IsSameT&lt;<span class="hljs-keyword">decltype</span>(test&lt;T&gt;(<span class="hljs-literal">nullptr</span>)), <span class="hljs-keyword">char</span>&gt;::value;
+};
+</code></pre>
+<p>&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x4E3A;&#xFF1A;</p>
+<pre><code class="lang-cpp">IsDefaultConstructibleT&lt;<span class="hljs-keyword">int</span>&gt;::value     <span class="hljs-comment">// yields true</span>
+
+<span class="hljs-keyword">struct</span> S {
+    S() = <span class="hljs-keyword">delete</span>;
+};
+IsDefaultConstructibleT&lt;S&gt;::value       <span class="hljs-comment">// yields false</span>
+</code></pre>
+<p><code>test()</code>&#x4E2D;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;<code>T</code>&#x4F5C;&#x4E3A;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x7684;&#x539F;&#x56E0;&#x5728;&#x4E8E;<code>IsDefaultConstructibleT&lt;T&gt;::value</code>&#x4F1A;&#x5148;&#x4EE5;&#x53C2;&#x6570;<code>T</code>&#x5B9E;&#x4F8B;&#x5316;&#x7C7B;&#x6A21;&#x677F;&#xFF0C;&#x5728;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x4E2D;&#x4F1A;&#x5B9E;&#x4F8B;&#x5316;<code>test()</code>&#x7684;&#x58F0;&#x660E;&#xFF0C;&#x5982;&#x679C;<code>T</code>&#x4E0D;&#x80FD;&#x88AB;&#x9ED8;&#x8BA4;&#x6784;&#x9020;&#xFF0C;&#x5C06;&#x4F1A;&#x51FA;&#x73B0;&#x7F16;&#x8BD1;&#x9519;&#x8BEF;&#xFF0C;&#x4F7F;&#x7528;<code>U</code>&#x5C06;&#x5B9E;&#x4F8B;&#x5316;&#x63A8;&#x8FDF;&#x5230;&#x4E86;&#x5F15;&#x7528;<code>value</code>&#x7684;&#x65F6;&#x523B;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5229;&#x7528;SFINAE&#x89C4;&#x5219;&#x7684;&#x65F6;&#x523B;&#x3002;&#x539F;&#x6587;&#xFF1A;</p>
+<blockquote>
+<p>This doesn&#x2019;t work, however, because for any T, always, all member functions are substituted, so that for a type that isn&#x2019;t default constructible, the code fails to compile instead of ignoring the first test() overload. By passing the class template parameter T to a function template parameter U, we create a specific SFINAE context only for the second test() overload.</p>
+</blockquote>
+<p>&#x53E6;&#x4E00;&#x79CD;&#x57FA;&#x4E8E;&#x8C13;&#x8BCD;&#x6A21;&#x677F;&#x7684;&#x5224;&#x65AD;&#x65B9;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/isdefaultconstructible2.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;type_traits&gt;</span></span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> IsDefaultConstructibleHelper {
+    <span class="hljs-keyword">private</span>:
+        <span class="hljs-comment">// test() trying substitute call of a default constructor for T passed as U:</span>
+        <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> U, <span class="hljs-keyword">typename</span> = <span class="hljs-keyword">decltype</span>(U())&gt;
+            <span class="hljs-keyword">static</span> <span class="hljs-built_in">std</span>::<span class="hljs-function">true_type <span class="hljs-title">test</span><span class="hljs-params">(<span class="hljs-keyword">void</span>*)</span></span>;
+        <span class="hljs-comment">// test() fallback:</span>
+        <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>&gt;
+            <span class="hljs-keyword">static</span> <span class="hljs-built_in">std</span>::<span class="hljs-function">false_type <span class="hljs-title">test</span><span class="hljs-params">(...)</span></span>;
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> Type = <span class="hljs-keyword">decltype</span>(test&lt;T&gt;(<span class="hljs-literal">nullptr</span>));
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> IsDefaultConstructibleT : IsDefaultConstructibleHelper&lt;T&gt;::Type {
+};
+</code></pre>
+<h3 id="SFINAE-Out-Partial-Specializations">19.4.2 &#x901A;&#x8FC7;SFINAE&#x89C4;&#x5219;&#x5B9E;&#x73B0;&#x504F;&#x7279;&#x5316; </h3>
+<p>&#x57FA;&#x4E8E;SFINAE&#x89C4;&#x5219;&#x5B9E;&#x73B0;&#x7684;&#x504F;&#x7279;&#x5316;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x5224;&#x65AD;&#x7C7B;&#x578B;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x88AB;&#x9ED8;&#x8BA4;&#x6784;&#x9020;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/isdefaultconstructible3.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;issame.hpp&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;type_traits&gt;</span> // defines true_type and false_type</span>
+
+<span class="hljs-comment">// helper to ignore any number of template parameters:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>...&gt; <span class="hljs-keyword">using</span> VoidT = <span class="hljs-keyword">void</span>;
+
+<span class="hljs-comment">// primary template:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>, <span class="hljs-keyword">typename</span> = VoidT&lt;&gt;&gt;
+<span class="hljs-keyword">struct</span> IsDefaultConstructibleT : <span class="hljs-built_in">std</span>::false_type
+{
+};
+
+<span class="hljs-comment">// partial specialization (may be SFINAE&#x2019;d away):</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> IsDefaultConstructibleT&lt;T, VoidT&lt;<span class="hljs-keyword">decltype</span>(T())&gt;&gt; : <span class="hljs-built_in">std</span>::true_type
+{
+};
+</code></pre>
+<h3 id="Using-Generic-Lambdas-for-SFINAE">19.4.3 &#x57FA;&#x4E8E;SFINAE&#x89C4;&#x5219;&#x7684;&#x6CDB;&#x578B;lambda&#x8868;&#x8FBE;&#x5F0F; </h3>
+<p>&#x57FA;&#x4E8E;SFINAE&#x89C4;&#x5219;&#x5B9E;&#x73B0;&#x7684;&#x6CDB;&#x578B;lambda&#x8868;&#x8FBE;&#x5F0F;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x5224;&#x65AD;&#x7C7B;&#x578B;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x88AB;&#x9ED8;&#x8BA4;&#x6784;&#x9020;&#xFF0C;&#x4F46;&#x662F;&#x5F88;&#x590D;&#x6742;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/isvalid.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;utility&gt;</span></span>
+
+<span class="hljs-comment">// helper: checking validity of f(args...) for F f and Args... args:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> F, <span class="hljs-keyword">typename</span>... Args,
+            <span class="hljs-keyword">typename</span> = <span class="hljs-keyword">decltype</span>(<span class="hljs-built_in">std</span>::declval&lt;F&gt;()(<span class="hljs-built_in">std</span>::declval&lt;Args&amp;&amp;&gt;()...))&gt;
+<span class="hljs-built_in">std</span>::<span class="hljs-function">true_type <span class="hljs-title">isValidImpl</span><span class="hljs-params">(<span class="hljs-keyword">void</span>*)</span></span>;
+
+<span class="hljs-comment">// fallback if helper SFINAE&#x2019;d out:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> F, <span class="hljs-keyword">typename</span>... Args&gt;
+<span class="hljs-built_in">std</span>::<span class="hljs-function">false_type <span class="hljs-title">isValidImpl</span><span class="hljs-params">(...)</span></span>;
+
+<span class="hljs-comment">// define a lambda that takes a lambda f and returns whether calling f with args is valid</span>
+<span class="hljs-keyword">inline</span> <span class="hljs-keyword">constexpr</span>
+<span class="hljs-keyword">auto</span> isValid = [](<span class="hljs-keyword">auto</span> f) {
+                            <span class="hljs-keyword">return</span> [](<span class="hljs-keyword">auto</span>&amp;&amp;... args) {
+                                        <span class="hljs-keyword">return</span> <span class="hljs-keyword">decltype</span>(isValidImpl&lt;<span class="hljs-keyword">decltype</span>(f),
+                                                                    <span class="hljs-keyword">decltype</span>(args)&amp;&amp;...
+                                                                    &gt;(<span class="hljs-literal">nullptr</span>)){};
+                                    };
+                            };
+
+<span class="hljs-comment">// helper template to represent a type as a value</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> TypeT {
+    <span class="hljs-keyword">using</span> Type = T;
+};
+
+<span class="hljs-comment">// helper to wrap a type as a value</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">auto</span> type = TypeT&lt;T&gt;{};
+
+<span class="hljs-comment">// helper to unwrap a wrapped type in unevaluated contexts</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-function">T <span class="hljs-title">valueT</span><span class="hljs-params">(TypeT&lt;T&gt;)</span></span>; <span class="hljs-comment">// no definition needed</span>
+</code></pre>
+<p>&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x4E3A;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">auto</span> isDefaultConstructible
+    = isValid([](<span class="hljs-keyword">auto</span> x) -&gt; <span class="hljs-keyword">decltype</span>((<span class="hljs-keyword">void</span>)<span class="hljs-keyword">decltype</span>(valueT(x))()) {
+                });
+
+isDefaultConstructible(type&lt;<span class="hljs-keyword">int</span>&gt;)   <span class="hljs-comment">// true (int is default-constructible)</span>
+isDefaultConstructible(type&lt;<span class="hljs-keyword">int</span>&amp;&gt;)  <span class="hljs-comment">// false (references are not default-constructible)</span>
+</code></pre>
+<p>&#x4E00;&#x70B9;&#x70B9;&#x5206;&#x6790;&#x3002;<code>isDefaultConstructible</code>&#x548C;<code>isValid()</code>&#x90FD;&#x662F;&#x5E38;&#x91CF;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x7F16;&#x8BD1;&#x65F6;&#x8BA1;&#x7B97;&#x3002;<code>isDefaultConstructible</code>&#x662F;&#x4EE5;lambda&#x8868;&#x8FBE;&#x5F0F;<code>[](auto x) -&gt; decltype((void)decltype(valueT(x))()) {}</code>&#x8C03;&#x7528;<code>isValid()</code>&#x8FD4;&#x56DE;&#x7684;lambda&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x4EE3;&#x6362;&#x540E;&#x7684;&#x7ED3;&#x679C;&#x4E3A;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">auto</span> isDefaultConstructible
+    = [](<span class="hljs-keyword">auto</span>&amp;&amp;... args) {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">decltype</span>(isValidImpl&lt;<span class="hljs-keyword">decltype</span>([](<span class="hljs-keyword">auto</span> x) -&gt; <span class="hljs-keyword">decltype</span>((<span class="hljs-keyword">void</span>)<span class="hljs-keyword">decltype</span>(valueT(x))())),
+                                    <span class="hljs-keyword">decltype</span>(args)&amp;&amp;...
+                                    &gt;(<span class="hljs-literal">nullptr</span>)
+                        ){};
+    };
+</code></pre>
+<p><code>isDefaultConstructible</code>&#x662F;&#x4E00;&#x4E2A;&#x6CDB;&#x578B;lambda&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x6240;&#x4EE5;<code>auto&amp;&amp;... args</code>&#x4E3A;&#x8F6C;&#x53D1;&#x5F15;&#x7528;&#x3002;&#x5F53;&#x4EE5;<code>TypeT&lt;int&gt;</code>&#x7C7B;&#x578B;&#x6216;&#x8005;<code>TypeT&lt;int&amp;&gt;</code>&#x7C7B;&#x578B;&#x7684;<strong>&#x4E34;&#x65F6;&#x5BF9;&#x8C61;</strong>&#x8C03;&#x7528;<code>isDefaultConstructible</code>&#x65F6;&#xFF0C;&#x63A8;&#x5BFC;&#x7ED3;&#x679C;&#x4E3A;<code>TypeT&lt;int&gt;</code>&#x548C;<code>TypeT&lt;int&amp;&gt;</code>&#x3002;&#x7531;&#x4E8E;&#x4E0A;&#x8FF0;<code>return</code>&#x8BED;&#x53E5;&#x7684;&#x6700;&#x540E;&#x662F;<code>{}</code>&#xFF0C;&#x6240;&#x4EE5;<code>isDefaultConstructible</code>&#x8FD4;&#x56DE;&#x7684;&#x5C06;&#x662F;<code>isValidImpl&lt;&gt;</code>&#x6A21;&#x677F;&#x7684;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#x521B;&#x5EFA;&#x7684;&#x4E34;&#x65F6;&#x5BF9;&#x8C61;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;<code>std::true_type</code>&#x6216;&#x8005;<code>std::false_type</code>&#x7C7B;&#x578B;&#x7684;&#x4E34;&#x65F6;&#x5BF9;&#x8C61;&#x3002;</p>
+<p>&#x73B0;&#x5728;&#x53EA;&#x9700;&#x8981;&#x786E;&#x5B9A;<code>return</code>&#x540E;&#x9762;&#x7684;<code>decltype</code>&#x7684;&#x63A8;&#x5BFC;&#x7ED3;&#x679C;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002;&#x6CE8;&#x610F;&#x5230;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x8C03;&#x7528;&#xFF0C;&#x53C2;&#x6570;&#x4E3A;<code>nullptr</code>&#xFF0C;&#x5C06;&#x5339;&#x914D;<code>isValidImpl(void*)</code>:</p>
+<ul>
+<li>&#x7B2C;1&#x4E2A;&#x53C2;&#x6570;&#x5305;&#x542B;&#x6CDB;&#x578B;lambda&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x7F16;&#x8BD1;&#x5668;&#x5C06;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x91CD;&#x8F7D;&#x4E86;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x8FD0;&#x7B97;&#x7B26;&#x6A21;&#x677F;&#x7684;&#x95ED;&#x5305;&#x7C7B;&#x578B;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-cpp">class SomeCompilerSpecificName
+{
+    public:
+        SomeCompilerSpecificName();
+        template&lt;typename T&gt;
+        auto operator() (T x) -&gt; decltype((void)decltype(valueT(x))())) const
+        {
+        }
+};
+</code></pre>
+<ul>
+<li>&#x7B2C;2&#x4E2A;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x4E3A;<code>TypeT&lt;int&gt;&amp;&amp;</code>&#x6216;&#x8005;<code>TypeT&lt;int&amp;&gt;&amp;&amp;</code></li>
+<li>&#x7B2C;3&#x4E2A;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x662F;<code>decltype</code>&#x7684;&#x63A8;&#x5BFC;&#x7ED3;&#x679C;&#xFF0C;&#x63A8;&#x5BFC;&#x7684;&#x5BF9;&#x8C61;&#x4E3A;<code>std::declval&lt;F&gt;()(std::declval&lt;Args&amp;&amp;&gt;()...)</code>&#x3002;<code>std::declval&lt;F&gt;()</code>&#x4F1A;&#x5B9E;&#x4F8B;&#x5316;&#x95ED;&#x5305;&#x7C7B;&#x578B;&#xFF0C;&#x4F46;&#x662F;&#x5E76;&#x4E0D;&#x4F1A;&#x5B9E;&#x4F8B;&#x5316;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x8FD0;&#x7B97;&#x7B26;&#x6210;&#x5458;&#x6A21;&#x677F;&#x3002;<code>std::declval&lt;Args&amp;&amp;&gt;()...</code>&#x5C06;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;<code>TypeT&lt;int&gt;</code>&#x6216;&#x8005;<code>TypeT&lt;int&amp;&gt;</code>&#x7C7B;&#x578B;&#x7684;<strong>&#x4E34;&#x65F6;&#x5BF9;&#x8C61;</strong>&#xFF0C;&#x5E76;&#x7528;&#x8BE5;&#x4E34;&#x65F6;&#x5BF9;&#x8C61;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x8C03;&#x7528;&#x95ED;&#x5305;&#x7C7B;&#x578B;&#xFF0C;&#x8FD9;&#x65F6;&#x624D;&#x4F1A;&#x5B9E;&#x4F8B;&#x5316;&#x95ED;&#x5305;&#x7C7B;&#x578B;&#x4E2D;&#x7684;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x8FD0;&#x7B97;&#x7B26;&#x6210;&#x5458;&#x6A21;&#x677F;&#xFF0C;&#x8BE5;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x4E3A;<code>TypeT&lt;int&gt;</code>&#x6216;&#x8005;<code>TypeT&lt;int&amp;&gt;</code>&#x3002;&#x5728;&#x63A8;&#x5BFC;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;<code>decltype(valueT(x))</code>&#x7684;&#x7ED3;&#x679C;&#x4E3A;<code>int</code>&#x6216;&#x8005;<code>int&amp;</code>&#xFF0C;&#x5F53;&#x5C1D;&#x8BD5;&#x9ED8;&#x8BA4;&#x6784;&#x9020;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x65F6;&#x5C31;&#x4F1A;&#x5931;&#x8D25;&#xFF0C;&#x7F16;&#x8BD1;&#x5668;&#x8F6C;&#x800C;&#x5BFB;&#x6C42;&#x53E6;&#x4E00;&#x4E2A;&#x7248;&#x672C;&#x7684;<code>isValidImpl&lt;&gt;</code>&#xFF0C;&#x8FD9;&#x5C06;&#x4F7F;&#x5F97;<code>isDefaultConstructible</code>&#x8FD4;&#x56DE;<code>std::false_type</code>&#x7C7B;&#x578B;&#x7684;&#x4E34;&#x65F6;&#x5BF9;&#x8C61;&#x3002;</li>
+</ul>
+<h3 id="1944-&#x7F16;&#x8BD1;&#x57FA;&#x4E8E;sfinae&#x89C4;&#x5219;&#x7684;&#x7C7B;&#x578B;&#x7279;&#x5F81;&#x6A21;&#x677F;&#xFF08;sfinae-friendly-traits&#xFF09;">19.4.4 &#x7F16;&#x8BD1;&#x57FA;&#x4E8E;SFINAE&#x89C4;&#x5219;&#x7684;&#x7C7B;&#x578B;&#x7279;&#x5F81;&#x6A21;&#x677F;&#xFF08;SFINAE-Friendly Traits&#xFF09;</h3>
+<p><a href="#Result-Type-Traits">19.3.4</a>&#x8282;&#x4E2D;&#x7684;traits/plus2.hpp&#x89E3;&#x51B3;&#x4E86;<code>T1</code>&#x548C;<code>T2</code>&#x9700;&#x8981;&#x9ED8;&#x8BA4;&#x6784;&#x9020;&#x624D;&#x80FD;&#x76F8;&#x52A0;&#x6C42;&#x548C;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x4F46;&#x662F;&#x8FD8;&#x5B58;&#x5728;<code>+</code>&#x672A;&#x5B9A;&#x4E49;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x4F8B;&#x5982;&#x5BF9;&#x4E8E;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">class</span> Array {
+    <span class="hljs-comment">// ...</span>
+};
+
+<span class="hljs-comment">// declare + for arrays of different element types:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T1, <span class="hljs-keyword">typename</span> T2&gt;
+Array&lt;<span class="hljs-keyword">typename</span> PlusResultT&lt;T1, T2&gt;::Type&gt; <span class="hljs-keyword">operator</span>+ (Array&lt;T1&gt; <span class="hljs-keyword">const</span>&amp;, Array&lt;T2&gt; <span class="hljs-keyword">const</span>&amp;);
+
+<span class="hljs-keyword">class</span> A {
+};
+<span class="hljs-keyword">class</span> B {
+};
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">addAB</span><span class="hljs-params">(Array&lt;A&gt; arrayA, Array&lt;B&gt; arrayB)</span> </span>{
+    <span class="hljs-keyword">auto</span> sum = arrayA + arrayB; <span class="hljs-comment">// ERROR: fails in instantiation of PlusResultT&lt;A, B&gt;</span>
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p>&#x5728;&#x63A8;&#x5BFC;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x5982;&#x679C;<code>A</code>&#x548C;<code>B</code>&#x4E0D;&#x80FD;&#x76F8;&#x52A0;&#xFF0C;&#x5219;&#x7F16;&#x8BD1;&#x5668;&#x4F1A;&#x56E0;&#x4E3A;&#x5B9E;&#x4F8B;&#x5316;<code>PlusResultT&lt;T1, T2&gt;::Type</code>&#x5931;&#x8D25;&#x62A5;&#x9519;&#xFF0C;&#x56E0;&#x4E3A;&#x6B64;&#x65F6;&#x662F;&#x5728;&#x5B9E;&#x4F8B;&#x5316;&#x7C7B;&#x6210;&#x5458;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5728;&#x4EE3;&#x6362;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x6240;&#x4EE5;SFINAE&#x89C4;&#x5219;&#x5E76;&#x4E0D;&#x9002;&#x7528;&#x3002;&#x539F;&#x6587;&#xFF1A;</p>
+<blockquote>
+<p>The practical problem is not that this failure occurs with code that is clearly ill-formed like this (there is no way to add an array of A to an array of B) but that it occurs during template argument deduction for operator+, deep in the instantiation of PlusResultT<a,b>.</a,b></p>
+</blockquote>
+<p>&#x7B80;&#x5355;&#x7684;&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#x662F;&#x518D;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x91CD;&#x8F7D;&#x7248;&#x672C;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// declare generic + for arrays of different element types:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T1, <span class="hljs-keyword">typename</span> T2&gt;
+Array&lt;<span class="hljs-keyword">typename</span> PlusResultT&lt;T1, T2&gt;::Type&gt; <span class="hljs-keyword">operator</span>+ (Array&lt;T1&gt; <span class="hljs-keyword">const</span>&amp;, Array&lt;T2&gt; <span class="hljs-keyword">const</span>&amp;);
+
+<span class="hljs-comment">// overload + for concrete types:</span>
+Array&lt;A&gt; <span class="hljs-keyword">operator</span>+(Array&lt;A&gt; <span class="hljs-keyword">const</span>&amp; arrayA, Array&lt;B&gt; <span class="hljs-keyword">const</span>&amp; arrayB);
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">addAB</span><span class="hljs-params">(Array&lt;A&gt; <span class="hljs-keyword">const</span>&amp; arrayA, Array&lt;B&gt; <span class="hljs-keyword">const</span>&amp; arrayB)</span> </span>{
+    <span class="hljs-keyword">auto</span> sum = arrayA + arrayB; <span class="hljs-comment">// ERROR?: depends on whether the compiler instantiates PlusResultT&lt;A,B&gt;</span>
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p>&#x4F46;&#x8FD9;&#x8FD8;&#x662F;&#x53EF;&#x80FD;&#x62A5;&#x9519;&#xFF0C;&#x539F;&#x56E0;&#x662F;&#x867D;&#x7136;&#x91CD;&#x8F7D;&#x7248;&#x672C;&#x66F4;&#x4E3A;&#x5339;&#x914D;&#xFF0C;&#x4F46;&#x662F;&#x6807;&#x51C6;&#x5E76;&#x6CA1;&#x6709;&#x89C4;&#x5B9A;&#x6B64;&#x65F6;&#x662F;&#x5426;&#x9700;&#x8981;&#x5B9E;&#x4F8B;&#x5316;&#x6A21;&#x677F;&#xFF0C;&#x5982;&#x679C;&#x5B9E;&#x4F8B;&#x5316;&#x4E86;&#xFF0C;&#x5C31;&#x6709;&#x53EF;&#x80FD;&#x62A5;&#x9519;&#x3002;&#x539F;&#x6587;&#xFF1A;</p>
+<blockquote>
+<p>This has a remarkable consequence: It means that the program may fail to compile even if we add a specific overload to adding A and B arrays, because C++ does not specify whether the types in a function template are actually instantiated if another overload would be better.</p>
+</blockquote>
+<p>&#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x9700;&#x8981;&#x628A;&#x6240;&#x6709;&#x53EF;&#x80FD;&#x7684;&#x5931;&#x8D25;&#x632A;&#x5230;&#x4EE3;&#x6362;&#x76F8;&#x5173;&#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5728;&#x51FD;&#x6570;&#x4F53;&#x6216;&#x8005;&#x7C7B;&#x5B9A;&#x4E49;&#x4E2D;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/hasplus.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;utility&gt;</span>      // for declval</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;type_traits&gt;</span>  // for true_type, false_type, and void_t</span>
+
+<span class="hljs-comment">// primary template:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>, <span class="hljs-keyword">typename</span>, <span class="hljs-keyword">typename</span> = <span class="hljs-built_in">std</span>::<span class="hljs-keyword">void_t</span>&lt;&gt;&gt;
+<span class="hljs-keyword">struct</span> HasPlusT : <span class="hljs-built_in">std</span>::false_type
+{
+};
+
+<span class="hljs-comment">// partial specialization (may be SFINAE&#x2019;d away):</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T1, <span class="hljs-keyword">typename</span> T2&gt;
+<span class="hljs-keyword">struct</span> HasPlusT&lt;T1, T2, <span class="hljs-built_in">std</span>::<span class="hljs-keyword">void_t</span>&lt;<span class="hljs-keyword">decltype</span>(<span class="hljs-built_in">std</span>::declval&lt;T1&gt;() + <span class="hljs-built_in">std</span>::declval&lt;T2&gt;())&gt;&gt; : <span class="hljs-built_in">std</span>::true_type
+{
+};
+</code></pre>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/plus3.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;hasplus.hpp&quot;</span></span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T1, <span class="hljs-keyword">typename</span> T2, <span class="hljs-keyword">bool</span> = HasPlusT&lt;T1, T2&gt;::value&gt;
+<span class="hljs-keyword">struct</span> PlusResultT { <span class="hljs-comment">// primary template, used when HasPlusT yields true</span>
+    <span class="hljs-keyword">using</span> Type = <span class="hljs-keyword">decltype</span>(<span class="hljs-built_in">std</span>::declval&lt;T1&gt;() + <span class="hljs-built_in">std</span>::declval&lt;T2&gt;());
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T1, <span class="hljs-keyword">typename</span> T2&gt;
+<span class="hljs-keyword">struct</span> PlusResultT&lt;T1, T2, <span class="hljs-literal">false</span>&gt; { <span class="hljs-comment">// partial specialization, used otherwise</span>
+};
+</code></pre>
+<p>&#x7F16;&#x8BD1;&#x5668;&#x63A8;&#x5BFC;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#x65F6;&#xFF0C;&#x4F1A;&#x5148;&#x5B9E;&#x4F8B;&#x5316;<code>PlusResultT&lt;T1, T2&gt;</code>&#xFF0C;&#x5982;&#x679C;&#x7B2C;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#x63A8;&#x5BFC;&#x7ED3;&#x679C;&#x4E3A;<code>true</code>&#xFF0C;&#x5219;&#x5B9E;&#x4F8B;&#x5316;&#x4E3B;&#x6A21;&#x677F;&#xFF0C;&#x4EE3;&#x6362;&#x987A;&#x5229;&#x7ED3;&#x675F;&#xFF1B;&#x5426;&#x5219;&#x5B9E;&#x4F8B;&#x5316;&#x7279;&#x5316;&#x7248;&#x672C;&#xFF0C;&#x7531;&#x4E8E;&#x7279;&#x5316;&#x7248;&#x672C;&#x6CA1;&#x6709;<code>Type</code>&#x6210;&#x5458;&#xFF0C;&#x5219;&#x51FD;&#x6570;&#x6A21;&#x677F;&#x7684;&#x5B9E;&#x4F8B;&#x5316;&#x4EE5;SFINAE&#x89C4;&#x5219;&#x7ED3;&#x675F;&#x3002;</p>
+<h2 id="195-isconvertiblet">19.5 IsConvertibleT&lt;&gt;</h2>
+<p>&#x57FA;&#x4E8E;SFINAE&#x89C4;&#x5219;&#x7684;&#x7C7B;&#x578B;&#x7279;&#x5F81;&#x6A21;&#x677F;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x5224;&#x65AD;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/isconvertible.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;type_traits&gt;</span>  // for true_type and false_type</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;utility&gt;</span>      // for declval</span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> FROM, <span class="hljs-keyword">typename</span> TO&gt;
+<span class="hljs-keyword">struct</span> IsConvertibleHelper {
+    <span class="hljs-keyword">private</span>:
+        <span class="hljs-comment">// test() trying to call the helper aux(TO) for a FROM passed as F:</span>
+        <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">aux</span><span class="hljs-params">(TO)</span></span>;
+        <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> F, <span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span> = <span class="hljs-keyword">decltype</span>(aux(<span class="hljs-built_in">std</span>::declval&lt;F&gt;()))&gt;
+            <span class="hljs-keyword">static</span> <span class="hljs-built_in">std</span>::<span class="hljs-function">true_type <span class="hljs-title">test</span><span class="hljs-params">(<span class="hljs-keyword">void</span>*)</span></span>;
+        <span class="hljs-comment">// test() fallback:</span>
+        <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>, <span class="hljs-keyword">typename</span>&gt;
+            <span class="hljs-keyword">static</span> <span class="hljs-built_in">std</span>::<span class="hljs-function">false_type <span class="hljs-title">test</span><span class="hljs-params">(...)</span></span>;
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> Type = <span class="hljs-keyword">decltype</span>(test&lt;FROM, TO&gt;(<span class="hljs-literal">nullptr</span>));
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> FROM, <span class="hljs-keyword">typename</span> TO&gt;
+<span class="hljs-keyword">struct</span> IsConvertibleT : IsConvertibleHelper&lt;FROM, TO&gt;::Type {
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> FROM, <span class="hljs-keyword">typename</span> TO&gt;
+<span class="hljs-keyword">using</span> IsConvertible = <span class="hljs-keyword">typename</span> IsConvertibleT&lt;FROM, TO&gt;::Type;
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> FROM, <span class="hljs-keyword">typename</span> TO&gt;
+<span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">bool</span> isConvertible = IsConvertibleT&lt;FROM, TO&gt;::value;
+</code></pre>
+<p>&#x4F7F;&#x7528;&#x5230;&#x7684;&#x65B9;&#x6CD5;&#x548C;<a href="#SFINAE-Out-Function-Overloads">19.4.1</a>&#x8282;&#x4E2D;&#x7684;&#x7C7B;&#x4F3C;&#x3002;&#x4E66;&#x4E2D;&#x7684;&#x4EE3;&#x7801;&#x6709;&#x9519;&#x8BEF;&#xFF0C;&#x8C03;&#x7528;<code>test()</code>&#x65F6;&#x5E94;&#x8BE5;&#x63D0;&#x4F9B;&#x4E24;&#x4E2A;&#x6A21;&#x677F;&#x5B9E;&#x53C2;&#xFF0C;&#x8FD9;&#x91CC;&#x662F;&#x4FEE;&#x6539;&#x540E;&#x7684;&#x6B63;&#x786E;&#x7248;&#x672C;&#x3002;</p>
+<p>&#x4E00;&#x822C;&#x6765;&#x8BF4;&#x662F;&#x4E0D;&#x80FD;&#x8F6C;&#x6362;&#x4E3A;&#x6570;&#x7EC4;&#x7C7B;&#x578B;&#x548C;&#x6307;&#x9488;&#x7C7B;&#x578B;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x8FD8;&#x9700;&#x8981;&#x5982;&#x4E0B;&#x7279;&#x5316;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> FROM, <span class="hljs-keyword">typename</span> TO, <span class="hljs-keyword">bool</span> = IsVoidT&lt;TO&gt;::value
+                                            || IsArrayT&lt;TO&gt;::value
+                                            || IsFunctionT&lt;TO&gt;::value&gt;
+<span class="hljs-keyword">struct</span> IsConvertibleHelper {
+    <span class="hljs-keyword">using</span> Type = <span class="hljs-built_in">std</span>::integral_constant&lt;<span class="hljs-keyword">bool</span>, IsVoidT&lt;TO&gt;::value &amp;&amp; IsVoidT&lt;FROM&gt;::value&gt;;
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> FROM, <span class="hljs-keyword">typename</span> TO&gt;
+<span class="hljs-keyword">struct</span> IsConvertibleHelper&lt;FROM,TO,<span class="hljs-literal">false</span>&gt; {
+    <span class="hljs-comment">// ... // previous implementation of IsConvertibleHelper here</span>
+};
+</code></pre>
+<h2 id="196-&#x4FA6;&#x6D4B;&#x7C7B;&#x6210;&#x5458;">19.6 &#x4FA6;&#x6D4B;&#x7C7B;&#x6210;&#x5458;</h2>
+<p>&#x57FA;&#x4E8E;SFINAE&#x89C4;&#x5219;&#x7684;&#x6A21;&#x677F;&#x8FD8;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x4FA6;&#x6D4B;&#x67D0;&#x4E2A;&#x7C7B;&#x4E2D;&#x662F;&#x5426;&#x5B9A;&#x4E49;&#x4E86;&#x67D0;&#x4E2A;&#x6210;&#x5458;&#x3002;</p>
+<h3 id="1961-&#x4FA6;&#x6D4B;&#x7C7B;&#x578B;&#x6210;&#x5458;">19.6.1 &#x4FA6;&#x6D4B;&#x7C7B;&#x578B;&#x6210;&#x5458;</h3>
+<p>&#x4F7F;&#x7528;<a href="#SFINAE-Out-Partial-Specializations">19.4.2</a>&#x8282;&#x4E2D;&#x504F;&#x7279;&#x5316;&#x7684;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x4FA6;&#x6D4B;&#x7C7B;&#x4E2D;&#x662F;&#x5426;&#x5B9A;&#x4E49;&#x4E86;<code>size_type</code>&#x7C7B;&#x578B;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/hassizetype.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;type_traits&gt;</span> // defines true_type and false_type</span>
+
+<span class="hljs-comment">// helper to ignore any number of template parameters:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>...&gt; <span class="hljs-keyword">using</span> VoidT = <span class="hljs-keyword">void</span>;
+
+<span class="hljs-comment">// primary template:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>, <span class="hljs-keyword">typename</span> = VoidT&lt;&gt;&gt;
+<span class="hljs-keyword">struct</span> HasSizeTypeT : <span class="hljs-built_in">std</span>::false_type
+{
+};
+
+<span class="hljs-comment">// partial specialization (may be SFINAE&#x2019;d away):</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> HasSizeTypeT&lt;T, VoidT&lt;<span class="hljs-keyword">typename</span> T::size_type&gt;&gt; : <span class="hljs-built_in">std</span>::true_type
+{
+};
+</code></pre>
+<h3 id="Detecting-Arbitrary-Member-Types">19.6.2 &#x4FA6;&#x6D4B;&#x4EFB;&#x610F;&#x7C7B;&#x578B;&#x6210;&#x5458; </h3>
+<p>&#x4E3A;&#x6BCF;&#x4E2A;&#x7C7B;&#x578B;&#x6210;&#x5458;&#x90FD;&#x5B9A;&#x4E49;&#x4E0A;&#x8FF0;&#x7684;&#x6A21;&#x677F;&#x8FC7;&#x4E8E;&#x9EBB;&#x70E6;&#x4E86;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5B8F;&#x6765;&#x7B80;&#x5316;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/hastype.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;type_traits&gt;</span> // for true_type, false_type, and void_t</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> DEFINE_HAS_TYPE(MemType)                                    \
+    template&lt;typename, typename = std::void_t&lt;&gt;&gt;                    \
+    struct HasTypeT_##MemType                                       \
+        : std::false_type { };                                      \
+    template&lt;typename T&gt;                                            \
+    struct HasTypeT_##MemType&lt;T, std::void_t&lt;typename T::MemType&gt;&gt;  \
+        : std::true_type { } <span class="hljs-comment">// ; intentionally skipped</span></span>
+</code></pre>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/hastype.cpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;hastype.hpp&quot;</span></span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;vector&gt;</span></span>
+
+DEFINE_HAS_TYPE(value_type);
+DEFINE_HAS_TYPE(char_type);
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;int::value_type: &quot;</span>
+                &lt;&lt; HasTypeT_value_type&lt;<span class="hljs-keyword">int</span>&gt;::value &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;std::vector&lt;int&gt;::value_type: &quot;</span>
+                &lt;&lt; HasTypeT_value_type&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&gt;::value &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;std::iostream::value_type: &quot;</span>
+                &lt;&lt; HasTypeT_value_type&lt;<span class="hljs-built_in">std</span>::iostream&gt;::value &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;std::iostream::char_type: &quot;</span>
+                &lt;&lt; HasTypeT_char_type&lt;<span class="hljs-built_in">std</span>::iostream&gt;::value &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+}
+</code></pre>
+<h3 id="Detecting-Nontype-Members">19.6.3 &#x4FA6;&#x6D4B;&#x975E;&#x7C7B;&#x578B;&#x6210;&#x5458; </h3>
+<p>&#x7528;&#x540C;&#x6837;&#x7684;&#x65B9;&#x6CD5;&#x4E5F;&#x53EF;&#x4EE5;&#x4FA6;&#x6D4B;&#x7C7B;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x6210;&#x5458;&#x548C;&#x6210;&#x5458;&#x51FD;&#x6570;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/hasmember.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;type_traits&gt;</span> // for true_type, false_type, and void_t</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> DEFINE_HAS_MEMBER(Member)                                       \
+    template&lt;typename, typename = std::void_t&lt;&gt;&gt;                        \
+    struct HasMemberT_##Member                                          \
+        : std::false_type { };                                          \
+    template&lt;typename T&gt;                                                \
+    struct HasMemberT_##Member&lt;T, std::void_t&lt;decltype(&amp;T::Member)&gt;&gt;    \
+        : std::true_type { } <span class="hljs-comment">// ; intentionally skipped</span></span>
+</code></pre>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/hasmember.cpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;hasmember.hpp&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;vector&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;utility&gt;</span></span>
+
+DEFINE_HAS_MEMBER(size);
+DEFINE_HAS_MEMBER(first);
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;int::size: &quot;</span>
+                &lt;&lt; HasMemberT_size&lt;<span class="hljs-keyword">int</span>&gt;::value &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;std::vector&lt;int&gt;::size: &quot;</span>
+                &lt;&lt; HasMemberT_size&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&gt;::value &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;std::pair&lt;int,int&gt;::first: &quot;</span>
+                &lt;&lt; HasMemberT_first&lt;<span class="hljs-built_in">std</span>::pair&lt;<span class="hljs-keyword">int</span>,<span class="hljs-keyword">int</span>&gt;&gt;::value &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+}
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x65E0;&#x6CD5;&#x5904;&#x7406;&#x91CD;&#x8F7D;&#x51FD;&#x6570;&#xFF08;&#x53EF;&#x80FD;&#x662F;&#x56E0;&#x4E3A;&#x533A;&#x5206;&#x786E;&#x5B9A;&#x4E24;&#x4E2A;&#x91CD;&#x8F7D;&#x51FD;&#x6570;&#x7684;&#x5730;&#x5740;&#xFF09;&#xFF0C;&#x4F46;&#x662F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8C03;&#x7528;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x4FA6;&#x6D4B;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/hasbegin.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;utility&gt;</span>      // for declval</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;type_traits&gt;</span>  // for true_type, false_type, and void_t</span>
+
+<span class="hljs-comment">// primary template:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>, <span class="hljs-keyword">typename</span> = <span class="hljs-built_in">std</span>::<span class="hljs-keyword">void_t</span>&lt;&gt;&gt;
+<span class="hljs-keyword">struct</span> HasBeginT : <span class="hljs-built_in">std</span>::false_type {
+};
+
+<span class="hljs-comment">// partial specialization (may be SFINAE&#x2019;d away):</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> HasBeginT&lt;T, <span class="hljs-built_in">std</span>::<span class="hljs-keyword">void_t</span>&lt;<span class="hljs-keyword">decltype</span>(<span class="hljs-built_in">std</span>::declval&lt;T&gt;().begin())&gt;&gt;
+    : <span class="hljs-built_in">std</span>::true_type {
+};
+</code></pre>
+<p>&#x540C;&#x6837;&#x7684;&#x6280;&#x5DE7;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x68C0;&#x6D4B;&#x8868;&#x8FBE;&#x5F0F;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/hasless.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;utility&gt;</span>      // for declval</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;type_traits&gt;</span>  // for true_type, false_type, and void_t</span>
+
+<span class="hljs-comment">// primary template:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>, <span class="hljs-keyword">typename</span>, <span class="hljs-keyword">typename</span> = <span class="hljs-built_in">std</span>::<span class="hljs-keyword">void_t</span>&lt;&gt;&gt;
+<span class="hljs-keyword">struct</span> HasLessT : <span class="hljs-built_in">std</span>::false_type
+{
+};
+
+<span class="hljs-comment">// partial specialization (may be SFINAE&#x2019;d away):</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T1, <span class="hljs-keyword">typename</span> T2&gt;
+<span class="hljs-keyword">struct</span> HasLessT&lt;T1, T2, <span class="hljs-built_in">std</span>::<span class="hljs-keyword">void_t</span>&lt;<span class="hljs-keyword">decltype</span>(<span class="hljs-built_in">std</span>::declval&lt;T1&gt;() &lt; <span class="hljs-built_in">std</span>::declval&lt;T2&gt;())&gt;&gt;
+    : <span class="hljs-built_in">std</span>::true_type
+{
+};
+</code></pre>
+<p>&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x68C0;&#x6D4B;&#x591A;&#x4E2A;&#x6761;&#x4EF6;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/hasvarious.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;utility&gt;</span>      // for declval</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;type_traits&gt;</span>  // for true_type, false_type, and void_t</span>
+
+<span class="hljs-comment">// primary template:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>, <span class="hljs-keyword">typename</span> = <span class="hljs-built_in">std</span>::<span class="hljs-keyword">void_t</span>&lt;&gt;&gt;
+<span class="hljs-keyword">struct</span> HasVariousT : <span class="hljs-built_in">std</span>::false_type
+{
+};
+
+<span class="hljs-comment">// partial specialization (may be SFINAE&#x2019;d away):</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> HasVariousT&lt;T, <span class="hljs-built_in">std</span>::<span class="hljs-keyword">void_t</span>&lt;<span class="hljs-keyword">decltype</span>(<span class="hljs-built_in">std</span>::declval&lt;T&gt;().begin()),
+                                    <span class="hljs-keyword">typename</span> T::difference_type,
+                                    <span class="hljs-keyword">typename</span> T::iterator&gt;&gt;
+    : <span class="hljs-built_in">std</span>::true_type
+{
+};
+</code></pre>
+<h3 id="1964-&#x4F7F;&#x7528;&#x6CDB;&#x578B;lambda&#x8868;&#x8FBE;&#x5F0F;&#x4FA6;&#x6D4B;&#x7C7B;&#x578B;&#x6210;&#x5458;">19.6.4 &#x4F7F;&#x7528;&#x6CDB;&#x578B;lambda&#x8868;&#x8FBE;&#x5F0F;&#x4FA6;&#x6D4B;&#x7C7B;&#x578B;&#x6210;&#x5458;</h3>
+<p>&#x548C;<a href="#Detecting-Arbitrary-Member-Types">19.6.2</a>&#x8282;&#x4E2D;&#x4F7F;&#x7528;&#x5B8F;&#x5B9A;&#x4E49;&#x6A21;&#x677F;&#x6700;&#x76F8;&#x8FD1;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x4F7F;&#x7528;<a href="#Using-Generic-Lambdas-for-SFINAE">19.4.3</a>&#x8282;&#x4E2D;&#x7684;<code>isValid()</code>&#xFF1A;</p>
+<pre><code class="lang-cpp">// traits/isvalid1.cpp
+#include &quot;isvalid.hpp&quot;
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;utility&gt;
+
+int main()
+{
+    using namespace std;
+    cout &lt;&lt; boolalpha;
+
+    // define to check for data member first:
+    constexpr auto hasFirst
+        = isValid([](auto x) -&gt; decltype((void)valueT(x).first) {
+                    });
+    cout &lt;&lt; &quot;hasFirst: &quot; &lt;&lt; hasFirst(type&lt;pair&lt;int,int&gt;&gt;) &lt;&lt; &apos;\n&apos;; // true
+
+    // define to check for member type size_type:
+    constexpr auto hasSizeType
+        = isValid([](auto x) -&gt; typename decltype(valueT(x))::size_type {
+                    });
+
+    struct CX {
+        using size_type = std::size_t;
+    };
+    cout &lt;&lt; &quot;hasSizeType: &quot; &lt;&lt; hasSizeType(type&lt;CX&gt;) &lt;&lt; &apos;\n&apos;; // true
+
+    if constexpr(!hasSizeType(type&lt;int&gt;)) {
+        cout &lt;&lt; &quot;int has no size_type\n&quot;;
+        // ...
+    }
+
+    // define to check for &lt;:
+    constexpr auto hasLess
+        = isValid([](auto x, auto y) -&gt; decltype(valueT(x) &lt; valueT(y)) {
+                    });
+
+    cout &lt;&lt; hasLess(42, type&lt;char&gt;) &lt;&lt; &apos;\n&apos;;                // yields false
+    cout &lt;&lt; hasLess(type&lt;string&gt;, type&lt;string&gt;) &lt;&lt; &apos;\n&apos;;    // yields true
+    cout &lt;&lt; hasLess(type&lt;string&gt;, type&lt;int&gt;) &lt;&lt; &apos;\n&apos;;       // yields false
+    cout &lt;&lt; hasLess(type&lt;string&gt;, &quot;hello&quot;) &lt;&lt; &apos;\n&apos;;         // yields false
+}
+</code></pre>
+<p>&#x7F16;&#x8BD1;&#x8BD5;&#x4E86;&#x4E0B;&#xFF0C;&#x5FC5;&#x987B;&#x8981;&#x6DFB;&#x52A0;&#x7F16;&#x8BD1;&#x9009;&#x9879;<code>-std=c++17</code>&#xFF0C;&#x540C;&#x65F6;<code>hasLess(42, type&lt;char&gt;)</code>&#x548C;<code>hasLess(type&lt;string&gt;, &quot;hello&quot;)</code>&#x7ED3;&#x679C;&#x4E3A;<code>false</code>&#xFF0C;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x4EE5;<code>42</code>&#x548C;<code>hello</code>&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x8C03;&#x7528;<code>valueT()</code>&#x65F6;&#x65E0;&#x6CD5;&#x8FDB;&#x884C;&#x63A8;&#x5BFC;&#x3002;</p>
+<p>&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>std::declval</code>&#x6765;&#x5B9E;&#x73B0;&#x4E0A;&#x8FF0;&#x7C7B;&#x578B;&#x7279;&#x5F81;&#x6A21;&#x677F;&#xFF08;&#x539F;&#x7406;&#x4E0A;&#x90FD;&#x662F;&#x4EA7;&#x751F;&#x67D0;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x4E34;&#x65F6;&#x5BF9;&#x8C61;&#xFF09;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/isvalid2.cpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;isvalid.hpp&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;utility&gt;</span></span>
+
+<span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">auto</span> hasFirst
+    = isValid([](<span class="hljs-keyword">auto</span>&amp;&amp; x) -&gt; <span class="hljs-keyword">decltype</span>((<span class="hljs-keyword">void</span>)&amp;x.first) {
+                });
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">using</span> HasFirstT = <span class="hljs-keyword">decltype</span>(hasFirst(<span class="hljs-built_in">std</span>::declval&lt;T&gt;()));
+
+<span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">auto</span> hasSizeType
+    = isValid([](<span class="hljs-keyword">auto</span>&amp;&amp; x) -&gt; <span class="hljs-keyword">typename</span> <span class="hljs-built_in">std</span>::<span class="hljs-keyword">decay_t</span>&lt;<span class="hljs-keyword">decltype</span>(x)&gt;::size_type {
+                });
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">using</span> HasSizeTypeT = <span class="hljs-keyword">decltype</span>(hasSizeType(<span class="hljs-built_in">std</span>::declval&lt;T&gt;()));
+
+<span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">auto</span> hasLess
+    = isValid([](<span class="hljs-keyword">auto</span>&amp;&amp; x, <span class="hljs-keyword">auto</span>&amp;&amp; y) -&gt; <span class="hljs-keyword">decltype</span>(x &lt; y) {
+                });
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T1, <span class="hljs-keyword">typename</span> T2&gt;
+<span class="hljs-keyword">using</span> HasLessT = <span class="hljs-keyword">decltype</span>(hasLess(<span class="hljs-built_in">std</span>::declval&lt;T1&gt;(), <span class="hljs-built_in">std</span>::declval&lt;T2&gt;()));
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;first: &quot;</span> &lt;&lt; HasFirstT&lt;pair&lt;<span class="hljs-keyword">int</span>,<span class="hljs-keyword">int</span>&gt;&gt;::value &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>; <span class="hljs-comment">// true</span>
+
+    <span class="hljs-keyword">struct</span> CX {
+        <span class="hljs-keyword">using</span> size_type = <span class="hljs-built_in">std</span>::<span class="hljs-keyword">size_t</span>;
+    };
+
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;size_type: &quot;</span> &lt;&lt; HasSizeTypeT&lt;CX&gt;::value &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;   <span class="hljs-comment">// true</span>
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;size_type: &quot;</span> &lt;&lt; HasSizeTypeT&lt;<span class="hljs-keyword">int</span>&gt;::value &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;  <span class="hljs-comment">// false</span>
+    <span class="hljs-built_in">cout</span> &lt;&lt; HasLessT&lt;<span class="hljs-keyword">int</span>, <span class="hljs-keyword">char</span>&gt;::value &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;                 <span class="hljs-comment">// true</span>
+    <span class="hljs-built_in">cout</span> &lt;&lt; HasLessT&lt;<span class="hljs-built_in">string</span>, <span class="hljs-built_in">string</span>&gt;::value &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;            <span class="hljs-comment">// true</span>
+    <span class="hljs-built_in">cout</span> &lt;&lt; HasLessT&lt;<span class="hljs-built_in">string</span>, <span class="hljs-keyword">int</span>&gt;::value &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;               <span class="hljs-comment">// false</span>
+    <span class="hljs-built_in">cout</span> &lt;&lt; HasLessT&lt;<span class="hljs-built_in">string</span>, <span class="hljs-keyword">char</span>*&gt;::value &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;             <span class="hljs-comment">// true</span>
+}
+</code></pre>
+<h2 id="197-&#x5176;&#x5B83;&#x7C7B;&#x578B;&#x7279;&#x5F81;&#x6A21;&#x677F;">19.7 &#x5176;&#x5B83;&#x7C7B;&#x578B;&#x7279;&#x5F81;&#x6A21;&#x677F;</h2>
+<h3 id="1971-&#x5206;&#x652F;&#x578B;&#x6A21;&#x677F;">19.7.1 &#x5206;&#x652F;&#x578B;&#x6A21;&#x677F;</h3>
+<p>&#x6839;&#x636E;&#x67D0;&#x79CD;&#x6761;&#x4EF6;&#x5B9E;&#x4F8B;&#x5316;&#x4E3B;&#x6A21;&#x677F;&#x6216;&#x8005;&#x7279;&#x5316;&#x7684;&#x6A21;&#x677F;&#x79F0;&#x4E3A;&#x5206;&#x652F;&#x6A21;&#x677F;&#xFF0C;&#x53EF;&#x4EE5;&#x7EDF;&#x4E00;&#x5199;&#x4E3A;&#x4E0B;&#x9762;&#x7684;&#x5F62;&#x5F0F;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/ifthenelse.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">ifndef</span> IFTHENELSE_HPP</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> IFTHENELSE_HPP</span>
+
+<span class="hljs-comment">// primary template: yield the second argument by default and rely on</span>
+<span class="hljs-comment">// a partial specialization to yield the third argument</span>
+<span class="hljs-comment">// if COND is false</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">bool</span> COND, <span class="hljs-keyword">typename</span> TrueType, <span class="hljs-keyword">typename</span> FalseType&gt;
+<span class="hljs-keyword">struct</span> IfThenElseT {
+    <span class="hljs-keyword">using</span> Type = TrueType;
+};
+
+<span class="hljs-comment">// partial specialization: false yields third argument</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> TrueType, <span class="hljs-keyword">typename</span> FalseType&gt;
+<span class="hljs-keyword">struct</span> IfThenElseT&lt;<span class="hljs-literal">false</span>, TrueType, FalseType&gt; {
+    <span class="hljs-keyword">using</span> Type = FalseType;
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">bool</span> COND, <span class="hljs-keyword">typename</span> TrueType, <span class="hljs-keyword">typename</span> FalseType&gt;
+<span class="hljs-keyword">using</span> IfThenElse = <span class="hljs-keyword">typename</span> IfThenElseT&lt;COND, TrueType, FalseType&gt;::Type;
+<span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span> <span class="hljs-comment">// IFTHENELSE_HPP</span></span>
+</code></pre>
+<p>&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x5229;&#x7528;&#x5206;&#x652F;&#x6A21;&#x677F;&#x9009;&#x62E9;&#x5BB9;&#x7EB3;<code>N</code>&#x7684;&#x6700;&#x5C0F;&#x6574;&#x578B;&#x7684;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/smallestint.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;limits&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;ifthenelse.hpp&quot;</span></span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">auto</span> N&gt;
+<span class="hljs-keyword">struct</span> SmallestIntT {
+    <span class="hljs-keyword">using</span> Type =
+        <span class="hljs-keyword">typename</span> IfThenElseT&lt;N &lt;= <span class="hljs-built_in">std</span>::numeric_limits&lt;<span class="hljs-keyword">char</span>&gt;::max(), <span class="hljs-keyword">char</span>,
+            <span class="hljs-keyword">typename</span> IfThenElseT&lt;N &lt;= <span class="hljs-built_in">std</span>::numeric_limits&lt;<span class="hljs-keyword">short</span>&gt;::max(), <span class="hljs-keyword">short</span>,
+                <span class="hljs-keyword">typename</span> IfThenElseT&lt;N &lt;= <span class="hljs-built_in">std</span>::numeric_limits&lt;<span class="hljs-keyword">int</span>&gt;::max(), <span class="hljs-keyword">int</span>,
+                    <span class="hljs-keyword">typename</span> IfThenElseT&lt;N &lt;= <span class="hljs-built_in">std</span>::numeric_limits&lt;<span class="hljs-keyword">long</span>&gt;::max(), <span class="hljs-keyword">long</span>,
+                        <span class="hljs-keyword">typename</span> IfThenElseT&lt;N &lt;= <span class="hljs-built_in">std</span>::numeric_limits&lt;<span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span>&gt;::max(),
+                                                <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span>, <span class="hljs-comment">// then</span>
+                                                <span class="hljs-keyword">void</span> <span class="hljs-comment">// fallback</span>
+                                            &gt;::Type
+                                        &gt;::Type
+                                    &gt;::Type
+                                &gt;::Type
+                            &gt;::Type;
+};
+</code></pre>
+<p>&#x5982;&#x679C;&#x60F3;&#x8981;&#x83B7;&#x53D6;&#x67D0;&#x79CD;&#x6574;&#x578B;&#x7684;&#x65E0;&#x7B26;&#x53F7;&#x7C7B;&#x578B;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;&#x6A21;&#x677F;&#x5199;&#x4E3A;&#x4E0B;&#x9762;&#x7684;&#x5F62;&#x5F0F;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// yield T when using member Type:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> IdentityT {
+    <span class="hljs-keyword">using</span> Type = T;
+};
+
+<span class="hljs-comment">// to make unsigned after IfThenElse was evaluated:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> MakeUnsignedT {
+    <span class="hljs-keyword">using</span> Type = <span class="hljs-keyword">typename</span> <span class="hljs-built_in">std</span>::make_unsigned&lt;T&gt;::type;
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> UnsignedT {
+    <span class="hljs-keyword">using</span> Type = <span class="hljs-keyword">typename</span> IfThenElse&lt;<span class="hljs-built_in">std</span>::is_integral&lt;T&gt;::value &amp;&amp; !<span class="hljs-built_in">std</span>::is_same&lt;T,<span class="hljs-keyword">bool</span>&gt;::value,
+                                        MakeUnsignedT&lt;T&gt;,
+                                        IdentityT&lt;T&gt;
+                                    &gt;::Type;
+};
+</code></pre>
+<h3 id="1972-&#x4FA6;&#x6D4B;&#x4E0D;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#x7684;&#x6210;&#x5458;">19.7.2 &#x4FA6;&#x6D4B;&#x4E0D;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#x7684;&#x6210;&#x5458;</h3>
+<p>&#x5982;&#x679C;&#x8981;&#x5224;&#x65AD;&#x67D0;&#x64CD;&#x4F5C;&#x662F;&#x5426;&#x4F1A;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#xFF0C;&#x4F8B;&#x5982;&#x79FB;&#x52A8;&#x6784;&#x9020;&#x51FD;&#x6570;&#x662F;&#x5426;&#x4F1A;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E0B;&#x9762;&#x7684;&#x6A21;&#x677F;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/isnothrowmoveconstructible1.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;utility&gt;</span>      // for declval</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;type_traits&gt;</span>  // for bool_constant</span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> IsNothrowMoveConstructibleT
+    : <span class="hljs-built_in">std</span>::bool_constant&lt;<span class="hljs-keyword">noexcept</span>(T(<span class="hljs-built_in">std</span>::declval&lt;T&gt;()))&gt;
+{
+};
+</code></pre>
+<p>&#x5982;&#x679C;<code>T</code>&#x7C7B;&#x578B;&#x6CA1;&#x6709;&#x79FB;&#x52A8;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF08;&#x6216;&#x8005;&#x62F7;&#x8D1D;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF09;&#xFF0C;&#x5219;&#x8868;&#x8FBE;&#x5F0F;<code>T(std::declval&lt;T&gt;())</code>&#x662F;&#x975E;&#x6CD5;&#x7684;&#xFF0C;&#x4E5F;&#x5C31;&#x65E0;&#x6CD5;&#x8FDB;&#x884C;&#x7F16;&#x8BD1;&#x3002;&#x501F;&#x9274;<a href="#Detecting-Nontype-Members">19.6.3</a>&#x4E2D;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x4FA6;&#x6D4B;&#x79FB;&#x52A8;&#x662F;&#x5426;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#x4E4B;&#x524D;&#x4FA6;&#x6D4B;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x79FB;&#x52A8;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/isnothrowmoveconstructible2.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;utility&gt;</span>      // for declval</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;type_traits&gt;</span>  // for true_type, false_type, and bool_constant<span class="hljs-meta-string">&lt;&gt;</span></span>
+
+<span class="hljs-comment">// primary template:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span> = <span class="hljs-built_in">std</span>::<span class="hljs-keyword">void_t</span>&lt;&gt;&gt;
+<span class="hljs-keyword">struct</span> IsNothrowMoveConstructibleT : <span class="hljs-built_in">std</span>::false_type
+{
+};
+
+<span class="hljs-comment">// partial specialization (may be SFINAE&#x2019;d away):</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> IsNothrowMoveConstructibleT&lt;T, <span class="hljs-built_in">std</span>::<span class="hljs-keyword">void_t</span>&lt;<span class="hljs-keyword">decltype</span>(T(<span class="hljs-built_in">std</span>::declval&lt;T&gt;()))&gt;&gt;
+    : <span class="hljs-built_in">std</span>::bool_constant&lt;<span class="hljs-keyword">noexcept</span>(T(<span class="hljs-built_in">std</span>::declval&lt;T&gt;()))&gt;
+{
+};
+</code></pre>
+<h3 id="1973-&#x7C7B;&#x578B;&#x7279;&#x5F81;&#x6A21;&#x677F;&#x7684;&#x7F3A;&#x70B9;">19.7.3 &#x7C7B;&#x578B;&#x7279;&#x5F81;&#x6A21;&#x677F;&#x7684;&#x7F3A;&#x70B9;</h3>
+<p>&#x7C7B;&#x578B;&#x7279;&#x5F81;&#x6A21;&#x677F;&#x8D77;&#x4F5C;&#x7528;&#x7684;&#x539F;&#x56E0;&#x662F;&#x5B9A;&#x4E49;&#x4E86;&#x7C7B;&#x578B;&#x6210;&#x5458;<code>Type</code>&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x5F97;&#x4E0D;&#x663E;&#x793A;&#x7684;&#x5199;&#x51FA;<code>::Type</code>&#x6765;&#x83B7;&#x53D6;&#x7C7B;&#x578B;&#x7279;&#x5F81;&#xFF0C;&#x4E3A;&#x4E86;&#x7B80;&#x4FBF;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x522B;&#x540D;&#x6A21;&#x677F;&#x6765;&#x4EE3;&#x66FF;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">using</span> RemoveCV = <span class="hljs-keyword">typename</span> RemoveCVT&lt;T&gt;::Type;
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">using</span> RemoveReference = <span class="hljs-keyword">typename</span> RemoveReferenceT&lt;T&gt;::Type;
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T1, <span class="hljs-keyword">typename</span> T2&gt;
+<span class="hljs-keyword">using</span> PlusResult = <span class="hljs-keyword">typename</span> PlusResultT&lt;T1, T2&gt;::Type;
+</code></pre>
+<p>&#x5BF9;&#x4E8E;&#x503C;&#x7279;&#x5F81;&#xFF0C;&#x4E5F;&#x9700;&#x8981;&#x663E;&#x793A;&#x5199;&#x51FA;<code>::value</code>&#xFF0C;&#x4E3A;&#x4E86;&#x7B80;&#x4FBF;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x53D8;&#x91CF;&#x6A21;&#x677F;&#x6765;&#x4EE3;&#x66FF;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T1, <span class="hljs-keyword">typename</span> T2&gt;
+<span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">bool</span> IsSame = IsSameT&lt;T1,T2&gt;::value;
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> FROM, <span class="hljs-keyword">typename</span> TO&gt;
+<span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">bool</span> IsConvertible = IsConvertibleT&lt;FROM, TO&gt;::value;
+</code></pre>
+<h2 id="198-&#x7C7B;&#x578B;&#x5206;&#x7C7B;">19.8 &#x7C7B;&#x578B;&#x5206;&#x7C7B;</h2>
+<p>&#x7C7B;&#x578B;&#x7279;&#x5F81;&#x6A21;&#x677F;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x5224;&#x65AD;&#x7C7B;&#x578B;&#x662F;&#x5185;&#x7F6E;&#x7C7B;&#x578B;&#x3001;&#x6307;&#x9488;&#x7C7B;&#x578B;&#x8FD8;&#x662F;&#x7C7B;&#x7C7B;&#x578B;&#x3002;</p>
+<h3 id="1981-&#x5224;&#x65AD;&#x5185;&#x7F6E;&#x7C7B;&#x578B;">19.8.1 &#x5224;&#x65AD;&#x5185;&#x7F6E;&#x7C7B;&#x578B;</h3>
+<p>&#x5185;&#x7F6E;&#x7C7B;&#x578B;&#x6570;&#x91CF;&#x8F83;&#x5C11;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x7A77;&#x4E3E;&#x7684;&#x65B9;&#x5F0F;&#x63D0;&#x4F9B;&#x6240;&#x6709;&#x7684;&#x7279;&#x5316;&#x7248;&#x672C;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/isfunda.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstddef&gt;</span>      // for nullptr_t</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;type_traits&gt;</span>  // for true_type, false_type, and bool_constant<span class="hljs-meta-string">&lt;&gt;</span></span>
+
+<span class="hljs-comment">// primary template: in general T is not a fundamental type</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> IsFundaT : <span class="hljs-built_in">std</span>::false_type {
+};
+
+<span class="hljs-comment">// macro to specialize for fundamental types</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> MK_FUNDA_TYPE(T)                               \
+    template&lt;&gt; struct IsFundaT&lt;T&gt; : std::true_type {    \
+    };</span>
+
+MK_FUNDA_TYPE(<span class="hljs-keyword">void</span>)
+MK_FUNDA_TYPE(<span class="hljs-keyword">bool</span>)
+MK_FUNDA_TYPE(<span class="hljs-keyword">char</span>)
+MK_FUNDA_TYPE(<span class="hljs-keyword">signed</span> <span class="hljs-keyword">char</span>)
+MK_FUNDA_TYPE(<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span>)
+MK_FUNDA_TYPE(<span class="hljs-keyword">wchar_t</span>)
+MK_FUNDA_TYPE(<span class="hljs-keyword">char16_t</span>)
+MK_FUNDA_TYPE(<span class="hljs-keyword">char32_t</span>)
+
+MK_FUNDA_TYPE(<span class="hljs-keyword">signed</span> <span class="hljs-keyword">short</span>)
+MK_FUNDA_TYPE(<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">short</span>)
+MK_FUNDA_TYPE(<span class="hljs-keyword">signed</span> <span class="hljs-keyword">int</span>)
+MK_FUNDA_TYPE(<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span>)
+MK_FUNDA_TYPE(<span class="hljs-keyword">signed</span> <span class="hljs-keyword">long</span>)
+MK_FUNDA_TYPE(<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span>)
+MK_FUNDA_TYPE(<span class="hljs-keyword">signed</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span>)
+MK_FUNDA_TYPE(<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span>)
+
+MK_FUNDA_TYPE(<span class="hljs-keyword">float</span>)
+MK_FUNDA_TYPE(<span class="hljs-keyword">double</span>)
+MK_FUNDA_TYPE(<span class="hljs-keyword">long</span> <span class="hljs-keyword">double</span>)
+
+MK_FUNDA_TYPE(<span class="hljs-built_in">std</span>::<span class="hljs-keyword">nullptr_t</span>)
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">undef</span> MK_FUNDA_TYPE</span>
+</code></pre>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/isfundatest.cpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;isfunda.hpp&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">test</span> <span class="hljs-params">(T <span class="hljs-keyword">const</span>&amp;)</span>
+</span>{
+    <span class="hljs-keyword">if</span> (IsFundaT&lt;T&gt;::value) {
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;T is a fundamental type&quot;</span> &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+    }
+    <span class="hljs-keyword">else</span> {
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;T is not a fundamental type&quot;</span> &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+    }
+}
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    test(<span class="hljs-number">7</span>);
+    test(<span class="hljs-string">&quot;hello&quot;</span>);
+}
+</code></pre>
+<h3 id="1982-&#x5224;&#x65AD;&#x590D;&#x5408;&#x7C7B;&#x578B;">19.8.2 &#x5224;&#x65AD;&#x590D;&#x5408;&#x7C7B;&#x578B;</h3>
+<p>&#x8FD9;&#x91CC;&#x7684;&#x590D;&#x5408;&#x7C7B;&#x578B;&#x662F;&#x6307;&#x6307;&#x9488;&#x7C7B;&#x578B;&#x3001;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x3001;&#x6210;&#x5458;&#x6307;&#x9488;&#x7C7B;&#x578B;&#x548C;&#x6570;&#x7EC4;&#x7C7B;&#x578B;&#xFF1A;</p>
+<h4 id="&#x6307;&#x9488;&#x7C7B;&#x578B;">&#x6307;&#x9488;&#x7C7B;&#x578B;</h4>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/ispointer.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> IsPointerT : <span class="hljs-built_in">std</span>::false_type {       <span class="hljs-comment">// primary template: by default not a pointer</span>
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> IsPointerT&lt;T*&gt; : <span class="hljs-built_in">std</span>::true_type {    <span class="hljs-comment">// partial specialization for pointers</span>
+    <span class="hljs-keyword">using</span> BaseT = T; <span class="hljs-comment">// type pointing to</span>
+};
+</code></pre>
+<h4 id="&#x5F15;&#x7528;&#x7C7B;&#x578B;">&#x5F15;&#x7528;&#x7C7B;&#x578B;</h4>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/islvaluereference.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> IsLValueReferenceT : <span class="hljs-built_in">std</span>::false_type {       <span class="hljs-comment">// by default no lvalue reference</span>
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> IsLValueReferenceT&lt;T&amp;&gt; : <span class="hljs-built_in">std</span>::true_type {    <span class="hljs-comment">// unless T is lvalue references</span>
+    <span class="hljs-keyword">using</span> BaseT = T; <span class="hljs-comment">// type referring to</span>
+};
+</code></pre>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/isrvaluereference.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> IsRValueReferenceT : <span class="hljs-built_in">std</span>::false_type {       <span class="hljs-comment">// by default no rvalue reference</span>
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> IsRValueReferenceT&lt;T&amp;&amp;&gt; : <span class="hljs-built_in">std</span>::true_type {   <span class="hljs-comment">// unless T is rvalue reference</span>
+    <span class="hljs-keyword">using</span> BaseT = T; <span class="hljs-comment">// type referring to</span>
+};
+</code></pre>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/isreference.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;islvaluereference.hpp&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;isrvaluereference.hpp&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;ifthenelse.hpp&quot;</span></span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">class</span> IsReferenceT
+    : <span class="hljs-keyword">public</span> IfThenElseT&lt;IsLValueReferenceT&lt;T&gt;::value,
+                            IsLValueReferenceT&lt;T&gt;,
+                            IsRValueReferenceT&lt;T&gt;
+                            &gt;::Type {
+};
+</code></pre>
+<h4 id="&#x6570;&#x7EC4;&#x7C7B;&#x578B;">&#x6570;&#x7EC4;&#x7C7B;&#x578B;</h4>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/isarray.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstddef&gt;</span></span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> IsArrayT : <span class="hljs-built_in">std</span>::false_type {         <span class="hljs-comment">// primary template: not an array</span>
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-built_in">std</span>::<span class="hljs-keyword">size_t</span> N&gt;
+<span class="hljs-keyword">struct</span> IsArrayT&lt;T[N]&gt; : <span class="hljs-built_in">std</span>::true_type {    <span class="hljs-comment">// partial specialization for arrays</span>
+    <span class="hljs-keyword">using</span> BaseT = T;
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">constexpr</span> <span class="hljs-built_in">std</span>::<span class="hljs-keyword">size_t</span> size = N;
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> IsArrayT&lt;T[]&gt; : <span class="hljs-built_in">std</span>::true_type {     <span class="hljs-comment">// partial specialization for unbound arrays</span>
+    <span class="hljs-keyword">using</span> BaseT = T;
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">constexpr</span> <span class="hljs-built_in">std</span>::<span class="hljs-keyword">size_t</span> size = <span class="hljs-number">0</span>;
+};
+</code></pre>
+<h4 id="&#x6210;&#x5458;&#x6307;&#x9488;&#x7C7B;&#x578B;">&#x6210;&#x5458;&#x6307;&#x9488;&#x7C7B;&#x578B;</h4>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/ispointertomember.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> IsPointerToMemberT : <span class="hljs-built_in">std</span>::false_type {           <span class="hljs-comment">// by default no pointer-to-member</span>
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span> C&gt;
+<span class="hljs-keyword">struct</span> IsPointerToMemberT&lt;T C::*&gt; : <span class="hljs-built_in">std</span>::true_type {    <span class="hljs-comment">// partial specialization</span>
+    <span class="hljs-keyword">using</span> MemberT = T;
+    <span class="hljs-keyword">using</span> ClassT = C;
+};
+</code></pre>
+<h3 id="1983-&#x8BC6;&#x522B;&#x51FD;&#x6570;&#x7C7B;&#x578B;">19.8.3 &#x8BC6;&#x522B;&#x51FD;&#x6570;&#x7C7B;&#x578B;</h3>
+<p>&#x51FD;&#x6570;&#x53EF;&#x80FD;&#x5305;&#x542B;&#x4EFB;&#x610F;&#x6570;&#x91CF;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x4E3A;&#x6B64;&#x9700;&#x8981;&#x4E3A;&#x7C7B;&#x578B;&#x7279;&#x5F81;&#x6A21;&#x677F;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x5305;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/isfunction.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;../typelist/typelist.hpp&quot;</span></span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> IsFunctionT : <span class="hljs-built_in">std</span>::false_type {                      <span class="hljs-comment">// primary template: no function</span>
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> R, <span class="hljs-keyword">typename</span>... Params&gt;
+<span class="hljs-keyword">struct</span> IsFunctionT&lt;R (Params...)&gt; : <span class="hljs-built_in">std</span>::true_type {        <span class="hljs-comment">// functions</span>
+    <span class="hljs-keyword">using</span> Type = R;
+    <span class="hljs-keyword">using</span> ParamsT = Typelist&lt;Params...&gt;;
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">bool</span> variadic = <span class="hljs-literal">false</span>;
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> R, <span class="hljs-keyword">typename</span>... Params&gt;
+<span class="hljs-keyword">struct</span> IsFunctionT&lt;R (Params..., ...)&gt; : <span class="hljs-built_in">std</span>::true_type {   <span class="hljs-comment">// variadic functions</span>
+    <span class="hljs-keyword">using</span> Type = R;
+    <span class="hljs-keyword">using</span> ParamsT = Typelist&lt;Params...&gt;;
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">bool</span> variadic = <span class="hljs-literal">true</span>;
+};
+</code></pre>
+<p>&#x5982;&#x679C;&#x8981;&#x5904;&#x7406;<code>const</code>&#x3001;<code>volatile</code>&#x548C;&#x5F15;&#x7528;&#x7B49;&#x4FEE;&#x9970;&#x7B26;&#xFF0C;&#x8FD8;&#x9700;&#x8981;&#x5F88;&#x591A;&#x7279;&#x5316;&#x7248;&#x672C;&#xFF0C;&#x5177;&#x4F53;&#x89C1;&#x4E66;&#x3002;</p>
+<h3 id="1984-&#x5224;&#x65AD;&#x7C7B;&#x7C7B;&#x578B;">19.8.4 &#x5224;&#x65AD;&#x7C7B;&#x7C7B;&#x578B;</h3>
+<p>&#x7C7B;&#x4E2D;&#x4E00;&#x822C;&#x90FD;&#x5305;&#x542B;&#x6210;&#x5458;&#xFF0C;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6210;&#x5458;&#x6307;&#x9488;&#x6765;&#x5224;&#x65AD;&#x7C7B;&#x7C7B;&#x578B;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/isclass.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;type_traits&gt;</span></span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span> = <span class="hljs-built_in">std</span>::<span class="hljs-keyword">void_t</span>&lt;&gt;&gt;
+<span class="hljs-keyword">struct</span> IsClassT : <span class="hljs-built_in">std</span>::false_type {         <span class="hljs-comment">// primary template: by default no class</span>
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> IsClassT&lt;T, <span class="hljs-built_in">std</span>::<span class="hljs-keyword">void_t</span>&lt;<span class="hljs-keyword">int</span> T::*&gt;&gt;   <span class="hljs-comment">// classes can have pointer-to-member</span>
+    : <span class="hljs-built_in">std</span>::true_type {
+};
+</code></pre>
+<h3 id="Determining-Enumeration-Types">19.8.5 &#x5224;&#x65AD;&#x679A;&#x4E3E;&#x7C7B;&#x578B; </h3>
+<p>&#x4E66;&#x4E2D;&#x7684;&#x662F;&#x201C;&#x975E;&#x5176;&#x5B83;&#x201D;&#x7684;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/isenum.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> IsEnumT {
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">bool</span> value = !IsFundaT&lt;T&gt;::value &amp;&amp;
+                                    !IsPointerT&lt;T&gt;::value &amp;&amp;
+                                    !IsReferenceT&lt;T&gt;::value &amp;&amp;
+                                    !IsArrayT&lt;T&gt;::value &amp;&amp;
+                                    !IsPointerToMemberT&lt;T&gt;::value &amp;&amp;
+                                    !IsFunctionT&lt;T&gt;::value &amp;&amp;
+                                    !IsClassT&lt;T&gt;::value;
+};
+</code></pre>
+<h2 id="199-&#x63D0;&#x53D6;&#x7B56;&#x7565;&#x7684;&#x7C7B;&#x578B;&#x7279;&#x5F81;&#x6A21;&#x677F;">19.9 &#x63D0;&#x53D6;&#x7B56;&#x7565;&#x7684;&#x7C7B;&#x578B;&#x7279;&#x5F81;&#x6A21;&#x677F;</h2>
+<h3 id="1991-&#x4F20;&#x9012;&#x53EA;&#x8BFB;&#x7C7B;&#x578B;&#x7684;&#x53C2;&#x6570;">19.9.1 &#x4F20;&#x9012;&#x53EA;&#x8BFB;&#x7C7B;&#x578B;&#x7684;&#x53C2;&#x6570;</h3>
+<p>&#x5411;&#x51FD;&#x6570;&#x4F20;&#x9012;&#x53EA;&#x8BFB;&#x7C7B;&#x578B;&#x7684;&#x53C2;&#x6570;&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x6CD5;&#xFF0C;&#x5206;&#x522B;&#x4E3A;&#x4F20;&#x503C;&#x548C;&#x4F20;&#x5E38;&#x91CF;&#x5F15;&#x7528;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4E0B;&#x9762;&#x7C7B;&#x578B;&#x7279;&#x5F81;&#x6A21;&#x677F;&#x7B80;&#x5355;&#x5224;&#x65AD;&#x54EA;&#x79CD;&#x65B9;&#x5F0F;&#x5F00;&#x9500;&#x66F4;&#x5C0F;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/rparam.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">ifndef</span> RPARAM_HPP</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> RPARAM_HPP</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;ifthenelse.hpp&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;type_traits&gt;</span></span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> RParam {
+    <span class="hljs-keyword">using</span> Type
+        = IfThenElse&lt;(<span class="hljs-keyword">sizeof</span>(T) &lt;= <span class="hljs-number">2</span>*<span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">void</span>*)
+                            &amp;&amp; <span class="hljs-built_in">std</span>::is_trivially_copy_constructible&lt;T&gt;::value
+                            &amp;&amp; <span class="hljs-built_in">std</span>::is_trivially_move_constructible&lt;T&gt;::value),
+                        T,
+                        T <span class="hljs-keyword">const</span>&amp;&gt;;
+};
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span> <span class="hljs-comment">// RPARAM_HPP</span></span>
+</code></pre>
+<p>&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/rparamcls.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;rparam.hpp&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+
+<span class="hljs-keyword">class</span> MyClass1 {
+    <span class="hljs-keyword">public</span>:
+        MyClass1 () {
+        }
+        MyClass1 (MyClass1 <span class="hljs-keyword">const</span>&amp;) {
+            <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;MyClass1 copy constructor called\n&quot;</span>;
+        }
+};
+
+<span class="hljs-keyword">class</span> MyClass2 {
+    <span class="hljs-keyword">public</span>:
+        MyClass2 () {
+        }
+        MyClass2 (MyClass2 <span class="hljs-keyword">const</span>&amp;) {
+            <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;MyClass2 copy constructor called\n&quot;</span>;
+        }
+};
+
+<span class="hljs-comment">// pass MyClass2 objects with RParam&lt;&gt; by value</span>
+<span class="hljs-keyword">template</span>&lt;&gt;
+<span class="hljs-keyword">class</span> RParam&lt;MyClass2&gt; {
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> Type = MyClass2;
+};
+</code></pre>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/rparam1.cpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;rparam.hpp&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;rparamcls.hpp&quot;</span></span>
+
+<span class="hljs-comment">// function that allows parameter passing by value or by reference</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T1, <span class="hljs-keyword">typename</span> T2&gt;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">foo</span> <span class="hljs-params">(<span class="hljs-keyword">typename</span> RParam&lt;T1&gt;::Type p1, <span class="hljs-keyword">typename</span> RParam&lt;T2&gt;::Type p2)</span>
+</span>{
+    <span class="hljs-comment">// ...</span>
+}
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    MyClass1 mc1;
+    MyClass2 mc2;
+    foo&lt;MyClass1,MyClass2&gt;(mc1,mc2);
+}
+</code></pre>
+<p>&#x4F46;&#x662F;&#x4E0D;&#x4FBF;&#x4E4B;&#x5904;&#x5728;&#x4E8E;&#x7F16;&#x8BD1;&#x5668;&#x65E0;&#x6CD5;&#x8FDB;&#x884C;&#x7C7B;&#x578B;&#x63A8;&#x5BFC;&#x4E86;&#xFF0C;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;<code>RParam&lt;T1&gt;::Type</code>&#x4E0D;&#x662F;&#x53EF;&#x63A8;&#x5BFC;&#x7684;&#x4E0A;&#x4E0B;&#x6587;&#xFF0C;&#x4F46;&#x662F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5305;&#x88C5;&#x5668;&#xFF08;wrapper&#xFF09;&#x5305;&#x88C5;&#x4E00;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// traits/rparam2.cpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;rparam.hpp&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;rparamcls.hpp&quot;</span></span>
+
+<span class="hljs-comment">// function that allows parameter passing by value or by reference</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T1, <span class="hljs-keyword">typename</span> T2&gt;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">foo_core</span> <span class="hljs-params">(<span class="hljs-keyword">typename</span> RParam&lt;T1&gt;::Type p1, <span class="hljs-keyword">typename</span> RParam&lt;T2&gt;::Type p2)</span>
+</span>{
+    <span class="hljs-comment">// ...</span>
+}
+
+<span class="hljs-comment">// wrapper to avoid explicit template parameter passing</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T1, <span class="hljs-keyword">typename</span> T2&gt;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">foo</span> <span class="hljs-params">(T1 &amp;&amp; p1, T2 &amp;&amp; p2)</span>
+</span>{
+    foo_core&lt;T1,T2&gt;(<span class="hljs-built_in">std</span>::forward&lt;T1&gt;(p1),<span class="hljs-built_in">std</span>::forward&lt;T2&gt;(p2));
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    MyClass1 mc1;
+    MyClass2 mc2;
+    foo(mc1,mc2); <span class="hljs-comment">// same as foo_core&lt;MyClass1,MyClass2&gt;(mc1,mc2)</span>
+}
+</code></pre>
+<h2 id="1910-&#x6807;&#x51C6;&#x5E93;&#x4E2D;&#x7684;&#x7C7B;&#x578B;&#x7279;&#x5F81;&#x6A21;&#x677F;">19.10 &#x6807;&#x51C6;&#x5E93;&#x4E2D;&#x7684;&#x7C7B;&#x578B;&#x7279;&#x5F81;&#x6A21;&#x677F;</h2>
+<p><a href="#Determining-Enumeration-Types">19.8.5</a>&#x8282;&#x4E2D;&#x7684;&#x5224;&#x65AD;&#x679A;&#x4E3E;&#x7C7B;&#x578B;&#x7684;&#x6A21;&#x677F;&#x4E0D;&#x592A;&#x5BB9;&#x6613;&#x76F4;&#x63A5;&#x5B9E;&#x73B0;&#xFF0C;&#x7C7B;&#x4F3C;&#x7684;&#x8FD8;&#x6709;&#x6807;&#x51C6;&#x5E93;&#x4E2D;&#x7684;<code>std::is_union</code>&#x6A21;&#x677F;&#xFF0C;&#x4E3A;&#x6B64;&#x7F16;&#x8BD1;&#x5668;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E9B;&#x652F;&#x6301;&#x3002;</p>
+<h2 id="1911-&#x540E;&#x8BB0;">19.11 &#x540E;&#x8BB0;</h2>
+<p>&#x9644;&#x5F55;D&#x4E2D;&#x4ECB;&#x7ECD;&#x4E86;&#x6807;&#x51C6;&#x5E93;&#x4E2D;&#x7C7B;&#x578B;&#x7279;&#x5F81;&#x6A21;&#x677F;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="2022-02-23-ch18-the-polymorphic-power-of-templates.html" class="navigation navigation-prev " aria-label="Previous page: Chapter 18 The Polymorphic Power of Templates">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="2022-03-02-ch20-overloading-on-type-properties.html" class="navigation navigation-next " aria-label="Next page: Chapter 20 Overloading on Type Properties">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Chapter 19 Implementing Traits","level":"1.20","depth":1,"next":{"title":"Chapter 20 Overloading on Type Properties","level":"1.21","depth":1,"path":"2022-03-02-ch20-overloading-on-type-properties.md","ref":"2022-03-02-ch20-overloading-on-type-properties.md","articles":[]},"previous":{"title":"Chapter 18 The Polymorphic Power of Templates","level":"1.19","depth":1,"path":"2022-02-23-ch18-the-polymorphic-power-of-templates.md","ref":"2022-02-23-ch18-the-polymorphic-power-of-templates.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"2022-03-01-ch19-implementing-traits.md","mtime":"2022-11-13T05:00:16.191Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-11-13T05:01:04.198Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

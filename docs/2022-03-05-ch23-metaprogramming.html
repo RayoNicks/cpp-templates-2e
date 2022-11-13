@@ -1,0 +1,973 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Chapter 23 Metaprogramming · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="2022-03-06-ch24-typelists.html" />
+    
+    
+    <link rel="prev" href="2022-03-05-ch22-bridging-static-and-dynamic-polymorphism.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="2021-12-15-ch1-function-templates.html">
+            
+                <a href="2021-12-15-ch1-function-templates.html">
+            
+                    
+                    Chapter 1 Funtion Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="2021-12-20-ch2-class-templates.html">
+            
+                <a href="2021-12-20-ch2-class-templates.html">
+            
+                    
+                    Chapter 2 Class Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="2021-12-20-ch3-nontype-template-parameters.html">
+            
+                <a href="2021-12-20-ch3-nontype-template-parameters.html">
+            
+                    
+                    Chapter 3 Nontype Template Parameters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="2021-12-20-ch4-variadic-templates.html">
+            
+                <a href="2021-12-20-ch4-variadic-templates.html">
+            
+                    
+                    Chapter 4 Variadic Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="2021-12-30-ch5-tricky-basics.html">
+            
+                <a href="2021-12-30-ch5-tricky-basics.html">
+            
+                    
+                    Chapter 5 Tricky Basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="2022-01-04-ch6-move-semantics-and-enable-if.html">
+            
+                <a href="2022-01-04-ch6-move-semantics-and-enable-if.html">
+            
+                    
+                    Chapter 6 Move Semantics and enable_if<>
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="2022-01-05-ch7-by-value-or-by-reference.html">
+            
+                <a href="2022-01-05-ch7-by-value-or-by-reference.html">
+            
+                    
+                    Chapter 7 By Value or by Reference?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="2022-01-06-ch8-compile-time-programming.html">
+            
+                <a href="2022-01-06-ch8-compile-time-programming.html">
+            
+                    
+                    Chapter 8 Compile-Time Programming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="2022-01-06-ch9-using-templates-in-practice.html">
+            
+                <a href="2022-01-06-ch9-using-templates-in-practice.html">
+            
+                    
+                    Chapter 9 Using Templates in Practice
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="2022-01-07-ch10-basic-template-terminology.html">
+            
+                <a href="2022-01-07-ch10-basic-template-terminology.html">
+            
+                    
+                    Chapter 10 Basic Template Terminology
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="2022-01-08-ch11-generic-libraries.html">
+            
+                <a href="2022-01-08-ch11-generic-libraries.html">
+            
+                    
+                    Chapter 11 Generic Libraries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="2022-01-12-ch12-fundamentals-in-depth.html">
+            
+                <a href="2022-01-12-ch12-fundamentals-in-depth.html">
+            
+                    
+                    Chapter 12 Fundamentals in Depth
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="2022-01-27-ch13-names-in-templates.html">
+            
+                <a href="2022-01-27-ch13-names-in-templates.html">
+            
+                    
+                    Chapter 13 Names in Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="2022-02-07-ch14-instantiation.html">
+            
+                <a href="2022-02-07-ch14-instantiation.html">
+            
+                    
+                    Chapter 14 Instantiation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="2022-02-15-ch15-template-argument-deduction.html">
+            
+                <a href="2022-02-15-ch15-template-argument-deduction.html">
+            
+                    
+                    Chapter 15 Template Argument Deduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="2022-02-17-ch16-specialization-and-overloading.html">
+            
+                <a href="2022-02-17-ch16-specialization-and-overloading.html">
+            
+                    
+                    Chapter 16 Specialization and Overloading
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="2022-02-22-ch17-future-directions.html">
+            
+                <a href="2022-02-22-ch17-future-directions.html">
+            
+                    
+                    Chapter 17 Future Directions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="2022-02-23-ch18-the-polymorphic-power-of-templates.html">
+            
+                <a href="2022-02-23-ch18-the-polymorphic-power-of-templates.html">
+            
+                    
+                    Chapter 18 The Polymorphic Power of Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="2022-03-01-ch19-implementing-traits.html">
+            
+                <a href="2022-03-01-ch19-implementing-traits.html">
+            
+                    
+                    Chapter 19 Implementing Traits
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="2022-03-02-ch20-overloading-on-type-properties.html">
+            
+                <a href="2022-03-02-ch20-overloading-on-type-properties.html">
+            
+                    
+                    Chapter 20 Overloading on Type Properties
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="2022-03-03-ch21-templates-and-inheritance.html">
+            
+                <a href="2022-03-03-ch21-templates-and-inheritance.html">
+            
+                    
+                    Chapter 21 Templates and Inheritance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="2022-03-05-ch22-bridging-static-and-dynamic-polymorphism.html">
+            
+                <a href="2022-03-05-ch22-bridging-static-and-dynamic-polymorphism.html">
+            
+                    
+                    Chapter 22 Bridging Static and Dynamic Polymorphism
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.24" data-path="2022-03-05-ch23-metaprogramming.html">
+            
+                <a href="2022-03-05-ch23-metaprogramming.html">
+            
+                    
+                    Chapter 23 Metaprogramming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="2022-03-06-ch24-typelists.html">
+            
+                <a href="2022-03-06-ch24-typelists.html">
+            
+                    
+                    Chapter 24 Typelists
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" data-path="2022-03-07-ch25-tuples.html">
+            
+                <a href="2022-03-07-ch25-tuples.html">
+            
+                    
+                    Chapter 25 Tuples
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27" data-path="2022-03-08-ch26-discriminated-unions.html">
+            
+                <a href="2022-03-08-ch26-discriminated-unions.html">
+            
+                    
+                    Chapter 26 Discriminated Unions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28" data-path="2022-03-09-ch27-expression-templates.html">
+            
+                <a href="2022-03-09-ch27-expression-templates.html">
+            
+                    
+                    Chapter 27 Expression Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29" data-path="2022-03-09-ch28-debugging-templates.html">
+            
+                <a href="2022-03-09-ch28-debugging-templates.html">
+            
+                    
+                    Chapter 28 Debugging Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.30" data-path="2022-01-05-appB-value-categories.html">
+            
+                <a href="2022-01-05-appB-value-categories.html">
+            
+                    
+                    Appendix B Value Categories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.31" data-path="2022-03-02-appC-overload-resolution.html">
+            
+                <a href="2022-03-02-appC-overload-resolution.html">
+            
+                    
+                    Appendix C Overload Resolution
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Chapter 23 Metaprogramming</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="23-&#x5143;&#x7F16;&#x7A0B;">23 &#x5143;&#x7F16;&#x7A0B;</h1>
+<p>&#x5143;&#x7F16;&#x7A0B;&#x662F;&#x5BF9;&#x7A0B;&#x5E8F;&#x8FDB;&#x884C;&#x7F16;&#x7A0B;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5728;&#x7F16;&#x7A0B;&#x7CFB;&#x7EDF;&#x5BF9;&#x6E90;&#x4EE3;&#x7801;&#x8FDB;&#x884C;&#x6784;&#x5EFA;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#x4EA7;&#x751F;&#x51FA;&#x65B0;&#x4EE3;&#x7801;&#x3001;&#x5B9E;&#x73B0;&#x65B0;&#x529F;&#x80FD;&#x7684;&#x6280;&#x672F;&#x3002;&#x539F;&#x6587;&#xFF1A;</p>
+<blockquote>
+<p>Metaprogramming consists of &#x201C;programming a program.&#x201D; In other words, we lay out code that the programming system executes to generate new code that implements the functionality we really want.</p>
+</blockquote>
+<h2 id="231-&#x73B0;&#x4EE3;c&#x4E2D;&#x7684;&#x5143;&#x7F16;&#x7A0B;">23.1 &#x73B0;&#x4EE3;C++&#x4E2D;&#x7684;&#x5143;&#x7F16;&#x7A0B;</h2>
+<h3 id="2311-&#x503C;&#x5143;&#x7F16;&#x7A0B;">23.1.1 &#x503C;&#x5143;&#x7F16;&#x7A0B;</h3>
+<p>&#x503C;&#x5143;&#x7F16;&#x7A0B;&#xFF08;value metaprogramming&#xFF09;&#x662F;&#x5728;&#x7F16;&#x8BD1;&#x671F;&#x95F4;&#x5BF9;&#x53D8;&#x91CF;&#x8FDB;&#x884C;&#x6C42;&#x503C;&#x7684;&#x6280;&#x672F;&#x3002;C++11&#x5F15;&#x5165;&#x7684;<code>constexpr</code>&#x89E3;&#x51B3;&#x4E86;&#x5927;&#x91CF;&#x9700;&#x8981;&#x5728;&#x7F16;&#x8BD1;&#x671F;&#x95F4;&#x6C42;&#x503C;&#x7684;&#x95EE;&#x9898;&#xFF0C;C++14&#x5F00;&#x59CB;&#x652F;&#x6301;&#x590D;&#x6742;&#x7684;&#x63A7;&#x5236;&#x7ED3;&#x6784;&#xFF0C;&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x5728;&#x7F16;&#x8BD1;&#x65F6;&#x8BA1;&#x7B97;&#x5E73;&#x65B9;&#x6839;&#x7684;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// meta/sqrtconstexpr.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-function"><span class="hljs-keyword">constexpr</span> T <span class="hljs-title">sqrt</span><span class="hljs-params">(T x)</span>
+</span>{
+    <span class="hljs-comment">// handle cases where x and its square root are equal as a special case to simplify</span>
+    <span class="hljs-comment">// the iteration criterion for larger x:</span>
+    <span class="hljs-keyword">if</span> (x &lt;= <span class="hljs-number">1</span>) {
+        <span class="hljs-keyword">return</span> x;
+    }
+
+    <span class="hljs-comment">// repeatedly determine in which half of a [lo, hi] interval the square root of x is located,</span>
+    <span class="hljs-comment">// until the interval is reduced to just one value:</span>
+    T lo = <span class="hljs-number">0</span>, hi = x;
+    <span class="hljs-keyword">for</span> (;;) {
+        <span class="hljs-keyword">auto</span> mid = (hi+lo)/<span class="hljs-number">2</span>, midSquared = mid*mid;
+        <span class="hljs-keyword">if</span> (lo+<span class="hljs-number">1</span> &gt;= hi || midSquared == x) {
+            <span class="hljs-comment">// mid must be the square root:</span>
+            <span class="hljs-keyword">return</span> mid;
+        }
+        <span class="hljs-comment">// continue with the higher/lower half-interval:</span>
+        <span class="hljs-keyword">if</span> (midSquared &lt; x) {
+            lo = mid;
+        }
+        <span class="hljs-keyword">else</span> {
+            hi = mid;
+        }
+    }
+}
+</code></pre>
+<h3 id="2312-&#x7C7B;&#x578B;&#x5143;&#x7F16;&#x7A0B;">23.1.2 &#x7C7B;&#x578B;&#x5143;&#x7F16;&#x7A0B;</h3>
+<p>&#x7C7B;&#x578B;&#x5143;&#x7F16;&#x7A0B;&#xFF08;type metaprogramming&#xFF09;&#x662F;&#x5728;&#x7F16;&#x8BD1;&#x671F;&#x95F4;&#x4EE5;&#x7C7B;&#x578B;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x4EA7;&#x751F;&#x65B0;&#x7C7B;&#x578B;&#x7684;&#x6280;&#x672F;&#xFF0C;&#x4E0B;&#x9762;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x5229;&#x7528;&#x6A21;&#x677F;&#x9012;&#x5F52;&#x5B9E;&#x4F8B;&#x5316;&#x6280;&#x672F;&#x63D0;&#x53D6;&#x53D8;&#x91CF;&#x7C7B;&#x578B;&#x7684;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// meta/removeallextents.hpp</span>
+<span class="hljs-comment">// primary template: in general we yield the given type:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> RemoveAllExtentsT {
+    <span class="hljs-keyword">using</span> Type = T;
+};
+
+<span class="hljs-comment">// partial specializations for array types (with and without bounds):</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-built_in">std</span>::<span class="hljs-keyword">size_t</span> SZ&gt;
+    <span class="hljs-keyword">struct</span> RemoveAllExtentsT&lt;T[SZ]&gt; {
+    <span class="hljs-keyword">using</span> Type = <span class="hljs-keyword">typename</span> RemoveAllExtentsT&lt;T&gt;::Type;
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> RemoveAllExtentsT&lt;T[]&gt; {
+    <span class="hljs-keyword">using</span> Type = <span class="hljs-keyword">typename</span> RemoveAllExtentsT&lt;T&gt;::Type;
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">using</span> RemoveAllExtents = <span class="hljs-keyword">typename</span> RemoveAllExtentsT&lt;T&gt;::Type;
+</code></pre>
+<h3 id="2313-&#x6DF7;&#x5408;&#x5143;&#x7F16;&#x7A0B;">23.1.3 &#x6DF7;&#x5408;&#x5143;&#x7F16;&#x7A0B;</h3>
+<p>&#x6DF7;&#x5408;&#x5143;&#x7F16;&#x7A0B;&#xFF08;hybrid metaprogramming&#xFF09;&#x662F;&#x5728;&#x7F16;&#x8BD1;&#x671F;&#x95F4;&#x751F;&#x6210;&#x4EE3;&#x7801;&#x5E76;&#x5728;&#x8FD0;&#x884C;&#x671F;&#x95F4;&#x8FDB;&#x884C;&#x6C42;&#x503C;&#x7684;&#x6280;&#x672F;&#x3002;&#x4F8B;&#x5982;&#x8981;&#x8BA1;&#x7B97;&#x5411;&#x91CF;&#x70B9;&#x79EF;&#xFF0C;&#x901A;&#x5E38;&#x4F1A;&#x5C06;&#x4EE3;&#x7801;&#x5199;&#x4E3A;&#x4E0B;&#x9762;&#x7684;&#x6837;&#x5B50;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-built_in">std</span>::<span class="hljs-keyword">size_t</span> N&gt;
+<span class="hljs-function"><span class="hljs-keyword">auto</span> <span class="hljs-title">dotProduct</span><span class="hljs-params">(<span class="hljs-built_in">std</span>::<span class="hljs-built_in">array</span>&lt;T, N&gt; <span class="hljs-keyword">const</span>&amp; x, <span class="hljs-built_in">std</span>::<span class="hljs-built_in">array</span>&lt;T, N&gt; <span class="hljs-keyword">const</span>&amp; y)</span>
+</span>{
+    T result{};
+    <span class="hljs-keyword">for</span> (<span class="hljs-built_in">std</span>::<span class="hljs-keyword">size_t</span> k = <span class="hljs-number">0</span>; k&lt;N; ++k) {
+        result += x[k]*y[k];
+    }
+    <span class="hljs-keyword">return</span> result;
+}
+</code></pre>
+<p>&#x5FAA;&#x73AF;&#x4E2D;&#x5305;&#x542B;&#x8DF3;&#x8F6C;&#xFF0C;&#x6240;&#x4EE5;&#x7F16;&#x8BD1;&#x5668;&#x53EF;&#x80FD;&#x4F1A;&#x8FDB;&#x884C;&#x5FAA;&#x73AF;&#x5C55;&#x5F00;&#x4F18;&#x5316;&#xFF0C;&#x4ECE;&#x800C;&#x5F62;&#x6210;&#x4E00;&#x7CFB;&#x5217;&#x7684;&#x4E58;&#x6CD5;&#x6C42;&#x548C;&#x8FD0;&#x7B97;&#xFF0C;&#x8FD9;&#x79CD;&#x4F18;&#x5316;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5143;&#x7F16;&#x7A0B;&#x6765;&#x5B9E;&#x73B0;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-built_in">std</span>::<span class="hljs-keyword">size_t</span> N&gt;
+<span class="hljs-keyword">struct</span> DotProductT {
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">inline</span> T <span class="hljs-title">result</span><span class="hljs-params">(T* a, T* b)</span> </span>{
+        <span class="hljs-keyword">return</span> *a * *b + DotProduct&lt;T, N<span class="hljs-number">-1</span>&gt;::result(a+<span class="hljs-number">1</span>,b+<span class="hljs-number">1</span>);
+    }
+};
+
+<span class="hljs-comment">// partial specialization as end criteria</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> DotProductT&lt;T, <span class="hljs-number">0</span>&gt; {
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">inline</span> T <span class="hljs-title">result</span><span class="hljs-params">(T*, T*)</span> </span>{
+        <span class="hljs-keyword">return</span> T{};
+    }
+};
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-built_in">std</span>::<span class="hljs-keyword">size_t</span> N&gt;
+<span class="hljs-function"><span class="hljs-keyword">auto</span> <span class="hljs-title">dotProduct</span><span class="hljs-params">(<span class="hljs-built_in">std</span>::<span class="hljs-built_in">array</span>&lt;T, N&gt; <span class="hljs-keyword">const</span>&amp; x, <span class="hljs-built_in">std</span>::<span class="hljs-built_in">array</span>&lt;T, N&gt; <span class="hljs-keyword">const</span>&amp; y)</span>
+</span>{
+    <span class="hljs-keyword">return</span> DotProductT&lt;T, N&gt;::result(x.begin(), y.begin());
+}
+</code></pre>
+<h3 id="2314-&#x5BF9;&#x4E0D;&#x540C;&#x5355;&#x4F4D;&#x4E0B;&#x7684;&#x503C;&#x8FD0;&#x7B97;&#x8FDB;&#x884C;&#x6DF7;&#x5408;&#x5143;&#x7F16;&#x7A0B;">23.1.4 &#x5BF9;&#x4E0D;&#x540C;&#x5355;&#x4F4D;&#x4E0B;&#x7684;&#x503C;&#x8FD0;&#x7B97;&#x8FDB;&#x884C;&#x6DF7;&#x5408;&#x5143;&#x7F16;&#x7A0B;</h3>
+<p>&#x6DF7;&#x5408;&#x5143;&#x7F16;&#x7A0B;&#x7684;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x5E94;&#x7528;&#x662F;&#x5BF9;&#x5177;&#x6709;&#x4E0D;&#x540C;&#x5355;&#x4F4D;&#x7684;&#x503C;&#x6C42;&#x548C;&#xFF0C;&#x5177;&#x4F53;&#x4E3A;&#x5728;&#x7F16;&#x8BD1;&#x671F;&#x95F4;&#x786E;&#x5B9A;&#x6C42;&#x548C;&#x7ED3;&#x679C;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x5E76;&#x5728;&#x8FD0;&#x884C;&#x671F;&#x95F4;&#x8FDB;&#x884C;&#x8BA1;&#x7B97;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// meta/ratio.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">unsigned</span> N, <span class="hljs-keyword">unsigned</span> D = <span class="hljs-number">1</span>&gt;
+<span class="hljs-keyword">struct</span> Ratio {
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">unsigned</span> num = N; <span class="hljs-comment">// numerator</span>
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">unsigned</span> den = D; <span class="hljs-comment">// denominator</span>
+    <span class="hljs-keyword">using</span> Type = Ratio&lt;num, den&gt;;
+};
+</code></pre>
+<pre><code class="lang-cpp"><span class="hljs-comment">// meta/ratioadd.hpp</span>
+<span class="hljs-comment">// implementation of adding two ratios:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> R1, <span class="hljs-keyword">typename</span> R2&gt;
+<span class="hljs-keyword">struct</span> RatioAddImpl
+{
+    <span class="hljs-keyword">private</span>:
+        <span class="hljs-keyword">static</span> <span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">unsigned</span> den = R1::den * R2::den;
+        <span class="hljs-keyword">static</span> <span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">unsigned</span> num = R1::num * R2::den + R2::num * R1::den;
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">typedef</span> Ratio&lt;num, den&gt; Type;
+};
+
+<span class="hljs-comment">// using declaration for convenient usage:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> R1, <span class="hljs-keyword">typename</span> R2&gt;
+<span class="hljs-keyword">using</span> RatioAdd = <span class="hljs-keyword">typename</span> RatioAddImpl&lt;R1, R2&gt;::Type;
+</code></pre>
+<pre><code class="lang-cpp">// meta/duration.hpp
+// duration type for values of type T with unit type U:
+template&lt;typename T, typename U = Ratio&lt;1&gt;&gt;
+class Duration {
+    public:
+        using ValueType = T;
+        using UnitType = typename U::Type;
+    private:
+        ValueType val;
+    public:
+        constexpr Duration(ValueType v = 0)
+            : val(v) {
+        }
+        constexpr ValueType value() const {
+            return val;
+        }
+};
+</code></pre>
+<pre><code class="lang-cpp"><span class="hljs-comment">// meta/durationadd.hpp</span>
+<span class="hljs-comment">// adding two durations where unit type might differ:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T1, <span class="hljs-keyword">typename</span> U1, <span class="hljs-keyword">typename</span> T2, <span class="hljs-keyword">typename</span> U2&gt;
+<span class="hljs-keyword">auto</span> <span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">operator</span>+(Duration&lt;T1, U1&gt; <span class="hljs-keyword">const</span>&amp; lhs, Duration&lt;T2, U2&gt; <span class="hljs-keyword">const</span>&amp; rhs)
+{
+    <span class="hljs-comment">// resulting type is a unit with 1 a nominator and</span>
+    <span class="hljs-comment">// the resulting denominator of adding both unit type fractions</span>
+    <span class="hljs-keyword">using</span> VT = Ratio&lt;<span class="hljs-number">1</span>,RatioAdd&lt;U1,U2&gt;::den&gt;;
+    <span class="hljs-comment">// resulting value is the sum of both values</span>
+    <span class="hljs-comment">// converted to the resulting unit type:</span>
+    <span class="hljs-keyword">auto</span> val = lhs.value() * VT::den / U1::den * U1::num + rhs.value() * VT::den / U2::den * U2::num;
+    <span class="hljs-keyword">return</span> Duration&lt;<span class="hljs-keyword">decltype</span>(val), VT&gt;(val);
+}
+</code></pre>
+<p>&#x770B;&#x5230;&#x8FD9;&#x91CC;&#x6211;&#x4E00;&#x4E0B;&#x5B50;&#x5C31;&#x60F3;&#x8D77;&#x6765;&#x4E86;&#x6807;&#x51C6;&#x5E93;&#x4E2D;&#x5173;&#x4E8E;&#x65F6;&#x95F4;&#x7684;&#x6A21;&#x677F;<code>std::chrono</code>&#x3002;<code>Ratio&lt;&gt;</code>&#x662F;&#x4E00;&#x4E2A;&#x5355;&#x4F4D;&#x7C7B;&#x578B;&#xFF0C;<code>RatioAddImpl&lt;&gt;</code>&#x5BF9;&#x4E24;&#x4E2A;&#x5177;&#x6709;&#x4E0D;&#x540C;&#x5355;&#x4F4D;&#x7684;&#x5355;&#x4F4D;&#x5143;&#x8FDB;&#x884C;&#x6C42;&#x548C;&#x5F97;&#x5230;&#x65B0;&#x7684;&#x5355;&#x4F4D;&#x5143;&#x7C7B;&#x578B;&#x3002;<code>Duration&lt;T, U&gt;</code>&#x8868;&#x793A;<code>U</code>&#x5355;&#x4F4D;&#x4E0B;&#x7684;&#x6570;&#x503C;&#xFF0C;&#x8BE5;&#x6570;&#x503C;&#x7528;&#x5185;&#x7F6E;&#x7C7B;&#x578B;<code>T</code>&#x8868;&#x793A;&#xFF0C;&#x6700;&#x7EC8;&#x7684;&#x52A0;&#x6CD5;&#x662F;&#x5BF9;&#x4E24;&#x4E2A;&#x4E0D;&#x540C;&#x5355;&#x4F4D;&#x4E0B;&#x7684;&#x6570;&#x503C;&#x8FDB;&#x884C;&#x6C42;&#x548C;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x6D4B;&#x8BD5;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">int</span> x = <span class="hljs-number">42</span>;
+<span class="hljs-keyword">int</span> y = <span class="hljs-number">77</span>;
+<span class="hljs-keyword">auto</span> a = Duration&lt;<span class="hljs-keyword">int</span>, Ratio&lt;<span class="hljs-number">1</span>,<span class="hljs-number">1000</span>&gt;&gt;(x);       <span class="hljs-comment">// x milliseconds</span>
+<span class="hljs-keyword">auto</span> b = Duration&lt;<span class="hljs-keyword">int</span>, Ratio&lt;<span class="hljs-number">2</span>,<span class="hljs-number">3</span>&gt;&gt;(y);          <span class="hljs-comment">// y 2/3 seconds</span>
+<span class="hljs-keyword">auto</span> c = a + b;                                 <span class="hljs-comment">// computes resulting unit type 1/3000 seconds</span>
+                                                <span class="hljs-comment">// and generates run-time code for c = a*3 + b*2000</span>
+<span class="hljs-keyword">auto</span> d = Duration&lt;<span class="hljs-keyword">double</span>, Ratio&lt;<span class="hljs-number">1</span>,<span class="hljs-number">3</span>&gt;&gt;(<span class="hljs-number">7.5</span>);     <span class="hljs-comment">// 7.5 1/3 seconds</span>
+<span class="hljs-keyword">auto</span> e = Duration&lt;<span class="hljs-keyword">int</span>, Ratio&lt;<span class="hljs-number">1</span>&gt;&gt;(<span class="hljs-number">4</span>);            <span class="hljs-comment">// 4 seconds</span>
+<span class="hljs-keyword">auto</span> f = d + e;                                 <span class="hljs-comment">// computes resulting unit type 1/3 seconds</span>
+                                                <span class="hljs-comment">// and generates code for f = d + e*3</span>
+</code></pre>
+<h2 id="232-&#x5143;&#x7F16;&#x7A0B;&#x4E2D;&#x7684;&#x53CD;&#x5C04;">23.2 &#x5143;&#x7F16;&#x7A0B;&#x4E2D;&#x7684;&#x53CD;&#x5C04;</h2>
+<p>&#x5728;&#x6CA1;&#x6709;<code>constexpr</code>&#x4E4B;&#x524D;&#xFF0C;&#x901A;&#x8FC7;&#x5143;&#x7F16;&#x7A0B;&#x8BA1;&#x7B97;&#x5E73;&#x65B9;&#x6839;&#x7684;&#x65B9;&#x6CD5;&#x4E3A;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// meta/sqrt1.hpp</span>
+<span class="hljs-comment">// primary template to compute sqrt(N)</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">int</span> N, <span class="hljs-keyword">int</span> LO=<span class="hljs-number">1</span>, <span class="hljs-keyword">int</span> HI=N&gt;
+<span class="hljs-keyword">struct</span> Sqrt {
+    <span class="hljs-comment">// compute the midpoint, rounded up</span>
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">auto</span> mid = (LO+HI+<span class="hljs-number">1</span>)/<span class="hljs-number">2</span>;
+    <span class="hljs-comment">// search a not too large value in a halved interval</span>
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">auto</span> value = (N&lt;mid*mid) ? Sqrt&lt;N,LO,mid<span class="hljs-number">-1</span>&gt;::value : Sqrt&lt;N,mid,HI&gt;::value;
+};
+
+<span class="hljs-comment">// partial specialization for the case when LO equals HI</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">int</span> N, <span class="hljs-keyword">int</span> M&gt;
+<span class="hljs-keyword">struct</span> Sqrt&lt;N,M,M&gt; {
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">auto</span> value = M;
+};
+</code></pre>
+<p>&#x901A;&#x5E38;&#x5143;&#x7F16;&#x7A0B;&#x53EF;&#x4EE5;&#x5305;&#x542B;&#x4E0B;&#x9762;&#x4E09;&#x90E8;&#x5206;&#x5185;&#x5BB9;&#xFF1A;</p>
+<ul>
+<li>&#x8BA1;&#x7B97;&#xFF08;computation&#xFF09;&#xFF0C;&#x901A;&#x8FC7;&#x9012;&#x5F52;&#x5B9E;&#x4F8B;&#x5316;&#x6216;&#x8005;&#x5E38;&#x91CF;&#x8868;&#x8FBE;&#x5F0F;&#x5728;&#x7F16;&#x8BD1;&#x671F;&#x95F4;&#x8FDB;&#x884C;&#x6C42;&#x503C;</li>
+<li>&#x53CD;&#x5C04;&#xFF08;reflection&#xFF09;&#xFF0C;&#x901A;&#x8FC7;&#x4EE3;&#x7801;&#x5728;&#x7F16;&#x8BD1;&#x671F;&#x95F4;&#x4FA6;&#x6D4B;&#x7A0B;&#x5E8F;&#x7684;&#x7279;&#x6027;</li>
+<li>&#x751F;&#x6210;&#xFF08;generation&#xFF09;&#xFF0C;&#x5728;&#x7F16;&#x8BD1;&#x5668;&#x671F;&#x95F4;&#x751F;&#x6210;&#x989D;&#x5916;&#x7684;&#x4EE3;&#x7801;</li>
+</ul>
+<h2 id="233-&#x9012;&#x5F52;&#x5B9E;&#x4F8B;&#x5316;&#x7684;&#x5F00;&#x9500;">23.3 &#x9012;&#x5F52;&#x5B9E;&#x4F8B;&#x5316;&#x7684;&#x5F00;&#x9500;</h2>
+<h3 id="2331-&#x8DDF;&#x8E2A;&#x9012;&#x5F52;&#x5B9E;&#x4F8B;&#x5316;&#x7684;&#x8FC7;&#x7A0B;">23.3.1 &#x8DDF;&#x8E2A;&#x9012;&#x5F52;&#x5B9E;&#x4F8B;&#x5316;&#x7684;&#x8FC7;&#x7A0B;</h3>
+<p>&#x5F53;&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#x5B9E;&#x4F8B;&#x5316;&#x4E0A;&#x4E00;&#x8282;&#x7684;&#x8BA1;&#x7B97;&#x5E73;&#x65B9;&#x6839;&#x7684;&#x4EE3;&#x7801;&#x65F6;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// meta/sqrt1.cpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;sqrt1.hpp&quot;</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Sqrt&lt;16&gt;::value = &quot;</span> &lt;&lt; Sqrt&lt;<span class="hljs-number">16</span>&gt;::value &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Sqrt&lt;25&gt;::value = &quot;</span> &lt;&lt; Sqrt&lt;<span class="hljs-number">25</span>&gt;::value &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Sqrt&lt;42&gt;::value = &quot;</span> &lt;&lt; Sqrt&lt;<span class="hljs-number">42</span>&gt;::value &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Sqrt&lt;1&gt;::value = &quot;</span> &lt;&lt; Sqrt&lt;<span class="hljs-number">1</span>&gt;::value &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+}
+</code></pre>
+<p>&#x60F3;&#x5F53;&#x7136;&#x7684;&#x4F1A;&#x8BA4;&#x4E3A;<code>Sqrt&lt;16&gt;::value</code>&#x7684;&#x9012;&#x5F52;&#x8FC7;&#x7A0B;&#x4E3A;&#xFF1A;</p>
+<ol>
+<li><code>Sqrt&lt;16,1,16&gt;::value</code></li>
+<li><code>Sqrt&lt;16,1,8&gt;::value</code></li>
+<li><code>Sqrt&lt;16,1,4&gt;::value</code></li>
+<li><code>Sqrt&lt;16,3,4&gt;::value</code></li>
+<li><code>Sqrt&lt;16,4,4&gt;::value</code></li>
+</ol>
+<p>&#x4F46;&#x662F;&#x5B9E;&#x9645;&#x5B9E;&#x4F8B;&#x5316;&#x7684;&#x8FC7;&#x7A0B;&#x5E76;&#x6CA1;&#x6709;&#x8FD9;&#x4E48;&#x7B80;&#x5355;&#xFF0C;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;<code>Sqrt::value</code>&#x5305;&#x542B;&#x4E24;&#x4E2A;&#x5206;&#x652F;&#xFF0C;&#x7F16;&#x8BD1;&#x671F;&#x95F4;&#x65E0;&#x6CD5;&#x6839;&#x636E;&#x6761;&#x4EF6;&#x4F18;&#x5316;&#x6389;&#x65E0;&#x6548;&#x7684;&#x5206;&#x652F;&#xFF0C;&#x6700;&#x7EC8;&#x7684;&#x7ED3;&#x679C;&#x662F;&#x4E00;&#x4E2A;&#x8D85;&#x957F;&#x7684;&#x6761;&#x4EF6;&#x5224;&#x65AD;&#x8868;&#x8FBE;&#x5F0F;&#x3002;&#x867D;&#x7136;&#x662F;&#x901A;&#x8FC7;&#x4E8C;&#x5206;&#x6CD5;&#x8BA1;&#x7B97;&#x5E73;&#x65B9;&#x6839;&#xFF0C;&#x4F46;&#x662F;&#x5B9E;&#x9645;&#x5B9E;&#x4F8B;&#x5316;&#x7684;&#x7C7B;&#x6A21;&#x677F;&#x4E3A;<code>O(2logN)</code>&#x4E2A;&#x3002;&#x4E0D;&#x4EC5;&#x5982;&#x6B64;&#xFF0C;&#x5F53;&#x4F7F;&#x7528;<code>::</code>&#x8FD0;&#x7B97;&#x7B26;&#x5F15;&#x7528;<code>value</code>&#x65F6;&#xFF0C;&#x8FD8;&#x9700;&#x8981;&#x5B9E;&#x4F8B;&#x5316;&#x6574;&#x4E2A;&#x7C7B;&#x3002;&#x4E0D;&#x8FC7;&#x597D;&#x5728;&#x53EF;&#x4EE5;&#x501F;&#x52A9;<code>IfThenElse&lt;&gt;</code>&#x5B9E;&#x73B0;&#x5206;&#x652F;&#x4F18;&#x5316;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// meta/sqrt2.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;ifthenelse.hpp&quot;</span></span>
+
+<span class="hljs-comment">// primary template for main recursive step</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">int</span> N, <span class="hljs-keyword">int</span> LO=<span class="hljs-number">1</span>, <span class="hljs-keyword">int</span> HI=N&gt;
+<span class="hljs-keyword">struct</span> Sqrt {
+    <span class="hljs-comment">// compute the midpoint, rounded up</span>
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">auto</span> mid = (LO+HI+<span class="hljs-number">1</span>)/<span class="hljs-number">2</span>;
+
+    <span class="hljs-comment">// search a not too large value in a halved interval</span>
+    <span class="hljs-keyword">using</span> SubT = IfThenElse&lt;(N&lt;mid*mid), Sqrt&lt;N,LO,mid<span class="hljs-number">-1</span>&gt;, Sqrt&lt;N,mid,HI&gt;&gt;;
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">auto</span> value = SubT::value;
+};
+
+<span class="hljs-comment">// partial specialization for end of recursion criterion</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">int</span> N, <span class="hljs-keyword">int</span> S&gt;
+<span class="hljs-keyword">struct</span> Sqrt&lt;N, S, S&gt; {
+s   tatic <span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">auto</span> value = S;
+};
+</code></pre>
+<p>&#x4E66;&#x4E2D;&#x7ED9;&#x51FA;&#x7684;&#x4E00;&#x6BB5;&#x89E3;&#x91CA;&#x89E3;&#x7B54;&#x4E86;&#x4E00;&#x4E2A;&#x8BA9;&#x6211;&#x7591;&#x60D1;&#x5F88;&#x4E45;&#x7684;&#x95EE;&#x9898;&#x3002;&#x539F;&#x6587;&#xFF1A;</p>
+<blockquote>
+<p>At this point it is important to remember that defining a type alias for a class template instance does not cause a C++ compiler to instantiate the body of that instance. Therefore, when we write <code>using SubT = IfThenElse&lt;(N&lt;mid*mid),Sqrt&lt;N,LO,mid-1&gt;,Sqrt&lt;N,mid,HI&gt;&gt;</code>, neither <code>Sqrt&lt;N,LO,mid-1&gt;</code> nor <code>Sqrt&lt;N,mid,HI&gt;</code> is fully instantiated. Whichever of these two types ends up being a synonym for <code>SubT</code> is fully instantiated when looking up <code>SubT::value</code>.</p>
+</blockquote>
+<p>&#x8FD9;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x5B9E;&#x4F8B;&#x5316;<code>IfThenElse&lt;&gt;</code>&#x65F6;&#x53EA;&#x4F1A;&#x5B9E;&#x4F8B;&#x5316;<code>IfThenElseT&lt;&gt;</code>&#xFF0C;&#x56E0;&#x4E3A;&#x5F15;&#x7528;&#x4E86;<code>IfThenElseT&lt;&gt;::Type</code>&#x3002;&#x5728;&#x540E;&#x9762;&#x5F15;&#x7528;<code>SubT::value</code>&#x65F6;&#xFF0C;&#x624D;&#x4F1A;&#x5B9E;&#x4F8B;&#x5316;<code>Type</code>&#x7684;&#x5177;&#x4F53;&#x7C7B;&#x578B;&#xFF08;&#x4E5F;&#x5C31;&#x662F;<code>Sqrt&lt;N,LO,mid-1&gt;</code>&#x6216;&#x8005;<code>Sqrt&lt;N,mid,HI&gt;</code>&#xFF09;&#x3002;&#x8054;&#x60F3;&#x5230;&#x7B2C;14&#x7AE0;&#x5F00;&#x5934;&#x63D0;&#x5230;&#x8FC7;&#xFF0C;&#x7F16;&#x8BD1;&#x5668;&#x53EA;&#x5728;&#x83B7;&#x53D6;&#x7C7B;&#x5927;&#x5C0F;&#x6216;&#x8005;&#x8BBF;&#x95EE;&#x7C7B;&#x6210;&#x5458;&#x65F6;&#x624D;&#x5B9E;&#x4F8B;&#x5316;&#x7C7B;&#x6A21;&#x677F;&#xFF0C;&#x4E5F;&#x5370;&#x8BC1;&#x4E86;&#x8FD9;&#x4E2A;&#x8BF4;&#x6CD5;&#x3002;</p>
+<h2 id="234-&#x8BA1;&#x7B97;&#x5B8C;&#x6574;&#x6027;">23.4 &#x8BA1;&#x7B97;&#x5B8C;&#x6574;&#x6027;</h2>
+<p><code>Sqrt&lt;&gt;</code>&#x7684;&#x4F8B;&#x5B50;&#x8868;&#x660E;&#x6A21;&#x677F;&#x5143;&#x7F16;&#x7A0B;&#x662F;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x4EFB;&#x610F;&#x8BA1;&#x7B97;&#x7684;&#x3002;</p>
+<h2 id="235-&#x9012;&#x5F52;&#x5B9E;&#x4F8B;&#x5316;&#x548C;&#x9012;&#x5F52;&#x6A21;&#x677F;">23.5 &#x9012;&#x5F52;&#x5B9E;&#x4F8B;&#x5316;&#x548C;&#x9012;&#x5F52;&#x6A21;&#x677F;</h2>
+<p>&#x5047;&#x8BBE;&#x6709;&#x4E0B;&#x9762;&#x7684;&#x9012;&#x5F52;&#x6A21;&#x677F;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span> U&gt;
+<span class="hljs-keyword">struct</span> Doublify {
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">int</span> N&gt;
+<span class="hljs-keyword">struct</span> Trouble {
+    <span class="hljs-keyword">using</span> LongType = Doublify&lt;<span class="hljs-keyword">typename</span> Trouble&lt;N<span class="hljs-number">-1</span>&gt;::LongType,
+    <span class="hljs-keyword">typename</span> Trouble&lt;N<span class="hljs-number">-1</span>&gt;::LongType&gt;;
+};
+<span class="hljs-keyword">template</span>&lt;&gt;
+<span class="hljs-keyword">struct</span> Trouble&lt;<span class="hljs-number">0</span>&gt; {
+    <span class="hljs-keyword">using</span> LongType = <span class="hljs-keyword">double</span>;
+};
+
+Trouble&lt;<span class="hljs-number">10</span>&gt;::LongType ouch;
+</code></pre>
+<p>&#x968F;&#x7740;&#x5B9E;&#x4F8B;&#x5316;<code>Trouble&lt;&gt;</code>&#x7684;<code>N</code>&#x7684;&#x589E;&#x5927;&#xFF0C;<code>Trouble::LongType</code>&#x7684;&#x540D;&#x5B57;&#x4E5F;&#x4F1A;&#x8D8A;&#x6765;&#x8D8A;&#x957F;&#xFF0C;&#x8FD9;&#x5BF9;&#x7F16;&#x8BD1;&#x5668;&#x662F;&#x4E00;&#x4E2A;&#x5F88;&#x5927;&#x7684;&#x8D1F;&#x62C5;&#xFF0C;&#x56E0;&#x6B64;&#x7F16;&#x8BD1;&#x5668;&#x90FD;&#x5BF9;&#x6A21;&#x677F;&#x540D;&#x5B57;&#x8FDB;&#x884C;&#x4E86;&#x538B;&#x7F29;&#x3002;</p>
+<h2 id="236-&#x679A;&#x4E3E;&#x503C;&#x548C;&#x5E38;&#x91CF;&#x503C;">23.6 &#x679A;&#x4E3E;&#x503C;&#x548C;&#x5E38;&#x91CF;&#x503C;</h2>
+<p>&#x65E9;&#x671F;C++&#x53EA;&#x652F;&#x6301;&#x679A;&#x4E3E;&#x7C7B;&#x578B;&#x4F5C;&#x4E3A;&#x5143;&#x7F16;&#x7A0B;&#x4E2D;&#x7684;&#x5E38;&#x91CF;&#xFF0C;&#x4F8B;&#x5982;&#x4E0B;&#x9762;&#x8BA1;&#x7B97;3&#x7684;&#x5E42;&#x7684;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// meta/pow3enum.hpp</span>
+<span class="hljs-comment">// primary template to compute 3 to the Nth</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">int</span> N&gt;
+<span class="hljs-keyword">struct</span> Pow3 {
+    <span class="hljs-keyword">enum</span> { value = <span class="hljs-number">3</span> * Pow3&lt;N<span class="hljs-number">-1</span>&gt;::value };
+};
+
+<span class="hljs-comment">// full specialization to end the recursion</span>
+<span class="hljs-keyword">template</span>&lt;&gt;
+<span class="hljs-keyword">struct</span> Pow3&lt;<span class="hljs-number">0</span>&gt; {
+    <span class="hljs-keyword">enum</span> { value = <span class="hljs-number">1</span> };
+};
+</code></pre>
+<p>&#x7136;&#x540E;&#x4ECE;C++98&#x5F00;&#x59CB;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7C7B;&#x5185;&#x9759;&#x6001;&#x5E38;&#x91CF;&#x53C2;&#x4E0E;&#x5143;&#x7F16;&#x7A0B;&#x8BA1;&#x7B97;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// meta/pow3const.hpp</span>
+<span class="hljs-comment">// primary template to compute 3 to the Nth</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">int</span> N&gt;
+<span class="hljs-keyword">struct</span> Pow3 {
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-keyword">const</span> value = <span class="hljs-number">3</span> * Pow3&lt;N<span class="hljs-number">-1</span>&gt;::value;
+};
+
+<span class="hljs-comment">// full specialization to end the recursion</span>
+<span class="hljs-keyword">template</span>&lt;&gt;
+<span class="hljs-keyword">struct</span> Pow3&lt;<span class="hljs-number">0</span>&gt; {
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-keyword">const</span> value = <span class="hljs-number">1</span>;
+};
+</code></pre>
+<p>&#x672C;&#x6765;&#x7F16;&#x8BD1;&#x5668;&#x662F;&#x4E0D;&#x9700;&#x8981;&#x4E3A;<code>Pow3::value</code>&#x5206;&#x914D;&#x5730;&#x5740;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x5F53;&#x5411;<code>void foo(int const&amp;)</code>&#x4F20;&#x9012;<code>value</code>&#x65F6;&#xFF0C;&#x5C31;&#x9700;&#x8981;&#x4E3A;<code>value</code>&#x5206;&#x914D;&#x5730;&#x5740;&#x4E86;&#xFF0C;<code>value</code>&#x4E0D;&#x518D;&#x662F;&#x7F16;&#x8BD1;&#x671F;&#x95F4;&#x7684;&#x5E38;&#x91CF;&#x4E86;&#x3002;</p>
+<p>&#x76F4;&#x5230;C++17&#x5141;&#x8BB8;&#x5185;&#x8054;&#x9759;&#x6001;&#x6570;&#x636E;&#x6210;&#x5458;&#x540E;&#xFF0C;&#x624D;&#x89E3;&#x51B3;&#x4E86;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF08;&#x4F46;&#x662F;&#x539F;&#x7406;&#x4E66;&#x4E0A;&#x6CA1;&#x8BF4;&#xFF09;&#x3002;</p>
+<h2 id="237-&#x540E;&#x8BB0;">23.7 &#x540E;&#x8BB0;</h2>
+<p>&#x6700;&#x65E9;&#x7531;Erwin Unruh&#x63D0;&#x51FA;&#x7684;&#x5143;&#x7F16;&#x7A0B;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// meta/unruh.cpp</span>
+<span class="hljs-comment">// prime number computation</span>
+<span class="hljs-comment">// (modified from original from 1994 by Erwin Unruh)</span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">int</span> p, <span class="hljs-keyword">int</span> i&gt;
+<span class="hljs-keyword">struct</span> is_prime {
+    <span class="hljs-keyword">enum</span> { pri = (p==<span class="hljs-number">2</span>) || ((p%i) &amp;&amp; is_prime&lt;(i&gt;<span class="hljs-number">2</span>?p:<span class="hljs-number">0</span>),i<span class="hljs-number">-1</span>&gt;::pri) };
+};
+
+<span class="hljs-keyword">template</span>&lt;&gt;
+<span class="hljs-keyword">struct</span> is_prime&lt;<span class="hljs-number">0</span>,<span class="hljs-number">0</span>&gt; {
+    <span class="hljs-keyword">enum</span> {pri=<span class="hljs-number">1</span>};
+};
+
+<span class="hljs-keyword">template</span>&lt;&gt;
+<span class="hljs-keyword">struct</span> is_prime&lt;<span class="hljs-number">0</span>,<span class="hljs-number">1</span>&gt; {
+    <span class="hljs-keyword">enum</span> {pri=<span class="hljs-number">1</span>};
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">int</span> i&gt;
+<span class="hljs-keyword">struct</span> D {
+    D(<span class="hljs-keyword">void</span>*);
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">int</span> i&gt;
+<span class="hljs-keyword">struct</span> CondNull {
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-keyword">const</span> value = i;
+};
+
+<span class="hljs-keyword">template</span>&lt;&gt;
+<span class="hljs-keyword">struct</span> CondNull&lt;<span class="hljs-number">0</span>&gt; {
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span>* value;
+};
+
+<span class="hljs-keyword">void</span>* CondNull&lt;<span class="hljs-number">0</span>&gt;::value = <span class="hljs-number">0</span>;
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">int</span> i&gt;
+<span class="hljs-keyword">struct</span> Prime_print { <span class="hljs-comment">// primary template for loop to print prime numbers</span>
+    Prime_print&lt;i<span class="hljs-number">-1</span>&gt; a;
+    <span class="hljs-keyword">enum</span> { pri = is_prime&lt;i,i<span class="hljs-number">-1</span>&gt;::pri };
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">f</span><span class="hljs-params">()</span> </span>{
+        D&lt;i&gt; d = CondNull&lt;pri ? <span class="hljs-number">1</span> : <span class="hljs-number">0</span>&gt;::value; <span class="hljs-comment">// 1 is an error, 0 is fine</span>
+        a.f();
+    }
+};
+<span class="hljs-keyword">template</span>&lt;&gt;
+<span class="hljs-keyword">struct</span> Prime_print&lt;<span class="hljs-number">1</span>&gt; { <span class="hljs-comment">// full specialization to end the loop</span>
+    <span class="hljs-keyword">enum</span> {pri=<span class="hljs-number">0</span>};
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">f</span><span class="hljs-params">()</span> </span>{
+        D&lt;<span class="hljs-number">1</span>&gt; d = <span class="hljs-number">0</span>;
+    };
+};
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">ifndef</span> LAST</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> LAST 18</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    Prime_print&lt;LAST&gt; a;
+    a.f();
+}
+</code></pre>
+<p>&#x8FD9;&#x4E2A;&#x7A0B;&#x5E8F;&#x4F1A;&#x5728;&#x7F16;&#x8BD1;&#x9519;&#x8BEF;&#x4E2D;&#x6253;&#x5370;&#x51FA;&#x6240;&#x6709;&#x7684;&#x5C0F;&#x4E8E;18&#x7684;&#x7D20;&#x6570;&#x3002;&#x3002;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="2022-03-05-ch22-bridging-static-and-dynamic-polymorphism.html" class="navigation navigation-prev " aria-label="Previous page: Chapter 22 Bridging Static and Dynamic Polymorphism">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="2022-03-06-ch24-typelists.html" class="navigation navigation-next " aria-label="Next page: Chapter 24 Typelists">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Chapter 23 Metaprogramming","level":"1.24","depth":1,"next":{"title":"Chapter 24 Typelists","level":"1.25","depth":1,"path":"2022-03-06-ch24-typelists.md","ref":"2022-03-06-ch24-typelists.md","articles":[]},"previous":{"title":"Chapter 22 Bridging Static and Dynamic Polymorphism","level":"1.23","depth":1,"path":"2022-03-05-ch22-bridging-static-and-dynamic-polymorphism.md","ref":"2022-03-05-ch22-bridging-static-and-dynamic-polymorphism.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"2022-03-05-ch23-metaprogramming.md","mtime":"2022-11-13T05:00:16.191Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-11-13T05:01:04.198Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

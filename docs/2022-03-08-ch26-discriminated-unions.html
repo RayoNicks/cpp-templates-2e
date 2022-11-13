@@ -1,0 +1,1224 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Chapter 26 Discriminated Unions · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="2022-03-09-ch27-expression-templates.html" />
+    
+    
+    <link rel="prev" href="2022-03-07-ch25-tuples.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="2021-12-15-ch1-function-templates.html">
+            
+                <a href="2021-12-15-ch1-function-templates.html">
+            
+                    
+                    Chapter 1 Funtion Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="2021-12-20-ch2-class-templates.html">
+            
+                <a href="2021-12-20-ch2-class-templates.html">
+            
+                    
+                    Chapter 2 Class Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="2021-12-20-ch3-nontype-template-parameters.html">
+            
+                <a href="2021-12-20-ch3-nontype-template-parameters.html">
+            
+                    
+                    Chapter 3 Nontype Template Parameters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="2021-12-20-ch4-variadic-templates.html">
+            
+                <a href="2021-12-20-ch4-variadic-templates.html">
+            
+                    
+                    Chapter 4 Variadic Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="2021-12-30-ch5-tricky-basics.html">
+            
+                <a href="2021-12-30-ch5-tricky-basics.html">
+            
+                    
+                    Chapter 5 Tricky Basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="2022-01-04-ch6-move-semantics-and-enable-if.html">
+            
+                <a href="2022-01-04-ch6-move-semantics-and-enable-if.html">
+            
+                    
+                    Chapter 6 Move Semantics and enable_if<>
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="2022-01-05-ch7-by-value-or-by-reference.html">
+            
+                <a href="2022-01-05-ch7-by-value-or-by-reference.html">
+            
+                    
+                    Chapter 7 By Value or by Reference?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="2022-01-06-ch8-compile-time-programming.html">
+            
+                <a href="2022-01-06-ch8-compile-time-programming.html">
+            
+                    
+                    Chapter 8 Compile-Time Programming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="2022-01-06-ch9-using-templates-in-practice.html">
+            
+                <a href="2022-01-06-ch9-using-templates-in-practice.html">
+            
+                    
+                    Chapter 9 Using Templates in Practice
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="2022-01-07-ch10-basic-template-terminology.html">
+            
+                <a href="2022-01-07-ch10-basic-template-terminology.html">
+            
+                    
+                    Chapter 10 Basic Template Terminology
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="2022-01-08-ch11-generic-libraries.html">
+            
+                <a href="2022-01-08-ch11-generic-libraries.html">
+            
+                    
+                    Chapter 11 Generic Libraries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="2022-01-12-ch12-fundamentals-in-depth.html">
+            
+                <a href="2022-01-12-ch12-fundamentals-in-depth.html">
+            
+                    
+                    Chapter 12 Fundamentals in Depth
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="2022-01-27-ch13-names-in-templates.html">
+            
+                <a href="2022-01-27-ch13-names-in-templates.html">
+            
+                    
+                    Chapter 13 Names in Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="2022-02-07-ch14-instantiation.html">
+            
+                <a href="2022-02-07-ch14-instantiation.html">
+            
+                    
+                    Chapter 14 Instantiation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="2022-02-15-ch15-template-argument-deduction.html">
+            
+                <a href="2022-02-15-ch15-template-argument-deduction.html">
+            
+                    
+                    Chapter 15 Template Argument Deduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="2022-02-17-ch16-specialization-and-overloading.html">
+            
+                <a href="2022-02-17-ch16-specialization-and-overloading.html">
+            
+                    
+                    Chapter 16 Specialization and Overloading
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="2022-02-22-ch17-future-directions.html">
+            
+                <a href="2022-02-22-ch17-future-directions.html">
+            
+                    
+                    Chapter 17 Future Directions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="2022-02-23-ch18-the-polymorphic-power-of-templates.html">
+            
+                <a href="2022-02-23-ch18-the-polymorphic-power-of-templates.html">
+            
+                    
+                    Chapter 18 The Polymorphic Power of Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="2022-03-01-ch19-implementing-traits.html">
+            
+                <a href="2022-03-01-ch19-implementing-traits.html">
+            
+                    
+                    Chapter 19 Implementing Traits
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="2022-03-02-ch20-overloading-on-type-properties.html">
+            
+                <a href="2022-03-02-ch20-overloading-on-type-properties.html">
+            
+                    
+                    Chapter 20 Overloading on Type Properties
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="2022-03-03-ch21-templates-and-inheritance.html">
+            
+                <a href="2022-03-03-ch21-templates-and-inheritance.html">
+            
+                    
+                    Chapter 21 Templates and Inheritance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="2022-03-05-ch22-bridging-static-and-dynamic-polymorphism.html">
+            
+                <a href="2022-03-05-ch22-bridging-static-and-dynamic-polymorphism.html">
+            
+                    
+                    Chapter 22 Bridging Static and Dynamic Polymorphism
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="2022-03-05-ch23-metaprogramming.html">
+            
+                <a href="2022-03-05-ch23-metaprogramming.html">
+            
+                    
+                    Chapter 23 Metaprogramming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="2022-03-06-ch24-typelists.html">
+            
+                <a href="2022-03-06-ch24-typelists.html">
+            
+                    
+                    Chapter 24 Typelists
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" data-path="2022-03-07-ch25-tuples.html">
+            
+                <a href="2022-03-07-ch25-tuples.html">
+            
+                    
+                    Chapter 25 Tuples
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.27" data-path="2022-03-08-ch26-discriminated-unions.html">
+            
+                <a href="2022-03-08-ch26-discriminated-unions.html">
+            
+                    
+                    Chapter 26 Discriminated Unions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28" data-path="2022-03-09-ch27-expression-templates.html">
+            
+                <a href="2022-03-09-ch27-expression-templates.html">
+            
+                    
+                    Chapter 27 Expression Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29" data-path="2022-03-09-ch28-debugging-templates.html">
+            
+                <a href="2022-03-09-ch28-debugging-templates.html">
+            
+                    
+                    Chapter 28 Debugging Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.30" data-path="2022-01-05-appB-value-categories.html">
+            
+                <a href="2022-01-05-appB-value-categories.html">
+            
+                    
+                    Appendix B Value Categories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.31" data-path="2022-03-02-appC-overload-resolution.html">
+            
+                <a href="2022-03-02-appC-overload-resolution.html">
+            
+                    
+                    Appendix C Overload Resolution
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Chapter 26 Discriminated Unions</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="26-&#x53EF;&#x8BC6;&#x522B;&#x8054;&#x5408;&#x4F53;">26 &#x53EF;&#x8BC6;&#x522B;&#x8054;&#x5408;&#x4F53;</h1>
+<p>&#x53EF;&#x8BC6;&#x522B;&#x8054;&#x5408;&#x4F53;&#x4E2D;&#x5B58;&#x50A8;&#x4E86;&#x4E00;&#x7EC4;&#x53EF;&#x80FD;&#x7C7B;&#x578B;&#x4E4B;&#x4E00;&#x7684;&#x503C;&#xFF0C;&#x4F46;&#x662F;&#x548C;&#x4F20;&#x7EDF;&#x7684;&#x8054;&#x5408;&#x4F53;&#x4E0D;&#x540C;&#x7684;&#x662F;&#x53EF;&#x8BC6;&#x522B;&#x8054;&#x5408;&#x4F53;&#x77E5;&#x9053;&#x5F53;&#x524D;&#x5176;&#x4E2D;&#x5B58;&#x50A8;&#x7684;&#x662F;&#x4EC0;&#x4E48;&#x7C7B;&#x578B;&#xFF0C;&#x4E5F;&#x5C31;&#x53EF;&#x4EE5;&#x63D0;&#x9AD8;&#x5B89;&#x5168;&#x6027;&#x3002;&#x672C;&#x7AE0;&#x5B9E;&#x73B0;&#x4E86;<code>Variant&lt;&gt;</code>&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;<code>std::variant</code>&#xFF0C;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x5E94;&#x7528;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// variant/variant.cpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;variant.hpp&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string&gt;</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    Variant&lt;<span class="hljs-keyword">int</span>, <span class="hljs-keyword">double</span>, <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&gt; field(<span class="hljs-number">17</span>);
+    <span class="hljs-keyword">if</span> (field.is&lt;<span class="hljs-keyword">int</span>&gt;()) {
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Field stores the integer &quot;</span>
+        &lt;&lt; field.get&lt;<span class="hljs-keyword">int</span>&gt;() &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+    }
+    field = <span class="hljs-number">42</span>;         <span class="hljs-comment">// assign value of same type</span>
+    field = <span class="hljs-string">&quot;hello&quot;</span>;    <span class="hljs-comment">// assign value of different type</span>
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Field now stores the string &#x2019;&quot;</span>
+        &lt;&lt; field.get&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&gt;() &lt;&lt; <span class="hljs-string">&quot;&#x2019;\n&quot;</span>;
+}
+</code></pre>
+<h2 id="261-&#x5B58;&#x50A8;">26.1 &#x5B58;&#x50A8;</h2>
+<p>&#x53EF;&#x4EE5;&#x5206;&#x522B;&#x901A;&#x8FC7;<code>Tuple&lt;&gt;</code>&#x548C;<code>union</code>&#x6765;&#x5B9E;&#x73B0;&#x53EF;&#x8BC6;&#x522B;&#x8054;&#x5408;&#x4F53;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// variant/variantstorageastuple.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>... Types&gt;
+<span class="hljs-keyword">class</span> Variant {
+    <span class="hljs-keyword">public</span>:
+        Tuple&lt;Types...&gt; storage;
+        <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> discriminator;
+};
+</code></pre>
+<pre><code class="lang-cpp"><span class="hljs-comment">// variant/variantstorageasunion.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>... Types&gt;
+<span class="hljs-keyword">union</span> VariantStorage;
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Head, <span class="hljs-keyword">typename</span>... Tail&gt;
+<span class="hljs-keyword">union</span> VariantStorage&lt;Head, Tail...&gt; {
+    Head head;
+    VariantStorage&lt;Tail...&gt; tail;
+};
+
+<span class="hljs-keyword">template</span>&lt;&gt;
+<span class="hljs-keyword">union</span> VariantStorage&lt;&gt; {
+};
+</code></pre>
+<p>&#x4F46;&#x662F;<code>Tuple&lt;&gt;</code>&#x7684;&#x65B9;&#x6CD5;&#x5360;&#x7528;&#x4E86;&#x8FC7;&#x591A;&#x7684;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;&#xFF0C;<code>union</code>&#x7684;&#x65B9;&#x5F0F;&#x65E0;&#x6CD5;&#x4F7F;&#x7528;&#x7EE7;&#x627F;&#xFF0C;&#x4E66;&#x4E2D;&#x6700;&#x7EC8;&#x91C7;&#x7528;&#x7684;&#x65B9;&#x5F0F;&#x662F;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x8DB3;&#x591F;&#x5927;&#x7684;&#x7F13;&#x51B2;&#x533A;&#x6765;&#x5BB9;&#x7EB3;&#x6240;&#x6709;&#x53EF;&#x80FD;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x5E76;&#x901A;&#x8FC7;<code>VariantStorage::discriminator</code>&#x6807;&#x8BC6;&#x7F13;&#x51B2;&#x533A;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x5E94;&#x8BE5;&#x89E3;&#x91CA;&#x4E3A;&#x54EA;&#x79CD;&#x7C7B;&#x578B;&#xFF08;&#x4E0B;&#x6807;&#x4ECE;1&#x5F00;&#x59CB;&#xFF0C;0&#x8868;&#x793A;&#x672A;&#x5B58;&#x50A8;&#x6570;&#x636E;&#xFF09;&#xFF0C;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// variant/variantstorage.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;new&gt;</span> // for std::launder()</span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>... Types&gt;
+<span class="hljs-keyword">class</span> VariantStorage {
+        <span class="hljs-keyword">using</span> LargestT = LargestType&lt;Typelist&lt;Types...&gt;&gt;;
+        alignas(Types...) <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> buffer[<span class="hljs-keyword">sizeof</span>(LargestT)];
+        <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> discriminator = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-function"><span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> <span class="hljs-title">getDiscriminator</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> </span>{ <span class="hljs-keyword">return</span> discriminator; }
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setDiscriminator</span><span class="hljs-params">(<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> d)</span> </span>{ discriminator = d; }
+        <span class="hljs-function"><span class="hljs-keyword">void</span>* <span class="hljs-title">getRawBuffer</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> buffer; }
+        <span class="hljs-function"><span class="hljs-keyword">const</span> <span class="hljs-keyword">void</span>* <span class="hljs-title">getRawBuffer</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> </span>{ <span class="hljs-keyword">return</span> buffer; }
+
+        <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+            <span class="hljs-function">T* <span class="hljs-title">getBufferAs</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> <span class="hljs-built_in">std</span>::launder(<span class="hljs-keyword">reinterpret_cast</span>&lt;T*&gt;(buffer)); }
+        <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+            <span class="hljs-function">T <span class="hljs-keyword">const</span>* <span class="hljs-title">getBufferAs</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> </span>{
+                <span class="hljs-keyword">return</span> <span class="hljs-built_in">std</span>::launder(<span class="hljs-keyword">reinterpret_cast</span>&lt;T <span class="hljs-keyword">const</span>*&gt;(buffer));
+            }
+};
+</code></pre>
+<h2 id="Design">26.2 &#x8BBE;&#x8BA1; </h2>
+<p>&#x53EF;&#x8BC6;&#x522B;&#x8054;&#x5408;&#x4F53;&#x7684;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// variant/variantchoice.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;findindexof.hpp&quot;</span></span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span>... Types&gt;
+<span class="hljs-keyword">class</span> VariantChoice {
+        <span class="hljs-keyword">using</span> Derived = Variant&lt;Types...&gt;;
+        <span class="hljs-function">Derived&amp; <span class="hljs-title">getDerived</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> *<span class="hljs-keyword">static_cast</span>&lt;Derived*&gt;(<span class="hljs-keyword">this</span>); }
+        <span class="hljs-function">Derived <span class="hljs-keyword">const</span>&amp; <span class="hljs-title">getDerived</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> </span>{
+            <span class="hljs-keyword">return</span> *<span class="hljs-keyword">static_cast</span>&lt;Derived <span class="hljs-keyword">const</span>*&gt;(<span class="hljs-keyword">this</span>);
+        }
+    <span class="hljs-keyword">protected</span>:
+        <span class="hljs-comment">// compute the discriminator to be used for this type</span>
+        <span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">unsigned</span> Discriminator =
+            FindIndexOfT&lt;Typelist&lt;Types...&gt;, T&gt;::value + <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">public</span>:
+        VariantChoice() { }
+        VariantChoice(T <span class="hljs-keyword">const</span>&amp; value);          <span class="hljs-comment">// see variantchoiceinit.hpp</span>
+        VariantChoice(T&amp;&amp; value);               <span class="hljs-comment">// see variantchoiceinit.hpp</span>
+        <span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">destroy</span><span class="hljs-params">()</span></span>;                         <span class="hljs-comment">// see variantchoicedestroy.hpp</span>
+        Derived&amp; <span class="hljs-keyword">operator</span>= (T <span class="hljs-keyword">const</span>&amp; value);    <span class="hljs-comment">// see variantchoiceassign.hpp</span>
+        Derived&amp; <span class="hljs-keyword">operator</span>= (T&amp;&amp; value);         <span class="hljs-comment">// see variantchoiceassign.hpp</span>
+};
+</code></pre>
+<pre><code class="lang-cpp"><span class="hljs-comment">// variant/findindexof.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List, <span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">unsigned</span> N = <span class="hljs-number">0</span>,
+            <span class="hljs-keyword">bool</span> Empty = IsEmpty&lt;List&gt;::value&gt;
+<span class="hljs-keyword">struct</span> FindIndexOfT;
+
+<span class="hljs-comment">// recursive case:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List, <span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">unsigned</span> N&gt;
+<span class="hljs-keyword">struct</span> FindIndexOfT&lt;List, T, N, <span class="hljs-literal">false</span>&gt;
+    : <span class="hljs-keyword">public</span> IfThenElse&lt;<span class="hljs-built_in">std</span>::is_same&lt;Front&lt;List&gt;, T&gt;::value,
+                        <span class="hljs-built_in">std</span>::integral_constant&lt;<span class="hljs-keyword">unsigned</span>, N&gt;,
+                        FindIndexOfT&lt;PopFront&lt;List&gt;, T, N+<span class="hljs-number">1</span>&gt;&gt;
+{
+};
+
+<span class="hljs-comment">// basis case:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List, <span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">unsigned</span> N&gt;
+<span class="hljs-keyword">struct</span> FindIndexOfT&lt;List, T, N, <span class="hljs-literal">true</span>&gt;
+{
+};
+</code></pre>
+<pre><code class="lang-cpp"><span class="hljs-comment">// variant/variant.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>... Types&gt;
+<span class="hljs-keyword">class</span> Variant
+    : <span class="hljs-keyword">private</span> VariantStorage&lt;Types...&gt;, <span class="hljs-keyword">private</span> VariantChoice&lt;Types, Types...&gt;...
+{
+        <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span>... OtherTypes&gt;
+        <span class="hljs-keyword">friend</span> <span class="hljs-keyword">class</span> VariantChoice;
+
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt; <span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">is</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span></span>;           <span class="hljs-comment">// see variantis.hpp</span>
+        <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt; <span class="hljs-function">T&amp; <span class="hljs-title">get</span><span class="hljs-params">()</span> &amp;</span>;                <span class="hljs-comment">// see variantget.hpp</span>
+        <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt; <span class="hljs-function">T <span class="hljs-keyword">const</span>&amp; <span class="hljs-title">get</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span>&amp;</span>;     <span class="hljs-comment">// see variantget.hpp</span>
+        <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt; <span class="hljs-function">T&amp;&amp; <span class="hljs-title">get</span><span class="hljs-params">()</span> &amp;&amp;</span>;              <span class="hljs-comment">// see variantget.hpp</span>
+
+        <span class="hljs-comment">// see variantvisit.hpp:</span>
+        <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> R = ComputedResultType, <span class="hljs-keyword">typename</span> Visitor&gt;
+        VisitResult&lt;R, Visitor, Types&amp;...&gt; visit(Visitor&amp;&amp; vis) &amp;;
+        <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> R = ComputedResultType, <span class="hljs-keyword">typename</span> Visitor&gt;
+        VisitResult&lt;R, Visitor, Types <span class="hljs-keyword">const</span>&amp;...&gt; visit(Visitor&amp;&amp; vis) <span class="hljs-keyword">const</span>&amp;;
+        <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> R = ComputedResultType, <span class="hljs-keyword">typename</span> Visitor&gt;
+        VisitResult&lt;R, Visitor, Types&amp;&amp;...&gt; visit(Visitor&amp;&amp; vis) &amp;&amp;;
+
+        <span class="hljs-keyword">using</span> VariantChoice&lt;Types, Types...&gt;::VariantChoice...;
+        Variant();                                          <span class="hljs-comment">// see variantdefaultctor.hpp</span>
+        Variant(Variant <span class="hljs-keyword">const</span>&amp; source);                     <span class="hljs-comment">// see variantcopyctor.hpp</span>
+        Variant(Variant&amp;&amp; source);                          <span class="hljs-comment">// see variantmovector.hpp</span>
+        <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>... SourceTypes&gt;
+        Variant(Variant&lt;SourceTypes...&gt; <span class="hljs-keyword">const</span>&amp; source);     <span class="hljs-comment">// variantcopyctortmpl.hpp</span>
+        <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>... SourceTypes&gt;
+        Variant(Variant&lt;SourceTypes...&gt;&amp;&amp; source);
+
+        <span class="hljs-keyword">using</span> VariantChoice&lt;Types, Types...&gt;::<span class="hljs-keyword">operator</span>=...;
+        Variant&amp; <span class="hljs-keyword">operator</span>= (Variant <span class="hljs-keyword">const</span>&amp; source);         <span class="hljs-comment">// see variantcopyassign.hpp</span>
+        Variant&amp; <span class="hljs-keyword">operator</span>= (Variant&amp;&amp; source);
+        <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>... SourceTypes&gt;
+        Variant&amp; <span class="hljs-keyword">operator</span>= (Variant&lt;SourceTypes...&gt; <span class="hljs-keyword">const</span>&amp; source);
+        <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>... SourceTypes&gt;
+        Variant&amp; <span class="hljs-keyword">operator</span>= (Variant&lt;SourceTypes...&gt;&amp;&amp; source);
+
+        <span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">empty</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span></span>;
+
+        ~Variant() { destroy(); }
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">destroy</span><span class="hljs-params">()</span></span>; <span class="hljs-comment">// see variantdestroy.hpp</span>
+};
+</code></pre>
+<p>&#x57FA;&#x7C7B;<code>VariantStorage&lt;Types...&gt;</code>&#x4E3A;&#x53EF;&#x8BC6;&#x522B;&#x7684;&#x8054;&#x5408;&#x4F53;&#x63D0;&#x4F9B;&#x5B58;&#x50A8;&#xFF0C;&#x5176;&#x4F59;&#x57FA;&#x7C7B;<code>VariantChoice&lt;Types, Types...&gt;...</code>&#x4E3A;&#x53EF;&#x8BC6;&#x522B;&#x8054;&#x5408;&#x4F53;&#x63D0;&#x4F9B;&#x6807;&#x8BC6;&#x2014;&#x2014;&#x8FD9;&#x662F;&#x4E00;&#x79CD;&#x5D4C;&#x5957;&#x7684;&#x5C55;&#x5F00;&#x53C2;&#x6570;&#x5305;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x5C55;&#x5F00;&#x540E;&#x5C06;&#x7EE7;&#x627F;&#x591A;&#x4E2A;<code>VariantChoice&lt;&gt;</code>&#xFF0C;&#x5176;&#x4E2D;&#x7B2C;&#x4E00;&#x4E2A;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x662F;<code>Types</code>&#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x662F;<code>Types</code>&#x4E2D;&#x7684;&#x6240;&#x6709;&#x7C7B;&#x578B;&#x3002;&#x5C06;<code>Type...</code>&#x4F5C;&#x4E3A;&#x7B2C;&#x4E8C;&#x4E2A;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x4F20;&#x5165;&#x5230;<code>VariantChoice&lt;&gt;</code>&#x4E2D;&#x4EE5;&#x4F7F;<code>getDrived()</code>&#x8FD4;&#x56DE;&#x6D3E;&#x751F;&#x7C7B;&#x7684;&#x5F15;&#x7528;&#x7528;&#x5230;&#x4E86;CRTP&#x6280;&#x672F;&#x3002;</p>
+<p><code>Variant&lt;&gt;</code>&#x4E2D;&#x7684;&#x6210;&#x5458;&#x51FD;&#x6570;&#x5C06;&#x5728;&#x540E;&#x9762;&#x7684;&#x5C0F;&#x8282;&#x4E2D;&#x8BE6;&#x7EC6;&#x8BF4;&#x660E;&#x3002;</p>
+<h2 id="Value-Query-and-Extraction">26.3 &#x67E5;&#x8BE2;&#x548C;&#x63D0;&#x53D6; </h2>
+<p>&#x67E5;&#x8BE2;&#x64CD;&#x4F5C;&#x5224;&#x65AD;&#x53EF;&#x8BC6;&#x522B;&#x8054;&#x5408;&#x4F53;&#x4E2D;&#x5B58;&#x50A8;&#x7684;&#x662F;&#x5426;&#x662F;&#x67D0;&#x4E00;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x503C;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// variant/variantis.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>... Types&gt;
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">bool</span> Variant&lt;Types...&gt;::is() <span class="hljs-keyword">const</span>
+{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>-&gt;getDiscriminator() == VariantChoice&lt;T, Types...&gt;::Discriminator;
+}
+</code></pre>
+<p>&#x63D0;&#x53D6;&#x64CD;&#x4F5C;&#x4ECE;&#x53EF;&#x8BC6;&#x522B;&#x8054;&#x5408;&#x4F53;&#x4E2D;&#x83B7;&#x53D6;&#x67D0;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x503C;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// variant/variantget.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;exception&gt;</span></span>
+
+<span class="hljs-keyword">class</span> EmptyVariant : <span class="hljs-keyword">public</span> <span class="hljs-built_in">std</span>::exception {
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>... Types&gt;
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+T&amp; Variant&lt;Types...&gt;::get() &amp; {
+    <span class="hljs-keyword">if</span> (empty()) {
+        <span class="hljs-keyword">throw</span> EmptyVariant();
+    }
+
+    assert(is&lt;T&gt;());
+    <span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span>-&gt;<span class="hljs-keyword">template</span> getBufferAs&lt;T&gt;();
+}
+</code></pre>
+<h2 id="264-&#x901A;&#x8FC7;&#x67D0;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x503C;&#x521D;&#x59CB;&#x5316;&#x3001;&#x8D4B;&#x503C;&#x548C;&#x6790;&#x6784;">26.4 &#x901A;&#x8FC7;&#x67D0;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x503C;&#x521D;&#x59CB;&#x5316;&#x3001;&#x8D4B;&#x503C;&#x548C;&#x6790;&#x6784;</h2>
+<h3 id="Initialization">26.4.1 &#x521D;&#x59CB;&#x5316; </h3>
+<p>&#x53EF;&#x8BC6;&#x522B;&#x8054;&#x5408;&#x4F53;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x67D0;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x521D;&#x503C;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x4E3A;&#x6B64;&#x901A;&#x8FC7;<code>using VariantChoice&lt;Types, Types...&gt;::VariantChoice...</code>&#x62C9;&#x53D6;&#x4E86;&#x6240;&#x6709;&#x57FA;&#x7C7B;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x4F8B;&#x5982;<code>Variant&lt;int, double, string&gt;</code>&#x7EE7;&#x627F;&#x4E86;&#x4E0B;&#x5217;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF1A;</p>
+<pre><code class="lang-cpp">Variant(<span class="hljs-keyword">int</span> <span class="hljs-keyword">const</span>&amp;);
+Variant(<span class="hljs-keyword">int</span>&amp;&amp;);
+Variant(<span class="hljs-keyword">double</span> <span class="hljs-keyword">const</span>&amp;);
+Variant(<span class="hljs-keyword">double</span>&amp;&amp;);
+Variant(<span class="hljs-built_in">string</span> <span class="hljs-keyword">const</span>&amp;);
+Variant(<span class="hljs-built_in">string</span>&amp;&amp;);
+</code></pre>
+<p>&#x6240;&#x4EE5;&#x53EA;&#x9700;&#x8981;&#x5B9E;&#x73B0;<code>VariantChoice&lt;&gt;</code>&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// variant/variantchoiceinit.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;utility&gt;</span> // for std::move()</span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span>... Types&gt;
+VariantChoice&lt;T, Types...&gt;::VariantChoice(T <span class="hljs-keyword">const</span>&amp; value) {
+    <span class="hljs-comment">// place value in buffer and set type discriminator:</span>
+    <span class="hljs-keyword">new</span>(getDerived().getRawBuffer()) T(value);
+    getDerived().setDiscriminator(Discriminator);
+}
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span>... Types&gt;
+VariantChoice&lt;T, Types...&gt;::VariantChoice(T&amp;&amp; value) {
+    <span class="hljs-comment">// place moved value in buffer and set type discriminator:</span>
+    <span class="hljs-keyword">new</span>(getDerived().getRawBuffer()) T(<span class="hljs-built_in">std</span>::move(value));
+    getDerived().setDiscriminator(Discriminator);
+}
+</code></pre>
+<p>&#x8FD9;&#x91CC;&#x4F7F;&#x7528;&#x7684;&#x662F;&#x539F;&#x5730;<code>new</code>&#x8FD0;&#x7B97;&#x7B26;&#xFF0C;&#x5373;&#x5728;&#x6307;&#x9488;&#x6240;&#x6307;&#x5411;&#x7684;&#x5185;&#x5B58;&#x4E2D;&#x6784;&#x9020;<code>T</code>&#x7C7B;&#x578B;&#x7684;&#x5BF9;&#x8C61;&#x3002;</p>
+<h3 id="2642-&#x6790;&#x6784;">26.4.2 &#x6790;&#x6784;</h3>
+<p>&#x6790;&#x6784;&#x65F6;&#x9700;&#x8981;&#x6839;&#x636E;&#x5F53;&#x524D;&#x5B58;&#x50A8;&#x7684;&#x7C7B;&#x578B;&#x91CA;&#x653E;&#x7F13;&#x51B2;&#x533A;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// variant/variantchoicedestroy.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span>... Types&gt;
+<span class="hljs-keyword">bool</span> VariantChoice&lt;T, Types...&gt;::destroy() {
+    <span class="hljs-keyword">if</span> (getDerived().getDiscriminator() == Discriminator) {
+        <span class="hljs-comment">// if type matches, call placement delete:</span>
+        getDerived().<span class="hljs-keyword">template</span> getBufferAs&lt;T&gt;()-&gt;~T();
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+}
+</code></pre>
+<p>&#x8FD9;&#x91CC;&#x7684;&#x6790;&#x6784;&#x4E5F;&#x662F;&#x539F;&#x5730;&#x6790;&#x6784;&#xFF0C;&#x5373;&#x6790;&#x6784;&#x540E;&#x4E0D;&#x91CA;&#x653E;&#x7F13;&#x51B2;&#x533A;&#x3002;&#x56E0;&#x4E3A;&#x53EF;&#x8BC6;&#x522B;&#x8054;&#x5408;&#x4F53;&#x4E2D;&#x5B58;&#x50A8;&#x7684;&#x80AF;&#x5B9A;&#x662F;&#x67D0;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x6240;&#x4EE5;&#x6709;&#x4E14;&#x53EA;&#x6709;&#x4E00;&#x4E2A;<code>VariantChoice&lt;Types, Types...&gt;::destroy()</code>&#x8FD4;&#x56DE;<code>true</code>&#x3002;&#x4E3A;&#x4E86;&#x5F3A;&#x5236;&#x6790;&#x6784;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;&#x6240;&#x6709;&#x7684;<code>destroy()</code>&#x90FD;&#x8C03;&#x7528;&#x4E00;&#x904D;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// variant/variantdestroy.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>... Types&gt;
+<span class="hljs-keyword">void</span> Variant&lt;Types...&gt;::destroy() {
+<span class="hljs-comment">// call destroy() on each VariantChoice base class; at most one will succeed:</span>
+    <span class="hljs-keyword">bool</span> results[] = {
+        VariantChoice&lt;Types, Types...&gt;::destroy()...
+    };
+    <span class="hljs-comment">// indicate that the variant does not store a value</span>
+    <span class="hljs-keyword">this</span>-&gt;setDiscriminator(<span class="hljs-number">0</span>);
+}
+</code></pre>
+<p>&#x6790;&#x6784;&#x7684;&#x6700;&#x540E;&#x5C06;<code>VariantStorage::discriminator</code>&#x8BBE;&#x7F6E;&#x4E3A;&#x4E86;0&#xFF0C;&#x8868;&#x793A;&#x53EF;&#x8BC6;&#x522B;&#x8054;&#x5408;&#x4F53;&#x4E2D;&#x672A;&#x5B58;&#x50A8;&#x4EFB;&#x4F55;&#x7C7B;&#x578B;&#x7684;&#x503C;&#x3002;</p>
+<p>&#x5728;C++17&#x4E2D;&#x4E5F;&#x53EF;&#x4EE5;&#x5199;&#x4E3A;&#x4E0B;&#x9762;&#x7684;&#x5F62;&#x5F0F;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// variant/variantdestroy17.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>... Types&gt;
+<span class="hljs-keyword">void</span> Variant&lt;Types...&gt;::destroy()
+{
+    <span class="hljs-comment">// call destroy() on each VariantChoice base class; at most one will succeed:</span>
+    (VariantChoice&lt;Types, Types...&gt;::destroy() , ...);
+
+    <span class="hljs-comment">// indicate that the variant does not store a value</span>
+    <span class="hljs-keyword">this</span>-&gt;setDiscriminator(<span class="hljs-number">0</span>);
+}
+</code></pre>
+<h3 id="2643-&#x8D4B;&#x503C;">26.4.3 &#x8D4B;&#x503C;</h3>
+<p>&#x53EF;&#x8BC6;&#x522B;&#x8054;&#x5408;&#x4F53;&#x521D;&#x59CB;&#x5316;&#x540E;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x67D0;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x503C;&#x8FDB;&#x884C;&#x8D4B;&#x503C;&#xFF0C;&#x4E3A;&#x6B64;&#x4E5F;&#x901A;&#x8FC7;<code>using VariantChoice&lt;Types, Types...&gt;::operator=...</code>&#x62C9;&#x53D6;&#x4E86;&#x57FA;&#x7C7B;&#x4E2D;&#x7684;&#x8D4B;&#x503C;&#x8FD0;&#x7B97;&#x7B26;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// variant/variantchoiceassign.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span>... Types&gt;
+<span class="hljs-keyword">auto</span> VariantChoice&lt;T, Types...&gt;::<span class="hljs-keyword">operator</span>= (T <span class="hljs-keyword">const</span>&amp; value) -&gt; Derived&amp; {
+    <span class="hljs-keyword">if</span> (getDerived().getDiscriminator() == Discriminator) {
+        <span class="hljs-comment">// assign new value of same type:</span>
+        *getDerived().<span class="hljs-keyword">template</span> getBufferAs&lt;T&gt;() = value;
+    }
+    <span class="hljs-keyword">else</span> {
+        <span class="hljs-comment">// assign new value of different type:</span>
+        getDerived().destroy(); <span class="hljs-comment">// try destroy() for all types</span>
+        <span class="hljs-keyword">new</span>(getDerived().getRawBuffer()) T(value); <span class="hljs-comment">// place new value</span>
+        getDerived().setDiscriminator(Discriminator);
+    }
+    <span class="hljs-keyword">return</span> getDerived();
+}
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span>... Types&gt;
+<span class="hljs-keyword">auto</span> VariantChoice&lt;T, Types...&gt;::<span class="hljs-keyword">operator</span>= (T&amp;&amp; value) -&gt; Derived&amp; {
+    <span class="hljs-keyword">if</span> (getDerived().getDiscriminator() == Discriminator) {
+        <span class="hljs-comment">// assign new value of same type:</span>
+        *getDerived().<span class="hljs-keyword">template</span> getBufferAs&lt;T&gt;() = <span class="hljs-built_in">std</span>::move(value);
+    }
+    <span class="hljs-keyword">else</span> {
+        <span class="hljs-comment">// assign new value of different type:</span>
+        getDerived().destroy(); <span class="hljs-comment">// try destroy() for all types</span>
+        <span class="hljs-keyword">new</span>(getDerived().getRawBuffer()) T(<span class="hljs-built_in">std</span>::move(value)); <span class="hljs-comment">// place new value</span>
+        getDerived().setDiscriminator(Discriminator);
+    }
+    <span class="hljs-keyword">return</span> getDerived();
+}
+</code></pre>
+<h4 id="&#x81EA;&#x8D4B;&#x503C;&#x95EE;&#x9898;">&#x81EA;&#x8D4B;&#x503C;&#x95EE;&#x9898;</h4>
+<p>&#x79FB;&#x52A8;&#x8D4B;&#x503C;&#x8FD0;&#x7B97;&#x7B26;&#x4E00;&#x822C;&#x8981;&#x8003;&#x8651;&#x81EA;&#x8D4B;&#x503C;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x56E0;&#x4E3A;&#x5F53;&#x65E7;&#x503C;&#x548C;&#x65B0;&#x503C;&#x76F8;&#x540C;&#x65F6;&#xFF0C;&#x9500;&#x6BC1;&#x540E;&#x8D4B;&#x503C;&#x7684;&#x64CD;&#x4F5C;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x5185;&#x5B58;&#x95EE;&#x9898;&#x3002;&#x4E0D;&#x8FC7;&#x5728;&#x53EF;&#x8BC6;&#x522B;&#x8054;&#x5408;&#x4F53;&#x4E2D;&#x4E0D;&#x5B58;&#x5728;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x56E0;&#x6B64;&#x7C7B;&#x578B;&#x76F8;&#x540C;&#x65F6;&#x5C06;&#x8C03;&#x7528;&#x7C7B;&#x578B;&#x7684;&#x79FB;&#x52A8;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x81EA;&#x8D4B;&#x503C;&#x7684;&#x95EE;&#x9898;&#x5C06;&#x88AB;&#x8BE5;&#x7C7B;&#x578B;&#x7684;&#x79FB;&#x52A8;&#x6784;&#x9020;&#x51FD;&#x6570;&#x89E3;&#x51B3;&#x3002;</p>
+<h4 id="&#x8D4B;&#x503C;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#x7684;&#x95EE;&#x9898;">&#x8D4B;&#x503C;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#x7684;&#x95EE;&#x9898;</h4>
+<p>&#x5982;&#x679C;&#x539F;&#x5730;&#x6790;&#x6784;&#x6B63;&#x5E38;&#x5B8C;&#x6210;&#x800C;&#x539F;&#x5730;&#x6784;&#x9020;&#x629B;&#x51FA;&#x4E86;&#x5F02;&#x5E38;&#xFF0C;&#x5219;&#x53EF;&#x8BC6;&#x522B;&#x8054;&#x5408;&#x4F53;&#x5C06;&#x5904;&#x4E8E;&#x672A;&#x5B58;&#x50A8;&#x503C;&#x7684;&#x72B6;&#x6001;&#xFF0C;&#x4F8B;&#x5B50;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// variant/variantexception.cpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;variant.hpp&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;exception&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string&gt;</span></span>
+
+<span class="hljs-keyword">class</span> CopiedNonCopyable : <span class="hljs-keyword">public</span> <span class="hljs-built_in">std</span>::exception
+{
+};
+
+<span class="hljs-keyword">class</span> NonCopyable
+{
+    <span class="hljs-keyword">public</span>:
+        NonCopyable() {
+        }
+        NonCopyable(NonCopyable <span class="hljs-keyword">const</span>&amp;) {
+            <span class="hljs-keyword">throw</span> CopiedNonCopyable();
+        }
+        NonCopyable(NonCopyable&amp;&amp;) = <span class="hljs-keyword">default</span>;
+        NonCopyable&amp; <span class="hljs-keyword">operator</span>= (NonCopyable <span class="hljs-keyword">const</span>&amp;) {<span class="hljs-number">616</span> Chapter <span class="hljs-number">26</span>: <span class="hljs-function">Discriminated Unions
+            throw <span class="hljs-title">CopiedNonCopyable</span><span class="hljs-params">()</span></span>;
+        }
+        NonCopyable&amp; <span class="hljs-keyword">operator</span>= (NonCopyable&amp;&amp;) = <span class="hljs-keyword">default</span>;
+};
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    Variant&lt;<span class="hljs-keyword">int</span>, NonCopyable&gt; v(<span class="hljs-number">17</span>);
+    <span class="hljs-keyword">try</span> {
+        NonCopyable nc;
+        v = nc;
+    }
+    <span class="hljs-keyword">catch</span> (CopiedNonCopyable) {
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Copy assignment of NonCopyable failed.&quot;</span> &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+        <span class="hljs-keyword">if</span> (!v.is&lt;<span class="hljs-keyword">int</span>&gt;() &amp;&amp; !v.is&lt;NonCopyable&gt;()) {
+            <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Variant has no value.&quot;</span> &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+        }
+    }
+}
+</code></pre>
+<p>&#x5224;&#x65AD;&#x53EF;&#x8BC6;&#x522B;&#x8054;&#x5408;&#x4F53;&#x662F;&#x5426;&#x5B58;&#x50A8;&#x503C;&#x7684;<code>empty()</code>&#x5B9A;&#x4E49;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// variant/variantempty.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>... Types&gt;
+<span class="hljs-keyword">bool</span> Variant&lt;Types...&gt;::empty() <span class="hljs-keyword">const</span> {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>-&gt;getDiscriminator() == <span class="hljs-number">0</span>;
+}
+</code></pre>
+<h4 id="stdlaunder">std::launder</h4>
+<p>&#x63D0;&#x9AD8;&#x8FD0;&#x884C;&#x6548;&#x7387;&#x7684;&#x65B9;&#x6CD5;&#x4E4B;&#x4E00;&#x662F;&#x5C3D;&#x91CF;&#x907F;&#x514D;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x590D;&#x5236;&#x503C;&#xFF0C;&#x4E3A;&#x6B64;&#x7F16;&#x8BD1;&#x5668;&#x5C06;&#x5047;&#x8BBE;&#x67D0;&#x4E9B;&#x503C;&#x5728;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x4E4B;&#x5185;&#x662F;&#x4E0D;&#x4F1A;&#x53D8;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x53EF;&#x8BC6;&#x522B;&#x8054;&#x5408;&#x4F53;&#x4E2D;&#x7684;&#x539F;&#x5730;&#x6790;&#x6784;&#x548C;&#x6784;&#x9020;&#x53EF;&#x80FD;&#x8BA9;&#x7F16;&#x8BD1;&#x5668;&#x505A;&#x51FA;&#x9519;&#x8BEF;&#x7684;&#x5224;&#x65AD;&#xFF0C;&#x4ECE;&#x800C;&#x5F15;&#x53D1;&#x5404;&#x79CD;bug&#x3002;</p>
+<p>&#x4E3A;&#x6B64;C++17&#x63D0;&#x4F9B;&#x4E86;<code>std::launder()</code>&#x7684;&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#xFF0C;&#x5B83;&#x4EE5;&#x4E00;&#x4E2A;&#x5730;&#x5740;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#xFF0C;&#x53EA;&#x662F;&#x7B80;&#x5355;&#x7684;&#x8FD4;&#x56DE;&#x8BE5;&#x5730;&#x5740;&#xFF0C;&#x540C;&#x65F6;&#x63D0;&#x793A;&#x7F16;&#x8BD1;&#x5668;&#x8FD9;&#x4E24;&#x4E2A;&#x5730;&#x5740;&#x6240;&#x5B58;&#x50A8;&#x7684;&#x5BF9;&#x8C61;&#x53EF;&#x80FD;&#x5DF2;&#x7ECF;&#x4E0D;&#x540C;&#x4E86;&#x3002;&#x539F;&#x6587;&#xFF1A;</p>
+<blockquote>
+<p>Since C++17, the solution for this issue is to access the address of the new object through std::launder(), which just returns its argument, but which causes the compiler to recognize that the resulting address points to an object that may differ from what the compiler assumes about the argument passed to std::launder().</p>
+</blockquote>
+<h2 id="265-&#x8BBF;&#x95EE;&#x51FD;&#x6570;">26.5 &#x8BBF;&#x95EE;&#x51FD;&#x6570;</h2>
+<p><a href="#Value-Query-and-Extraction">26.3</a>&#x4E2D;&#x7684;<code>is()</code>&#x548C;<code>get()</code>&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x67E5;&#x8BE2;&#x548C;&#x63D0;&#x53D6;&#x53EF;&#x8BC6;&#x522B;&#x8054;&#x5408;&#x4F53;&#x4E2D;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x5C06;&#x4F1A;&#x5BFC;&#x81F4;&#x5197;&#x957F;&#x7684;&#x5224;&#x65AD;&#x8BED;&#x53E5;&#xFF0C;&#x4F8B;&#x5982;&#x6253;&#x5370;&#x53EF;&#x8BC6;&#x522B;&#x8054;&#x5408;&#x4F53;&#xFF1A;</p>
+<pre><code class="lang-cpp">Variant&lt;<span class="hljs-keyword">int</span>, <span class="hljs-keyword">double</span>, <span class="hljs-built_in">string</span>&gt; v;
+
+<span class="hljs-keyword">if</span> (v.is&lt;<span class="hljs-keyword">int</span>&gt;()) {
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; v.get&lt;<span class="hljs-keyword">int</span>&gt;();
+}
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (v.is&lt;<span class="hljs-keyword">double</span>&gt;()) {
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; v.get&lt;<span class="hljs-keyword">double</span>&gt;();
+}
+<span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; v.get&lt;<span class="hljs-built_in">string</span>&gt;();
+}
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x9012;&#x5F52;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF1A;</p>
+<pre><code class="lang-cpp">// variant/printrec.cpp
+#include &quot;variant.hpp&quot;
+#include &lt;iostream&gt;
+
+template&lt;typename V, typename Head, typename... Tail&gt;
+void printImpl(V const&amp; v)
+{
+    if (v.template is&lt;Head&gt;()) {
+        std::cout &lt;&lt; v.template get&lt;Head&gt;();
+    }
+    else if constexpr (sizeof...(Tail) &gt; 0) {
+        printImpl&lt;V, Tail...&gt;(v);
+    }
+}
+
+template&lt;typename... Types&gt;
+void print(Variant&lt;Types...&gt; const&amp; v)
+{
+    printImpl&lt;Variant&lt;Types...&gt;, Types...&gt;(v);
+}
+
+int main() {
+    Variant&lt;int, short, float, double&gt; v(1.5);
+    print(v);
+}
+</code></pre>
+<p>&#x5982;&#x679C;&#x4E3A;&#x6BCF;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x64CD;&#x4F5C;&#x90FD;&#x5B9E;&#x73B0;&#x7C7B;&#x4F3C;&#x7684;&#x51FD;&#x6570;&#x5219;&#x8981;&#x7F16;&#x5199;&#x5F88;&#x591A;&#x4EE3;&#x7801;&#xFF0C;&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#x662F;&#x5C06;&#x8BBF;&#x95EE;&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#xFF1A;</p>
+<pre><code class="lang-cpp">// variant/variantvisitimpl.hpp
+template&lt;typename R, typename V, typename Visitor,
+typename Head, typename... Tail&gt;
+R variantVisitImpl(V&amp;&amp; variant, Visitor&amp;&amp; vis, Typelist&lt;Head, Tail...&gt;) {
+    if (variant.template is&lt;Head&gt;()) {
+        return static_cast&lt;R&gt;(
+                                std::forward&lt;Visitor&gt;(vis)(
+                                std::forward&lt;V&gt;(variant).template get&lt;Head&gt;()));
+    }
+    else if constexpr (sizeof...(Tail) &gt; 0) {
+        return variantVisitImpl&lt;R&gt;(std::forward&lt;V&gt;(variant),
+                                    std::forward&lt;Visitor&gt;(vis),
+                                    Typelist&lt;Tail...&gt;());
+    }
+    else {
+        throw EmptyVariant();
+    }
+}
+</code></pre>
+<pre><code class="lang-cpp"><span class="hljs-comment">// variant/variantvisit.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>... Types&gt;
+    <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> R, <span class="hljs-keyword">typename</span> Visitor&gt;
+VisitResult&lt;R, Visitor, Types&amp;...&gt; Variant&lt;Types...&gt;::visit(Visitor&amp;&amp; vis)&amp; {
+    <span class="hljs-keyword">using</span> Result = VisitResult&lt;R, Visitor, Types&amp;...&gt;;
+    <span class="hljs-keyword">return</span> variantVisitImpl&lt;Result&gt;(*<span class="hljs-keyword">this</span>,
+                                    <span class="hljs-built_in">std</span>::forward&lt;Visitor&gt;(vis),
+                                    Typelist&lt;Types...&gt;());
+}
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>... Types&gt;
+    <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> R, <span class="hljs-keyword">typename</span> Visitor&gt;
+VisitResult&lt;R, Visitor, Types <span class="hljs-keyword">const</span>&amp;...&gt; Variant&lt;Types...&gt;::visit(Visitor&amp;&amp; vis) <span class="hljs-keyword">const</span>&amp; {
+    <span class="hljs-keyword">using</span> Result = VisitResult&lt;R, Visitor, Types <span class="hljs-keyword">const</span> &amp;...&gt;;
+    <span class="hljs-keyword">return</span> variantVisitImpl&lt;Result&gt;(*<span class="hljs-keyword">this</span>,
+                                    <span class="hljs-built_in">std</span>::forward&lt;Visitor&gt;(vis),
+                                    Typelist&lt;Types...&gt;());
+}
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>... Types&gt;
+    <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> R, <span class="hljs-keyword">typename</span> Visitor&gt;
+VisitResult&lt;R, Visitor, Types&amp;&amp;...&gt; Variant&lt;Types...&gt;::visit(Visitor&amp;&amp; vis) &amp;&amp; {
+    <span class="hljs-keyword">using</span> Result = VisitResult&lt;R, Visitor, Types&amp;&amp;...&gt;;
+    <span class="hljs-keyword">return</span> variantVisitImpl&lt;Result&gt;(<span class="hljs-built_in">std</span>::move(*<span class="hljs-keyword">this</span>),
+                                    <span class="hljs-built_in">std</span>::forward&lt;Visitor&gt;(vis),
+                                    Typelist&lt;Types...&gt;());
+}
+</code></pre>
+<h3 id="2651-&#x8BBF;&#x95EE;&#x51FD;&#x6570;&#x7684;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;">26.5.1 &#x8BBF;&#x95EE;&#x51FD;&#x6570;&#x7684;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;</h3>
+<p>&#x5982;&#x679C;&#x8BBF;&#x95EE;&#x51FD;&#x6570;&#x6709;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#xFF0C;&#x5C31;&#x8981;&#x4FDD;&#x8BC1;&#x65E0;&#x8BBA;&#x53EF;&#x8BC6;&#x522B;&#x8054;&#x5408;&#x4F53;&#x4E2D;&#x662F;&#x4EC0;&#x4E48;&#x7C7B;&#x578B;&#xFF0C;&#x8BBF;&#x95EE;&#x51FD;&#x6570;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x90FD;&#x53EF;&#x4EE5;&#x8F6C;&#x6362;&#x4E3A;&#x8BE5;&#x7C7B;&#x578B;&#xFF0C;&#x5426;&#x5219;&#x5C06;&#x4E0D;&#x80FD;&#x7F16;&#x8BD1;&#xFF0C;&#x4E3A;&#x6B64;&#x9700;&#x8981;&#x5B9E;&#x73B0;<code>VisitResult&lt;&gt;</code>&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// variant/variantvisitresult.hpp</span>
+<span class="hljs-comment">// an explicitly-provided visitor result type:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> R, <span class="hljs-keyword">typename</span> Visitor, <span class="hljs-keyword">typename</span>... ElementTypes&gt;
+<span class="hljs-keyword">class</span> VisitResultT
+{
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> Type = R;
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> R, <span class="hljs-keyword">typename</span> Visitor, <span class="hljs-keyword">typename</span>... ElementTypes&gt;
+<span class="hljs-keyword">using</span> VisitResult = <span class="hljs-keyword">typename</span> VisitResultT&lt;R, Visitor, ElementTypes...&gt;::Type;
+</code></pre>
+<p>&#x5728;&#x6307;&#x5B9A;&#x4E86;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;<code>R</code>&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#x5C31;&#x662F;<code>R</code>&#xFF0C;&#x800C;&#x5F53;&#x672A;&#x6307;&#x5B9A;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#x65F6;&#xFF08;&#x4E5F;&#x5C31;&#x662F;<code>R</code>&#x4ECD;&#x7136;&#x4E3A;&#x9ED8;&#x8BA4;&#x6A21;&#x677F;&#x5B9E;&#x53C2;<code>ComputedResultType</code>&#xFF0C;&#x53C2;&#x89C1;<a href="#Design">26.2</a>&#xFF09;&#xFF0C;&#x5C31;&#x8981;&#x63A8;&#x5BFC;&#x53EF;&#x8BC6;&#x522B;&#x8054;&#x5408;&#x4F53;&#x4E2D;&#x6240;&#x6709;&#x53EF;&#x80FD;&#x7C7B;&#x578B;&#x7684;&#x503C;&#x8C03;&#x7528;&#x8BBF;&#x95EE;&#x51FD;&#x6570;&#x7684;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#x7684;&#x516C;&#x5171;&#x7C7B;&#x578B;&#x3002;</p>
+<h3 id="2652-&#x516C;&#x5171;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;">26.5.2 &#x516C;&#x5171;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;</h3>
+<p>&#x63A8;&#x5BFC;&#x6240;&#x6709;&#x53EF;&#x80FD;&#x7C7B;&#x578B;&#x7684;&#x516C;&#x5171;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#x7684;&#x6A21;&#x677F;&#x4EE3;&#x7801;&#x4E3A;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// variant/commontype.hpp</span>
+<span class="hljs-keyword">using</span> <span class="hljs-built_in">std</span>::declval;
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span> U&gt;
+<span class="hljs-keyword">class</span> CommonTypeT
+{
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> Type = <span class="hljs-keyword">decltype</span>(<span class="hljs-literal">true</span>? declval&lt;T&gt;() : declval&lt;U&gt;());
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span> U&gt;
+<span class="hljs-keyword">using</span> CommonType = <span class="hljs-keyword">typename</span> CommonTypeT&lt;T, U&gt;::Type;
+</code></pre>
+<pre><code class="lang-cpp"><span class="hljs-comment">// variant/variantvisitresultcommon.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;accumulate.hpp&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;commontype.hpp&quot;</span></span>
+
+<span class="hljs-comment">// the result type produced when calling a visitor with a value of type T:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Visitor, <span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">using</span> VisitElementResult = <span class="hljs-keyword">decltype</span>(declval&lt;Visitor&gt;()(declval&lt;T&gt;()));
+
+<span class="hljs-comment">// the common result type for a visitor called with each of the given element types:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Visitor, <span class="hljs-keyword">typename</span>... ElementTypes&gt;
+<span class="hljs-keyword">class</span> VisitResultT&lt;ComputedResultType, Visitor, ElementTypes...&gt;
+{
+        <span class="hljs-keyword">using</span> ResultTypes =  Typelist&lt;VisitElementResult&lt;Visitor, ElementTypes&gt;...&gt;;
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> Type = Accumulate&lt;PopFront&lt;ResultTypes&gt;, CommonTypeT, Front&lt;ResultTypes&gt;&gt;;
+};
+</code></pre>
+<p><code>VisitElementResult&lt;&gt;</code>&#x5F97;&#x5230;&#x6240;&#x6709;&#x53EF;&#x80FD;&#x7684;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#x5F62;&#x6210;&#x7C7B;&#x578B;&#x5217;&#x8868;&#xFF0C;&#x6700;&#x7EC8;&#x901A;&#x8FC7;&#x7C7B;&#x578B;&#x5217;&#x8868;&#x7684;&#x7D2F;&#x52A0;&#x7B97;&#x6CD5;<code>Accumulate&lt;&gt;</code>&#x63A8;&#x5BFC;&#x516C;&#x5171;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#x3002;&#x5F53;&#x7136;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>std::is_common_type_t</code>&#x6765;&#x7B80;&#x5316;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// variant/variantvisitresultstd.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Visitor, <span class="hljs-keyword">typename</span>... ElementTypes&gt;
+<span class="hljs-keyword">class</span> VisitResultT&lt;ComputedResultType, Visitor, ElementTypes...&gt;
+{
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> Type =
+            <span class="hljs-built_in">std</span>::<span class="hljs-keyword">common_type_t</span>&lt;VisitElementResult&lt;Visitor, ElementTypes&gt;...&gt;;
+};
+</code></pre>
+<p>&#x6700;&#x540E;&#x662F;&#x6D4B;&#x8BD5;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// variant/visit.cpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;variant.hpp&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;typeinfo&gt;</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    Variant&lt;<span class="hljs-keyword">int</span>, <span class="hljs-keyword">short</span>, <span class="hljs-keyword">double</span>, <span class="hljs-keyword">float</span>&gt; v(<span class="hljs-number">1.5</span>);
+    <span class="hljs-keyword">auto</span> result = v.visit([](<span class="hljs-keyword">auto</span> <span class="hljs-keyword">const</span>&amp; value) {
+        <span class="hljs-keyword">return</span> value + <span class="hljs-number">1</span>;
+    });
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-keyword">typeid</span>(result).name() &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+}
+</code></pre>
+<h2 id="266-&#x53EF;&#x8BC6;&#x522B;&#x8054;&#x5408;&#x4F53;&#x7684;&#x521D;&#x59CB;&#x5316;&#x548C;&#x8D4B;&#x503C;">26.6 &#x53EF;&#x8BC6;&#x522B;&#x8054;&#x5408;&#x4F53;&#x7684;&#x521D;&#x59CB;&#x5316;&#x548C;&#x8D4B;&#x503C;</h2>
+<h3 id="&#x9ED8;&#x8BA4;&#x6784;&#x9020;&#x51FD;&#x6570;">&#x9ED8;&#x8BA4;&#x6784;&#x9020;&#x51FD;&#x6570;</h3>
+<p>&#x53EF;&#x8BC6;&#x522B;&#x8054;&#x5408;&#x4F53;&#x53EF;&#x4EE5;&#x88AB;&#x9ED8;&#x8BA4;&#x6784;&#x9020;&#xFF0C;&#x4F46;&#x662F;&#x5E76;&#x4E0D;&#x662F;&#x4E0D;&#x5B58;&#x50A8;&#x503C;&#xFF0C;&#x800C;&#x662F;&#x7528;&#x7B2C;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x5C3D;&#x91CF;&#x907F;&#x514D;&#x4E86;&#x4E0D;&#x5B58;&#x50A8;&#x503C;&#x7684;&#x7279;&#x6B8A;&#x60C5;&#x51B5;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// variant/variantdefaultctor.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>... Types&gt;
+Variant&lt;Types...&gt;::Variant() {
+    *<span class="hljs-keyword">this</span> = Front&lt;Typelist&lt;Types...&gt;&gt;();
+}
+</code></pre>
+<p>&#x6D4B;&#x8BD5;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// variant/variantdefaultctor.cpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;variant.hpp&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    Variant&lt;<span class="hljs-keyword">int</span>, <span class="hljs-keyword">double</span>&gt; v;
+    <span class="hljs-keyword">if</span> (v.is&lt;<span class="hljs-keyword">int</span>&gt;()) {
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Default-constructed v stores the int &quot;</span> &lt;&lt; v.get&lt;<span class="hljs-keyword">int</span>&gt;() &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+    }
+    Variant&lt;<span class="hljs-keyword">double</span>, <span class="hljs-keyword">int</span>&gt; v2;
+    <span class="hljs-keyword">if</span> (v2.is&lt;<span class="hljs-keyword">double</span>&gt;()) {
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Default-constructed v2 stores the double &quot;</span> &lt;&lt; v2.get&lt;<span class="hljs-keyword">double</span>&gt;() &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+        }
+    }
+</code></pre>
+<h3 id="&#x62F7;&#x8D1D;&#x548C;&#x79FB;&#x52A8;&#x521D;&#x59CB;&#x5316;">&#x62F7;&#x8D1D;&#x548C;&#x79FB;&#x52A8;&#x521D;&#x59CB;&#x5316;</h3>
+<p>&#x62F7;&#x8D1D;&#x521D;&#x59CB;&#x5316;&#x6700;&#x7EC8;&#x8F6C;&#x6362;&#x4E3A;&#x4E86;<a href="#Initialization">26.4.1</a>&#x4E2D;&#x7684;&#x521D;&#x59CB;&#x5316;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>... Types&gt;
+Variant&lt;Types...&gt;::Variant(Variant <span class="hljs-keyword">const</span>&amp; source) {
+    <span class="hljs-keyword">if</span> (!source.empty()) {
+        source.visit([&amp;](<span class="hljs-keyword">auto</span> <span class="hljs-keyword">const</span>&amp; value) {
+                        *<span class="hljs-keyword">this</span> = value;
+                    });
+    }
+}
+</code></pre>
+<p>&#x79FB;&#x52A8;&#x521D;&#x59CB;&#x5316;&#x7C7B;&#x4F3C;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// variant/variantmovector.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>... Types&gt;
+Variant&lt;Types...&gt;::Variant(Variant&amp;&amp; source) {
+    <span class="hljs-keyword">if</span> (!source.empty()) {
+        <span class="hljs-built_in">std</span>::move(source).visit([&amp;](<span class="hljs-keyword">auto</span>&amp;&amp; value) {
+                                    *<span class="hljs-keyword">this</span> = <span class="hljs-built_in">std</span>::move(value);
+                                });
+    }
+}
+</code></pre>
+<p>&#x4ECE;&#x53E6;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;&#x7684;&#x53EF;&#x8BC6;&#x522B;&#x8054;&#x5408;&#x4F53;&#x521D;&#x59CB;&#x5316;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// variant/variantcopyctortmpl.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>... Types&gt;
+    <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>... SourceTypes&gt;
+Variant&lt;Types...&gt;::Variant(Variant&lt;SourceTypes...&gt; <span class="hljs-keyword">const</span>&amp; source) {
+    <span class="hljs-keyword">if</span> (!source.empty()) {
+        source.visit([&amp;](<span class="hljs-keyword">auto</span> <span class="hljs-keyword">const</span>&amp; value) {
+                        *<span class="hljs-keyword">this</span> = value;
+                    });
+    }
+}
+</code></pre>
+<p>&#x8FD9;&#x79CD;&#x521D;&#x59CB;&#x5316;&#x65B9;&#x5F0F;&#x53EF;&#x80FD;&#x4F1A;&#x53D1;&#x751F;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x4EE5;&#x5339;&#x914D;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x6D4B;&#x8BD5;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// variant/variantpromote.cpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;variant.hpp&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string&gt;</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    Variant&lt;<span class="hljs-keyword">short</span>, <span class="hljs-keyword">float</span>, <span class="hljs-keyword">char</span> <span class="hljs-keyword">const</span>*&gt; v1((<span class="hljs-keyword">short</span>)<span class="hljs-number">123</span>);
+
+    Variant&lt;<span class="hljs-keyword">int</span>, <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>, <span class="hljs-keyword">double</span>&gt; v2(v1);<span class="hljs-number">26.6</span> Variant Initialization and Assignment <span class="hljs-number">627</span>
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;v2 contains the integer &quot;</span> &lt;&lt; v2.get&lt;<span class="hljs-keyword">int</span>&gt;() &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+
+    v1 = <span class="hljs-number">3.14f</span>;
+    Variant&lt;<span class="hljs-keyword">double</span>, <span class="hljs-keyword">int</span>, <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&gt; v3(<span class="hljs-built_in">std</span>::move(v1));
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;v3 contains the double &quot;</span> &lt;&lt; v3.get&lt;<span class="hljs-keyword">double</span>&gt;() &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+
+    v1 = <span class="hljs-string">&quot;hello&quot;</span>;
+    Variant&lt;<span class="hljs-keyword">double</span>, <span class="hljs-keyword">int</span>, <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&gt; v4(<span class="hljs-built_in">std</span>::move(v1));
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;v4 contains the string &quot;</span> &lt;&lt; v4.get&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&gt;() &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+}
+</code></pre>
+<h3 id="&#x8D4B;&#x503C;">&#x8D4B;&#x503C;</h3>
+<p>&#x8D4B;&#x503C;&#x548C;&#x6784;&#x9020;&#x7C7B;&#x4F3C;&#xFF0C;&#x4E66;&#x4E2D;&#x53EA;&#x6709;&#x62F7;&#x8D1D;&#x6784;&#x9020;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// variant/variantcopyassign.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>... Types&gt;
+Variant&lt;Types...&gt;&amp; Variant&lt;Types...&gt;::<span class="hljs-keyword">operator</span>= (Variant <span class="hljs-keyword">const</span>&amp; source) {
+    <span class="hljs-keyword">if</span> (!source.empty()) {
+        source.visit([&amp;](<span class="hljs-keyword">auto</span> <span class="hljs-keyword">const</span>&amp; value) {
+                        *<span class="hljs-keyword">this</span> = value;
+                    });
+    }
+    <span class="hljs-keyword">else</span> {
+        destroy();
+    }
+    <span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span>;
+}
+</code></pre>
+<h2 id="267-&#x540E;&#x8BB0;">26.7 &#x540E;&#x8BB0;</h2>
+<p>&#x672C;&#x7AE0;&#x4E2D;&#x7684;&#x5B9E;&#x73B0;&#x7684;<code>Variant&lt;&gt;</code>&#x5728;&#x5B9E;&#x4F8B;&#x5316;&#x65F6;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;&#x76F8;&#x540C;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x4F46;&#x662F;<code>std::variant</code>&#x53EF;&#x4EE5;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="2022-03-07-ch25-tuples.html" class="navigation navigation-prev " aria-label="Previous page: Chapter 25 Tuples">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="2022-03-09-ch27-expression-templates.html" class="navigation navigation-next " aria-label="Next page: Chapter 27 Expression Templates">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Chapter 26 Discriminated Unions","level":"1.27","depth":1,"next":{"title":"Chapter 27 Expression Templates","level":"1.28","depth":1,"path":"2022-03-09-ch27-expression-templates.md","ref":"2022-03-09-ch27-expression-templates.md","articles":[]},"previous":{"title":"Chapter 25 Tuples","level":"1.26","depth":1,"path":"2022-03-07-ch25-tuples.md","ref":"2022-03-07-ch25-tuples.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"2022-03-08-ch26-discriminated-unions.md","mtime":"2022-11-13T05:00:16.206Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-11-13T05:01:04.198Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

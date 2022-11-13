@@ -1,0 +1,1219 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Chapter 24 Typelists · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="2022-03-07-ch25-tuples.html" />
+    
+    
+    <link rel="prev" href="2022-03-05-ch23-metaprogramming.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="2021-12-15-ch1-function-templates.html">
+            
+                <a href="2021-12-15-ch1-function-templates.html">
+            
+                    
+                    Chapter 1 Funtion Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="2021-12-20-ch2-class-templates.html">
+            
+                <a href="2021-12-20-ch2-class-templates.html">
+            
+                    
+                    Chapter 2 Class Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="2021-12-20-ch3-nontype-template-parameters.html">
+            
+                <a href="2021-12-20-ch3-nontype-template-parameters.html">
+            
+                    
+                    Chapter 3 Nontype Template Parameters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="2021-12-20-ch4-variadic-templates.html">
+            
+                <a href="2021-12-20-ch4-variadic-templates.html">
+            
+                    
+                    Chapter 4 Variadic Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="2021-12-30-ch5-tricky-basics.html">
+            
+                <a href="2021-12-30-ch5-tricky-basics.html">
+            
+                    
+                    Chapter 5 Tricky Basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="2022-01-04-ch6-move-semantics-and-enable-if.html">
+            
+                <a href="2022-01-04-ch6-move-semantics-and-enable-if.html">
+            
+                    
+                    Chapter 6 Move Semantics and enable_if<>
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="2022-01-05-ch7-by-value-or-by-reference.html">
+            
+                <a href="2022-01-05-ch7-by-value-or-by-reference.html">
+            
+                    
+                    Chapter 7 By Value or by Reference?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="2022-01-06-ch8-compile-time-programming.html">
+            
+                <a href="2022-01-06-ch8-compile-time-programming.html">
+            
+                    
+                    Chapter 8 Compile-Time Programming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="2022-01-06-ch9-using-templates-in-practice.html">
+            
+                <a href="2022-01-06-ch9-using-templates-in-practice.html">
+            
+                    
+                    Chapter 9 Using Templates in Practice
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="2022-01-07-ch10-basic-template-terminology.html">
+            
+                <a href="2022-01-07-ch10-basic-template-terminology.html">
+            
+                    
+                    Chapter 10 Basic Template Terminology
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="2022-01-08-ch11-generic-libraries.html">
+            
+                <a href="2022-01-08-ch11-generic-libraries.html">
+            
+                    
+                    Chapter 11 Generic Libraries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="2022-01-12-ch12-fundamentals-in-depth.html">
+            
+                <a href="2022-01-12-ch12-fundamentals-in-depth.html">
+            
+                    
+                    Chapter 12 Fundamentals in Depth
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="2022-01-27-ch13-names-in-templates.html">
+            
+                <a href="2022-01-27-ch13-names-in-templates.html">
+            
+                    
+                    Chapter 13 Names in Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="2022-02-07-ch14-instantiation.html">
+            
+                <a href="2022-02-07-ch14-instantiation.html">
+            
+                    
+                    Chapter 14 Instantiation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="2022-02-15-ch15-template-argument-deduction.html">
+            
+                <a href="2022-02-15-ch15-template-argument-deduction.html">
+            
+                    
+                    Chapter 15 Template Argument Deduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="2022-02-17-ch16-specialization-and-overloading.html">
+            
+                <a href="2022-02-17-ch16-specialization-and-overloading.html">
+            
+                    
+                    Chapter 16 Specialization and Overloading
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="2022-02-22-ch17-future-directions.html">
+            
+                <a href="2022-02-22-ch17-future-directions.html">
+            
+                    
+                    Chapter 17 Future Directions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="2022-02-23-ch18-the-polymorphic-power-of-templates.html">
+            
+                <a href="2022-02-23-ch18-the-polymorphic-power-of-templates.html">
+            
+                    
+                    Chapter 18 The Polymorphic Power of Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="2022-03-01-ch19-implementing-traits.html">
+            
+                <a href="2022-03-01-ch19-implementing-traits.html">
+            
+                    
+                    Chapter 19 Implementing Traits
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="2022-03-02-ch20-overloading-on-type-properties.html">
+            
+                <a href="2022-03-02-ch20-overloading-on-type-properties.html">
+            
+                    
+                    Chapter 20 Overloading on Type Properties
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="2022-03-03-ch21-templates-and-inheritance.html">
+            
+                <a href="2022-03-03-ch21-templates-and-inheritance.html">
+            
+                    
+                    Chapter 21 Templates and Inheritance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="2022-03-05-ch22-bridging-static-and-dynamic-polymorphism.html">
+            
+                <a href="2022-03-05-ch22-bridging-static-and-dynamic-polymorphism.html">
+            
+                    
+                    Chapter 22 Bridging Static and Dynamic Polymorphism
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="2022-03-05-ch23-metaprogramming.html">
+            
+                <a href="2022-03-05-ch23-metaprogramming.html">
+            
+                    
+                    Chapter 23 Metaprogramming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.25" data-path="2022-03-06-ch24-typelists.html">
+            
+                <a href="2022-03-06-ch24-typelists.html">
+            
+                    
+                    Chapter 24 Typelists
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" data-path="2022-03-07-ch25-tuples.html">
+            
+                <a href="2022-03-07-ch25-tuples.html">
+            
+                    
+                    Chapter 25 Tuples
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27" data-path="2022-03-08-ch26-discriminated-unions.html">
+            
+                <a href="2022-03-08-ch26-discriminated-unions.html">
+            
+                    
+                    Chapter 26 Discriminated Unions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28" data-path="2022-03-09-ch27-expression-templates.html">
+            
+                <a href="2022-03-09-ch27-expression-templates.html">
+            
+                    
+                    Chapter 27 Expression Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29" data-path="2022-03-09-ch28-debugging-templates.html">
+            
+                <a href="2022-03-09-ch28-debugging-templates.html">
+            
+                    
+                    Chapter 28 Debugging Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.30" data-path="2022-01-05-appB-value-categories.html">
+            
+                <a href="2022-01-05-appB-value-categories.html">
+            
+                    
+                    Appendix B Value Categories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.31" data-path="2022-03-02-appC-overload-resolution.html">
+            
+                <a href="2022-03-02-appC-overload-resolution.html">
+            
+                    
+                    Appendix C Overload Resolution
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Chapter 24 Typelists</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="24-&#x7C7B;&#x578B;&#x5217;&#x8868;">24 &#x7C7B;&#x578B;&#x5217;&#x8868;</h1>
+<h2 id="241-&#x7C7B;&#x578B;&#x5217;&#x8868;">24.1 &#x7C7B;&#x578B;&#x5217;&#x8868;</h2>
+<p>&#x7C7B;&#x578B;&#x5217;&#x8868;&#x5C31;&#x662F;&#x5B58;&#x50A8;&#x7C7B;&#x578B;&#x7684;&#x5217;&#x8868;&#xFF0C;&#x548C;<code>std::list</code>&#x7C7B;&#x4F3C;&#x4E5F;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x6DFB;&#x52A0;&#x548C;&#x5220;&#x9664;&#x7B49;&#x64CD;&#x4F5C;&#xFF0C;&#x4F46;&#x662F;&#x533A;&#x522B;&#x5728;&#x4E8E;&#x6DFB;&#x52A0;&#x64CD;&#x4F5C;&#x4E0D;&#x4F1A;&#x5BF9;&#x539F;&#x59CB;&#x5217;&#x8868;&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#xFF0C;&#x800C;&#x662F;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x5217;&#x8868;&#xFF0C;&#x6700;&#x5E38;&#x89C1;&#x7684;&#x65B9;&#x5F0F;&#x662F;&#x901A;&#x8FC7;&#x6A21;&#x677F;&#x5B9E;&#x73B0;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// typelist/typelist.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>... Elements&gt;
+<span class="hljs-keyword">class</span> Typelist
+{
+};
+</code></pre>
+<p>&#x83B7;&#x53D6;&#x7C7B;&#x578B;&#x5217;&#x8868;&#x4E2D;&#x7B2C;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// typelist/typelistfront.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List&gt;
+<span class="hljs-keyword">class</span> FrontT;
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Head, <span class="hljs-keyword">typename</span>... Tail&gt;
+<span class="hljs-keyword">class</span> FrontT&lt;Typelist&lt;Head, Tail...&gt;&gt;
+{
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> Type = Head;
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List&gt;
+<span class="hljs-keyword">using</span> Front = <span class="hljs-keyword">typename</span> FrontT&lt;List&gt;::Type;
+</code></pre>
+<p>&#x79FB;&#x9664;&#x7C7B;&#x578B;&#x5217;&#x8868;&#x4E2D;&#x7B2C;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// typelist/typelistpopfront.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List&gt;
+<span class="hljs-keyword">class</span> PopFrontT;
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Head, <span class="hljs-keyword">typename</span>... Tail&gt;
+<span class="hljs-keyword">class</span> PopFrontT&lt;Typelist&lt;Head, Tail...&gt;&gt; {
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> Type = Typelist&lt;Tail...&gt;;
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List&gt;
+<span class="hljs-keyword">using</span> PopFront = <span class="hljs-keyword">typename</span> PopFrontT&lt;List&gt;::Type;
+</code></pre>
+<p>&#x5728;&#x7C7B;&#x578B;&#x5217;&#x8868;&#x9996;&#x90E8;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x7C7B;&#x578B;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// typelist/typelistpushfront.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List, <span class="hljs-keyword">typename</span> NewElement&gt;
+<span class="hljs-keyword">class</span> PushFrontT;
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>... Elements, <span class="hljs-keyword">typename</span> NewElement&gt;
+<span class="hljs-keyword">class</span> PushFrontT&lt;Typelist&lt;Elements...&gt;, NewElement&gt; {
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> Type = Typelist&lt;NewElement, Elements...&gt;;
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List, <span class="hljs-keyword">typename</span> NewElement&gt;
+<span class="hljs-keyword">using</span> PushFront = <span class="hljs-keyword">typename</span> PushFrontT&lt;List, NewElement&gt;::Type;
+</code></pre>
+<h2 id="242-&#x7C7B;&#x578B;&#x5217;&#x8868;&#x7B97;&#x6CD5;">24.2 &#x7C7B;&#x578B;&#x5217;&#x8868;&#x7B97;&#x6CD5;</h2>
+<h3 id="2421-&#x7D22;&#x5F15;&#x7B97;&#x6CD5;">24.2.1 &#x7D22;&#x5F15;&#x7B97;&#x6CD5;</h3>
+<p>&#x5229;&#x7528;<code>PopFront&lt;&gt;</code>&#x548C;&#x9012;&#x5F52;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x83B7;&#x53D6;&#x7C7B;&#x578B;&#x5217;&#x8868;&#x4E2D;&#x7B2C;N&#x4E2A;&#x7C7B;&#x578B;&#x7684;&#x7B97;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// typelist/nthelement.hpp</span>
+<span class="hljs-comment">// recursive case:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List, <span class="hljs-keyword">unsigned</span> N&gt;
+<span class="hljs-keyword">class</span> NthElementT : <span class="hljs-keyword">public</span> NthElementT&lt;PopFront&lt;List&gt;, N<span class="hljs-number">-1</span>&gt;
+{
+};
+
+<span class="hljs-comment">// basis case:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List&gt;
+<span class="hljs-keyword">class</span> NthElementT&lt;List, <span class="hljs-number">0</span>&gt; : <span class="hljs-keyword">public</span> FrontT&lt;List&gt;
+{
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List, <span class="hljs-keyword">unsigned</span> N&gt;
+<span class="hljs-keyword">using</span> NthElement = <span class="hljs-keyword">typename</span> NthElementT&lt;List, N&gt;::Type;
+</code></pre>
+<h3 id="2422-&#x67E5;&#x627E;&#x7B97;&#x6CD5;">24.2.2 &#x67E5;&#x627E;&#x7B97;&#x6CD5;</h3>
+<p>&#x67E5;&#x627E;&#x7C7B;&#x578B;&#x5217;&#x8868;&#x4E2D;&#x6700;&#x5927;&#x4F4D;&#x5BBD;&#x7684;&#x7B97;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// typelist/largesttype.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List&gt;
+<span class="hljs-keyword">class</span> LargestTypeT;
+
+<span class="hljs-comment">// recursive case:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List&gt;
+<span class="hljs-keyword">class</span> LargestTypeT
+{
+    <span class="hljs-keyword">private</span>:
+        <span class="hljs-keyword">using</span> First = Front&lt;List&gt;;
+        <span class="hljs-keyword">using</span> Rest = <span class="hljs-keyword">typename</span> LargestTypeT&lt;PopFront&lt;List&gt;&gt;::Type;
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> Type = IfThenElse&lt;(<span class="hljs-keyword">sizeof</span>(First) &gt;= <span class="hljs-keyword">sizeof</span>(Rest)), First, Rest&gt;;
+};
+
+<span class="hljs-comment">// basis case:</span>
+<span class="hljs-keyword">template</span>&lt;&gt;
+<span class="hljs-keyword">class</span> LargestTypeT&lt;Typelist&lt;&gt;&gt;
+{
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> Type = <span class="hljs-keyword">char</span>;
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List&gt;
+<span class="hljs-keyword">using</span> LargestType = <span class="hljs-keyword">typename</span> LargestTypeT&lt;List&gt;::Type;
+</code></pre>
+<p>&#x9012;&#x5F52;&#x7EC8;&#x6B62;&#x6761;&#x4EF6;&#x6A21;&#x677F;&#x53EF;&#x80FD;&#x4F1A;&#x5BFC;&#x81F4;&#x7F16;&#x8BD1;&#x9519;&#x8BEF;&#xFF0C;&#x4E3A;&#x6B64;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;<code>IsEmpty&lt;&gt;</code>&#x8FDB;&#x884C;&#x5C01;&#x88C5;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// typelist/typelistisempty.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List&gt;
+<span class="hljs-keyword">class</span> IsEmpty
+{
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">static</span> <span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">bool</span> value = <span class="hljs-literal">false</span>;
+};
+
+<span class="hljs-keyword">template</span>&lt;&gt;
+<span class="hljs-keyword">class</span> IsEmpty&lt;Typelist&lt;&gt;&gt; {
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">static</span> <span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">bool</span> value = <span class="hljs-literal">true</span>;
+};
+</code></pre>
+<pre><code class="lang-cpp"><span class="hljs-comment">// typelist/genericlargesttype.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List, <span class="hljs-keyword">bool</span> Empty = IsEmpty&lt;List&gt;::value&gt;
+<span class="hljs-keyword">class</span> LargestTypeT;
+
+<span class="hljs-comment">// recursive case:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List&gt;
+<span class="hljs-keyword">class</span> LargestTypeT&lt;List, <span class="hljs-literal">false</span>&gt;
+{
+    <span class="hljs-keyword">private</span>:
+        <span class="hljs-keyword">using</span> Contender = Front&lt;List&gt;;
+        <span class="hljs-keyword">using</span> Best = <span class="hljs-keyword">typename</span> LargestTypeT&lt;PopFront&lt;List&gt;&gt;::Type;
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> Type = IfThenElse&lt;(<span class="hljs-keyword">sizeof</span>(Contender) &gt;= <span class="hljs-keyword">sizeof</span>(Best)), Contender, Best&gt;;
+};
+
+<span class="hljs-comment">// basis case:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List&gt;
+<span class="hljs-keyword">class</span> LargestTypeT&lt;List, <span class="hljs-literal">true</span>&gt;
+{
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> Type = <span class="hljs-keyword">char</span>;
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List&gt;
+<span class="hljs-keyword">using</span> LargestType = <span class="hljs-keyword">typename</span> LargestTypeT&lt;List&gt;::Type;
+</code></pre>
+<h3 id="2423-&#x8FFD;&#x52A0;&#x7B97;&#x6CD5;">24.2.3 &#x8FFD;&#x52A0;&#x7B97;&#x6CD5;</h3>
+<p>&#x8FFD;&#x52A0;&#x7B97;&#x6CD5;&#x548C;<code>PushFrontT&lt;&gt;</code>&#x7C7B;&#x4F3C;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// typelist/typelistpushback.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List, <span class="hljs-keyword">typename</span> NewElement&gt;
+<span class="hljs-keyword">class</span> PushBackT;
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>... Elements, <span class="hljs-keyword">typename</span> NewElement&gt;
+<span class="hljs-keyword">class</span> PushBackT&lt;Typelist&lt;Elements...&gt;, NewElement&gt;
+{
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> Type = Typelist&lt;Elements..., NewElement&gt;;
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List, <span class="hljs-keyword">typename</span> NewElement&gt;
+<span class="hljs-keyword">using</span> PushBack = <span class="hljs-keyword">typename</span> PushBackT&lt;List, NewElement&gt;::Type;
+</code></pre>
+<p>&#x4F46;&#x662F;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>Front&lt;&gt;</code>&#x3001;<code>PushFront&lt;&gt;</code>&#x3001;<code>PopFront&lt;&gt;</code>&#x548C;<code>IsEmpty&lt;&gt;</code>&#x5B9E;&#x73B0;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// typelist/genericpushback.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List, <span class="hljs-keyword">typename</span> NewElement, <span class="hljs-keyword">bool</span> = IsEmpty&lt;List&gt;::value&gt;
+<span class="hljs-keyword">class</span> PushBackRecT;
+
+<span class="hljs-comment">// recursive case:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List, <span class="hljs-keyword">typename</span> NewElement&gt;
+<span class="hljs-keyword">class</span> PushBackRecT&lt;List, NewElement, <span class="hljs-literal">false</span>&gt;
+{
+        <span class="hljs-keyword">using</span> Head = Front&lt;List&gt;;
+        <span class="hljs-keyword">using</span> Tail = PopFront&lt;List&gt;;
+        <span class="hljs-keyword">using</span> NewTail = <span class="hljs-keyword">typename</span> PushBackRecT&lt;Tail, NewElement&gt;::Type;
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> Type = PushFront&lt;Head, NewTail&gt;;
+};
+
+<span class="hljs-comment">// basis case:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List, <span class="hljs-keyword">typename</span> NewElement&gt;
+<span class="hljs-keyword">class</span> PushBackRecT&lt;List, NewElement, <span class="hljs-literal">true</span>&gt;
+{
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> Type = PushFront&lt;List, NewElement&gt;;
+};
+
+<span class="hljs-comment">// generic push-back operation:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List, <span class="hljs-keyword">typename</span> NewElement&gt;
+<span class="hljs-keyword">class</span> PushBackT : <span class="hljs-keyword">public</span> PushBackRecT&lt;List, NewElement&gt; { };
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List, <span class="hljs-keyword">typename</span> NewElement&gt;
+<span class="hljs-keyword">using</span> PushBack = <span class="hljs-keyword">typename</span> PushBackT&lt;List, NewElement&gt;::Type;
+</code></pre>
+<p>&#x4E24;&#x79CD;&#x65B9;&#x6CD5;&#x867D;&#x7136;&#x6548;&#x679C;&#x4E00;&#x6837;&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x7F16;&#x8BD1;&#x65F6;&#x95F4;&#x4E0A;&#x6709;&#x5F88;&#x5927;&#x5DEE;&#x522B;&#xFF0C;&#x539F;&#x56E0;&#x5728;&#x4E8E;&#x7B2C;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#x53EA;&#x9700;&#x8981;&#x5B9E;&#x4F8B;&#x5316;&#x591A;&#x4E2A;<code>Typelist&lt;&gt;</code>&#x5C31;&#x53EF;&#x4EE5;&#xFF0C;&#x800C;&#x7B2C;&#x4E8C;&#x79CD;&#x65B9;&#x6CD5;&#x8FD8;&#x4F1A;&#x5B9E;&#x4F8B;&#x5316;<code>PushBackRecT&lt;&gt;</code>&#x3001;<code>PushFrontT&lt;&gt;</code>&#x3001;<code>FrontT&lt;&gt;</code>&#x548C;<code>PopFrontT&lt;&gt;</code>&#x3002;</p>
+<h3 id="2424-&#x53CD;&#x8F6C;&#x7B97;&#x6CD5;">24.2.4 &#x53CD;&#x8F6C;&#x7B97;&#x6CD5;</h3>
+<p>&#x53CD;&#x8F6C;&#x7B97;&#x6CD5;&#x7684;&#x4E00;&#x79CD;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;&#x662F;&#x901A;&#x8FC7;<code>Front&lt;&gt;</code>&#x53D6;&#x51FA;&#x7C7B;&#x578B;&#x5217;&#x8868;&#x9996;&#x90E8;&#x7C7B;&#x578B;&#xFF0C;&#x7136;&#x540E;&#x9012;&#x5F52;&#x53CD;&#x8F6C;&#x5269;&#x4E0B;&#x7684;&#x7C7B;&#x578B;&#x5217;&#x8868;&#xFF0C;&#x6700;&#x540E;&#x518D;&#x8FDB;&#x884C;&#x7EC4;&#x5408;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// typelist/typelistreverse.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List, <span class="hljs-keyword">bool</span> Empty = IsEmpty&lt;List&gt;::value&gt;
+<span class="hljs-keyword">class</span> ReverseT;
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List&gt;
+<span class="hljs-keyword">using</span> Reverse = <span class="hljs-keyword">typename</span> ReverseT&lt;List&gt;::Type;
+
+<span class="hljs-comment">// recursive case:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List&gt;
+<span class="hljs-keyword">class</span> ReverseT&lt;List, <span class="hljs-literal">false</span>&gt;
+    : <span class="hljs-keyword">public</span> PushBackT&lt;Reverse&lt;PopFront&lt;List&gt;&gt;, Front&lt;List&gt;&gt; { };
+
+<span class="hljs-comment">// basis case:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List&gt;
+<span class="hljs-keyword">class</span> ReverseT&lt;List, <span class="hljs-literal">true</span>&gt;
+{
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> Type = List;
+};
+</code></pre>
+<p><code>Reverse&lt;&gt;</code>&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x5B9E;&#x73B0;<code>PopBack&lt;&gt;</code>&#xFF08;&#x611F;&#x89C9;&#x6709;&#x4E9B;&#x591A;&#x6B64;&#x4E00;&#x4E3E;&#xFF09;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// typelist/typelistpopback.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List&gt;
+<span class="hljs-keyword">class</span> PopBackT {
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> Type = Reverse&lt;PopFront&lt;Reverse&lt;List&gt;&gt;&gt;;
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List&gt;
+<span class="hljs-keyword">using</span> PopBack = <span class="hljs-keyword">typename</span> PopBackT&lt;List&gt;::Type;
+</code></pre>
+<h3 id="Transforming-a-Typelist">24.2.5 &#x53D8;&#x6362;&#x7B97;&#x6CD5; </h3>
+<p>&#x53D8;&#x6362;&#x7B97;&#x6CD5;&#x662F;&#x5C06;&#x7C7B;&#x578B;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x7C7B;&#x578B;&#x8FDB;&#x884C;&#x53D8;&#x6362;&#x751F;&#x6210;&#x65B0;&#x7684;&#x7C7B;&#x578B;&#x5217;&#x8868;&#x7684;&#x7B97;&#x6CD5;&#xFF0C;&#x5B9E;&#x73B0;&#x65B9;&#x6CD5;&#x662F;&#x5148;&#x5BF9;&#x9996;&#x90E8;&#x7C7B;&#x578B;&#x8FDB;&#x884C;&#x7C7B;&#x578B;&#x53D8;&#x6362;&#xFF0C;&#x7136;&#x540E;&#x9012;&#x5F52;&#x7684;&#x5BF9;&#x53BB;&#x9664;&#x9996;&#x90E8;&#x7684;&#x7C7B;&#x578B;&#x5217;&#x8868;&#x8FDB;&#x884C;&#x53D8;&#x6362;&#xFF0C;&#x6700;&#x7EC8;&#x518D;&#x62FC;&#x63A5;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// typelist/transform.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List, <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt; <span class="hljs-keyword">class</span> MetaFun, <span class="hljs-keyword">bool</span> Empty = IsEmpty&lt;List&gt;::value&gt;
+<span class="hljs-keyword">class</span> TransformT;
+
+<span class="hljs-comment">// recursive case:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List, <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt; <span class="hljs-keyword">class</span> MetaFun&gt;
+<span class="hljs-keyword">class</span> TransformT&lt;List, MetaFun, <span class="hljs-literal">false</span>&gt;
+    : <span class="hljs-keyword">public</span> PushFrontT&lt;<span class="hljs-keyword">typename</span> TransformT&lt;PopFront&lt;List&gt;, MetaFun&gt;::Type,
+                        <span class="hljs-keyword">typename</span> MetaFun&lt;Front&lt;List&gt;&gt;::Type&gt;
+{
+};
+
+<span class="hljs-comment">// basis case:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List, <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt; <span class="hljs-keyword">class</span> MetaFun&gt;
+<span class="hljs-keyword">class</span> TransformT&lt;List, MetaFun, <span class="hljs-literal">true</span>&gt;
+{
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> Type = List;
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List, <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt; <span class="hljs-keyword">class</span> MetaFun&gt;
+<span class="hljs-keyword">using</span> Transform = <span class="hljs-keyword">typename</span> TransformT&lt;List, MetaFun&gt;::Type;
+</code></pre>
+<p>&#x53D8;&#x6362;&#x5143;&#x51FD;&#x6570;<code>MetaFun&lt;&gt;</code>&#x53EF;&#x4EE5;&#x662F;&#x4E0B;&#x9762;&#x7684;&#x5F62;&#x5F0F;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// typelist/addconst.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> AddConstT
+{
+    <span class="hljs-keyword">using</span> Type = T <span class="hljs-keyword">const</span>;
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">using</span> AddConst = <span class="hljs-keyword">typename</span> AddConstT&lt;T&gt;::Type;
+</code></pre>
+<h3 id="2426-&#x7D2F;&#x52A0;&#x7B97;&#x6CD5;">24.2.6 &#x7D2F;&#x52A0;&#x7B97;&#x6CD5;</h3>
+<p>&#x7D2F;&#x52A0;&#x7B97;&#x6CD5;&#x53EF;&#x4EE5;&#x5728;&#x904D;&#x5386;&#x7C7B;&#x578B;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#x4F7F;&#x7528;&#x7C7B;&#x578B;&#x51FD;&#x6570;<code>F</code>&#x8FDB;&#x884C;&#x8BA1;&#x7B97;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// typelist/accumulate.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List,
+            <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> X, <span class="hljs-keyword">typename</span> Y&gt; <span class="hljs-keyword">class</span> F,
+            <span class="hljs-keyword">typename</span> I,
+            <span class="hljs-keyword">bool</span> = IsEmpty&lt;List&gt;::value&gt;
+<span class="hljs-keyword">class</span> AccumulateT;
+
+<span class="hljs-comment">// recursive case:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List,
+            <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> X, <span class="hljs-keyword">typename</span> Y&gt; <span class="hljs-keyword">class</span> F,
+            <span class="hljs-keyword">typename</span> I&gt;
+<span class="hljs-keyword">class</span> AccumulateT&lt;List, F, I, <span class="hljs-literal">false</span>&gt;
+    : <span class="hljs-keyword">public</span> AccumulateT&lt;PopFront&lt;List&gt;, F, <span class="hljs-keyword">typename</span> F&lt;I, Front&lt;List&gt;&gt;::Type&gt;
+{
+};
+
+<span class="hljs-comment">// basis case:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List,
+            <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> X, <span class="hljs-keyword">typename</span> Y&gt; <span class="hljs-keyword">class</span> F,
+            <span class="hljs-keyword">typename</span> I&gt;
+<span class="hljs-keyword">class</span> AccumulateT&lt;List, F, I, <span class="hljs-literal">true</span>&gt;
+{
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> Type = I;
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List,
+            <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> X, <span class="hljs-keyword">typename</span> Y&gt; <span class="hljs-keyword">class</span> F,
+            <span class="hljs-keyword">typename</span> I&gt;
+<span class="hljs-keyword">using</span> Accumulate = <span class="hljs-keyword">typename</span> AccumulateT&lt;List, F, I&gt;::Type;
+</code></pre>
+<p>&#x7D2F;&#x52A0;&#x7B97;&#x6CD5;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x67E5;&#x627E;&#x7C7B;&#x578B;&#x5217;&#x8868;&#x4E2D;&#x4F4D;&#x5BBD;&#x6700;&#x5927;&#x7684;&#x7C7B;&#x578B;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// typelist/largesttypeacc0.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span> U&gt;
+<span class="hljs-keyword">class</span> LargerTypeT
+    : <span class="hljs-keyword">public</span> IfThenElseT&lt;<span class="hljs-keyword">sizeof</span>(T) &gt;= <span class="hljs-keyword">sizeof</span>(U), T, U&gt;
+{
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Typelist&gt;
+<span class="hljs-keyword">class</span> LargestTypeAccT
+    : <span class="hljs-keyword">public</span> AccumulateT&lt;PopFront&lt;Typelist&gt;, LargerTypeT, Front&lt;Typelist&gt;&gt;
+{
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Typelist&gt;
+<span class="hljs-keyword">using</span> LargestTypeAcc = <span class="hljs-keyword">typename</span> LargestTypeAccT&lt;Typelist&gt;::Type;
+</code></pre>
+<p>&#x5F53;&#x5411;<code>LargestTypeAcc&lt;&gt;</code>&#x4F20;&#x9012;&#x7A7A;&#x7C7B;&#x578B;&#x5217;&#x8868;&#x65F6;&#x4F1A;&#x51FA;&#x73B0;&#x7F16;&#x8BD1;&#x9519;&#x8BEF;&#xFF0C;&#x6539;&#x8FDB;&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// typelist/largesttypeacc.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span> U&gt;
+<span class="hljs-keyword">class</span> LargerTypeT
+    : <span class="hljs-keyword">public</span> IfThenElseT&lt;<span class="hljs-keyword">sizeof</span>(T) &gt;= <span class="hljs-keyword">sizeof</span>(U), T, U&gt;
+{
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Typelist, <span class="hljs-keyword">bool</span> = IsEmpty&lt;Typelist&gt;::value&gt;
+<span class="hljs-keyword">class</span> LargestTypeAccT;
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Typelist&gt;
+<span class="hljs-keyword">class</span> LargestTypeAccT&lt;Typelist, <span class="hljs-literal">false</span>&gt;
+    : <span class="hljs-keyword">public</span> AccumulateT&lt;PopFront&lt;Typelist&gt;, LargerTypeT, Front&lt;Typelist&gt;&gt;
+{
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Typelist&gt;
+<span class="hljs-keyword">class</span> LargestTypeAccT&lt;Typelist, <span class="hljs-literal">true</span>&gt;
+{
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Typelist&gt;
+<span class="hljs-keyword">using</span> LargestTypeAcc = <span class="hljs-keyword">typename</span> LargestTypeAccT&lt;Typelist&gt;::Type;
+</code></pre>
+<h3 id="2427-&#x63D2;&#x5165;&#x6392;&#x5E8F;">24.2.7 &#x63D2;&#x5165;&#x6392;&#x5E8F;</h3>
+<p>&#x63D2;&#x5165;&#x6392;&#x5E8F;&#x7684;&#x601D;&#x8DEF;&#x662F;&#x9996;&#x5148;&#x53D6;&#x51FA;&#x7C7B;&#x578B;&#x5217;&#x8868;&#x7684;&#x9996;&#x90E8;&#x7C7B;&#x578B;&#xFF0C;&#x7136;&#x540E;&#x5BF9;&#x5269;&#x4E0B;&#x7684;&#x7C7B;&#x578B;&#x5217;&#x8868;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#xFF0C;&#x6700;&#x7EC8;&#x518D;&#x5C06;&#x9996;&#x90E8;&#x7C7B;&#x578B;&#x63D2;&#x5165;&#x5230;&#x5408;&#x9002;&#x7684;&#x4F4D;&#x7F6E;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// typelist/insertionsort.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List,
+            <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span> U&gt; <span class="hljs-keyword">class</span> Compare,
+            <span class="hljs-keyword">bool</span> = IsEmpty&lt;List&gt;::value&gt;
+<span class="hljs-keyword">class</span> InsertionSortT;
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List,
+            <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span> U&gt; <span class="hljs-keyword">class</span> Compare&gt;
+<span class="hljs-keyword">using</span> InsertionSort = <span class="hljs-keyword">typename</span> InsertionSortT&lt;List, Compare&gt;::Type;
+
+<span class="hljs-comment">// recursive case (insert first element into sorted list):</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List,
+            <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span> U&gt; <span class="hljs-keyword">class</span> Compare&gt;
+<span class="hljs-keyword">class</span> InsertionSortT&lt;List, Compare, <span class="hljs-literal">false</span>&gt;
+    : <span class="hljs-keyword">public</span> InsertSortedT&lt;InsertionSort&lt;PopFront&lt;List&gt;, Compare&gt;,
+                            Front&lt;List&gt;, Compare&gt;
+{
+};
+
+<span class="hljs-comment">// basis case (an empty list is sorted):</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List,
+            <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span> U&gt; <span class="hljs-keyword">class</span> Compare&gt;
+<span class="hljs-keyword">class</span> InsertionSortT&lt;List, Compare, <span class="hljs-literal">true</span>&gt;
+{
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> Type = List;
+};
+</code></pre>
+<p>&#x5728;&#x6709;&#x5E8F;&#x7C7B;&#x578B;&#x5217;&#x8868;&#x4E2D;&#x63D2;&#x5165;&#x7C7B;&#x578B;&#x7684;&#x6A21;&#x677F;<code>InsertSortedT&lt;&gt;</code>&#x4F9D;&#x7136;&#x662F;&#x901A;&#x8FC7;&#x9012;&#x5F52;&#x7684;&#x65B9;&#x5F0F;&#x5B9E;&#x73B0;&#x7684;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// typelist/insertsorted.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;identity.hpp&quot;</span></span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List, <span class="hljs-keyword">typename</span> Element,
+            <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span> U&gt; <span class="hljs-keyword">class</span> Compare,
+            <span class="hljs-keyword">bool</span> = IsEmpty&lt;List&gt;::value&gt;
+<span class="hljs-keyword">class</span> InsertSortedT;
+
+<span class="hljs-comment">// recursive case:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List, <span class="hljs-keyword">typename</span> Element,
+            <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span> U&gt; <span class="hljs-keyword">class</span> Compare&gt;
+<span class="hljs-keyword">class</span> InsertSortedT&lt;List, Element, Compare, <span class="hljs-literal">false</span>&gt;
+{
+        <span class="hljs-comment">// compute the tail of the resulting list:</span>
+        <span class="hljs-keyword">using</span> NewTail = <span class="hljs-keyword">typename</span> IfThenElse&lt;Compare&lt;Element, Front&lt;List&gt;&gt;::value,
+                                            IdentityT&lt;List&gt;,
+                                            InsertSortedT&lt;PopFront&lt;List&gt;, Element, Compare&gt;&gt;::Type;
+        <span class="hljs-comment">// compute the head of the resulting list:</span>
+        <span class="hljs-keyword">using</span> NewHead = IfThenElse&lt;Compare&lt;Element, Front&lt;List&gt;&gt;::value,
+                                    Element,
+                                    Front&lt;List&gt;&gt;;
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> Type = PushFront&lt;NewTail, NewHead&gt;;
+};
+
+<span class="hljs-comment">// basis case:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List, <span class="hljs-keyword">typename</span> Element,
+            <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span> U&gt; <span class="hljs-keyword">class</span> Compare&gt;
+<span class="hljs-keyword">class</span> InsertSortedT&lt;List, Element, Compare, <span class="hljs-literal">true</span>&gt;
+    : <span class="hljs-keyword">public</span> PushFrontT&lt;List, Element&gt;
+{
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List, <span class="hljs-keyword">typename</span> Element,
+            <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span> U&gt; <span class="hljs-keyword">class</span> Compare&gt;
+<span class="hljs-keyword">using</span> InsertSorted = <span class="hljs-keyword">typename</span> InsertSortedT&lt;List, Element, Compare&gt;::Type;
+</code></pre>
+<p>&#x5F53;<code>Compare&lt;T, U&gt;::value</code>&#x4E3A;<code>true</code>&#x65F6;&#xFF0C;&#x5728;&#x6392;&#x5E8F;&#x540E;&#x7684;&#x7C7B;&#x578B;&#x5217;&#x8868;&#x4E2D;<code>T</code>&#x4F1A;&#x51FA;&#x73B0;&#x5728;<code>U</code>&#x7684;&#x524D;&#x9762;&#xFF0C;&#x6D4B;&#x8BD5;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// typelist/insertionsorttest.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span> U&gt;
+<span class="hljs-keyword">struct</span> SmallerThanT {
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">bool</span> value = <span class="hljs-keyword">sizeof</span>(T) &lt; <span class="hljs-keyword">sizeof</span>(U);
+};
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">testInsertionSort</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">using</span> Types = Typelist&lt;<span class="hljs-keyword">int</span>, <span class="hljs-keyword">char</span>, <span class="hljs-keyword">short</span>, <span class="hljs-keyword">double</span>&gt;;
+    <span class="hljs-keyword">using</span> ST = InsertionSort&lt;Types, SmallerThanT&gt;;
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">std</span>::is_same&lt;ST,Typelist&lt;<span class="hljs-keyword">char</span>, <span class="hljs-keyword">short</span>, <span class="hljs-keyword">int</span>, <span class="hljs-keyword">double</span>&gt;&gt;::value &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+}
+</code></pre>
+<h2 id="243-&#x975E;&#x7C7B;&#x578B;&#x7684;&#x7C7B;&#x578B;&#x5217;&#x8868;">24.3 &#x975E;&#x7C7B;&#x578B;&#x7684;&#x7C7B;&#x578B;&#x5217;&#x8868;</h2>
+<p>&#x8FD9;&#x4E2A;&#x540D;&#x5B57;&#x6709;&#x70B9;&#x7ED5;&#xFF0C;&#x5B9E;&#x9645;&#x610F;&#x601D;&#x5C31;&#x662F;&#x5728;&#x7F16;&#x8BD1;&#x65F6;&#x5B58;&#x50A8;&#x503C;&#x7684;&#x5217;&#x8868;&#xFF0C;&#x4E3A;&#x6B64;&#x9700;&#x8981;&#x4E3A;&#x6BCF;&#x4E2A;&#x503C;&#x6784;&#x9020;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// typelist/ctvalue.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, T Value&gt;
+<span class="hljs-keyword">struct</span> CTValue
+{
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">constexpr</span> T value = Value;
+};
+</code></pre>
+<p>&#x5BF9;&#x524D;&#x51E0;&#x4E2A;&#x7D20;&#x6570;&#x7684;&#x7F16;&#x8BD1;&#x65F6;&#x503C;&#x5217;&#x8868;&#x6C42;&#x79EF;&#x7684;&#x4EE3;&#x7801;&#x4E3A;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// typelist/multiply.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span> U&gt;
+<span class="hljs-keyword">struct</span> MultiplyT;
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, T Value1, T Value2&gt;
+<span class="hljs-keyword">struct</span> MultiplyT&lt;CTValue&lt;T, Value1&gt;, CTValue&lt;T, Value2&gt;&gt; {
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> Type = CTValue&lt;T, Value1 * Value2&gt;;
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span> U&gt;
+<span class="hljs-keyword">using</span> Multiply = <span class="hljs-keyword">typename</span> MultiplyT&lt;T, U&gt;::Type;
+</code></pre>
+<pre><code class="lang-cpp"><span class="hljs-keyword">using</span> Primes = Typelist&lt;CTValue&lt;<span class="hljs-keyword">int</span>, <span class="hljs-number">2</span>&gt;, CTValue&lt;<span class="hljs-keyword">int</span>, <span class="hljs-number">3</span>&gt;,
+                        CTValue&lt;<span class="hljs-keyword">int</span>, <span class="hljs-number">5</span>&gt;, CTValue&lt;<span class="hljs-keyword">int</span>, <span class="hljs-number">7</span>&gt;,
+                        CTValue&lt;<span class="hljs-keyword">int</span>, <span class="hljs-number">11</span>&gt;&gt;;
+
+Accumulate&lt;Primes, MultiplyT, CTValue&lt;<span class="hljs-keyword">int</span>, <span class="hljs-number">1</span>&gt;&gt;::value
+</code></pre>
+<p>&#x5982;&#x679C;&#x7F16;&#x8BD1;&#x65F6;&#x503C;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x503C;&#x90FD;&#x662F;&#x540C;&#x4E00;&#x7C7B;&#x578B;&#x7684;&#x8BDD;&#xFF0C;&#x90A3;&#x4E48;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E0B;&#x9762;&#x7684;&#x6A21;&#x677F;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// typelist/cttypelist.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, T... Values&gt;
+<span class="hljs-keyword">using</span> CTTypelist = Typelist&lt;CTValue&lt;T, Values&gt;...&gt;;
+</code></pre>
+<p>&#x6216;&#x8005;&#x4E0D;&#x501F;&#x52A9;<code>TypeList&lt;&gt;</code>&#xFF0C;&#x76F4;&#x63A5;&#x5B9E;&#x73B0;<code>ValueList&lt;&gt;</code>&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// typelist/valuelist.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, T... Values&gt;
+<span class="hljs-keyword">struct</span> Valuelist {
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, T... Values&gt;
+<span class="hljs-keyword">struct</span> IsEmpty&lt;Valuelist&lt;T, Values...&gt;&gt; {
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">bool</span> value = <span class="hljs-keyword">sizeof</span>...(Values) == <span class="hljs-number">0</span>;
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, T Head, T... Tail&gt;
+<span class="hljs-keyword">struct</span> FrontT&lt;Valuelist&lt;T, Head, Tail...&gt;&gt; {
+    <span class="hljs-keyword">using</span> Type = CTValue&lt;T, Head&gt;;
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">constexpr</span> T value = Head;
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, T Head, T... Tail&gt;
+<span class="hljs-keyword">struct</span> PopFrontT&lt;Valuelist&lt;T, Head, Tail...&gt;&gt; {
+    <span class="hljs-keyword">using</span> Type = Valuelist&lt;T, Tail...&gt;;
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, T... Values, T New&gt;
+<span class="hljs-keyword">struct</span> PushFrontT&lt;Valuelist&lt;T, Values...&gt;, CTValue&lt;T, New&gt;&gt; {
+    <span class="hljs-keyword">using</span> Type = Valuelist&lt;T, New, Values...&gt;;
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, T... Values, T New&gt;
+<span class="hljs-keyword">struct</span> PushBackT&lt;Valuelist&lt;T, Values...&gt;, CTValue&lt;T, New&gt;&gt; {
+    <span class="hljs-keyword">using</span> Type = Valuelist&lt;T, Values..., New&gt;;
+};
+</code></pre>
+<p>&#x5B9A;&#x4E49;&#x4E86;<code>IsEmpty&lt;&gt;</code>&#x3001;<code>FrontT&lt;&gt;</code>&#x3001;<code>PopFrontT&lt;&gt;</code>&#x3001;<code>PushFrontT</code>&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x63D2;&#x5165;&#x6392;&#x5E8F;&#x4E86;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// typelist/valuelisttest.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span> U&gt;
+<span class="hljs-keyword">struct</span> GreaterThanT;
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, T First, T Second&gt;
+<span class="hljs-keyword">struct</span> GreaterThanT&lt;CTValue&lt;T, First&gt;, CTValue&lt;T, Second&gt;&gt; {
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">bool</span> value = First &gt; Second;
+};
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">valuelisttest</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">using</span> Integers = Valuelist&lt;<span class="hljs-keyword">int</span>, <span class="hljs-number">6</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">9</span>, <span class="hljs-number">5</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">7</span>&gt;;
+    <span class="hljs-keyword">using</span> SortedIntegers = InsertionSort&lt;Integers, GreaterThanT&gt;;
+    <span class="hljs-keyword">static_assert</span>(<span class="hljs-built_in">std</span>::is_same_v&lt;SortedIntegers, Valuelist&lt;<span class="hljs-keyword">int</span>, <span class="hljs-number">9</span>, <span class="hljs-number">7</span>, <span class="hljs-number">6</span>, <span class="hljs-number">5</span>, <span class="hljs-number">4</span>, <span class="hljs-number">2</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>&gt;&gt;,
+                    <span class="hljs-string">&quot;insertion sort failed&quot;</span>);
+}
+</code></pre>
+<h3 id="2431-&#x4F7F;&#x7528;auto&#x63A8;&#x5BFC;&#x975E;&#x7C7B;&#x578B;&#x6A21;&#x677F;&#x53C2;&#x6570;">24.3.1 &#x4F7F;&#x7528;auto&#x63A8;&#x5BFC;&#x975E;&#x7C7B;&#x578B;&#x6A21;&#x677F;&#x53C2;&#x6570;</h3>
+<p>&#x4ECE;C++17&#x5F00;&#x59CB;&#xFF0C;&#x7531;&#x4E8E;<code>auto</code>&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x63A8;&#x5BFC;&#x975E;&#x7C7B;&#x578B;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x6240;&#x4EE5;<code>CTValue&lt;&gt;</code>&#x8FD8;&#x6709;&#x66F4;&#x7B80;&#x5355;&#x7684;&#x5B9A;&#x4E49;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// typelist/ctvalue17.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">auto</span> Value&gt;
+<span class="hljs-keyword">struct</span> CTValue
+{
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">auto</span> value = Value;
+};
+</code></pre>
+<h2 id="244-&#x5229;&#x7528;&#x53C2;&#x6570;&#x5305;&#x5C55;&#x5F00;&#x4F18;&#x5316;&#x7B97;&#x6CD5;">24.4 &#x5229;&#x7528;&#x53C2;&#x6570;&#x5305;&#x5C55;&#x5F00;&#x4F18;&#x5316;&#x7B97;&#x6CD5;</h2>
+<p>&#x5BF9;&#x4E8E;<a href="#Transforming-a-Typelist">24.2.5</a>&#x4E2D;&#x7684;&#x53D8;&#x6362;&#x7B97;&#x6CD5;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x5229;&#x7528;&#x53C2;&#x6570;&#x5305;&#x5C55;&#x5F00;&#x6765;&#x8FDB;&#x884C;&#x4F18;&#x5316;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// typelist/variadictransform.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>... Elements, <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt; <span class="hljs-keyword">class</span> MetaFun&gt;
+<span class="hljs-keyword">class</span> TransformT&lt;Typelist&lt;Elements...&gt;, MetaFun, <span class="hljs-literal">false</span>&gt;
+{
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> Type = Typelist&lt;<span class="hljs-keyword">typename</span> MetaFun&lt;Elements&gt;::Type...&gt;;
+};
+</code></pre>
+<p>&#x4E66;&#x4E2D;&#x8FD8;&#x7ED9;&#x51FA;&#x4E86;&#x4E00;&#x4E2A;&#x6839;&#x636E;&#x7D22;&#x5F15;&#x63D0;&#x53D6;&#x7C7B;&#x578B;&#x5217;&#x8868;&#x4E2D;&#x6307;&#x5B9A;&#x7C7B;&#x578B;&#x7684;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// typelist/select.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Types, <span class="hljs-keyword">typename</span> Indices&gt;
+<span class="hljs-keyword">class</span> SelectT;
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Types, <span class="hljs-keyword">unsigned</span>... Indices&gt;
+<span class="hljs-keyword">class</span> SelectT&lt;Types, Valuelist&lt;<span class="hljs-keyword">unsigned</span>, Indices...&gt;&gt;
+{
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> Type = Typelist&lt;NthElement&lt;Types, Indices&gt;...&gt;;
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Types, <span class="hljs-keyword">typename</span> Indices&gt;
+<span class="hljs-keyword">using</span> Select = <span class="hljs-keyword">typename</span> SelectT&lt;Types, Indices&gt;::Type;
+</code></pre>
+<h2 id="245-cons&#x98CE;&#x683C;&#x7684;&#x7C7B;&#x578B;&#x5217;&#x8868;">24.5 Cons&#x98CE;&#x683C;&#x7684;&#x7C7B;&#x578B;&#x5217;&#x8868;</h2>
+<p>&#x5047;&#x5982;C++&#x4E0D;&#x652F;&#x6301;&#x53EF;&#x53D8;&#x53C2;&#x6570;&#x6A21;&#x677F;&#xFF0C;&#x90A3;&#x4E48;&#x7C7B;&#x578B;&#x5217;&#x8868;&#x5C31;&#x53EA;&#x80FD;&#x5199;&#x6210;LISP&#x4E2D;&#x7684;&#x6837;&#x5B50;&#x4E86;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// typelist/cons.hpp</span>
+<span class="hljs-keyword">class</span> Nil { };
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> HeadT, <span class="hljs-keyword">typename</span> TailT = Nil&gt;
+<span class="hljs-keyword">class</span> Cons {
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> Head = HeadT;
+        <span class="hljs-keyword">using</span> Tail = TailT;
+};
+</code></pre>
+<pre><code class="lang-cpp"><span class="hljs-comment">// typelist/consfront.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List&gt;
+<span class="hljs-keyword">class</span> FrontT {
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> Type = <span class="hljs-keyword">typename</span> List::Head;
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List&gt;
+<span class="hljs-keyword">using</span> Front = <span class="hljs-keyword">typename</span> FrontT&lt;List&gt;::Type;
+</code></pre>
+<pre><code class="lang-cpp"><span class="hljs-comment">// typelist/conspushfront.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List, <span class="hljs-keyword">typename</span> Element&gt;
+<span class="hljs-keyword">class</span> PushFrontT {
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> Type = Cons&lt;Element, List&gt;;
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List, <span class="hljs-keyword">typename</span> Element&gt;
+<span class="hljs-keyword">using</span> PushFront = <span class="hljs-keyword">typename</span> PushFrontT&lt;List, Element&gt;::Type;
+</code></pre>
+<pre><code class="lang-cpp"><span class="hljs-comment">// typelist/conspopfront.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List&gt;
+<span class="hljs-keyword">class</span> PopFrontT {
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> Type = <span class="hljs-keyword">typename</span> List::Tail;
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List&gt;
+<span class="hljs-keyword">using</span> PopFront = <span class="hljs-keyword">typename</span> PopFrontT&lt;List&gt;::Type;
+</code></pre>
+<pre><code class="lang-cpp"><span class="hljs-comment">// typelist/consisempty.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List&gt;
+<span class="hljs-keyword">struct</span> IsEmpty {
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">bool</span> value = <span class="hljs-literal">false</span>;
+};
+
+<span class="hljs-keyword">template</span>&lt;&gt;
+<span class="hljs-keyword">struct</span> IsEmpty&lt;Nil&gt; {
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">bool</span> value = <span class="hljs-literal">true</span>;
+};
+</code></pre>
+<p>&#x5B9A;&#x4E49;&#x4E86;&#x8FD9;&#x4E9B;&#x57FA;&#x7840;&#x64CD;&#x4F5C;&#x540E;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x63D2;&#x5165;&#x6392;&#x5E8F;&#x4E86;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// typelist/conslisttest.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span> U&gt;
+<span class="hljs-keyword">struct</span> SmallerThanT {
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">bool</span> value = <span class="hljs-keyword">sizeof</span>(T) &lt; <span class="hljs-keyword">sizeof</span>(U);
+};
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">conslisttest</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">using</span> ConsList = Cons&lt;<span class="hljs-keyword">int</span>, Cons&lt;<span class="hljs-keyword">char</span>, Cons&lt;<span class="hljs-keyword">short</span>, Cons&lt;<span class="hljs-keyword">double</span>&gt;&gt;&gt;&gt;;
+    <span class="hljs-keyword">using</span> SortedTypes = InsertionSort&lt;ConsList, SmallerThanT&gt;;
+    <span class="hljs-keyword">using</span> Expected = Cons&lt;<span class="hljs-keyword">char</span>, Cons&lt;<span class="hljs-keyword">short</span>, Cons&lt;<span class="hljs-keyword">int</span>, Cons&lt;<span class="hljs-keyword">double</span>&gt;&gt;&gt;&gt;;
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">std</span>::is_same&lt;SortedTypes, Expected&gt;::value &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+}
+</code></pre>
+<h2 id="246-&#x540E;&#x8BB0;">24.6 &#x540E;&#x8BB0;</h2>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="2022-03-05-ch23-metaprogramming.html" class="navigation navigation-prev " aria-label="Previous page: Chapter 23 Metaprogramming">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="2022-03-07-ch25-tuples.html" class="navigation navigation-next " aria-label="Next page: Chapter 25 Tuples">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Chapter 24 Typelists","level":"1.25","depth":1,"next":{"title":"Chapter 25 Tuples","level":"1.26","depth":1,"path":"2022-03-07-ch25-tuples.md","ref":"2022-03-07-ch25-tuples.md","articles":[]},"previous":{"title":"Chapter 23 Metaprogramming","level":"1.24","depth":1,"path":"2022-03-05-ch23-metaprogramming.md","ref":"2022-03-05-ch23-metaprogramming.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"2022-03-06-ch24-typelists.md","mtime":"2022-11-13T05:00:16.206Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-11-13T05:01:04.198Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

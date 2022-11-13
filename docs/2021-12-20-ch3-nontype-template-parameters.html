@@ -1,0 +1,872 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Chapter 3 Nontype Template Parameters · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="2021-12-20-ch4-variadic-templates.html" />
+    
+    
+    <link rel="prev" href="2021-12-20-ch2-class-templates.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="2021-12-15-ch1-function-templates.html">
+            
+                <a href="2021-12-15-ch1-function-templates.html">
+            
+                    
+                    Chapter 1 Funtion Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="2021-12-20-ch2-class-templates.html">
+            
+                <a href="2021-12-20-ch2-class-templates.html">
+            
+                    
+                    Chapter 2 Class Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="2021-12-20-ch3-nontype-template-parameters.html">
+            
+                <a href="2021-12-20-ch3-nontype-template-parameters.html">
+            
+                    
+                    Chapter 3 Nontype Template Parameters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="2021-12-20-ch4-variadic-templates.html">
+            
+                <a href="2021-12-20-ch4-variadic-templates.html">
+            
+                    
+                    Chapter 4 Variadic Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="2021-12-30-ch5-tricky-basics.html">
+            
+                <a href="2021-12-30-ch5-tricky-basics.html">
+            
+                    
+                    Chapter 5 Tricky Basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="2022-01-04-ch6-move-semantics-and-enable-if.html">
+            
+                <a href="2022-01-04-ch6-move-semantics-and-enable-if.html">
+            
+                    
+                    Chapter 6 Move Semantics and enable_if<>
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="2022-01-05-ch7-by-value-or-by-reference.html">
+            
+                <a href="2022-01-05-ch7-by-value-or-by-reference.html">
+            
+                    
+                    Chapter 7 By Value or by Reference?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="2022-01-06-ch8-compile-time-programming.html">
+            
+                <a href="2022-01-06-ch8-compile-time-programming.html">
+            
+                    
+                    Chapter 8 Compile-Time Programming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="2022-01-06-ch9-using-templates-in-practice.html">
+            
+                <a href="2022-01-06-ch9-using-templates-in-practice.html">
+            
+                    
+                    Chapter 9 Using Templates in Practice
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="2022-01-07-ch10-basic-template-terminology.html">
+            
+                <a href="2022-01-07-ch10-basic-template-terminology.html">
+            
+                    
+                    Chapter 10 Basic Template Terminology
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="2022-01-08-ch11-generic-libraries.html">
+            
+                <a href="2022-01-08-ch11-generic-libraries.html">
+            
+                    
+                    Chapter 11 Generic Libraries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="2022-01-12-ch12-fundamentals-in-depth.html">
+            
+                <a href="2022-01-12-ch12-fundamentals-in-depth.html">
+            
+                    
+                    Chapter 12 Fundamentals in Depth
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="2022-01-27-ch13-names-in-templates.html">
+            
+                <a href="2022-01-27-ch13-names-in-templates.html">
+            
+                    
+                    Chapter 13 Names in Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="2022-02-07-ch14-instantiation.html">
+            
+                <a href="2022-02-07-ch14-instantiation.html">
+            
+                    
+                    Chapter 14 Instantiation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="2022-02-15-ch15-template-argument-deduction.html">
+            
+                <a href="2022-02-15-ch15-template-argument-deduction.html">
+            
+                    
+                    Chapter 15 Template Argument Deduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="2022-02-17-ch16-specialization-and-overloading.html">
+            
+                <a href="2022-02-17-ch16-specialization-and-overloading.html">
+            
+                    
+                    Chapter 16 Specialization and Overloading
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="2022-02-22-ch17-future-directions.html">
+            
+                <a href="2022-02-22-ch17-future-directions.html">
+            
+                    
+                    Chapter 17 Future Directions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="2022-02-23-ch18-the-polymorphic-power-of-templates.html">
+            
+                <a href="2022-02-23-ch18-the-polymorphic-power-of-templates.html">
+            
+                    
+                    Chapter 18 The Polymorphic Power of Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="2022-03-01-ch19-implementing-traits.html">
+            
+                <a href="2022-03-01-ch19-implementing-traits.html">
+            
+                    
+                    Chapter 19 Implementing Traits
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="2022-03-02-ch20-overloading-on-type-properties.html">
+            
+                <a href="2022-03-02-ch20-overloading-on-type-properties.html">
+            
+                    
+                    Chapter 20 Overloading on Type Properties
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="2022-03-03-ch21-templates-and-inheritance.html">
+            
+                <a href="2022-03-03-ch21-templates-and-inheritance.html">
+            
+                    
+                    Chapter 21 Templates and Inheritance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="2022-03-05-ch22-bridging-static-and-dynamic-polymorphism.html">
+            
+                <a href="2022-03-05-ch22-bridging-static-and-dynamic-polymorphism.html">
+            
+                    
+                    Chapter 22 Bridging Static and Dynamic Polymorphism
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="2022-03-05-ch23-metaprogramming.html">
+            
+                <a href="2022-03-05-ch23-metaprogramming.html">
+            
+                    
+                    Chapter 23 Metaprogramming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="2022-03-06-ch24-typelists.html">
+            
+                <a href="2022-03-06-ch24-typelists.html">
+            
+                    
+                    Chapter 24 Typelists
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" data-path="2022-03-07-ch25-tuples.html">
+            
+                <a href="2022-03-07-ch25-tuples.html">
+            
+                    
+                    Chapter 25 Tuples
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27" data-path="2022-03-08-ch26-discriminated-unions.html">
+            
+                <a href="2022-03-08-ch26-discriminated-unions.html">
+            
+                    
+                    Chapter 26 Discriminated Unions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28" data-path="2022-03-09-ch27-expression-templates.html">
+            
+                <a href="2022-03-09-ch27-expression-templates.html">
+            
+                    
+                    Chapter 27 Expression Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29" data-path="2022-03-09-ch28-debugging-templates.html">
+            
+                <a href="2022-03-09-ch28-debugging-templates.html">
+            
+                    
+                    Chapter 28 Debugging Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.30" data-path="2022-01-05-appB-value-categories.html">
+            
+                <a href="2022-01-05-appB-value-categories.html">
+            
+                    
+                    Appendix B Value Categories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.31" data-path="2022-03-02-appC-overload-resolution.html">
+            
+                <a href="2022-03-02-appC-overload-resolution.html">
+            
+                    
+                    Appendix C Overload Resolution
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Chapter 3 Nontype Template Parameters</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="3-&#x975E;&#x7C7B;&#x578B;&#x6A21;&#x677F;&#x53C2;&#x6570;">3 &#x975E;&#x7C7B;&#x578B;&#x6A21;&#x677F;&#x53C2;&#x6570;</h1>
+<p>&#x5BF9;&#x4E8E;&#x51FD;&#x6570;&#x6A21;&#x677F;&#x548C;&#x7C7B;&#x6A21;&#x677F;&#xFF0C;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x666E;&#x901A;&#x7684;&#x6570;&#x503C;&#x3002;</p>
+<h2 id="31-&#x975E;&#x7C7B;&#x578B;&#x7C7B;&#x6A21;&#x677F;&#x53C2;&#x6570;">3.1 &#x975E;&#x7C7B;&#x578B;&#x7C7B;&#x6A21;&#x677F;&#x53C2;&#x6570;</h2>
+<p>&#x5C06;&#x6808;&#x7684;&#x5927;&#x5C0F;&#x8BBE;&#x5B9A;&#x4E3A;&#x56FA;&#x5B9A;&#x503C;&#x53EF;&#x4EE5;&#x907F;&#x514D;&#x5185;&#x5B58;&#x7BA1;&#x7406;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x4F46;&#x662F;&#x6A21;&#x677F;&#x4F5C;&#x8005;&#x5E76;&#x4E0D;&#x77E5;&#x9053;&#x8BBE;&#x5B9A;&#x4E3A;&#x591A;&#x5927;&#x662F;&#x5408;&#x9002;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x975E;&#x7C7B;&#x578B;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x6765;&#x8BA9;&#x7528;&#x6237;&#x8BBE;&#x5B9A;&#x6808;&#x7684;&#x5927;&#x5C0F;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// basics/stacknontype.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;array&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cassert&gt;</span></span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-built_in">std</span>::<span class="hljs-keyword">size_t</span> Maxsize&gt;
+<span class="hljs-keyword">class</span> Stack {
+    <span class="hljs-keyword">private</span>:
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">array</span>&lt;T,Maxsize&gt; elems;    <span class="hljs-comment">// elements</span>
+        <span class="hljs-built_in">std</span>::<span class="hljs-keyword">size_t</span> numElems;           <span class="hljs-comment">// current number of elements</span>
+    <span class="hljs-keyword">public</span>:
+        Stack();                    <span class="hljs-comment">// constructor</span>
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">push</span><span class="hljs-params">(T <span class="hljs-keyword">const</span>&amp; elem)</span></span>;   <span class="hljs-comment">// push element</span>
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">pop</span><span class="hljs-params">()</span></span>;                 <span class="hljs-comment">// pop element</span>
+        <span class="hljs-function">T <span class="hljs-keyword">const</span>&amp; <span class="hljs-title">top</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span></span>;       <span class="hljs-comment">// return top element</span>
+        <span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">empty</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> </span>{        <span class="hljs-comment">// return whether the stack is empty</span>
+            <span class="hljs-keyword">return</span> numElems == <span class="hljs-number">0</span>;
+        }
+        <span class="hljs-built_in">std</span>::<span class="hljs-keyword">size_t</span> size() <span class="hljs-keyword">const</span> {  <span class="hljs-comment">// return current number of elements</span>
+            <span class="hljs-keyword">return</span> numElems;
+        }
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-built_in">std</span>::<span class="hljs-keyword">size_t</span> Maxsize&gt;
+Stack&lt;T,Maxsize&gt;::Stack ()
+    : numElems(<span class="hljs-number">0</span>) <span class="hljs-comment">// start with no elements</span>
+{
+    <span class="hljs-comment">// nothing else to do</span>
+}
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-built_in">std</span>::<span class="hljs-keyword">size_t</span> Maxsize&gt;
+<span class="hljs-keyword">void</span> Stack&lt;T,Maxsize&gt;::push (T <span class="hljs-keyword">const</span>&amp; elem)
+{
+    assert(numElems &lt; Maxsize);
+    elems[numElems] = elem;     <span class="hljs-comment">// append element</span>
+    ++numElems;                 <span class="hljs-comment">// increment number of elements</span>
+}
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-built_in">std</span>::<span class="hljs-keyword">size_t</span> Maxsize&gt;
+<span class="hljs-keyword">void</span> Stack&lt;T,Maxsize&gt;::pop ()
+{
+    assert(!elems.empty());
+    --numElems; <span class="hljs-comment">// decrement number of elements</span>
+}
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-built_in">std</span>::<span class="hljs-keyword">size_t</span> Maxsize&gt;
+T <span class="hljs-keyword">const</span>&amp; Stack&lt;T,Maxsize&gt;::top () <span class="hljs-keyword">const</span>
+{
+    assert(!elems.empty());
+    <span class="hljs-keyword">return</span> elems[numElems<span class="hljs-number">-1</span>]; <span class="hljs-comment">// return last element</span>
+}
+</code></pre>
+<p>&#x4E0B;&#x9762;&#x662F;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// basics/stacknontype.cpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;stacknontype.hpp&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string&gt;</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    Stack&lt;<span class="hljs-keyword">int</span>,<span class="hljs-number">20</span>&gt; int20Stack;           <span class="hljs-comment">// stack of up to 20 ints</span>
+    Stack&lt;<span class="hljs-keyword">int</span>,<span class="hljs-number">40</span>&gt; int40Stack;           <span class="hljs-comment">// stack of up to 40 ints</span>
+    Stack&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>,<span class="hljs-number">40</span>&gt; stringStack;  <span class="hljs-comment">// stack of up to 40 strings</span>
+
+    <span class="hljs-comment">// manipulate stack of up to 20 ints</span>
+    int20Stack.push(<span class="hljs-number">7</span>);
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; int20Stack.top() &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+    int20Stack.pop();
+
+    <span class="hljs-comment">// manipulate stack of up to 40 strings</span>
+    stringStack.push(<span class="hljs-string">&quot;hello&quot;</span>);
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; stringStack.top() &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+    stringStack.pop();
+}
+</code></pre>
+<p>&#x5F53;&#x7136;&#x975E;&#x7C7B;&#x578B;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x4E5F;&#x662F;&#x53EF;&#x4EE5;&#x6709;&#x9ED8;&#x8BA4;&#x503C;&#x7684;&#x3002;</p>
+<h2 id="32-&#x975E;&#x7C7B;&#x578B;&#x51FD;&#x6570;&#x6A21;&#x677F;&#x53C2;&#x6570;">3.2 &#x975E;&#x7C7B;&#x578B;&#x51FD;&#x6570;&#x6A21;&#x677F;&#x53C2;&#x6570;</h2>
+<p>&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x5E26;&#x975E;&#x7C7B;&#x578B;&#x53C2;&#x6570;&#x7684;&#x51FD;&#x6570;&#x6A21;&#x677F;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// basics/addvalue.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">int</span> Val, <span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-function">T <span class="hljs-title">addValue</span> <span class="hljs-params">(T x)</span>
+</span>{
+    <span class="hljs-keyword">return</span> x + Val;
+}
+</code></pre>
+<p>&#x7136;&#x540E;&#x901A;&#x8FC7;&#x7B97;&#x6CD5;<code>transform</code>&#x5C31;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x5C06;<code>source</code>&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x503C;&#x52A0;5&#x540E;&#x5B58;&#x50A8;&#x5230;<code>dest</code>&#x4E2D;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-built_in">std</span>::transform (source.begin(), source.end(),   <span class="hljs-comment">// start and end of source</span>
+                dest.begin(),                   <span class="hljs-comment">// start of destination</span>
+                addValue&lt;<span class="hljs-number">5</span>,<span class="hljs-keyword">int</span>&gt;);               <span class="hljs-comment">// operation</span>
+</code></pre>
+<p>&#x548C;&#x524D;&#x9762;&#x7684;&#x7C7B;&#x6A21;&#x677F;&#x4E00;&#x6837;&#xFF0C;&#x975E;&#x7C7B;&#x578B;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x4E5F;&#x662F;&#x53EF;&#x4EE5;&#x6709;&#x9ED8;&#x8BA4;&#x503C;&#x7684;&#x3002;</p>
+<h2 id="Restrictions">3.3 &#x975E;&#x7C7B;&#x578B;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x7684;&#x9650;&#x5236; </h2>
+<p>&#x975E;&#x7C7B;&#x578B;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x53EA;&#x80FD;&#x662F;&#xFF1A;</p>
+<ol>
+<li>&#x5E38;&#x91CF;&#x6574;&#x6570;&#xFF0C;&#x4E5F;&#x5305;&#x62EC;&#x679A;&#x4E3E;&#x7C7B;&#x578B;</li>
+<li>&#x6307;&#x5411;&#x5BF9;&#x8C61;&#x3001;&#x51FD;&#x6570;&#x548C;&#x6210;&#x5458;&#x7684;&#x6307;&#x9488;</li>
+<li>&#x5BF9;&#x8C61;&#x548C;&#x51FD;&#x6570;&#x7684;&#x5DE6;&#x503C;&#x5F15;&#x7528;</li>
+<li><code>std::nullptr_t</code></li>
+</ol>
+<p>&#x4E0D;&#x80FD;&#x662F;&#xFF1A;</p>
+<ol>
+<li>&#x6D6E;&#x70B9;&#x7C7B;&#x578B;</li>
+<li>&#x7C7B;&#x7C7B;&#x578B;&#xFF0C;&#x4F8B;&#x5982;<code>std::string</code></li>
+</ol>
+<p><em>&#x5F53;&#x975E;&#x7C7B;&#x578B;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x662F;&#x6307;&#x9488;&#x6216;&#x8005;&#x5F15;&#x7528;&#x65F6;&#xFF0C;&#x6307;&#x9488;&#x6307;&#x5411;&#x7684;&#x5BF9;&#x8C61;&#x6216;&#x8005;&#x5F15;&#x7528;&#x5F15;&#x7528;&#x7684;&#x5BF9;&#x8C61;&#x4E0D;&#x80FD;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#x5B57;&#x9762;&#x503C;&#x3001;&#x4E34;&#x65F6;&#x53D8;&#x91CF;&#x3001;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x6216;&#x8005;&#x5176;&#x5B83;&#x5B50;&#x5BF9;&#x8C61;&#x3002;&#x4E0D;&#x8FC7;&#x968F;&#x7740;&#x6F14;&#x53D8;&#x5230;C++17&#xFF0C;&#x8FD9;&#x4E9B;&#x9650;&#x5236;&#x5DF2;&#x7ECF;&#x6162;&#x6162;&#x7684;&#x653E;&#x5F00;&#x4E86;&#xFF0C;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x7CBE;&#x7B80;&#x4E3A;&#x4E0B;&#x9762;&#x7684;&#x51E0;&#x6761;&#xFF1A;</em></p>
+<ul>
+<li>&#x5728;C++11&#x4E2D;&#xFF0C;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x5FC5;&#x987B;&#x662F;&#x53EF;&#x4EE5;&#x88AB;&#x5916;&#x90E8;&#x94FE;&#x63A5;&#x7684;</li>
+<li>&#x5728;C++14&#x4E2D;&#xFF0C;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x5FC5;&#x987B;&#x662F;&#x5916;&#x90E8;&#x94FE;&#x63A5;&#x6216;&#x8005;&#x5185;&#x90E8;&#x94FE;&#x63A5;&#x7684;</li>
+</ul>
+<p>&#x56E0;&#x6B64;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x662F;&#x9519;&#x8BEF;&#x7684;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">char</span> <span class="hljs-keyword">const</span>* name&gt;
+<span class="hljs-keyword">class</span> MyClass {
+};
+
+MyClass&lt;<span class="hljs-string">&quot;hello&quot;</span>&gt; x; <span class="hljs-comment">// ERROR: string literal &quot;hello&quot; not allowed</span>
+</code></pre>
+<p>&#x4E0D;&#x8FC7;&#x6709;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">extern</span> <span class="hljs-keyword">char</span> <span class="hljs-keyword">const</span> s03[] = <span class="hljs-string">&quot;hi&quot;</span>;     <span class="hljs-comment">// external linkage</span>
+<span class="hljs-keyword">char</span> <span class="hljs-keyword">const</span> s11[] = <span class="hljs-string">&quot;hi&quot;</span>;            <span class="hljs-comment">// internal linkage</span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    Message&lt;s03&gt; m03;                   <span class="hljs-comment">// OK (all versions)</span>
+    Message&lt;s11&gt; m11;                   <span class="hljs-comment">// OK since C++11</span>
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">char</span> <span class="hljs-keyword">const</span> s17[] = <span class="hljs-string">&quot;hi&quot;</span>;     <span class="hljs-comment">// no linkage</span>
+    Message&lt;s17&gt; m17;                   <span class="hljs-comment">// OK since C++17</span>
+}
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x659C;&#x4F53;&#x539F;&#x6587;&#xFF1A;</p>
+<blockquote>
+<p>When passing template arguments to pointers or references, the objects must not be string literals, temporaries, or data members and other subobjects. Because these restrictions were relaxed with each and every C++ version before C++17, additional constraints apply.</p>
+</blockquote>
+<p>&#x975E;&#x7C7B;&#x578B;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x8868;&#x8FBE;&#x5F0F;&#x3002;</p>
+<h2 id="34-auto&#x7C7B;&#x578B;&#x7684;&#x975E;&#x7C7B;&#x578B;&#x6A21;&#x677F;&#x53C2;&#x6570;">3.4 auto&#x7C7B;&#x578B;&#x7684;&#x975E;&#x7C7B;&#x578B;&#x6A21;&#x677F;&#x53C2;&#x6570;</h2>
+<p>&#x4ECE;C++17&#x5F00;&#x59CB;&#xFF0C;&#x975E;&#x7C7B;&#x578B;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x7684;&#x7C7B;&#x578B;&#x53EF;&#x4EE5;&#x4E3A;<code>auto</code>&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// basics/stackauto.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;array&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cassert&gt;</span></span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">auto</span> Maxsize&gt;
+<span class="hljs-keyword">class</span> Stack {
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> size_type = <span class="hljs-keyword">decltype</span>(Maxsize);
+    <span class="hljs-keyword">private</span>:
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">array</span>&lt;T,Maxsize&gt; elems;    <span class="hljs-comment">// elements</span>
+        size_type numElems;             <span class="hljs-comment">// current number of elements</span>
+    <span class="hljs-keyword">public</span>:
+        Stack();                        <span class="hljs-comment">// constructor</span>
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">push</span><span class="hljs-params">(T <span class="hljs-keyword">const</span>&amp; elem)</span></span>;       <span class="hljs-comment">// push element</span>
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">pop</span><span class="hljs-params">()</span></span>;                     <span class="hljs-comment">// pop element</span>
+        <span class="hljs-function">T <span class="hljs-keyword">const</span>&amp; <span class="hljs-title">top</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span></span>;           <span class="hljs-comment">// return top element</span>
+        <span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">empty</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> </span>{            <span class="hljs-comment">// return whether the stack is empty</span>
+            <span class="hljs-keyword">return</span> numElems == <span class="hljs-number">0</span>;
+        }
+        <span class="hljs-function">size_type <span class="hljs-title">size</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> </span>{        <span class="hljs-comment">// return current number of elements</span>
+            <span class="hljs-keyword">return</span> numElems;
+        }
+};
+
+<span class="hljs-comment">// constructor</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">auto</span> Maxsize&gt;
+Stack&lt;T,Maxsize&gt;::Stack ()
+    : numElems(<span class="hljs-number">0</span>) <span class="hljs-comment">// start with no elements</span>
+{
+    <span class="hljs-comment">// nothing else to do</span>
+}
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">auto</span> Maxsize&gt;
+<span class="hljs-keyword">void</span> Stack&lt;T,Maxsize&gt;::push (T <span class="hljs-keyword">const</span>&amp; elem)
+{
+    assert(numElems &lt; Maxsize);
+    elems[numElems] = elem;     <span class="hljs-comment">// append element</span>
+    ++numElems;                 <span class="hljs-comment">// increment number of elements</span>
+}
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">auto</span> Maxsize&gt;
+<span class="hljs-keyword">void</span> Stack&lt;T,Maxsize&gt;::pop ()
+{
+    assert(!elems.empty());
+    --numElems; <span class="hljs-comment">// decrement number of elements</span>
+}
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">auto</span> Maxsize&gt;
+T <span class="hljs-keyword">const</span>&amp; Stack&lt;T,Maxsize&gt;::top () <span class="hljs-keyword">const</span>
+{
+    assert(!elems.empty());
+    <span class="hljs-keyword">return</span> elems[numElems<span class="hljs-number">-1</span>]; <span class="hljs-comment">// return last element</span>
+}
+</code></pre>
+<p>&#x4E0B;&#x9762;&#x662F;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// basics/stackauto.cpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;stackauto.hpp&quot;</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    Stack&lt;<span class="hljs-keyword">int</span>,<span class="hljs-number">20u</span>&gt; int20Stack;          <span class="hljs-comment">// stack of up to 20 ints</span>
+    Stack&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>,<span class="hljs-number">40</span>&gt; stringStack;  <span class="hljs-comment">// stack of up to 40 strings</span>
+
+    <span class="hljs-comment">// manipulate stack of up to 20 ints</span>
+    int20Stack.push(<span class="hljs-number">7</span>);
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; int20Stack.top() &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+    <span class="hljs-keyword">auto</span> size1 = int20Stack.size();
+
+    <span class="hljs-comment">// manipulate stack of up to 40 strings</span>
+    stringStack.push(<span class="hljs-string">&quot;hello&quot;</span>);
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; stringStack.top() &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+    <span class="hljs-keyword">auto</span> size2 = stringStack.size();
+    <span class="hljs-keyword">if</span> (!<span class="hljs-built_in">std</span>::is_same_v&lt;<span class="hljs-keyword">decltype</span>(size1), <span class="hljs-keyword">decltype</span>(size2)&gt;) {
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;size types differ&quot;</span> &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+    }
+}
+</code></pre>
+<p>&#x6CE8;&#x610F;<code>int20Stack</code>&#x4E2D;&#x7684;<code>size_type</code>&#x662F;<code>unsigned int</code>&#xFF0C;&#x800C;<code>stringStack</code>&#x4E2D;&#x7684;<code>size_type</code>&#x662F;<code>int</code>&#xFF0C;&#x6240;&#x4EE5;&#x7A0B;&#x5E8F;&#x7684;&#x8F93;&#x51FA;&#x662F;<code>size types differ</code>&#x3002;</p>
+<p>&#x867D;&#x7136;&#x4F7F;&#x7528;&#x4E86;<code>auto</code>&#xFF0C;&#x4F46;&#x662F;3.3&#x4E2D;&#x7684;&#x9650;&#x5236;&#x662F;&#x4F9D;&#x7136;&#x5B58;&#x5728;&#x7684;&#xFF0C;&#x6240;&#x4EE5;<code>Stack&lt;int,3.14&gt; sd</code>&#x4F9D;&#x7136;&#x662F;&#x9519;&#x8BEF;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x7531;&#x4E8E;&#x5B57;&#x7B26;&#x4E32;&#x53EF;&#x4EE5;&#x88AB;&#x4F5C;&#x4E3A;&#x5E38;&#x91CF;&#x6570;&#x7EC4;&#xFF0C;&#x6240;&#x4EE5;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x662F;&#x5408;&#x6CD5;&#x7684;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// basics/message.cpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">auto</span> T&gt; <span class="hljs-comment">// take value of any possible nontype parameter (since C++17)</span>
+<span class="hljs-keyword">class</span> Message {
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">()</span> </span>{
+            <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; T &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+        }
+};
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    Message&lt;<span class="hljs-number">42</span>&gt; msg1;
+    msg1.print();       <span class="hljs-comment">// initialize with int 42 and print that value</span>
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">char</span> <span class="hljs-keyword">const</span> s[] = <span class="hljs-string">&quot;hello&quot;</span>;
+    Message&lt;s&gt; msg2;    <span class="hljs-comment">// initialize with char const[6] &quot;hello&quot;</span>
+    msg2.print();       <span class="hljs-comment">// and print that value</span>
+}
+</code></pre>
+<p>&#x8FD8;&#x6709;<code>template&lt;decltype(auto) N&gt;</code>&#x4E5F;&#x662F;&#x5408;&#x6CD5;&#x7684;&#xFF0C;&#x8FD9;&#x79CD;&#x58F0;&#x660E;&#x4F1A;&#x8BA9;<code>N</code>&#x7684;&#x7C7B;&#x578B;&#x53D8;&#x4E3A;&#x5F15;&#x7528;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">decltype</span>(<span class="hljs-keyword">auto</span>) N&gt;
+<span class="hljs-keyword">class</span> C {
+};
+
+<span class="hljs-keyword">int</span> i;
+C&lt;(i)&gt; x; <span class="hljs-comment">// N is int&amp;</span>
+</code></pre>
+<h2 id="35-&#x603B;&#x7ED3;">3.5 &#x603B;&#x7ED3;</h2>
+<ol>
+<li>&#x6A21;&#x677F;&#x53C2;&#x6570;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x975E;&#x7C7B;&#x578B;&#x7684;</li>
+<li>&#x6D6E;&#x70B9;&#x7C7B;&#x578B;&#x548C;&#x7C7B;&#x7C7B;&#x578B;&#x662F;&#x4E0D;&#x80FD;&#x4F5C;&#x4E3A;&#x975E;&#x7C7B;&#x578B;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x7684;&#xFF0C;&#x5BF9;&#x4E8E;&#x6307;&#x9488;&#x548C;&#x5F15;&#x7528;&#x7684;&#x9650;&#x5236;&#x5728;<a href="#Restrictions">3.3</a>&#x8282;</li>
+<li>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>auto</code>&#x4F5C;&#x4E3A;&#x975E;&#x7C7B;&#x578B;&#x6A21;&#x677F;&#x53C2;&#x6570;</li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="2021-12-20-ch2-class-templates.html" class="navigation navigation-prev " aria-label="Previous page: Chapter 2 Class Templates">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="2021-12-20-ch4-variadic-templates.html" class="navigation navigation-next " aria-label="Next page: Chapter 4 Variadic Templates">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Chapter 3 Nontype Template Parameters","level":"1.4","depth":1,"next":{"title":"Chapter 4 Variadic Templates","level":"1.5","depth":1,"path":"2021-12-20-ch4-variadic-templates.md","ref":"2021-12-20-ch4-variadic-templates.md","articles":[]},"previous":{"title":"Chapter 2 Class Templates","level":"1.3","depth":1,"path":"2021-12-20-ch2-class-templates.md","ref":"2021-12-20-ch2-class-templates.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"2021-12-20-ch3-nontype-template-parameters.md","mtime":"2022-11-13T05:00:16.159Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-11-13T05:01:04.198Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

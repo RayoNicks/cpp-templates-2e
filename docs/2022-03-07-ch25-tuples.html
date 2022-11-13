@@ -1,0 +1,1473 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Chapter 25 Tuples · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="2022-03-08-ch26-discriminated-unions.html" />
+    
+    
+    <link rel="prev" href="2022-03-06-ch24-typelists.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="2021-12-15-ch1-function-templates.html">
+            
+                <a href="2021-12-15-ch1-function-templates.html">
+            
+                    
+                    Chapter 1 Funtion Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="2021-12-20-ch2-class-templates.html">
+            
+                <a href="2021-12-20-ch2-class-templates.html">
+            
+                    
+                    Chapter 2 Class Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="2021-12-20-ch3-nontype-template-parameters.html">
+            
+                <a href="2021-12-20-ch3-nontype-template-parameters.html">
+            
+                    
+                    Chapter 3 Nontype Template Parameters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="2021-12-20-ch4-variadic-templates.html">
+            
+                <a href="2021-12-20-ch4-variadic-templates.html">
+            
+                    
+                    Chapter 4 Variadic Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="2021-12-30-ch5-tricky-basics.html">
+            
+                <a href="2021-12-30-ch5-tricky-basics.html">
+            
+                    
+                    Chapter 5 Tricky Basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="2022-01-04-ch6-move-semantics-and-enable-if.html">
+            
+                <a href="2022-01-04-ch6-move-semantics-and-enable-if.html">
+            
+                    
+                    Chapter 6 Move Semantics and enable_if<>
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="2022-01-05-ch7-by-value-or-by-reference.html">
+            
+                <a href="2022-01-05-ch7-by-value-or-by-reference.html">
+            
+                    
+                    Chapter 7 By Value or by Reference?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="2022-01-06-ch8-compile-time-programming.html">
+            
+                <a href="2022-01-06-ch8-compile-time-programming.html">
+            
+                    
+                    Chapter 8 Compile-Time Programming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="2022-01-06-ch9-using-templates-in-practice.html">
+            
+                <a href="2022-01-06-ch9-using-templates-in-practice.html">
+            
+                    
+                    Chapter 9 Using Templates in Practice
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="2022-01-07-ch10-basic-template-terminology.html">
+            
+                <a href="2022-01-07-ch10-basic-template-terminology.html">
+            
+                    
+                    Chapter 10 Basic Template Terminology
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="2022-01-08-ch11-generic-libraries.html">
+            
+                <a href="2022-01-08-ch11-generic-libraries.html">
+            
+                    
+                    Chapter 11 Generic Libraries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="2022-01-12-ch12-fundamentals-in-depth.html">
+            
+                <a href="2022-01-12-ch12-fundamentals-in-depth.html">
+            
+                    
+                    Chapter 12 Fundamentals in Depth
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="2022-01-27-ch13-names-in-templates.html">
+            
+                <a href="2022-01-27-ch13-names-in-templates.html">
+            
+                    
+                    Chapter 13 Names in Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="2022-02-07-ch14-instantiation.html">
+            
+                <a href="2022-02-07-ch14-instantiation.html">
+            
+                    
+                    Chapter 14 Instantiation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="2022-02-15-ch15-template-argument-deduction.html">
+            
+                <a href="2022-02-15-ch15-template-argument-deduction.html">
+            
+                    
+                    Chapter 15 Template Argument Deduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="2022-02-17-ch16-specialization-and-overloading.html">
+            
+                <a href="2022-02-17-ch16-specialization-and-overloading.html">
+            
+                    
+                    Chapter 16 Specialization and Overloading
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="2022-02-22-ch17-future-directions.html">
+            
+                <a href="2022-02-22-ch17-future-directions.html">
+            
+                    
+                    Chapter 17 Future Directions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="2022-02-23-ch18-the-polymorphic-power-of-templates.html">
+            
+                <a href="2022-02-23-ch18-the-polymorphic-power-of-templates.html">
+            
+                    
+                    Chapter 18 The Polymorphic Power of Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="2022-03-01-ch19-implementing-traits.html">
+            
+                <a href="2022-03-01-ch19-implementing-traits.html">
+            
+                    
+                    Chapter 19 Implementing Traits
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="2022-03-02-ch20-overloading-on-type-properties.html">
+            
+                <a href="2022-03-02-ch20-overloading-on-type-properties.html">
+            
+                    
+                    Chapter 20 Overloading on Type Properties
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="2022-03-03-ch21-templates-and-inheritance.html">
+            
+                <a href="2022-03-03-ch21-templates-and-inheritance.html">
+            
+                    
+                    Chapter 21 Templates and Inheritance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="2022-03-05-ch22-bridging-static-and-dynamic-polymorphism.html">
+            
+                <a href="2022-03-05-ch22-bridging-static-and-dynamic-polymorphism.html">
+            
+                    
+                    Chapter 22 Bridging Static and Dynamic Polymorphism
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="2022-03-05-ch23-metaprogramming.html">
+            
+                <a href="2022-03-05-ch23-metaprogramming.html">
+            
+                    
+                    Chapter 23 Metaprogramming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="2022-03-06-ch24-typelists.html">
+            
+                <a href="2022-03-06-ch24-typelists.html">
+            
+                    
+                    Chapter 24 Typelists
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.26" data-path="2022-03-07-ch25-tuples.html">
+            
+                <a href="2022-03-07-ch25-tuples.html">
+            
+                    
+                    Chapter 25 Tuples
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27" data-path="2022-03-08-ch26-discriminated-unions.html">
+            
+                <a href="2022-03-08-ch26-discriminated-unions.html">
+            
+                    
+                    Chapter 26 Discriminated Unions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28" data-path="2022-03-09-ch27-expression-templates.html">
+            
+                <a href="2022-03-09-ch27-expression-templates.html">
+            
+                    
+                    Chapter 27 Expression Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29" data-path="2022-03-09-ch28-debugging-templates.html">
+            
+                <a href="2022-03-09-ch28-debugging-templates.html">
+            
+                    
+                    Chapter 28 Debugging Templates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.30" data-path="2022-01-05-appB-value-categories.html">
+            
+                <a href="2022-01-05-appB-value-categories.html">
+            
+                    
+                    Appendix B Value Categories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.31" data-path="2022-03-02-appC-overload-resolution.html">
+            
+                <a href="2022-03-02-appC-overload-resolution.html">
+            
+                    
+                    Appendix C Overload Resolution
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Chapter 25 Tuples</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="25-&#x5143;&#x7EC4;">25 &#x5143;&#x7EC4;</h1>
+<p>&#x672C;&#x7AE0;&#x5B9E;&#x73B0;&#x4E86;<code>Tuple&lt;&gt;</code>&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;<code>std::tuple</code>&#x3002;</p>
+<h2 id="251-&#x57FA;&#x672C;&#x8BBE;&#x8BA1;">25.1 &#x57FA;&#x672C;&#x8BBE;&#x8BA1;</h2>
+<h3 id="2511-&#x5B58;&#x50A8;">25.1.1 &#x5B58;&#x50A8;</h3>
+<p>&#x6700;&#x7B80;&#x5355;&#x7684;&#x65B9;&#x5F0F;&#x8FD8;&#x662F;&#x5C06;&#x5143;&#x7EC4;&#x62C6;&#x5206;&#x4E3A;&#x5934;&#x548C;&#x5C3E;&#x7684;&#x5F62;&#x5F0F;&#x8FDB;&#x884C;&#x5B58;&#x50A8;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// tuples/tuple0.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>... Types&gt;
+<span class="hljs-keyword">class</span> Tuple;
+
+<span class="hljs-comment">// recursive case:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Head, <span class="hljs-keyword">typename</span>... Tail&gt;
+<span class="hljs-keyword">class</span> Tuple&lt;Head, Tail...&gt;
+{
+    <span class="hljs-keyword">private</span>:
+        Head head;
+        Tuple&lt;Tail...&gt; tail;
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-comment">// constructors:</span>
+        Tuple() {
+        }
+        Tuple(Head <span class="hljs-keyword">const</span>&amp; head, Tuple&lt;Tail...&gt; <span class="hljs-keyword">const</span>&amp; tail)
+            : head(head), tail(tail) {
+        }
+        <span class="hljs-comment">// ...</span>
+
+        <span class="hljs-function">Head&amp; <span class="hljs-title">getHead</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> head; }
+        <span class="hljs-function">Head <span class="hljs-keyword">const</span>&amp; <span class="hljs-title">getHead</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> </span>{ <span class="hljs-keyword">return</span> head; }
+        Tuple&lt;Tail...&gt;&amp; getTail() { <span class="hljs-keyword">return</span> tail; }
+        Tuple&lt;Tail...&gt; <span class="hljs-function"><span class="hljs-keyword">const</span>&amp; <span class="hljs-title">getTail</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> </span>{ <span class="hljs-keyword">return</span> tail; }
+};
+
+<span class="hljs-comment">// basis case:</span>
+<span class="hljs-keyword">template</span>&lt;&gt;
+<span class="hljs-keyword">class</span> Tuple&lt;&gt; {
+<span class="hljs-comment">// no storage required</span>
+};
+</code></pre>
+<p>&#x5143;&#x7EC4;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x901A;&#x8FC7;<code>TupleGet&lt;&gt;</code>&#x63D0;&#x53D6;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// tuples/tupleget.hpp</span>
+<span class="hljs-comment">// recursive case:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">unsigned</span> N&gt;
+<span class="hljs-keyword">struct</span> TupleGet {
+    <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Head, <span class="hljs-keyword">typename</span>... Tail&gt;
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">auto</span> <span class="hljs-title">apply</span><span class="hljs-params">(Tuple&lt;Head, Tail...&gt; <span class="hljs-keyword">const</span>&amp; t)</span> </span>{
+        <span class="hljs-keyword">return</span> TupleGet&lt;N<span class="hljs-number">-1</span>&gt;::apply(t.getTail());
+    }
+};
+
+<span class="hljs-comment">// basis case:</span>
+<span class="hljs-keyword">template</span>&lt;&gt;
+<span class="hljs-keyword">struct</span> TupleGet&lt;<span class="hljs-number">0</span>&gt; {
+    <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Head, <span class="hljs-keyword">typename</span>... Tail&gt;
+    <span class="hljs-function"><span class="hljs-keyword">static</span> Head <span class="hljs-keyword">const</span>&amp; <span class="hljs-title">apply</span><span class="hljs-params">(Tuple&lt;Head, Tail...&gt; <span class="hljs-keyword">const</span>&amp; t)</span> </span>{
+        <span class="hljs-keyword">return</span> t.getHead();
+    }
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">unsigned</span> N, <span class="hljs-keyword">typename</span>... Types&gt;
+<span class="hljs-function"><span class="hljs-keyword">auto</span> <span class="hljs-title">get</span><span class="hljs-params">(Tuple&lt;Types...&gt; <span class="hljs-keyword">const</span>&amp; t)</span> </span>{
+    <span class="hljs-keyword">return</span> TupleGet&lt;N&gt;::apply(t);
+}
+</code></pre>
+<h3 id="2512-&#x6784;&#x9020;&#x51FD;&#x6570;">25.1.2 &#x6784;&#x9020;&#x51FD;&#x6570;</h3>
+<p>&#x4E66;&#x4E2D;&#x63D0;&#x5230;&#x4E86;&#x5176;&#x5B83;&#x51E0;&#x4E2A;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x4F46;&#x662F;&#x914D;&#x5957;&#x4EE3;&#x7801;&#x4E2D;&#x6CA1;&#x6709;&#xFF0C;&#x4E0B;&#x9762;&#x7684;&#x662F;&#x6211;&#x81EA;&#x5DF1;&#x5199;&#x7684;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;functional&gt;</span></span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>... Types&gt;
+<span class="hljs-keyword">class</span> Tuple;
+
+<span class="hljs-comment">// recursive case:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Head, <span class="hljs-keyword">typename</span>... Tail&gt;
+<span class="hljs-keyword">class</span> Tuple&lt;Head, Tail...&gt;
+{
+    <span class="hljs-keyword">private</span>:
+        Head head;
+        Tuple&lt;Tail...&gt; tail;
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-comment">// #1</span>
+        Tuple() {
+        }
+        <span class="hljs-comment">// #2</span>
+        Tuple(Head <span class="hljs-keyword">const</span>&amp; head, Tuple&lt;Tail...&gt; <span class="hljs-keyword">const</span>&amp; tail)
+            : head(head), tail(tail) {
+        }
+        <span class="hljs-comment">// #3</span>
+        Tuple(Head <span class="hljs-keyword">const</span>&amp; head, Tail <span class="hljs-keyword">const</span>&amp;... tail)
+            : head(head), tail(tail...) {
+        }
+        <span class="hljs-comment">// #4</span>
+        <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> VHead, <span class="hljs-keyword">typename</span>... VTail&gt;
+        Tuple(VHead&amp;&amp; vhead, VTail&amp;&amp;... vtail)
+            : head(<span class="hljs-built_in">std</span>::forward&lt;VHead&gt;(vhead)), tail(<span class="hljs-built_in">std</span>::forward&lt;VTail&gt;(vtail)...) {
+        }
+        <span class="hljs-comment">// #5</span>
+        <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> VHead, <span class="hljs-keyword">typename</span>... VTail&gt;
+        Tuple(Tuple&lt;VHead, VTail...&gt; <span class="hljs-keyword">const</span>&amp; other)
+            : head(other.getHead()), tail(other.getTail()) {
+        }
+
+        <span class="hljs-function">Head&amp; <span class="hljs-title">getHead</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> head; }
+        <span class="hljs-function">Head <span class="hljs-keyword">const</span>&amp; <span class="hljs-title">getHead</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> </span>{ <span class="hljs-keyword">return</span> head; }
+        Tuple&lt;Tail...&gt;&amp; getTail() { <span class="hljs-keyword">return</span> tail; }
+        Tuple&lt;Tail...&gt; <span class="hljs-function"><span class="hljs-keyword">const</span>&amp; <span class="hljs-title">getTail</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> </span>{ <span class="hljs-keyword">return</span> tail; }
+};
+
+<span class="hljs-comment">// basis case:</span>
+<span class="hljs-keyword">template</span>&lt;&gt;
+<span class="hljs-keyword">class</span> Tuple&lt;&gt; {
+<span class="hljs-comment">// no storage required</span>
+};
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    Tuple&lt;<span class="hljs-keyword">int</span>, <span class="hljs-keyword">double</span>, <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&gt; t(<span class="hljs-number">17</span>, <span class="hljs-number">3.14</span>, <span class="hljs-string">&quot;Hello, World!&quot;</span>);
+    Tuple&lt;<span class="hljs-keyword">long</span> <span class="hljs-keyword">int</span>, <span class="hljs-keyword">long</span> <span class="hljs-keyword">double</span>, <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&gt; t2(t);
+}
+</code></pre>
+<p><code>t2</code>&#x7684;&#x521D;&#x59CB;&#x5316;&#x4F1A;&#x62A5;&#x9519;&#xFF0C;&#x663E;&#x793A;&#x65E0;&#x6CD5;&#x5C06;<code>Tuple&lt;int, double, std::string&gt;</code>&#x8F6C;&#x6362;&#x4E3A;<code>long</code>&#x7C7B;&#x578B;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x5206;&#x6790;&#x4E0B;&#x6784;&#x9020;&#x51FD;&#x6570;&#x7684;&#x91CD;&#x8F7D;&#x89E3;&#x6790;&#x8FC7;&#x7A0B;&#x3002;1&#x548C;2&#x53C2;&#x6570;&#x6570;&#x91CF;&#x4E0D;&#x5339;&#x914D;&#xFF0C;3&#x4E2D;<code>Head</code>&#x4E3A;<code>long</code>&#xFF0C;&#x4E0D;&#x80FD;&#x5339;&#x914D;<code>Tuple&lt;int, double, std::string&gt;</code>&#x3002;4&#x5B9E;&#x4F8B;&#x5316;&#x540E;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E3A;<code>Tuple&lt;Tuple&lt;int, double, std::string&gt;&amp;&gt;(Tuple&lt;int, double, std::string&gt;&amp;)</code>&#xFF0C;5&#x5B9E;&#x4F8B;&#x5316;&#x540E;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E3A;<code>Tuple&lt;int, double, std::string&gt;(Tuple&lt;int, double, std::string&gt; const&amp;)</code>&#xFF0C;&#x7528;<code>t</code>&#x521D;&#x59CB;&#x5316;<code>t2</code>&#x65F6;4&#x6BD4;5&#x7684;&#x5339;&#x914D;&#x5EA6;&#x66F4;&#x9AD8;&#xFF0C;&#x7F16;&#x8BD1;&#x5668;&#x5C06;&#x5339;&#x914D;&#x6784;&#x9020;&#x51FD;&#x6570;4&#xFF0C;&#x8FD9;&#x5C31;&#x5BFC;&#x81F4;&#x4E86;&#x5728;&#x6784;&#x9020;<code>head</code>&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#x51FA;&#x73B0;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x7684;&#x9519;&#x8BEF;&#x3002;</p>
+<p>4&#x7684;&#x672C;&#x610F;&#x662F;&#x901A;&#x8FC7;&#x4E00;&#x7CFB;&#x5217;&#x7684;&#x503C;&#x521D;&#x59CB;&#x5316;&#x5143;&#x7EC4;&#xFF0C;5&#x7684;&#x672C;&#x610F;&#x662F;&#x4ECE;&#x5176;&#x5B83;&#x7684;&#x5143;&#x7EC4;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x6240;&#x4EE5;&#x5E94;&#x8BE5;&#x5728;&#x4E24;&#x4E2A;&#x6A21;&#x677F;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#x6DFB;&#x52A0;<code>std::enable_if</code>&#x6765;&#x4FDD;&#x8BC1;&#x53C2;&#x6570;&#x5305;&#x7684;&#x5927;&#x5C0F;&#x662F;&#x76F8;&#x540C;&#x7684;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> VHead, <span class="hljs-keyword">typename</span>... VTail,
+            <span class="hljs-keyword">typename</span> = <span class="hljs-built_in">std</span>::<span class="hljs-keyword">enable_if_t</span>&lt;<span class="hljs-keyword">sizeof</span>...(VTail)==<span class="hljs-keyword">sizeof</span>...(Tail)&gt;&gt;
+Tuple(VHead&amp;&amp; vhead, VTail&amp;&amp;... vtail)
+    : head(<span class="hljs-built_in">std</span>::forward&lt;VHead&gt;(vhead)), tail(<span class="hljs-built_in">std</span>::forward&lt;VTail&gt;(vtail)...) { }
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> VHead, <span class="hljs-keyword">typename</span>... VTail,
+            <span class="hljs-keyword">typename</span> = <span class="hljs-built_in">std</span>::<span class="hljs-keyword">enable_if_t</span>&lt;<span class="hljs-keyword">sizeof</span>...(VTail)==<span class="hljs-keyword">sizeof</span>...(Tail)&gt;&gt;
+Tuple(Tuple&lt;VHead, VTail...&gt; <span class="hljs-keyword">const</span>&amp; other)
+    : head(other.getHead()), tail(other.getTail()) { }
+</code></pre>
+<p>&#x7C7B;&#x4F3C;<code>std::make_tuple</code>&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>makeTuple()</code>&#x6784;&#x9020;&#x5143;&#x7EC4;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// tuples/maketuple.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>... Types&gt;
+<span class="hljs-function"><span class="hljs-keyword">auto</span> <span class="hljs-title">makeTuple</span><span class="hljs-params">(Types&amp;&amp;... elems)</span>
+</span>{
+    <span class="hljs-keyword">return</span> Tuple&lt;<span class="hljs-built_in">std</span>::<span class="hljs-keyword">decay_t</span>&lt;Types&gt;...&gt;(<span class="hljs-built_in">std</span>::forward&lt;Types&gt;(elems)...);
+}
+</code></pre>
+<h2 id="252-&#x57FA;&#x672C;&#x64CD;&#x4F5C;">25.2 &#x57FA;&#x672C;&#x64CD;&#x4F5C;</h2>
+<h3 id="2521-&#x6BD4;&#x8F83;">25.2.1 &#x6BD4;&#x8F83;</h3>
+<p>&#x6BD4;&#x8F83;&#x64CD;&#x4F5C;&#x5224;&#x65AD;&#x4E24;&#x4E2A;&#x5143;&#x7EC4;&#x7C7B;&#x578B;&#x662F;&#x5426;&#x76F8;&#x540C;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// tuples/tupleeq.hpp</span>
+<span class="hljs-comment">// basis case:</span>
+<span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span>==(Tuple&lt;&gt; <span class="hljs-keyword">const</span>&amp;, Tuple&lt;&gt; <span class="hljs-keyword">const</span>&amp;)
+{
+    <span class="hljs-comment">// empty tuples are always equivalent</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+}
+
+<span class="hljs-comment">// recursive case:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Head1, <span class="hljs-keyword">typename</span>... Tail1,
+            <span class="hljs-keyword">typename</span> Head2, <span class="hljs-keyword">typename</span>... Tail2,
+            <span class="hljs-keyword">typename</span> = <span class="hljs-built_in">std</span>::<span class="hljs-keyword">enable_if_t</span>&lt;<span class="hljs-keyword">sizeof</span>...(Tail1)==<span class="hljs-keyword">sizeof</span>...(Tail2)&gt;&gt;
+<span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span>==(Tuple&lt;Head1, Tail1...&gt; <span class="hljs-keyword">const</span>&amp; lhs, Tuple&lt;Head2, Tail2...&gt; <span class="hljs-keyword">const</span>&amp; rhs)
+{
+    <span class="hljs-keyword">return</span> lhs.getHead() == rhs.getHead() &amp;&amp; lhs.getTail() == rhs.getTail();
+}
+</code></pre>
+<h3 id="2525-&#x8F93;&#x51FA;">25.2.5 &#x8F93;&#x51FA;</h3>
+<pre><code class="lang-cpp"><span class="hljs-comment">// tuples/tupleio.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printTuple</span><span class="hljs-params">(<span class="hljs-built_in">std</span>::ostream&amp; strm, Tuple&lt;&gt; <span class="hljs-keyword">const</span>&amp;, <span class="hljs-keyword">bool</span> isFirst = <span class="hljs-literal">true</span>)</span>
+</span>{
+    strm &lt;&lt; ( isFirst ? <span class="hljs-string">&apos;(&apos;</span> : <span class="hljs-string">&apos;)&apos;</span> );
+}
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Head, <span class="hljs-keyword">typename</span>... Tail&gt;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printTuple</span><span class="hljs-params">(<span class="hljs-built_in">std</span>::ostream&amp; strm, Tuple&lt;Head, Tail...&gt; <span class="hljs-keyword">const</span>&amp; t,
+<span class="hljs-keyword">bool</span> isFirst = <span class="hljs-literal">true</span>)</span>
+</span>{
+    strm &lt;&lt; ( isFirst ? <span class="hljs-string">&quot;(&quot;</span> : <span class="hljs-string">&quot;, &quot;</span> );
+    strm &lt;&lt; t.getHead();
+    printTuple(strm, t.getTail(), <span class="hljs-literal">false</span>);
+}
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>... Types&gt;
+<span class="hljs-built_in">std</span>::ostream&amp; <span class="hljs-keyword">operator</span>&lt;&lt;(<span class="hljs-built_in">std</span>::ostream&amp; strm, Tuple&lt;Types...&gt; <span class="hljs-keyword">const</span>&amp; t)
+{
+    printTuple(strm, t);
+    <span class="hljs-keyword">return</span> strm;
+}
+</code></pre>
+<h2 id="253-&#x7B97;&#x6CD5;">25.3 &#x7B97;&#x6CD5;</h2>
+<p>&#x5143;&#x7EC4;&#x548C;&#x4E0A;&#x4E00;&#x7AE0;&#x5B9E;&#x73B0;&#x7684;&#x7C7B;&#x578B;&#x5217;&#x8868;<code>TypeList&lt;&gt;</code>&#x7C7B;&#x4F3C;&#xFF0C;&#x90FD;&#x5B58;&#x50A8;&#x4E86;&#x4E00;&#x7CFB;&#x5217;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x4F46;&#x4E0D;&#x540C;&#x7684;&#x662F;&#x5143;&#x7EC4;&#x4E2D;&#x8FD8;&#x5305;&#x62EC;&#x7C7B;&#x578B;&#x6240;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#xFF0C;&#x56E0;&#x6B64;&#x5143;&#x7EC4;&#x6240;&#x652F;&#x6301;&#x7684;&#x7B97;&#x6CD5;&#x65E2;&#x8981;&#x5728;&#x7F16;&#x8BD1;&#x65F6;&#x786E;&#x5B9A;&#x7C7B;&#x578B;&#xFF0C;&#x53C8;&#x9700;&#x8981;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x5BF9;&#x503C;&#x8FDB;&#x884C;&#x8BA1;&#x7B97;&#x3002;</p>
+<h3 id="Tuples-as-Typelists">25.3.1 &#x7C7B;&#x578B;&#x64CD;&#x4F5C;&#x7B97;&#x6CD5; </h3>
+<p>&#x4E0B;&#x9762;&#x662F;&#x5143;&#x7EC4;&#x7684;&#x7F16;&#x8BD1;&#x65F6;&#x7B97;&#x6CD5;&#xFF0C;&#x4E3B;&#x8981;&#x7528;&#x6765;&#x786E;&#x5B9A;&#x7C7B;&#x578B;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// tuples/tupletypelist.hpp</span>
+<span class="hljs-comment">// determine whether the tuple is empty:</span>
+<span class="hljs-keyword">template</span>&lt;&gt;
+<span class="hljs-keyword">struct</span> IsEmpty&lt;Tuple&lt;&gt;&gt; {
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">bool</span> value = <span class="hljs-literal">true</span>;
+};
+
+<span class="hljs-comment">// extract front element:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Head, <span class="hljs-keyword">typename</span>... Tail&gt;
+<span class="hljs-keyword">class</span> FrontT&lt;Tuple&lt;Head, Tail...&gt;&gt; {
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> Type = Head;
+};
+
+<span class="hljs-comment">// remove front element:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Head, <span class="hljs-keyword">typename</span>... Tail&gt;
+<span class="hljs-keyword">class</span> PopFrontT&lt;Tuple&lt;Head, Tail...&gt;&gt; {
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> Type = Tuple&lt;Tail...&gt;;
+};
+
+<span class="hljs-comment">// add element to the front:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>... Types, <span class="hljs-keyword">typename</span> Element&gt;
+<span class="hljs-keyword">class</span> PushFrontT&lt;Tuple&lt;Types...&gt;, Element&gt; {
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> Type = Tuple&lt;Element, Types...&gt;;
+};
+
+<span class="hljs-comment">// add element to the back:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>... Types, <span class="hljs-keyword">typename</span> Element&gt;
+<span class="hljs-keyword">class</span> PushBackT&lt;Tuple&lt;Types...&gt;, Element&gt; {
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> Type = Tuple&lt;Types..., Element&gt;;
+};
+</code></pre>
+<p>&#x8FD9;&#x91CC;&#x53EA;&#x6709;&#x539F;&#x59CB;&#x7684;&#x7C7B;&#x6A21;&#x677F;&#xFF0C;&#x6CA1;&#x6709;&#x7ED9;&#x51FA;&#x522B;&#x540D;&#x6A21;&#x677F;&#x3002;</p>
+<h3 id="Adding-to-and-Removing-from-a-Tuple">25.3.2 &#x503C;&#x64CD;&#x4F5C;&#x7B97;&#x6CD5; </h3>
+<p>&#x548C;&#x524D;&#x4E00;&#x8282;&#x7C7B;&#x578B;&#x64CD;&#x4F5C;&#x7B97;&#x6CD5;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x7B97;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// tuples/popfront.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>... Types&gt;
+PopFront&lt;Tuple&lt;Types...&gt;&gt; popFront(Tuple&lt;Types...&gt; <span class="hljs-keyword">const</span>&amp; tuple)
+{
+    <span class="hljs-keyword">return</span> tuple.getTail();
+}
+</code></pre>
+<pre><code class="lang-cpp"><span class="hljs-comment">// tuples/pushfront.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>... Types, <span class="hljs-keyword">typename</span> V&gt;
+PushFront&lt;Tuple&lt;Types...&gt;, V&gt; pushFront(Tuple&lt;Types...&gt; <span class="hljs-keyword">const</span>&amp; tuple, V <span class="hljs-keyword">const</span>&amp; value)
+{
+    <span class="hljs-keyword">return</span> PushFront&lt;Tuple&lt;Types...&gt;, V&gt;(value, tuple);
+}
+</code></pre>
+<pre><code class="lang-cpp"><span class="hljs-comment">// tuples/pushback.hpp</span>
+<span class="hljs-comment">// basis case</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> V&gt;
+Tuple&lt;V&gt; pushBack(Tuple&lt;&gt; <span class="hljs-keyword">const</span>&amp;, V <span class="hljs-keyword">const</span>&amp; value)
+{
+    <span class="hljs-keyword">return</span> Tuple&lt;V&gt;(value);
+}
+
+<span class="hljs-comment">// recursive case</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Head, <span class="hljs-keyword">typename</span>... Tail, <span class="hljs-keyword">typename</span> V&gt;
+Tuple&lt;Head, Tail..., V&gt; pushBack(Tuple&lt;Head, Tail...&gt; <span class="hljs-keyword">const</span>&amp; tuple, V <span class="hljs-keyword">const</span>&amp; value)
+{
+    <span class="hljs-keyword">return</span> Tuple&lt;Head, Tail..., V&gt;(tuple.getHead(), pushBack(tuple.getTail(), value));
+}
+</code></pre>
+<h3 id="Reversing-a-Tuple">25.3.3 &#x53CD;&#x8F6C;&#x7B97;&#x6CD5; </h3>
+<p>&#x53CD;&#x8F6C;&#x7B97;&#x6CD5;&#x901A;&#x8FC7;&#x9012;&#x5F52;&#x7684;&#x65B9;&#x5F0F;&#x5B9E;&#x73B0;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// tuples/reverse.hpp</span>
+<span class="hljs-comment">// basis case</span>
+Tuple&lt;&gt; reverse(Tuple&lt;&gt; <span class="hljs-keyword">const</span>&amp; t)
+{
+    <span class="hljs-keyword">return</span> t;
+}
+
+<span class="hljs-comment">// recursive case</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Head, <span class="hljs-keyword">typename</span>... Tail&gt;
+Reverse&lt;Tuple&lt;Head, Tail...&gt;&gt; reverse(Tuple&lt;Head, Tail...&gt; <span class="hljs-keyword">const</span>&amp; t)
+{
+    <span class="hljs-keyword">return</span> pushBack(reverse(t.getTail()), t.getHead());
+}
+</code></pre>
+<p>&#x6709;&#x4E86;&#x53CD;&#x8F6C;&#x7B97;&#x6CD5;&#x540E;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x5F39;&#x51FA;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x7684;&#x7B97;&#x6CD5;&#x4E86;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// tuples/popback.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>... Types&gt;
+PopBack&lt;Tuple&lt;Types...&gt;&gt; popBack(Tuple&lt;Types...&gt; <span class="hljs-keyword">const</span>&amp; tuple)
+{
+    <span class="hljs-keyword">return</span> reverse(popFront(reverse(tuple)));
+}
+</code></pre>
+<h3 id="2534-&#x7D22;&#x5F15;&#x5217;&#x8868;">25.3.4 &#x7D22;&#x5F15;&#x5217;&#x8868;</h3>
+<p>&#x4E0A;&#x4E00;&#x8282;&#x4E2D;&#x7684;&#x53CD;&#x8F6C;&#x7B97;&#x6CD5;&#x6548;&#x7387;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x7EDF;&#x8BA1;&#x62F7;&#x8D1D;&#x7684;&#x6B21;&#x6570;&#x6765;&#x6D4B;&#x91CF;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// tuples/copycounter.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">int</span> N&gt;
+<span class="hljs-keyword">struct</span> CopyCounter
+{
+    <span class="hljs-keyword">inline</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">unsigned</span> numCopies = <span class="hljs-number">0</span>;
+    CopyCounter() {
+    }
+    CopyCounter(CopyCounter <span class="hljs-keyword">const</span>&amp;) {
+        ++numCopies;
+    }
+};
+</code></pre>
+<pre><code class="lang-cpp"><span class="hljs-comment">// tuples/copycountertest.hpp</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">copycountertest</span><span class="hljs-params">()</span>
+</span>{
+    Tuple&lt;CopyCounter&lt;<span class="hljs-number">0</span>&gt;, CopyCounter&lt;<span class="hljs-number">1</span>&gt;, CopyCounter&lt;<span class="hljs-number">2</span>&gt;,
+            CopyCounter&lt;<span class="hljs-number">3</span>&gt;, CopyCounter&lt;<span class="hljs-number">4</span>&gt;&gt; copies;
+    <span class="hljs-keyword">auto</span> reversed = reverse(copies);
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;0: &quot;</span> &lt;&lt; CopyCounter&lt;<span class="hljs-number">0</span>&gt;::numCopies &lt;&lt; <span class="hljs-string">&quot; copies\n&quot;</span>;     <span class="hljs-comment">// 5</span>
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;1: &quot;</span> &lt;&lt; CopyCounter&lt;<span class="hljs-number">1</span>&gt;::numCopies &lt;&lt; <span class="hljs-string">&quot; copies\n&quot;</span>;     <span class="hljs-comment">// 8</span>
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;2: &quot;</span> &lt;&lt; CopyCounter&lt;<span class="hljs-number">2</span>&gt;::numCopies &lt;&lt; <span class="hljs-string">&quot; copies\n&quot;</span>;     <span class="hljs-comment">// 9</span>
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;3: &quot;</span> &lt;&lt; CopyCounter&lt;<span class="hljs-number">3</span>&gt;::numCopies &lt;&lt; <span class="hljs-string">&quot; copies\n&quot;</span>;     <span class="hljs-comment">// 8</span>
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;4: &quot;</span> &lt;&lt; CopyCounter&lt;<span class="hljs-number">4</span>&gt;::numCopies &lt;&lt; <span class="hljs-string">&quot; copies\n&quot;</span>;     <span class="hljs-comment">// 5</span>
+}
+</code></pre>
+<p>&#x62F7;&#x8D1D;&#x6B21;&#x6570;&#x8FC7;&#x591A;&#x4E3B;&#x8981;&#x662F;&#x7531;&#x4E8E;<code>pushBack()</code>&#x7684;&#x9012;&#x5F52;&#xFF0C;&#x6BCF;&#x6B21;&#x5728;&#x6784;&#x9020;<code>Tuple::tail</code>&#x65F6;&#x90FD;&#x4F1A;&#x53D1;&#x751F;&#x62F7;&#x8D1D;&#x3002;&#x66F4;&#x6709;&#x6548;&#x7387;&#x7684;&#x65B9;&#x5F0F;&#x662F;&#x4F7F;&#x7528;<code>makeTuple()</code>&#x8FDB;&#x884C;&#x6784;&#x9020;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">auto</span> reversed = makeTuple(get&lt;<span class="hljs-number">4</span>&gt;(copies), get&lt;<span class="hljs-number">3</span>&gt;(copies),
+                            get&lt;<span class="hljs-number">2</span>&gt;(copies), get&lt;<span class="hljs-number">1</span>&gt;(copies),
+                            get&lt;<span class="hljs-number">0</span>&gt;(copies));
+</code></pre>
+<p>&#x8FD9;&#x6837;&#x62F7;&#x8D1D;&#x6B21;&#x6570;&#x5C31;&#x90FD;&#x964D;&#x4F4E;&#x4E3A;1&#x6B21;&#x4E86;&#xFF0C;&#x4F46;&#x662F;&#x4E0A;&#x9762;&#x7684;&#x5199;&#x6CD5;&#x5F88;&#x9EBB;&#x70E6;&#xFF0C;&#x6240;&#x4EE5;&#x5E94;&#x8BE5;&#x5C06;&#x7D22;&#x5F15;&#x5E8F;&#x5217;&#x53D8;&#x6210;&#x975E;&#x7C7B;&#x578B;&#x7684;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x5305;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x7D22;&#x5F15;&#x5217;&#x8868;&#x3002;</p>
+<h3 id="2535-&#x901A;&#x8FC7;&#x7D22;&#x5F15;&#x5217;&#x8868;&#x5B9E;&#x73B0;&#x53CD;&#x8F6C;">25.3.5 &#x901A;&#x8FC7;&#x7D22;&#x5F15;&#x5217;&#x8868;&#x5B9E;&#x73B0;&#x53CD;&#x8F6C;</h3>
+<p>&#x7D22;&#x5F15;&#x5217;&#x8868;&#x501F;&#x52A9;&#x4E0A;&#x4E00;&#x7AE0;&#x7684;<code>ValueList&lt;&gt;</code>&#x5B9E;&#x73B0;&#xFF1A;</p>
+<pre><code class="lang-cpp">// tuples/indexlistreverse.hpp
+template&lt;typename... Elements, unsigned... Indices&gt;
+auto reverseImpl(Tuple&lt;Elements...&gt; const&amp; t, Valuelist&lt;unsigned, Indices...&gt;)
+    -&gt; decltype(makeTuple(get&lt;Indices&gt;(t)...))
+{
+    return makeTuple(get&lt;Indices&gt;(t)...);
+}
+
+template&lt;typename... Elements&gt;
+auto reverse(Tuple&lt;Elements...&gt; const&amp; t)
+    -&gt; decltype(reverseImpl(t, Reverse&lt;MakeIndexList&lt;sizeof...(Elements)&gt;&gt;()))
+{
+    return reverseImpl(t, Reverse&lt;MakeIndexList&lt;sizeof...(Elements)&gt;&gt;());
+}
+</code></pre>
+<p><code>reverseImpl()</code>&#x4E2D;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x6CA1;&#x6709;&#x540D;&#x5B57;&#xFF0C;&#x56E0;&#x4E3A;&#x5728;&#x51FD;&#x6570;&#x4F53;&#x4E2D;&#x5E76;&#x4E0D;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x8BE5;&#x53C2;&#x6570;&#xFF0C;&#x4E3B;&#x8981;&#x4F5C;&#x7528;&#x662F;&#x901A;&#x8FC7;&#x8BE5;&#x53C2;&#x6570;&#x63A8;&#x5BFC;<code>Indices</code>&#x3002;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x8BE5;&#x53C2;&#x6570;&#xFF0C;&#x5219;&#x5FC5;&#x987B;&#x8981;&#x901A;&#x8FC7;&#x663E;&#x793A;&#x5B9E;&#x4F8B;&#x5316;&#x6A21;&#x677F;&#x7684;&#x65B9;&#x5F0F;&#x663E;&#x5F0F;&#x6307;&#x5B9A;&#x3002;</p>
+<p>&#x6784;&#x9020;<code>ValueList&lt;&gt;</code>&#x7684;<code>MakeIndexList()</code>&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// tuples/makeindexlist.hpp</span>
+<span class="hljs-comment">// recursive case</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">unsigned</span> N, <span class="hljs-keyword">typename</span> Result = Valuelist&lt;<span class="hljs-keyword">unsigned</span>&gt;&gt;
+<span class="hljs-keyword">struct</span> MakeIndexListT : MakeIndexListT&lt;N<span class="hljs-number">-1</span>, PushFront&lt;Result, CTValue&lt;<span class="hljs-keyword">unsigned</span>, N<span class="hljs-number">-1</span>&gt;&gt;&gt;
+{
+};
+
+<span class="hljs-comment">// basis case</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Result&gt;
+<span class="hljs-keyword">struct</span> MakeIndexListT&lt;<span class="hljs-number">0</span>, Result&gt;
+{
+    <span class="hljs-keyword">using</span> Type = Result;
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">unsigned</span> N&gt;
+<span class="hljs-keyword">using</span> MakeIndexList = <span class="hljs-keyword">typename</span> MakeIndexListT&lt;N&gt;::Type;
+</code></pre>
+<h3 id="2536-&#x91CD;&#x6392;&#x548C;&#x9009;&#x62E9;">25.3.6 &#x91CD;&#x6392;&#x548C;&#x9009;&#x62E9;</h3>
+<p><code>reverseImpl()</code>&#x53EA;&#x662F;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x9012;&#x51CF;&#x7684;&#x503C;&#x5217;&#x8868;&#x9009;&#x62E9;&#x51FA;&#x5143;&#x7EC4;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x5176;&#x6838;&#x5FC3;&#x662F;&#x63D0;&#x53D6;&#x7B97;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// tuples/select.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>... Elements, <span class="hljs-keyword">unsigned</span>... Indices&gt;
+<span class="hljs-function"><span class="hljs-keyword">auto</span> <span class="hljs-title">select</span><span class="hljs-params">(Tuple&lt;Elements...&gt; <span class="hljs-keyword">const</span>&amp; t, Valuelist&lt;<span class="hljs-keyword">unsigned</span>, Indices...&gt;)</span>
+</span>{
+    <span class="hljs-keyword">return</span> makeTuple(get&lt;Indices&gt;(t)...);
+}
+</code></pre>
+<p>&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x5C06;<code>I</code>&#x91CD;&#x590D;<code>N</code>&#x6B21;&#x7684;&#x7D22;&#x5F15;&#x5E8F;&#x5217;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x751F;&#x6210;&#x7531;&#x5143;&#x7EC4;&#x4E2D;&#x7B2C;<code>I</code>&#x4E2A;&#x5143;&#x7D20;&#x91CD;&#x590D;<code>N</code>&#x6B21;&#x7684;&#x65B0;&#x5143;&#x7EC4;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// tuples/splat.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">unsigned</span> I, <span class="hljs-keyword">unsigned</span> N, <span class="hljs-keyword">typename</span> IndexList = Valuelist&lt;<span class="hljs-keyword">unsigned</span>&gt;&gt;
+<span class="hljs-keyword">class</span> ReplicatedIndexListT;
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">unsigned</span> I, <span class="hljs-keyword">unsigned</span> N, <span class="hljs-keyword">unsigned</span>... Indices&gt;
+<span class="hljs-keyword">class</span> ReplicatedIndexListT&lt;I, N, Valuelist&lt;<span class="hljs-keyword">unsigned</span>, Indices...&gt;&gt;
+    : <span class="hljs-keyword">public</span> ReplicatedIndexListT&lt;I, N<span class="hljs-number">-1</span>, Valuelist&lt;<span class="hljs-keyword">unsigned</span>, Indices..., I&gt;&gt; {
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">unsigned</span> I, <span class="hljs-keyword">unsigned</span>... Indices&gt;
+<span class="hljs-keyword">class</span> ReplicatedIndexListT&lt;I, <span class="hljs-number">0</span>, Valuelist&lt;<span class="hljs-keyword">unsigned</span>, Indices...&gt;&gt; {
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> Type = Valuelist&lt;<span class="hljs-keyword">unsigned</span>, Indices...&gt;;
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">unsigned</span> I, <span class="hljs-keyword">unsigned</span> N&gt;
+<span class="hljs-keyword">using</span> ReplicatedIndexList = <span class="hljs-keyword">typename</span> ReplicatedIndexListT&lt;I, N&gt;::Type;
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">unsigned</span> I, <span class="hljs-keyword">unsigned</span> N, <span class="hljs-keyword">typename</span>... Elements&gt;
+<span class="hljs-function"><span class="hljs-keyword">auto</span> <span class="hljs-title">splat</span><span class="hljs-params">(Tuple&lt;Elements...&gt; <span class="hljs-keyword">const</span>&amp; t)</span>
+</span>{
+    <span class="hljs-keyword">return</span> select(t, ReplicatedIndexList&lt;I, N&gt;());
+}
+</code></pre>
+<p>&#x6CE8;&#x610F;<code>ReplicatedIndexListT&lt;&gt;</code>&#x7684;&#x4E3B;&#x6A21;&#x677F;&#x548C;&#x7279;&#x5316;&#x6A21;&#x677F;&#x4E4B;&#x95F4;&#x7684;&#x6A21;&#x677F;&#x5F62;&#x53C2;&#x6709;&#x533A;&#x522B;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x8981;&#x5BF9;&#x5143;&#x7EC4;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x6309;&#x7167;&#x5927;&#x5C0F;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#xFF0C;&#x53EF;&#x4EE5;&#x5148;&#x5BF9;&#x4E0B;&#x6807;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x5E94;&#x7528;<code>select()</code>&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// tuples/tuplesorttest.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;complex&gt;</span></span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span> U&gt;
+<span class="hljs-keyword">class</span> SmallerThanT
+{
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">static</span> <span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">bool</span> value = <span class="hljs-keyword">sizeof</span>(T) &lt; <span class="hljs-keyword">sizeof</span>(U);
+};
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">testTupleSort</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">auto</span> t1 = makeTuple(<span class="hljs-number">17L</span>L, <span class="hljs-built_in">std</span>::<span class="hljs-keyword">complex</span>&lt;<span class="hljs-keyword">double</span>&gt;(<span class="hljs-number">42</span>,<span class="hljs-number">77</span>), <span class="hljs-string">&apos;c&apos;</span>, <span class="hljs-number">42</span>, <span class="hljs-number">7.7</span>);
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; t1 &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+    <span class="hljs-keyword">auto</span> t2 = sort&lt;SmallerThanT&gt;(t1); <span class="hljs-comment">// t2 is Tuple&lt;int, long, std::string&gt;</span>
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;sorted by size: &quot;</span> &lt;&lt; t2 &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+}
+</code></pre>
+<pre><code class="lang-cpp"><span class="hljs-comment">// tuples/tuplesort.hpp</span>
+<span class="hljs-comment">// metafunction wrapper that compares the elements in a tuple:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> List, <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span> U&gt; <span class="hljs-keyword">class</span> F&gt;
+<span class="hljs-keyword">class</span> MetafunOfNthElementT {
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span> U&gt; <span class="hljs-keyword">class</span> Apply;
+        <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">unsigned</span> N, <span class="hljs-keyword">unsigned</span> M&gt;
+        <span class="hljs-keyword">class</span> Apply&lt;CTValue&lt;<span class="hljs-keyword">unsigned</span>, M&gt;, CTValue&lt;<span class="hljs-keyword">unsigned</span>, N&gt;&gt;
+            : <span class="hljs-keyword">public</span> F&lt;NthElement&lt;List, M&gt;, NthElement&lt;List, N&gt;&gt; { };
+};
+
+<span class="hljs-comment">// sort a tuple based on comparing the element types:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span> U&gt; <span class="hljs-keyword">class</span> Compare, <span class="hljs-keyword">typename</span>... Elements&gt;
+<span class="hljs-function"><span class="hljs-keyword">auto</span> <span class="hljs-title">sort</span><span class="hljs-params">(Tuple&lt;Elements...&gt; <span class="hljs-keyword">const</span>&amp; t)</span>
+</span>{
+    <span class="hljs-keyword">return</span> select(t,
+            InsertionSort&lt;MakeIndexList&lt;<span class="hljs-keyword">sizeof</span>...(Elements)&gt;, 
+                            MetafunOfNthElementT&lt;Tuple&lt;Elements...&gt;, Compare&gt;::<span class="hljs-keyword">template</span> Apply&gt;
+                            ());
+}
+</code></pre>
+<p><code>InsertionSort&lt;&gt;</code>&#x4E2D;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x9700;&#x8981;&#x6392;&#x5E8F;&#x7684;&#x503C;&#x5217;&#x8868;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x6BD4;&#x8F83;&#x503C;&#x5217;&#x8868;&#x7684;&#x5143;&#x51FD;&#x6570;&#x3002;&#x56E0;&#x4E3A;&#x4E0D;&#x662F;&#x7B80;&#x5355;&#x7684;&#x6BD4;&#x8F83;&#x503C;&#x5217;&#x8868;&#x4E2D;&#x7D22;&#x5F15;&#x7684;&#x5927;&#x5C0F;&#xFF0C;&#x800C;&#x662F;&#x6BD4;&#x8F83;&#x5143;&#x7EC4;&#x4E2D;&#x5177;&#x6709;&#x8BE5;&#x7D22;&#x5F15;&#x7684;&#x7C7B;&#x578B;&#x7684;&#x5927;&#x5C0F;&#xFF0C;&#x56E0;&#x6B64;&#x9700;&#x8981;&#x5C06;&#x989D;&#x5916;&#x7684;&#x53C2;&#x6570;<code>Tuple&lt;Elements...&gt;</code>&#x548C;&#x6BD4;&#x8F83;&#x51FD;&#x6570;<code>SmallerThanT&lt;&gt;</code>&#x8FDB;&#x884C;&#x7EC4;&#x5408;&#x3002;&#x6B64;&#x5916;&#x7531;&#x4E8E;<code>InsertionSort&lt;&gt;</code>&#x4E2D;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x4F9D;&#x7136;&#x662F;&#x6A21;&#x677F;&#xFF08;&#x6A21;&#x677F;&#x7684;&#x6A21;&#x677F;&#x53C2;&#x6570;&#xFF09;&#xFF0C;&#x800C;<code>MetafunOfNthElementT&lt;Tuple&lt;Elements...&gt;, Compare&gt;</code>&#x5E76;&#x4E0D;&#x662F;&#x6A21;&#x677F;&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x518D;&#x6B21;&#x5F15;&#x7528;&#x5D4C;&#x5165;&#x7684;&#x7C7B;&#x6A21;&#x677F;<code>Apply&lt;&gt;</code>&#xFF0C;&#x540C;&#x65F6;&#x63D0;&#x793A;&#x7F16;&#x8BD1;&#x5668;<code>Apply&lt;&gt;</code>&#x662F;&#x6A21;&#x677F;&#x3002;</p>
+<h2 id="254-&#x5C06;&#x5143;&#x7EC4;&#x50CF;&#x53C2;&#x6570;&#x5305;&#x4E00;&#x6837;&#x5C55;&#x5F00;">25.4 &#x5C06;&#x5143;&#x7EC4;&#x50CF;&#x53C2;&#x6570;&#x5305;&#x4E00;&#x6837;&#x5C55;&#x5F00;</h2>
+<p>&#x4E3A;&#x4E86;&#x5C06;&#x5143;&#x7EC4;&#x4F20;&#x9012;&#x7ED9;&#x63A5;&#x6536;&#x53EF;&#x53D8;&#x53C2;&#x6570;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x53EF;&#x4EE5;&#x5229;&#x7528;&#x548C;<code>select()</code>&#x4E2D;&#x540C;&#x6837;&#x7684;&#x65B9;&#x5F0F;&#x5C06;&#x53C2;&#x6570;&#x5305;&#x5C55;&#x5F00;&#xFF1A;</p>
+<pre><code class="lang-cpp">// tuples/apply.hpp
+template&lt;typename F, typename... Elements, unsigned... Indices&gt;
+auto applyImpl(F f, Tuple&lt;Elements...&gt; const&amp; t, Valuelist&lt;unsigned, Indices...&gt;)
+    -&gt;decltype(f(get&lt;Indices&gt;(t)...))
+{
+    return f(get&lt;Indices&gt;(t)...);
+}
+
+template&lt;typename F, typename... Elements, unsigned N = sizeof...(Elements)&gt;
+auto apply(F f, Tuple&lt;Elements...&gt; const&amp; t)
+    -&gt;decltype(applyImpl(f, t, MakeIndexList&lt;N&gt;()))
+{
+    return applyImpl(f, t, MakeIndexList&lt;N&gt;());
+}
+</code></pre>
+<h2 id="255-&#x4F18;&#x5316;">25.5 &#x4F18;&#x5316;</h2>
+<h3 id="2551-&#x5143;&#x7EC4;&#x548C;&#x7A7A;&#x57FA;&#x7C7B;&#x4F18;&#x5316;">25.5.1 &#x5143;&#x7EC4;&#x548C;&#x7A7A;&#x57FA;&#x7C7B;&#x4F18;&#x5316;</h3>
+<p>&#x4E3A;&#x4E86;&#x5229;&#x7528;&#x7A7A;&#x57FA;&#x7C7B;&#x4F18;&#x5316;&#xFF0C;&#x5C31;&#x4E0D;&#x80FD;&#x5C06;<code>Tuple::tail</code>&#x4F5C;&#x4E3A;&#x6210;&#x5458;&#xFF0C;&#x800C;&#x5E94;&#x8BE5;&#x4F5C;&#x4E3A;&#x57FA;&#x7C7B;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// tuples/tuplestorage1.hpp</span>
+<span class="hljs-comment">// recursive case:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Head, <span class="hljs-keyword">typename</span>... Tail&gt;
+<span class="hljs-keyword">class</span> Tuple&lt;Head, Tail...&gt; : <span class="hljs-keyword">private</span> Tuple&lt;Tail...&gt;
+{
+    <span class="hljs-keyword">private</span>:
+        Head head;
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-function">Head&amp; <span class="hljs-title">getHead</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> head; }
+        <span class="hljs-function">Head <span class="hljs-keyword">const</span>&amp; <span class="hljs-title">getHead</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> </span>{ <span class="hljs-keyword">return</span> head; }
+        Tuple&lt;Tail...&gt;&amp; getTail() { <span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span>; }
+        Tuple&lt;Tail...&gt; <span class="hljs-function"><span class="hljs-keyword">const</span>&amp; <span class="hljs-title">getTail</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> </span>{ <span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span>; }
+};
+</code></pre>
+<p>&#x95EE;&#x9898;&#x5728;&#x4E8E;&#x91C7;&#x7528;&#x7EE7;&#x627F;&#x7684;&#x65B9;&#x5F0F;&#x4F1A;&#x5148;&#x521D;&#x59CB;&#x5316;&#x57FA;&#x7C7B;&#xFF0C;&#x867D;&#x7136;&#x6CA1;&#x4EC0;&#x4E48;&#x95EE;&#x9898;&#xFF0C;&#x4F46;&#x662F;&#x770B;&#x8D77;&#x6765;&#x6709;&#x4E9B;&#x522B;&#x626D;&#xFF0C;&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#x662F;&#x901A;&#x8FC7;&#x591A;&#x91CD;&#x7EE7;&#x627F;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// tuples/tuplestorage2.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>... Types&gt;
+<span class="hljs-keyword">class</span> Tuple;
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">class</span> TupleElt
+{
+        T value;
+    <span class="hljs-keyword">public</span>:
+        TupleElt() = <span class="hljs-keyword">default</span>;
+
+        <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> U&gt;
+        TupleElt(U&amp;&amp; other) : value(<span class="hljs-built_in">std</span>::forward&lt;U&gt;(other) { }
+
+        <span class="hljs-function">T&amp; <span class="hljs-title">get</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> value; }
+        <span class="hljs-function">T <span class="hljs-keyword">const</span>&amp; <span class="hljs-title">get</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> </span>{ <span class="hljs-keyword">return</span> value; }
+};
+
+<span class="hljs-comment">// recursive case:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Head, <span class="hljs-keyword">typename</span>... Tail&gt;
+<span class="hljs-keyword">class</span> Tuple&lt;Head, Tail...&gt; : <span class="hljs-keyword">private</span> TupleElt&lt;Head&gt;, <span class="hljs-keyword">private</span> Tuple&lt;Tail...&gt;
+{
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-function">Head&amp; <span class="hljs-title">getHead</span><span class="hljs-params">()</span> </span>{
+            <span class="hljs-comment">// potentially ambiguous</span>
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">static_cast</span>&lt;TupleElt&lt;Head&gt; *&gt;(<span class="hljs-keyword">this</span>)-&gt;get();
+        }
+        <span class="hljs-function">Head <span class="hljs-keyword">const</span>&amp; <span class="hljs-title">getHead</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> </span>{
+            <span class="hljs-comment">// potentially ambiguous</span>
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">static_cast</span>&lt;TupleElt&lt;Head&gt; <span class="hljs-keyword">const</span>*&gt;(<span class="hljs-keyword">this</span>)-&gt;get();
+        }
+        Tuple&lt;Tail...&gt;&amp; getTail() { <span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span>; }
+        Tuple&lt;Tail...&gt; <span class="hljs-function"><span class="hljs-keyword">const</span>&amp; <span class="hljs-title">getTail</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> </span>{ <span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span>; }
+};
+
+<span class="hljs-comment">// basis case:</span>
+<span class="hljs-keyword">template</span>&lt;&gt;
+<span class="hljs-keyword">class</span> Tuple&lt;&gt; {
+<span class="hljs-comment">// no storage required</span>
+};
+</code></pre>
+<p>&#x8FD9;&#x867D;&#x7136;&#x89E3;&#x51B3;&#x4E86;&#x521D;&#x59CB;&#x5316;&#x987A;&#x5E8F;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x4F46;&#x662F;&#x5F53;&#x591A;&#x91CD;&#x7EE7;&#x627F;&#x7684;&#x57FA;&#x7C7B;&#x76F8;&#x540C;&#x65F6;&#x5C31;&#x4F1A;&#x51FA;&#x73B0;&#x6B67;&#x4E49;&#xFF0C;&#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;<code>TupleElt&lt;&gt;</code>&#x4E2D;&#x52A0;&#x5165;&#x4E00;&#x4E2A;&#x9AD8;&#x5EA6;&#x4FE1;&#x606F;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// tuples/tupleelt1.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">unsigned</span> Height, <span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">class</span> TupleElt {
+        T value;
+    <span class="hljs-keyword">public</span>:
+        TupleElt() = <span class="hljs-keyword">default</span>;
+        <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> U&gt;
+        TupleElt(U&amp;&amp; other) : value(<span class="hljs-built_in">std</span>::forward&lt;U&gt;(other)) { }
+        <span class="hljs-function">T&amp; <span class="hljs-title">get</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> value; }
+        <span class="hljs-function">T <span class="hljs-keyword">const</span>&amp; <span class="hljs-title">get</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> </span>{ <span class="hljs-keyword">return</span> value; }
+};
+</code></pre>
+<pre><code class="lang-cpp"><span class="hljs-comment">// tuples/tuplestorage3.hpp</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>... Types&gt;
+<span class="hljs-keyword">class</span> Tuple;
+
+<span class="hljs-comment">// recursive case:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Head, <span class="hljs-keyword">typename</span>... Tail&gt;
+<span class="hljs-keyword">class</span> Tuple&lt;Head, Tail...&gt;
+    : <span class="hljs-keyword">private</span> TupleElt&lt;<span class="hljs-keyword">sizeof</span>...(Tail), Head&gt;, <span class="hljs-keyword">private</span> Tuple&lt;Tail...&gt;
+{
+        <span class="hljs-keyword">using</span> HeadElt = TupleElt&lt;<span class="hljs-keyword">sizeof</span>...(Tail), Head&gt;;
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-function">Head&amp; <span class="hljs-title">getHead</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">static_cast</span>&lt;HeadElt *&gt;(<span class="hljs-keyword">this</span>)-&gt;get();
+        }
+        <span class="hljs-function">Head <span class="hljs-keyword">const</span>&amp; <span class="hljs-title">getHead</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">static_cast</span>&lt;HeadElt <span class="hljs-keyword">const</span>*&gt;(<span class="hljs-keyword">this</span>)-&gt;get();
+        }
+        Tuple&lt;Tail...&gt;&amp; getTail() { <span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span>; }
+        Tuple&lt;Tail...&gt; <span class="hljs-function"><span class="hljs-keyword">const</span>&amp; <span class="hljs-title">getTail</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> </span>{ <span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span>; }
+};
+
+<span class="hljs-comment">// basis case:</span>
+<span class="hljs-keyword">template</span>&lt;&gt;
+<span class="hljs-keyword">class</span> Tuple&lt;&gt; {
+<span class="hljs-comment">// no storage required</span>
+};
+</code></pre>
+<p>&#x4E0B;&#x9762;&#x7684;&#x7A0B;&#x5E8F;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x6D4B;&#x8BD5;&#x4F18;&#x5316;&#x540E;&#x7684;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// tuples/compressedtuple1.cpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;algorithm&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;tupleelt1.hpp&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;tuplestorage3.hpp&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+
+<span class="hljs-keyword">struct</span> A {
+    A() {
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;A()&quot;</span> &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+    }
+};
+
+<span class="hljs-keyword">struct</span> B {
+    B() {
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;B()&quot;</span> &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+    }
+};
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    Tuple&lt;A, <span class="hljs-keyword">char</span>, A, <span class="hljs-keyword">char</span>, B&gt; t1;
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-keyword">sizeof</span>(t1) &lt;&lt; <span class="hljs-string">&quot; bytes&quot;</span> &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;}
+</code></pre>
+<p><code>t1</code>&#x7684;&#x5927;&#x5C0F;&#x662F;5&#x5B57;&#x8282;&#xFF0C;&#x8BF4;&#x660E;&#x7EE7;&#x627F;&#x94FE;&#x4E2D;&#x7684;&#x7A7A;&#x5143;&#x7EC4;&#x7684;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;&#x88AB;&#x4F18;&#x5316;&#x4E86;&#x3002;&#x7531;&#x4E8E;&#x4E0A;&#x4F8B;&#x4E2D;&#x7684;<code>A</code>&#x548C;<code>B</code>&#x4E5F;&#x662F;&#x7A7A;&#x7C7B;&#x578B;&#xFF0C;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x6539;&#x8FDB;<code>TupleElt&lt;&gt;</code>&#x6765;&#x5C06;<code>A</code>&#x548C;<code>B</code>&#x6240;&#x5360;&#x7528;&#x7684;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;&#x4E5F;&#x4F18;&#x5316;&#x6389;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// tuples/tupleelt2.hpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;type_traits&gt;</span></span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">unsigned</span> Height, <span class="hljs-keyword">typename</span> T,
+            <span class="hljs-keyword">bool</span> = <span class="hljs-built_in">std</span>::is_class&lt;T&gt;::value &amp;&amp; !<span class="hljs-built_in">std</span>::is_final&lt;T&gt;::value&gt;
+<span class="hljs-keyword">class</span> TupleElt;
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">unsigned</span> Height, <span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">class</span> TupleElt&lt;Height, T, <span class="hljs-literal">false</span>&gt;
+{
+        T value;
+    <span class="hljs-keyword">public</span>:
+        TupleElt() = <span class="hljs-keyword">default</span>;
+        <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> U&gt;
+        TupleElt(U&amp;&amp; other) : value(<span class="hljs-built_in">std</span>::forward&lt;U&gt;(other)) { }
+
+        <span class="hljs-function">T&amp; <span class="hljs-title">get</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> value; }
+        <span class="hljs-function">T <span class="hljs-keyword">const</span>&amp; <span class="hljs-title">get</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> </span>{ <span class="hljs-keyword">return</span> value; }
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">unsigned</span> Height, <span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">class</span> TupleElt&lt;Height, T, <span class="hljs-literal">true</span>&gt; : <span class="hljs-keyword">private</span> T
+{
+    <span class="hljs-keyword">public</span>:
+        TupleElt() = <span class="hljs-keyword">default</span>;
+        <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> U&gt;
+        TupleElt(U&amp;&amp; other) : T(<span class="hljs-built_in">std</span>::forward&lt;U&gt;(other)) { }
+
+        <span class="hljs-function">T&amp; <span class="hljs-title">get</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span>; }
+        <span class="hljs-function">T <span class="hljs-keyword">const</span>&amp; <span class="hljs-title">get</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> </span>{ <span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span>; }
+};
+</code></pre>
+<h3 id="2552--&#x5E38;&#x91CF;&#x65F6;&#x95F4;&#x7684;get">25.5.2  &#x5E38;&#x91CF;&#x65F6;&#x95F4;&#x7684;get()</h3>
+<p>&#x7531;&#x4E8E;<code>TupleElt&lt;&gt;</code>&#x7684;&#x5B9E;&#x73B0;&#x65B9;&#x6CD5;&#x662F;&#x901A;&#x8FC7;&#x7EE7;&#x627F;&#xFF0C;&#x56E0;&#x6B64;&#x53EF;&#x4EE5;&#x5229;&#x7528;&#x6D3E;&#x751F;&#x7C7B;&#x5230;&#x57FA;&#x7C7B;&#x7684;&#x8F6C;&#x6362;&#x5B9E;&#x73B0;&#x5E38;&#x91CF;&#x65F6;&#x95F4;&#x7684;<code>get()</code>&#xFF1A;</p>
+<pre><code class="lang-cpp">// tuples/constantget.hpp
+template&lt;unsigned H, typename T&gt;
+T&amp; getHeight(TupleElt&lt;H,T&gt;&amp; te)
+{
+    return te.get();
+}
+
+template&lt;typename... Types&gt;
+class Tuple;
+
+template&lt;unsigned I, typename... Elements&gt;
+auto get(Tuple&lt;Elements...&gt;&amp; t)
+    -&gt; decltype(getHeight&lt;sizeof...(Elements)-I-1&gt;(t))
+{
+    return getHeight&lt;sizeof...(Elements)-I-1&gt;(t);
+}
+</code></pre>
+<p>&#x56E0;&#x4E3A;&#x4F18;&#x5316;&#x540E;&#x7684;&#x5143;&#x7EC4;&#x662F;&#x79C1;&#x6709;&#x7EE7;&#x627F;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x5C06;<code>get()</code>&#x58F0;&#x660E;&#x4E3A;&#x53CB;&#x5143;&#x3002;</p>
+<h2 id="256-&#x4E0B;&#x6807;&#x8FD0;&#x7B97;">25.6 &#x4E0B;&#x6807;&#x8FD0;&#x7B97;</h2>
+<p>&#x5143;&#x7EC4;&#x4E5F;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x4E0B;&#x6807;&#x8FD0;&#x7B97;&#x7B26;&#xFF0C;&#x5185;&#x90E8;&#x501F;&#x52A9;<code>get()</code>&#x5B9E;&#x73B0;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, T Index&gt;
+<span class="hljs-keyword">auto</span>&amp; <span class="hljs-keyword">operator</span>[](CTValue&lt;T, Index&gt;) {
+    <span class="hljs-keyword">return</span> get&lt;Index&gt;(*<span class="hljs-keyword">this</span>);
+}
+
+<span class="hljs-keyword">auto</span> t = makeTuple(<span class="hljs-number">0</span>, <span class="hljs-string">&apos;1&apos;</span>, <span class="hljs-number">2.2f</span>, <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>{<span class="hljs-string">&quot;hello&quot;</span>});
+<span class="hljs-keyword">auto</span> a = t[CTValue&lt;<span class="hljs-keyword">unsigned</span>, <span class="hljs-number">2</span>&gt;{}];
+<span class="hljs-keyword">auto</span> b = t[CTValue&lt;<span class="hljs-keyword">unsigned</span>, <span class="hljs-number">3</span>&gt;{}];
+</code></pre>
+<p>&#x7531;&#x4E8E;<code>get&lt;Index&gt;(*this)</code>&#x662F;&#x7F16;&#x8BD1;&#x671F;&#x95F4;&#x786E;&#x5B9A;&#x7684;&#x503C;&#xFF0C;&#x6240;&#x4EE5;&#x53C2;&#x6570;&#x4E5F;&#x5FC5;&#x987B;&#x662F;&#x4E00;&#x4E2A;&#x7F16;&#x8BD1;&#x671F;&#x95F4;&#x7684;&#x503C;&#x3002;&#x53EF;&#x4EE5;&#x53D1;&#x73B0;<code>CTValue&lt;&gt;</code>&#x7684;&#x5199;&#x6CD5;&#x6709;&#x4E9B;&#x590D;&#x6742;&#xFF0C;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x501F;&#x52A9;&#x5B57;&#x9762;&#x503C;&#x8FD0;&#x7B97;&#x7B26;&#x6A21;&#x677F;&#xFF1A;</p>
+<pre><code class="lang-cpp">// tuples/literals.hpp
+#include &quot;ctvalue.hpp&quot;
+#include &lt;cassert&gt;
+#include &lt;cstddef&gt;
+
+// convert single char to corresponding int value at compile time:
+constexpr int toInt(char c) {
+    // hexadecimal letters:
+    if (c &gt;= &apos;A&apos; &amp;&amp; c &lt;= &apos;F&apos;) {
+        return static_cast&lt;int&gt;(c) - static_cast&lt;int&gt;(&apos;A&apos;) + 10;
+    }
+    if (c &gt;= &apos;a&apos; &amp;&amp; c &lt;= &apos;f&apos;) {
+        return static_cast&lt;int&gt;(c) - static_cast&lt;int&gt;(&apos;a&apos;) + 10;
+    }
+    // other (disable &apos;.&apos; for floating-point literals):
+    assert(c &gt;= &apos;0&apos; &amp;&amp; c &lt;= &apos;9&apos;);
+    return static_cast&lt;int&gt;(c) - static_cast&lt;int&gt;(&apos;0&apos;);
+}
+
+// parse array of chars to corresponding int value at compile time:
+template&lt;std::size_t N&gt;
+constexpr int parseInt(char const (&amp;arr)[N]) {
+    int base = 10;                  // to handle base (default: decimal)
+    int offset = 0;                 // to skip prefixes like 0x
+    if (N &gt; 2 &amp;&amp; arr[0] == &apos;0&apos;) {
+        switch (arr[1]) {
+            case &apos;x&apos;:               // prefix 0x or 0X, so hexadecimal
+            case &apos;X&apos;:
+                base = 16;
+                offset = 2;
+                break;
+            case &apos;b&apos;:               // prefix 0b or 0B (since C++14), so binary
+            case &apos;B&apos;:
+                base = 2;
+                offset = 2;
+                break;
+            default:                // prefix 0, so octal
+                base = 8;
+                offset = 1;
+                break;
+        }
+    }
+    // iterate over all digits and compute resulting value:
+    int value = 0;
+    int multiplier = 1;
+    for (std::size_t i = 0; i &lt; N - offset; ++i) {
+        if (arr[N-1-i] != &apos;\&apos;&apos;) {   // ignore separating single quotes (e.g. in 1&apos;000)
+            value += toInt(arr[N-1-i]) * multiplier;
+            multiplier *= base;
+        }
+    }
+    return value;
+}
+
+// literal operator: parse integral literals with suffix _c as sequence of chars:
+template&lt;char... cs&gt;
+constexpr auto operator&quot;&quot; _c() {
+    return CTValue&lt;int, parseInt&lt;sizeof...(cs)&gt;({cs...})&gt;{};
+}
+</code></pre>
+<pre><code class="lang-cpp"><span class="hljs-keyword">auto</span> t = makeTuple(<span class="hljs-number">0</span>, <span class="hljs-string">&apos;1&apos;</span>, <span class="hljs-number">2.2f</span>, <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>{<span class="hljs-string">&quot;hello&quot;</span>});
+<span class="hljs-keyword">auto</span> c = t[<span class="hljs-number">2</span>_c];
+<span class="hljs-keyword">auto</span> d = t[<span class="hljs-number">3</span>_c];
+</code></pre>
+<h2 id="257-&#x540E;&#x8BB0;">25.7 &#x540E;&#x8BB0;</h2>
+<p><a href="#Tuples-as-Typelists">25.3.1</a>&#x3001;<a href="#Adding-to-and-Removing-from-a-Tuple">25.3.2</a>&#x3001;<a href="#Reversing-a-Tuple">25.3.3</a>&#x4E2D;&#x6CA1;&#x6709;&#x7ED9;&#x51FA;&#x522B;&#x540D;&#x6A21;&#x677F;&#xFF0C;&#x914D;&#x5957;&#x4EE3;&#x7801;&#x4E2D;&#x4E5F;&#x7F3A;&#x5C11;&#x7701;&#x7565;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x5B8C;&#x6574;&#x7684;&#x53CD;&#x8F6C;&#x7B97;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;functional&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;type_traits&gt;</span></span>
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>... Types&gt;
+<span class="hljs-keyword">class</span> Tuple;
+
+<span class="hljs-comment">// recursive case:</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Head, <span class="hljs-keyword">typename</span>... Tail&gt;
+<span class="hljs-keyword">class</span> Tuple&lt;Head, Tail...&gt;
+{
+    <span class="hljs-keyword">private</span>:
+        Head head;
+        Tuple&lt;Tail...&gt; tail;
+    <span class="hljs-keyword">public</span>:
+        Tuple() {
+        }
+        Tuple(Head <span class="hljs-keyword">const</span>&amp; head, Tuple&lt;Tail...&gt; <span class="hljs-keyword">const</span>&amp; tail)
+            : head(head), tail(tail) {
+        }
+        Tuple(Head <span class="hljs-keyword">const</span>&amp; head, Tail <span class="hljs-keyword">const</span>&amp;... tail)
+            : head(head), tail(tail...) {
+        }
+        <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> VHead, <span class="hljs-keyword">typename</span>... VTail,
+                    <span class="hljs-keyword">typename</span> = <span class="hljs-built_in">std</span>::<span class="hljs-keyword">enable_if_t</span>&lt;<span class="hljs-keyword">sizeof</span>...(VTail) == <span class="hljs-keyword">sizeof</span>...(Tail)&gt;&gt;
+        Tuple(VHead&amp;&amp; vhead, VTail&amp;&amp;... vtail)
+            : head(<span class="hljs-built_in">std</span>::forward&lt;VHead&gt;(vhead)), tail(<span class="hljs-built_in">std</span>::forward&lt;VTail&gt;(vtail)...) {
+        }
+        <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> VHead, <span class="hljs-keyword">typename</span>... VTail,
+                    <span class="hljs-keyword">typename</span> = <span class="hljs-built_in">std</span>::<span class="hljs-keyword">enable_if_t</span>&lt;<span class="hljs-keyword">sizeof</span>...(VTail) == <span class="hljs-keyword">sizeof</span>...(Tail)&gt;&gt;
+        Tuple(Tuple&lt;VHead, VTail...&gt; <span class="hljs-keyword">const</span>&amp; other)
+            : head(other.getHead()), tail(other.getTail()) {
+        }
+
+        <span class="hljs-function">Head&amp; <span class="hljs-title">getHead</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> head; }
+        <span class="hljs-function">Head <span class="hljs-keyword">const</span>&amp; <span class="hljs-title">getHead</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> </span>{ <span class="hljs-keyword">return</span> head; }
+        Tuple&lt;Tail...&gt;&amp; getTail() { <span class="hljs-keyword">return</span> tail; }
+        Tuple&lt;Tail...&gt; <span class="hljs-function"><span class="hljs-keyword">const</span>&amp; <span class="hljs-title">getTail</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> </span>{ <span class="hljs-keyword">return</span> tail; }
+};
+
+<span class="hljs-comment">// basis case:</span>
+<span class="hljs-keyword">template</span>&lt;&gt;
+<span class="hljs-keyword">class</span> Tuple&lt;&gt; {
+<span class="hljs-comment">// no storage required</span>
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Tuple&gt;
+<span class="hljs-keyword">struct</span> IsEmpty {
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">bool</span> value = <span class="hljs-literal">false</span>;
+};
+
+<span class="hljs-keyword">template</span>&lt;&gt;
+<span class="hljs-keyword">struct</span> IsEmpty&lt;Tuple&lt;&gt;&gt; {
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">bool</span> value = <span class="hljs-literal">true</span>;
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Tuple&gt;
+<span class="hljs-keyword">class</span> FrontT;
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Head, <span class="hljs-keyword">typename</span>... Tail&gt;
+<span class="hljs-keyword">class</span> FrontT&lt;Tuple&lt;Head, Tail...&gt;&gt; {
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> Type = Head;
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Tuple&gt;
+<span class="hljs-keyword">using</span> Front = <span class="hljs-keyword">typename</span> FrontT&lt;Tuple&gt;::Type;
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Tuple&gt;
+<span class="hljs-keyword">class</span> PopFrontT;
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Head, <span class="hljs-keyword">typename</span>... Tail&gt;
+<span class="hljs-keyword">class</span> PopFrontT&lt;Tuple&lt;Head, Tail...&gt;&gt; {
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> Type = Tuple&lt;Tail...&gt;;
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Tuple&gt;
+<span class="hljs-keyword">using</span> PopFront = <span class="hljs-keyword">typename</span> PopFrontT&lt;Tuple&gt;::Type;
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Tuple, <span class="hljs-keyword">typename</span> Element&gt;
+<span class="hljs-keyword">class</span> PushFrontT;
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>... Types, <span class="hljs-keyword">typename</span> Element&gt;
+<span class="hljs-keyword">class</span> PushFrontT&lt;Tuple&lt;Types...&gt;, Element&gt; {
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> Type = Tuple&lt;Element, Types...&gt;;
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Tuple, <span class="hljs-keyword">typename</span> Element&gt;
+<span class="hljs-keyword">using</span> PushFront = <span class="hljs-keyword">typename</span> PushFrontT&lt;Tuple, Element&gt;::Type;
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Tuple, <span class="hljs-keyword">typename</span> Element&gt;
+<span class="hljs-keyword">class</span> PushBackT;
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span>... Types, <span class="hljs-keyword">typename</span> Element&gt;
+<span class="hljs-keyword">class</span> PushBackT&lt;Tuple&lt;Types...&gt;, Element&gt; {
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> Type = Tuple&lt;Types..., Element&gt;;
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Tuple, <span class="hljs-keyword">typename</span> Element&gt;
+<span class="hljs-keyword">using</span> PushBack = <span class="hljs-keyword">typename</span> PushBackT&lt;Tuple, Element&gt;::Type;
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Tuple, <span class="hljs-keyword">bool</span> Empty = IsEmpty&lt;Tuple&gt;::value&gt;
+<span class="hljs-keyword">class</span> ReverseT;
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Tuple&gt;
+<span class="hljs-keyword">using</span> Reverse = <span class="hljs-keyword">typename</span> ReverseT&lt;Tuple&gt;::Type;
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Tuple&gt;
+<span class="hljs-keyword">class</span> ReverseT&lt;Tuple, <span class="hljs-literal">false</span>&gt;
+{
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> Type = PushBack&lt;Reverse&lt;PopFront&lt;Tuple&gt;&gt;, Front&lt;Tuple&gt;&gt;;
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Tuple&gt;
+<span class="hljs-keyword">class</span> ReverseT&lt;Tuple, <span class="hljs-literal">true</span>&gt;
+{
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> Type = Tuple;
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Tuple&gt;
+<span class="hljs-keyword">class</span> PopBackT {
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">using</span> Type = Reverse&lt;PopFront&lt;Reverse&lt;Tuple&gt;&gt;&gt;;
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Tuple&gt;
+<span class="hljs-keyword">using</span> PopBack = <span class="hljs-keyword">typename</span> PopBackT&lt;Tuple&gt;::Type;
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> V&gt;
+Tuple&lt;V&gt; pushBack(Tuple&lt;&gt; <span class="hljs-keyword">const</span>&amp;, V <span class="hljs-keyword">const</span>&amp; value)
+{
+    <span class="hljs-keyword">return</span> Tuple&lt;V&gt;(value);
+}
+
+<span class="hljs-comment">// recursive case</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Head, <span class="hljs-keyword">typename</span>... Tail, <span class="hljs-keyword">typename</span> V&gt;
+Tuple&lt;Head, Tail..., V&gt; pushBack(Tuple&lt;Head, Tail...&gt; <span class="hljs-keyword">const</span>&amp; tuple, V <span class="hljs-keyword">const</span>&amp; value)
+{
+    <span class="hljs-keyword">return</span> Tuple&lt;Head, Tail..., V&gt;(tuple.getHead(), pushBack(tuple.getTail(), value));
+}
+
+Tuple&lt;&gt; reverse(Tuple&lt;&gt; <span class="hljs-keyword">const</span>&amp; t)
+{
+    <span class="hljs-keyword">return</span> t;
+}
+
+<span class="hljs-comment">// recursive case</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> Head, <span class="hljs-keyword">typename</span>... Tail&gt;
+Reverse&lt;Tuple&lt;Head, Tail...&gt;&gt; reverse(Tuple&lt;Head, Tail...&gt; <span class="hljs-keyword">const</span>&amp; t)
+{
+    <span class="hljs-keyword">return</span> pushBack(reverse(t.getTail()), t.getHead());
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    Tuple&lt;<span class="hljs-keyword">int</span>, <span class="hljs-keyword">double</span>, <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&gt; t(<span class="hljs-number">1</span>, <span class="hljs-number">2.5</span>, <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>(<span class="hljs-string">&quot;hello&quot;</span>));
+    reverse(t);
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="2022-03-06-ch24-typelists.html" class="navigation navigation-prev " aria-label="Previous page: Chapter 24 Typelists">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="2022-03-08-ch26-discriminated-unions.html" class="navigation navigation-next " aria-label="Next page: Chapter 26 Discriminated Unions">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Chapter 25 Tuples","level":"1.26","depth":1,"next":{"title":"Chapter 26 Discriminated Unions","level":"1.27","depth":1,"path":"2022-03-08-ch26-discriminated-unions.md","ref":"2022-03-08-ch26-discriminated-unions.md","articles":[]},"previous":{"title":"Chapter 24 Typelists","level":"1.25","depth":1,"path":"2022-03-06-ch24-typelists.md","ref":"2022-03-06-ch24-typelists.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"2022-03-07-ch25-tuples.md","mtime":"2022-11-13T05:00:16.206Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-11-13T05:01:04.198Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
